@@ -1,0 +1,47 @@
+# =========================
+# Archivos de compilación Java
+# =========================
+*.class
+*.jar
+*.war
+*.ear
+*.log
+
+# Directorios de salida / build
+/bin/
+/build/
+/out/
+target/
+
+# =========================
+# Configuración de IDEs comunes
+# =========================
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# VS Code
+.vscode/
+
+# Eclipse
+.project
+.classpath
+.settings/
+
+# =========================
+# Archivos del sistema operativo
+# =========================
+.DS_Store
+Thumbs.db
+
+# =========================
+# Archivos temporales o personales
+# =========================
+*.tmp
+*.swp
+*.bak
+
+# =========================
+# Dependencias (si se agregaran más adelante)
+# =========================
+lib/
