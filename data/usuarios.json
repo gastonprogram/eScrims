@@ -1,0 +1,34 @@
+[
+  {
+    "id": 0,
+    "username": "user1",
+    "email": "user1@example.com",
+    "hashedPassword": "w+4uA8veY1SUAAOizrxgUQnTo7AE2qnBQWjEyYEDAe0\u003d",
+    "salt": "qNFMCPSCRFHreokfIbiVqg\u003d\u003d",
+    "rol": "USER",
+    "region": "N/A",
+    "rangoPrincipal": "Sin Rango",
+    "rolesPreferidos": [],
+    "juegoPrincipal": "No definido",
+    "disponibilidad": "00:00-23:59",
+    "disponible": false,
+    "createdAt": "Oct 20, 2025, 7:42:03 PM",
+    "updatedAt": "Oct 20, 2025, 7:42:03 PM"
+  },
+  {
+    "id": 0,
+    "username": "user2",
+    "email": "user2@example.com",
+    "hashedPassword": "2Z2zcPPXSyIXIzOjCQ33wio5dMjrvhIzVsVh6jeQHgA\u003d",
+    "salt": "muqO2v3ZWvV6xDaZaTXiZw\u003d\u003d",
+    "rol": "USER",
+    "region": "N/A",
+    "rangoPrincipal": "Sin Rango",
+    "rolesPreferidos": [],
+    "juegoPrincipal": "No definido",
+    "disponibilidad": "00:00-23:59",
+    "disponible": false,
+    "createdAt": "Oct 20, 2025, 7:42:03 PM",
+    "updatedAt": "Oct 20, 2025, 7:42:03 PM"
+  }
+]
