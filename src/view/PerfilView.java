@@ -10,7 +10,8 @@ public class PerfilView {
     private Scanner scanner;
 
     public PerfilView() {
-        // Asumo que el scanner ya fue inicializado en el Main, pero lo inicializo aquí por seguridad
+        // Asumo que el scanner ya fue inicializado en el Main, pero lo inicializo aquí
+        // por seguridad
         this.scanner = new Scanner(System.in);
     }
 
