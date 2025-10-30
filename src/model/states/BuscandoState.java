@@ -1,6 +1,7 @@
 package model.states;
 
 import model.Scrim;
+import model.notifications.core.NotificationService;
 
 public class BuscandoState implements ScrimState {
     @Override
@@ -9,6 +10,8 @@ public class BuscandoState implements ScrimState {
             scrim.getListaPostulaciones().add(userId);
             if (scrim.getPlazas() == scrim.getListaPostulaciones().size()) {
                 scrim.setState(new LobbyArmadoState());
+                // Notificar que el lobby está completo
+                NotificationService.getInstance().notifyLobbyArmado(scrim);
             }
         }
     }
@@ -31,6 +34,8 @@ public class BuscandoState implements ScrimState {
     @Override
     public void cancelar(Scrim scrim) {
         scrim.setState(new CanceladoState());
+        // Notificar cancelación
+        NotificationService.getInstance().notifyCancelado(scrim);
     }
 
     @Override
@@ -51,6 +56,8 @@ class LobbyArmadoState implements ScrimState {
             scrim.getListaConfirmaciones().add(userId);
             if (scrim.getListaConfirmaciones().size() == scrim.getPlazas()) {
                 scrim.setState(new ConfirmadoState());
+                // Notificar que todos confirmaron
+                NotificationService.getInstance().notifyConfirmadoTodos(scrim);
             }
         }
     }
@@ -68,6 +75,8 @@ class LobbyArmadoState implements ScrimState {
     @Override
     public void cancelar(Scrim scrim) {
         scrim.setState(new CanceladoState());
+        // Notificar cancelación
+        NotificationService.getInstance().notifyCancelado(scrim);
     }
 
     @Override
@@ -90,6 +99,8 @@ class ConfirmadoState implements ScrimState {
     @Override
     public void iniciar(Scrim scrim) {
         scrim.setState(new EnJuegoState());
+        // Notificar que el juego ha comenzado
+        NotificationService.getInstance().notifyEnJuego(scrim);
     }
 
     @Override
@@ -100,6 +111,8 @@ class ConfirmadoState implements ScrimState {
     @Override
     public void cancelar(Scrim scrim) {
         scrim.setState(new CanceladoState());
+        // Notificar cancelación
+        NotificationService.getInstance().notifyCancelado(scrim);
     }
 
     @Override
@@ -127,6 +140,8 @@ class EnJuegoState implements ScrimState {
     @Override
     public void finalizar(Scrim scrim) {
         scrim.setState(new FinalizadoState());
+        // Notificar que el scrim ha finalizado
+        NotificationService.getInstance().notifyFinalizado(scrim);
     }
 
     @Override

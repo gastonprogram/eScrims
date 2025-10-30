@@ -2,6 +2,7 @@ package model;
 
 import model.utils.ScrimFormat;
 import model.utils.ScrimValidator;
+import model.notifications.core.NotificationService;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -77,7 +78,7 @@ public class ScrimBuilder {
             throw new IllegalStateException("La fecha y hora son requeridas para crear una Scrim");
         }
 
-        return new Scrim(
+        Scrim scrim = new Scrim(
             juego,
             formato,
             fechaHora,
@@ -87,5 +88,10 @@ public class ScrimBuilder {
             latenciaMaxima,
             plazas
         );
+        
+        // Notificar a usuarios que coincidan con las preferencias del scrim
+        NotificationService.getInstance().notifyScrimCreated(scrim);
+        
+        return scrim;
     }
 }

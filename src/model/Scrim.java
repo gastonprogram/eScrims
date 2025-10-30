@@ -89,4 +89,45 @@ public class Scrim {
     public String getEstado() {
         return state.getEstado();
     }
+
+    // Getters adicionales
+    public String getId() {
+        return id;
+    }
+
+    public String getJuego() {
+        return juego;
+    }
+
+    public ScrimFormat getFormato() {
+        return formato;
+    }
+
+    public int getRangoMin() {
+        return rangoMin;
+    }
+
+    public int getRangoMax() {
+        return rangoMax;
+    }
+
+    public int getLatenciaMax() {
+        return latenciaMax;
+    }
+
+    public List<String> getRolesRequeridos() {
+        return rolesRequeridos;
+    }
+
+    public String getCreatedBy() {
+        return createdBy;
+    }
+
+    public void setCreatedBy(String createdBy) {
+        this.createdBy = createdBy;
+    }
+
+    public LocalDateTime getCreatedAt() {
+        return createdAt;
+    }
 }
