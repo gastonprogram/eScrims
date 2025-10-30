@@ -244,5 +244,3 @@ El sistema incluye implementaciones mock que permiten testear sin configurar pro
 - [ ] Implementar retry logic para fallos temporales
 - [ ] Agregar métricas y monitoreo de notificaciones
 - [ ] Soporte para notificaciones agrupadas (digest)
- 
- 
