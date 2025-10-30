@@ -1,20 +1,39 @@
 package model.states;
 
 import model.Scrim;
-class EnJuegoState implements ScrimState {
+import model.Postulacion;
+import model.Confirmacion;
+
+/**
+ * Estado EN_JUEGO: la partida está en curso.
+ * 
+ * Transiciones posibles:
+ * - A FINALIZADO: cuando termina la partida
+ * 
+ * Reglas de negocio:
+ * - NO se pueden aceptar postulaciones ni confirmaciones
+ * - NO se puede cancelar una vez iniciada
+ * - Solo se puede finalizar
+ * 
+ * @author eScrims Team
+ */
+public class EnJuegoState implements ScrimState {
+
     @Override
-    public void postular(Scrim scrim, String userId) {
-        throw new IllegalStateException("No se puede postular en estado En Juego");
+    public void postular(Scrim scrim, Postulacion postulacion) {
+        throw new IllegalStateException("No se pueden aceptar postulaciones en estado EN_JUEGO. " +
+                "La partida ya comenzó");
     }
 
     @Override
-    public void confirmar(Scrim scrim, String userId) {
-        throw new IllegalStateException("No se puede confirmar en estado En Juego");
+    public void confirmar(Scrim scrim, Confirmacion confirmacion) {
+        throw new IllegalStateException("No se pueden procesar confirmaciones en estado EN_JUEGO. " +
+                "La partida ya comenzó");
     }
 
     @Override
     public void iniciar(Scrim scrim) {
-        throw new IllegalStateException("La scrim ya está en juego");
+        throw new IllegalStateException("El scrim ya está en curso");
     }
 
     @Override
@@ -24,7 +43,8 @@ class EnJuegoState implements ScrimState {
 
     @Override
     public void cancelar(Scrim scrim) {
-        throw new IllegalStateException("No se puede cancelar una scrim en juego");
+        throw new IllegalStateException("No se puede cancelar un scrim en curso. " +
+                "Debe finalizarlo primero");
     }
 
     @Override

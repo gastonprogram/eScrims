@@ -4,10 +4,10 @@ import model.Usuario;
 import model.utils.RegisterValidator;
 import java.util.Map;
 
-public class Register {
+public class RegisterController {
     private Map<String, Usuario> usuarios;
 
-    public Register(Map<String, Usuario> usuarios) {
+    public RegisterController(Map<String, Usuario> usuarios) {
         this.usuarios = usuarios;
     }
 

@@ -1,6 +1,7 @@
 package model;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Map;
 
 import model.utils.PasswordHasher;
@@ -8,7 +9,7 @@ import model.utils.Rol;
 
 public class Usuario {
 
-    private int id;
+    private String id;
     private String username;
     private String email;
     private String hashedPassword;
@@ -27,6 +28,7 @@ public class Usuario {
 
     // Constructor
     public Usuario(String username, String email, String password) {
+        this.id = java.util.UUID.randomUUID().toString();
         this.username = username;
         this.email = email;
         setPassword(password);
@@ -58,6 +60,10 @@ public class Usuario {
     }
 
     // getters y setters
+
+    public String getId() {
+        return id;
+    }
 
     public String getUsername() {
         return username;
@@ -95,6 +101,31 @@ public class Usuario {
 
     public boolean esUsuario() {
         return rol == Rol.USER;
+    }
+
+    public void setRangoPrincipal(String nuevoRango) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setRangoPrincipal'");
+    }
+
+    public void setRolesPreferidos(List<String> nuevosRolesPreferidos) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setRolesPreferidos'");
+    }
+
+    public void setJuegoPrincipal(String nuevoJuegoPrincipal) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setJuegoPrincipal'");
+    }
+
+    public void setRegion(String nuevaRegion) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setRegion'");
+    }
+
+    public void setDisponibilidad(String nuevaDisponibilidad) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'setDisponibilidad'");
     }
 
 }

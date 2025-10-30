@@ -36,8 +36,8 @@ public class Scrim {
     private LocalDateTime fechaHora;
     private int plazas;
     private List<String> rolesRequeridos;
-    private List<String> listaPostulaciones;
-    private List<String> listaConfirmaciones;
+    private List<Postulacion> postulaciones;
+    private List<Confirmacion> confirmaciones;
     private String createdBy;
     private LocalDateTime createdAt;
     private ScrimState state;
@@ -68,19 +68,19 @@ public class Scrim {
         this.rolesRequeridos = rolesRequeridos;
         this.latenciaMax = latenciaMax;
         this.plazas = plazas;
-        this.listaPostulaciones = new ArrayList<>();
-        this.listaConfirmaciones = new ArrayList<>();
+        this.postulaciones = new ArrayList<>();
+        this.confirmaciones = new ArrayList<>();
         this.createdAt = LocalDateTime.now();
         this.state = new BuscandoState();
     }
 
     // Métodos para el State Pattern
-    public void postular(String userId) {
-        state.postular(this, userId);
+    public void postular(Postulacion postulacion) {
+        state.postular(this, postulacion);
     }
 
-    public void confirmar(String userId) {
-        state.confirmar(this, userId);
+    public void confirmar(Confirmacion confirmacion) {
+        state.confirmar(this, confirmacion);
     }
 
     public void iniciar() {
@@ -95,13 +95,75 @@ public class Scrim {
         state.cancelar(this);
     }
 
-    // Getters necesarios para los estados
-    public List<String> getListaPostulaciones() {
-        return listaPostulaciones;
+    // Getters necesarios para los estados y lógica de negocio
+    public List<Postulacion> getPostulaciones() {
+        return postulaciones;
     }
 
+    public List<Confirmacion> getConfirmaciones() {
+        return confirmaciones;
+    }
+
+    /**
+     * Retorna solo las postulaciones aceptadas.
+     */
+    public List<Postulacion> getPostulacionesAceptadas() {
+        return postulaciones.stream()
+                .filter(Postulacion::isAceptada)
+                .toList();
+    }
+
+    /**
+     * Retorna solo las postulaciones pendientes.
+     */
+    public List<Postulacion> getPostulacionesPendientes() {
+        return postulaciones.stream()
+                .filter(Postulacion::isPendiente)
+                .toList();
+    }
+
+    /**
+     * Retorna solo las confirmaciones confirmadas.
+     */
+    public List<Confirmacion> getConfirmacionesConfirmadas() {
+        return confirmaciones.stream()
+                .filter(Confirmacion::isConfirmada)
+                .toList();
+    }
+
+    /**
+     * Verifica si un usuario ya se postuló a este scrim.
+     */
+    public boolean yaSePostulo(String userId) {
+        return postulaciones.stream()
+                .anyMatch(p -> p.getUserId().equals(userId));
+    }
+
+    /**
+     * Obtiene las postulaciones aceptadas para mantener compatibilidad con vistas.
+     * 
+     * @deprecated Usar getPostulacionesAceptadas() en su lugar
+     */
+    @Deprecated
+    public List<String> getListaPostulaciones() {
+        return postulaciones.stream()
+                .filter(Postulacion::isAceptada)
+                .map(Postulacion::getUserId)
+                .toList();
+    }
+
+    /**
+     * Obtiene las confirmaciones confirmadas para mantener compatibilidad con
+     * vistas.
+     * 
+     * @deprecated Usar getConfirmacionesConfirmadas() en su lugar
+     */
+    @Deprecated
     public List<String> getListaConfirmaciones() {
-        return listaConfirmaciones;
+        return confirmaciones.stream()
+                .filter(Confirmacion::isConfirmada)
+                .map(Confirmacion::getUserId)
+                .toList();
     }
 
     public int getPlazas() {
