@@ -3,11 +3,11 @@ package controller;
 import model.Usuario;
 import java.util.Map;
 
-public class Login {
+public class LoginController {
     private Map<String, Usuario> usuarios;
     private Usuario usuarioLogueado;
 
-    public Login(Map<String, Usuario> usuarios) {
+    public LoginController(Map<String, Usuario> usuarios) {
         this.usuarios = usuarios;
         this.usuarioLogueado = null;
     }

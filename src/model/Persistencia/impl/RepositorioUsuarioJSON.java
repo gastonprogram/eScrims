@@ -22,18 +22,18 @@ import java.util.stream.Collectors;
  * Implementación de RepositorioUsuario que guarda los datos en un archivo JSON.
  */
 public class RepositorioUsuarioJSON implements RepositorioUsuario {
-    
+
     private static final String ARCHIVO_JSON = "data/usuarios.json";
     private final Gson gson;
     private List<Usuario> usuarios;
-    
+
     public RepositorioUsuarioJSON() {
         this.gson = new GsonBuilder()
-            .setPrettyPrinting()
-            .create();
+                .setPrettyPrinting()
+                .create();
         this.usuarios = cargarUsuarios();
     }
-    
+
     private List<Usuario> cargarUsuarios() {
         try {
             // Crear el directorio si no existe
@@ -41,14 +41,15 @@ public class RepositorioUsuarioJSON implements RepositorioUsuario {
             if (!Files.exists(dir)) {
                 Files.createDirectories(dir);
             }
-            
+
             // Si el archivo no existe, devolver lista vacía
             if (!Files.exists(Paths.get(ARCHIVO_JSON))) {
                 return new ArrayList<>();
             }
-            
+
             try (FileReader reader = new FileReader(ARCHIVO_JSON)) {
-                Type tipoListaUsuarios = new TypeToken<List<Usuario>>() {}.getType();
+                Type tipoListaUsuarios = new TypeToken<List<Usuario>>() {
+                }.getType();
                 List<Usuario> usuariosCargados = gson.fromJson(reader, tipoListaUsuarios);
                 return usuariosCargados != null ? usuariosCargados : new ArrayList<>();
             }
@@ -57,7 +58,7 @@ public class RepositorioUsuarioJSON implements RepositorioUsuario {
             return new ArrayList<>();
         }
     }
-    
+
     private void guardarUsuarios() {
         try (FileWriter writer = new FileWriter(ARCHIVO_JSON)) {
             gson.toJson(usuarios, writer);
@@ -65,13 +66,13 @@ public class RepositorioUsuarioJSON implements RepositorioUsuario {
             System.err.println("Error al guardar usuarios: " + e.getMessage());
         }
     }
-    
+
     @Override
     public void guardar(Usuario usuario) {
         if (usuario == null) {
             throw new IllegalArgumentException("El usuario no puede ser nulo");
         }
-        
+
         // Si el usuario ya existe (mismo email), actualizarlo
         for (int i = 0; i < usuarios.size(); i++) {
             if (usuarios.get(i).getEmail().equals(usuario.getEmail())) {
@@ -80,67 +81,78 @@ public class RepositorioUsuarioJSON implements RepositorioUsuario {
                 return;
             }
         }
-        
+
         // Si no existe, agregarlo
         usuarios.add(usuario);
         guardarUsuarios();
     }
-    
+
+    @Override
+    public Usuario buscarPorId(String id) {
+        if (id == null || id.trim().isEmpty()) {
+            return null;
+        }
+        return usuarios.stream()
+                .filter(u -> id.equals(u.getId()))
+                .findFirst()
+                .orElse(null);
+    }
+
     @Override
     public Usuario buscarPorEmail(String email) {
         if (email == null || email.trim().isEmpty()) {
             return null;
         }
         return usuarios.stream()
-            .filter(u -> email.equalsIgnoreCase(u.getEmail()))
-            .findFirst()
-            .orElse(null);
+                .filter(u -> email.equalsIgnoreCase(u.getEmail()))
+                .findFirst()
+                .orElse(null);
     }
-    
+
     @Override
     public Usuario buscarPorUsername(String username) {
         if (username == null || username.trim().isEmpty()) {
             return null;
         }
         return usuarios.stream()
-            .filter(u -> username.equalsIgnoreCase(u.getUsername()))
-            .findFirst()
-            .orElse(null);
+                .filter(u -> username.equalsIgnoreCase(u.getUsername()))
+                .findFirst()
+                .orElse(null);
     }
-    
+
     @Override
     public List<Usuario> listarTodos() {
         return new ArrayList<>(usuarios);
     }
-    
+
     @Override
     public boolean eliminar(String email) {
         if (email == null || email.trim().isEmpty()) {
             return false;
         }
-        
+
         boolean eliminado = usuarios.removeIf(u -> email.equalsIgnoreCase(u.getEmail()));
         if (eliminado) {
             guardarUsuarios();
         }
         return eliminado;
     }
-    
+
     @Override
     public boolean existeEmail(String email) {
         if (email == null || email.trim().isEmpty()) {
             return false;
         }
         return usuarios.stream()
-            .anyMatch(u -> email.equalsIgnoreCase(u.getEmail()));
+                .anyMatch(u -> email.equalsIgnoreCase(u.getEmail()));
     }
-    
+
     @Override
     public boolean existeUsername(String username) {
         if (username == null || username.trim().isEmpty()) {
             return false;
         }
         return usuarios.stream()
-            .anyMatch(u -> username.equalsIgnoreCase(u.getUsername()));
+                .anyMatch(u -> username.equalsIgnoreCase(u.getUsername()));
     }
 }
