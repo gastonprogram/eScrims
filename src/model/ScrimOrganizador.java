@@ -138,10 +138,13 @@ public class ScrimOrganizador {
         for (ParticipanteScrim participante : participantes) {
             participante.confirmar();
 
-            // Agregar a la lista de confirmaciones del scrim si no está
-            if (!scrim.getListaConfirmaciones().contains(participante.getUserId())) {
-                scrim.getListaConfirmaciones().add(participante.getUserId());
-            }
+            // Buscar la confirmación del participante y marcarla como confirmada
+            String userId = participante.getUserId();
+            scrim.getConfirmaciones().stream()
+                    .filter(conf -> conf.getUserId().equals(userId))
+                    .filter(conf -> conf.getEstado() == Confirmacion.EstadoConfirmacion.PENDIENTE)
+                    .findFirst()
+                    .ifPresent(Confirmacion::confirmar);
         }
 
         // Limpiar el historial ya que no se puede deshacer después de confirmar

@@ -30,38 +30,21 @@ public class FinalizadoState implements ScrimState {
     @Override
     public void confirmar(Scrim scrim, Confirmacion confirmacion) {
         throw new IllegalStateException("El scrim ya finalizó");
-
-/**
- * Estado de un scrim finalizado.
- * Una vez finalizado, no se pueden realizar más acciones sobre el scrim.
- */
-public class FinalizadoState implements ScrimState {
-    @Override
-    public void postular(Scrim scrim, String userId) {
-        throw new IllegalStateException("La scrim ya está finalizada");
-    }
-
-    @Override
-    public void confirmar(Scrim scrim, String userId) {
-        throw new IllegalStateException("La scrim ya está finalizada");
     }
 
     @Override
     public void iniciar(Scrim scrim) {
         throw new IllegalStateException("El scrim ya finalizó");
-        throw new IllegalStateException("La scrim ya está finalizada");
     }
 
     @Override
     public void finalizar(Scrim scrim) {
         throw new IllegalStateException("El scrim ya está finalizado");
-        throw new IllegalStateException("La scrim ya está finalizada");
     }
 
     @Override
     public void cancelar(Scrim scrim) {
         throw new IllegalStateException("No se puede cancelar un scrim finalizado");
-        throw new IllegalStateException("No se puede cancelar una scrim finalizada");
     }
 
     @Override

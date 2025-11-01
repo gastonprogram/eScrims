@@ -1,6 +1,8 @@
 package view;
 
 import model.Usuario;
+import model.juegos.Juego;
+import model.juegos.LeagueOfLegends;
 import java.util.Arrays;
 import java.util.List;
 import java.util.Scanner;
@@ -25,8 +27,15 @@ public class PerfilView {
     public void mostrarPerfilActual(Usuario perfil) {
         System.out.println("\n--- Valores Actuales ---");
         System.out.println("Rango: " + perfil.getRangoPrincipal());
-        System.out.println("Roles Preferidos: " + String.join(", ", perfil.getRolesPreferidos()));
-        System.out.println("Juego Principal: " + perfil.getJuegoPrincipal());
+
+        List<String> roles = perfil.getRolesPreferidos();
+        String rolesStr = roles.isEmpty() ? "Sin roles configurados" : String.join(", ", roles);
+        System.out.println("Roles Preferidos: " + rolesStr);
+
+        // Usar el método que retorna String para compatibilidad con la vista
+        String juego = perfil.getJuegoPrincipalNombre();
+        System.out.println("Juego Principal: " + (juego.isEmpty() ? "Sin juego configurado" : juego));
+
         System.out.println("Región: " + perfil.getRegion());
         System.out.println("Disponibilidad: " + perfil.getDisponibilidad());
         System.out.println("------------------------\n");
@@ -56,8 +65,29 @@ public class PerfilView {
     }
 
     public String solicitarNuevoJuegoPrincipal(String actual) {
-        System.out.print("Nuevo Juego Principal (" + actual + "): ");
+        System.out.println("Juegos disponibles:");
+        System.out.println("  1. League of Legends");
+        System.out.println("  (Más juegos próximamente...)");
+        System.out.print("Nuevo Juego Principal (actual: " + actual + ") [Ingrese el nombre]: ");
         return scanner.nextLine();
+    }
+
+    /**
+     * Convierte el nombre ingresado por el usuario a un objeto Juego.
+     * Por ahora solo soporta League of Legends.
+     */
+    public Juego convertirStringAJuego(String nombreJuego) {
+        if (nombreJuego == null || nombreJuego.trim().isEmpty()) {
+            return null;
+        }
+
+        String nombre = nombreJuego.trim().toLowerCase();
+        if (nombre.contains("league") || nombre.contains("lol")) {
+            return LeagueOfLegends.getInstance();
+        }
+
+        // Si no coincide con ninguno, retornar null
+        return null;
     }
 
     public String solicitarNuevaRegion(String actual) {

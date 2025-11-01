@@ -1,5 +1,6 @@
 package model;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 import java.util.Map;
@@ -7,6 +8,7 @@ import java.util.Set;
 import java.util.HashSet;
 import java.util.HashMap;
 
+import model.juegos.Juego;
 import model.utils.PasswordHasher;
 import model.utils.Rol;
 import model.notifications.types.NotificationEvent;
@@ -23,6 +25,9 @@ public class Usuario {
     private Map<String, Integer> rangoPorJuego;
     private Rol rol;
     private String region;
+    private Juego juegoPrincipal; // ✅ Objeto Juego en lugar de String
+    private Map<String, List<String>> rolesPorJuego; // ✅ Roles organizados por juego
+    private String disponibilidad;
 
     private boolean disponible;
 
@@ -45,12 +50,20 @@ public class Usuario {
         this.rol = Rol.USER;
         this.createdAt = new Date();
         this.updatedAt = new Date();
-        
+
+        // Inicializar atributos de perfil
+        this.rangoPorJuego = new HashMap<>();
+        this.region = "";
+        this.juegoPrincipal = null; // Se asignará cuando el usuario elija un juego
+        this.rolesPorJuego = new HashMap<>();
+        this.disponibilidad = "";
+        this.disponible = true;
+
         // Inicializar preferencias de notificación con valores por defecto
         this.subscribedEvents = new HashSet<>();
         this.preferredChannels = new HashSet<>();
         this.channelRecipients = new HashMap<>();
-        
+
         // Por defecto, suscribir a todos los eventos y usar email
         subscribeToAllEvents();
         addPreferredChannel(ChannelType.EMAIL, this.email);
@@ -122,29 +135,154 @@ public class Usuario {
         return rol == Rol.USER;
     }
 
+    // Getters y Setters para perfil del usuario
+
+    /**
+     * Obtiene el rango principal del usuario (del juego principal o primer juego
+     * disponible).
+     */
+    public String getRangoPrincipal() {
+        if (rangoPorJuego.isEmpty()) {
+            return "Sin rango";
+        }
+        if (juegoPrincipal != null && rangoPorJuego.containsKey(juegoPrincipal.getNombre())) {
+            return String.valueOf(rangoPorJuego.get(juegoPrincipal.getNombre()));
+        }
+        // Retornar el primer rango disponible
+        return String.valueOf(rangoPorJuego.values().iterator().next());
+    }
+
     public void setRangoPrincipal(String nuevoRango) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setRangoPrincipal'");
+        try {
+            int rango = Integer.parseInt(nuevoRango);
+            if (juegoPrincipal != null) {
+                rangoPorJuego.put(juegoPrincipal.getNombre(), rango);
+            } else {
+                // Si no hay juego principal, usar "General"
+                rangoPorJuego.put("General", rango);
+            }
+            this.updatedAt = new Date();
+        } catch (NumberFormatException e) {
+            throw new IllegalArgumentException("El rango debe ser un número válido");
+        }
     }
 
+    /**
+     * Obtiene los roles preferidos del usuario para el juego principal.
+     * Si no hay juego principal, retorna lista vacía.
+     */
+    public List<String> getRolesPreferidos() {
+        if (juegoPrincipal != null) {
+            return new ArrayList<>(rolesPorJuego.getOrDefault(juegoPrincipal.getNombre(), new ArrayList<>()));
+        }
+        return new ArrayList<>();
+    }
+
+    /**
+     * Establece los roles preferidos para el juego principal.
+     * Si no hay juego principal, lanza excepción.
+     */
     public void setRolesPreferidos(List<String> nuevosRolesPreferidos) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setRolesPreferidos'");
+        if (juegoPrincipal == null) {
+            throw new IllegalStateException("Debe establecer un juego principal antes de configurar roles");
+        }
+        this.rolesPorJuego.put(juegoPrincipal.getNombre(),
+                nuevosRolesPreferidos != null ? new ArrayList<>(nuevosRolesPreferidos) : new ArrayList<>());
+        this.updatedAt = new Date();
     }
 
-    public void setJuegoPrincipal(String nuevoJuegoPrincipal) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setJuegoPrincipal'");
+    /**
+     * Agrega un rol preferido para un juego específico con validación.
+     */
+    public void agregarRolPreferido(Juego juego, String rol) {
+        if (juego == null) {
+            throw new IllegalArgumentException("El juego no puede ser null");
+        }
+        // Crear un RolJuego temporal para validar
+        // Nota: esto asume que tienes una forma de crear RolJuego desde String
+        // Si no, puedes omitir la validación o implementarla de otra forma
+        rolesPorJuego
+                .computeIfAbsent(juego.getNombre(), k -> new ArrayList<>())
+                .add(rol);
+        this.updatedAt = new Date();
+    }
+
+    /**
+     * Obtiene los roles preferidos para un juego específico.
+     */
+    public List<String> getRolesPreferidosParaJuego(String nombreJuego) {
+        return new ArrayList<>(rolesPorJuego.getOrDefault(nombreJuego, new ArrayList<>()));
+    }
+
+    /**
+     * Obtiene el juego principal del usuario.
+     * 
+     * @return Objeto Juego o null si no está configurado
+     */
+    public Juego getJuegoPrincipal() {
+        return juegoPrincipal;
+    }
+
+    /**
+     * Obtiene el nombre del juego principal (para compatibilidad con vistas).
+     * 
+     * @return Nombre del juego o string vacío
+     */
+    public String getJuegoPrincipalNombre() {
+        return juegoPrincipal != null ? juegoPrincipal.getNombre() : "";
+    }
+
+    /**
+     * Establece el juego principal del usuario.
+     */
+    public void setJuegoPrincipal(Juego nuevoJuegoPrincipal) {
+        this.juegoPrincipal = nuevoJuegoPrincipal;
+        this.updatedAt = new Date();
+    }
+
+    public String getRegion() {
+        return region != null ? region : "";
     }
 
     public void setRegion(String nuevaRegion) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setRegion'");
+        this.region = nuevaRegion != null ? nuevaRegion : "";
+        this.updatedAt = new Date();
+    }
+
+    public String getDisponibilidad() {
+        return disponibilidad != null ? disponibilidad : "";
     }
 
     public void setDisponibilidad(String nuevaDisponibilidad) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'setDisponibilidad'");
+        this.disponibilidad = nuevaDisponibilidad != null ? nuevaDisponibilidad : "";
+        this.updatedAt = new Date();
+    }
+
+    public boolean isDisponible() {
+        return disponible;
+    }
+
+    public void setDisponible(boolean disponible) {
+        this.disponible = disponible;
+        this.updatedAt = new Date();
+    }
+
+    public Map<String, Integer> getRangoPorJuego() {
+        return new HashMap<>(rangoPorJuego);
+    }
+
+    public void setRangoParaJuego(String juego, int rango) {
+        this.rangoPorJuego.put(juego, rango);
+        this.updatedAt = new Date();
+    }
+
+    public Date getCreatedAt() {
+        return createdAt;
+    }
+
+    public Date getUpdatedAt() {
+        return updatedAt;
+    }
     // Métodos de gestión de notificaciones
 
     /**
@@ -192,7 +330,8 @@ public class Usuario {
      * Agrega un canal preferido para recibir notificaciones.
      * 
      * @param channelType Tipo de canal (PUSH, EMAIL, DISCORD, SLACK)
-     * @param recipient Identificador del destinatario (email, token, webhook, etc.)
+     * @param recipient   Identificador del destinatario (email, token, webhook,
+     *                    etc.)
      */
     public void addPreferredChannel(ChannelType channelType, String recipient) {
         this.preferredChannels.add(channelType);

@@ -190,7 +190,7 @@ public class Scrim {
         return id;
     }
 
-    public String getJuego() {
+    public Juego getJuego() {
         return juego;
     }
 
@@ -212,10 +212,6 @@ public class Scrim {
 
     public int getLatenciaMax() {
         return latenciaMax;
-    }
-
-    public List<String> getRolesRequeridos() {
-        return rolesRequeridos;
     }
 
     public String getCreatedBy() {
