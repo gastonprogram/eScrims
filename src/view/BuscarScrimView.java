@@ -228,9 +228,9 @@ public class BuscarScrimView {
         if (!scrim.getPostulacionesAceptadas().isEmpty()) {
             System.out.println("\nPostulados:");
             for (model.Postulacion postulacion : scrim.getPostulacionesAceptadas()) {
-                System.out.println("  - " + postulacion.getUserId() + 
-                                 " (Rango: " + postulacion.getRangoUsuario() + 
-                                 ", Latencia: " + postulacion.getLatenciaUsuario() + "ms)");
+                System.out.println("  - " + postulacion.getUserId() +
+                        " (Rango: " + postulacion.getRangoUsuario() +
+                        ", Latencia: " + postulacion.getLatenciaUsuario() + "ms)");
             }
         }
 
