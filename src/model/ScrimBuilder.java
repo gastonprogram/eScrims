@@ -114,7 +114,7 @@ public class ScrimBuilder {
             throw new IllegalStateException("La fecha y hora son requeridas para crear una Scrim");
         }
 
-        return new Scrim(
+        Scrim scrim = new Scrim(
                 juego,
                 formato,
                 fechaHora,
@@ -123,20 +123,10 @@ public class ScrimBuilder {
                 rolesRequeridos,
                 latenciaMaxima,
                 plazas);
-        Scrim scrim = new Scrim(
-            juego,
-            formato,
-            fechaHora,
-            rangoMin,
-            rangoMax,
-            rolesRequeridos,
-            latenciaMaxima,
-            plazas
-        );
-        
+
         // Notificar a usuarios que coincidan con las preferencias del scrim
         NotificationService.getInstance().notifyScrimCreated(scrim);
-        
+
         return scrim;
     }
 }

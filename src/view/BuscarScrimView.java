@@ -201,7 +201,7 @@ public class BuscarScrimView {
         sb.append("   Latencia máx: ")
                 .append(scrim.getLatenciaMax() == -1 ? "Sin límite" : scrim.getLatenciaMax() + " ms").append("\n");
         sb.append("   Estado: ").append(scrim.getEstado()).append("\n");
-        sb.append("   Plazas: ").append(scrim.getListaPostulaciones().size()).append("/").append(scrim.getPlazas());
+        sb.append("   Plazas: ").append(scrim.getPostulacionesAceptadas().size()).append("/").append(scrim.getPlazas());
 
         return sb.toString();
     }
@@ -221,14 +221,16 @@ public class BuscarScrimView {
         System.out.println(
                 "Latencia máx:    " + (scrim.getLatenciaMax() == -1 ? "Sin límite" : scrim.getLatenciaMax() + " ms"));
         System.out.println("Estado:          " + scrim.getEstado());
-        System.out.println("Plazas ocupadas: " + scrim.getListaPostulaciones().size() + "/" + scrim.getPlazas());
+        System.out.println("Plazas ocupadas: " + scrim.getPostulacionesAceptadas().size() + "/" + scrim.getPlazas());
         System.out.println("Creado por:      " + (scrim.getCreatedBy() != null ? scrim.getCreatedBy() : "Anónimo"));
         System.out.println("Creado el:       " + scrim.getCreatedAt().format(FORMATO_FECHA));
 
-        if (!scrim.getListaPostulaciones().isEmpty()) {
+        if (!scrim.getPostulacionesAceptadas().isEmpty()) {
             System.out.println("\nPostulados:");
-            for (String userId : scrim.getListaPostulaciones()) {
-                System.out.println("  - " + userId);
+            for (model.Postulacion postulacion : scrim.getPostulacionesAceptadas()) {
+                System.out.println("  - " + postulacion.getUserId() + 
+                                 " (Rango: " + postulacion.getRangoUsuario() + 
+                                 ", Latencia: " + postulacion.getLatenciaUsuario() + "ms)");
             }
         }
 

@@ -1,38 +1,86 @@
 [
   {
-    "id": "0",
+    "id": "33c8b6e0-ffc2-410d-aee6-0c1f0ec150ea",
     "username": "user1",
     "email": "user1@example.com",
-    "hashedPassword": "w+4uA8veY1SUAAOizrxgUQnTo7AE2qnBQWjEyYEDAe0\u003d",
-    "salt": "qNFMCPSCRFHreokfIbiVqg\u003d\u003d",
+    "hashedPassword": "qonVf9Rr7brdWbdiHB2OeDjaHoEw8xdehrcyWxtuiM4\u003d",
+    "salt": "DCzi619WRvwKgNJEei+eJw\u003d\u003d",
+    "rangoPorJuego": {},
     "rol": "USER",
-    "region": "N/A",
-    "disponible": false,
-    "createdAt": "Oct 20, 2025, 7:42:03 PM",
-    "updatedAt": "Oct 20, 2025, 7:42:03 PM"
+    "region": "",
+    "rolesPorJuego": {},
+    "disponibilidad": "",
+    "disponible": true,
+    "createdAt": "Nov 1, 2025, 12:17:52 PM",
+    "updatedAt": "Nov 1, 2025, 12:17:52 PM",
+    "subscribedEvents": [
+      "SCRIM_CREATED_MATCH",
+      "EN_JUEGO",
+      "FINALIZADO",
+      "CONFIRMADO_TODOS",
+      "CANCELADO",
+      "LOBBY_ARMADO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "user1@example.com"
+    }
   },
   {
-    "id": "0",
+    "id": "33cd2051-ac2d-479e-b524-03151abb1da3",
     "username": "user2",
     "email": "user2@example.com",
-    "hashedPassword": "2Z2zcPPXSyIXIzOjCQ33wio5dMjrvhIzVsVh6jeQHgA\u003d",
-    "salt": "muqO2v3ZWvV6xDaZaTXiZw\u003d\u003d",
+    "hashedPassword": "BPheEQvYU/Mzo4z1eK9uuKohcyKrhaqFYswL43zRoOI\u003d",
+    "salt": "fDJcei/eYhE9DU1zxZgUyA\u003d\u003d",
+    "rangoPorJuego": {},
     "rol": "USER",
-    "region": "N/A",
-    "disponible": false,
-    "createdAt": "Oct 20, 2025, 7:42:03 PM",
-    "updatedAt": "Oct 20, 2025, 7:42:03 PM"
+    "region": "",
+    "rolesPorJuego": {},
+    "disponibilidad": "",
+    "disponible": true,
+    "createdAt": "Nov 1, 2025, 12:17:52 PM",
+    "updatedAt": "Nov 1, 2025, 12:17:52 PM",
+    "subscribedEvents": [
+      "SCRIM_CREATED_MATCH",
+      "EN_JUEGO",
+      "FINALIZADO",
+      "CONFIRMADO_TODOS",
+      "CANCELADO",
+      "LOBBY_ARMADO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "user2@example.com"
+    }
   },
   {
-    "id": "21183de1-6766-4f98-b20e-2c579bc31b87",
+    "id": "d922bd64-a25a-473b-ad43-94e807ccbe46",
     "username": "ProOrganizer",
     "email": "organizer@escrims.com",
-    "hashedPassword": "QptbXv61HwjyIy8P3PbxcOvL1C7CxGEGXTgGvvER8BI\u003d",
-    "salt": "vAFg1OXKKwDrsw2Ae7jZNg\u003d\u003d",
+    "hashedPassword": "PpH5ii0eILe3E4OfBhg8u0OLwH797nwI6tLNiXH244g\u003d",
+    "salt": "YM7t2v+lOQfy1DAQ2+kNrA\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "organizer@escrims.com"
+    }
   },
   {
     "id": "ffd4074d-1fa8-472c-8b84-72d704e6687a",
@@ -123,146 +171,328 @@
     "updatedAt": "Oct 30, 2025, 6:25:45 PM"
   },
   {
-    "id": "45ea8e29-d3ab-48fd-affd-b8ab435a604c",
+    "id": "5ce421ba-40fa-470e-8b02-67d9afcf6a27",
     "username": "Player8",
     "email": "player8@escrims.com",
-    "hashedPassword": "EVstGUeNULS2fwp67Km4jfW/j+Y6A3ZSeNwGKHMyn60\u003d",
-    "salt": "A2LZDI7CyxI+Sd8RdY6VfQ\u003d\u003d",
+    "hashedPassword": "VeFvGvusx5FKT5sGN0rNxVCksGPoRKGDshEW9KjoU9g\u003d",
+    "salt": "IGGX4MqX32gZ2nB34T3sfg\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "player8@escrims.com"
+    }
   },
   {
-    "id": "8780a970-e345-4b31-907d-adca1ef62e50",
+    "id": "926198e6-3690-4d93-8258-2e395be02793",
     "username": "Player9",
     "email": "player9@escrims.com",
-    "hashedPassword": "FBOBZDFp7DZ/ga+sM6kZ62ErESZU51ByPeEKqeLsB/0\u003d",
-    "salt": "frcrqkVQptu1yKJFPGCyjQ\u003d\u003d",
+    "hashedPassword": "jYXQ0HvMDoRr0ELgjQp51Jt/XFWuYmbl52qJuDFtw5s\u003d",
+    "salt": "WphOk60XHhQ500+wbsZHbw\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "player9@escrims.com"
+    }
   },
   {
-    "id": "31a8ab13-6a49-48d1-af2a-945de40bb782",
+    "id": "f49e9dfa-0e70-4cb0-bdb9-4237ebf0a793",
     "username": "Player10",
     "email": "player10@escrims.com",
-    "hashedPassword": "tnSroBmbZvxnRkE619H9/sRFWz3bfyRl+BC+hVSSqjo\u003d",
-    "salt": "/fzvMf33IO/+/YmC6rVy6A\u003d\u003d",
+    "hashedPassword": "pcvfLnFQRufGwL0dYEUBZmPWXklD0sC987HlHXMXMFY\u003d",
+    "salt": "5HTwnbUqFtY6MMJzyspgxw\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "player10@escrims.com"
+    }
   },
   {
-    "id": "6835466b-1031-4c45-a845-7fc15a4443a9",
+    "id": "d0984fa2-21e8-47d6-83c2-c9d719988cfd",
     "username": "Player11",
     "email": "player11@escrims.com",
-    "hashedPassword": "1rIMXw8HPDlAFGBSgpLx9zol3cvwp63+ycVMRMNxPjc\u003d",
-    "salt": "Fzs0uwgU2dLP69w9XfagtA\u003d\u003d",
+    "hashedPassword": "pgVyQpu0dEL0Zk+r19/fJNhKk3L/AJvQczxfbsm9aB8\u003d",
+    "salt": "+/v2N4Frjrfjkc8UthsokA\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "player11@escrims.com"
+    }
   },
   {
-    "id": "d1b7086f-8030-400a-9373-29cbe9027eae",
+    "id": "d2e7f65e-65b6-4d49-be4d-66b5b30747b6",
     "username": "Player12",
     "email": "player12@escrims.com",
-    "hashedPassword": "5s3e9op36zG86n2Zg3nCUhS3uwXfEkBHg/zZ3H2EHEQ\u003d",
-    "salt": "tejaNzrrNTV3Wc0eLxPTBQ\u003d\u003d",
+    "hashedPassword": "yz9NxeO18mRrHv66B2eHHyLbSmKErBIhaRmaA4Tn/3M\u003d",
+    "salt": "j5+PieXm9H9IfKOTnM8Fqg\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "player12@escrims.com"
+    }
   },
   {
-    "id": "9d29b4e3-8a02-4442-b0ed-5ffeba4ceaa2",
+    "id": "f3fbe7db-0fee-4c27-a31f-18b885cbf0cd",
     "username": "TopLaner",
     "email": "toplaner@escrims.com",
-    "hashedPassword": "5mtqh0g99BJN/Y/FLtBWmRCM/4Tu37Vl6QM6uVa7qMU\u003d",
-    "salt": "GabLgzwj2sDl8XMNcRU2bg\u003d\u003d",
+    "hashedPassword": "RQskSkJW2bOkAUG6AsCXd2s2KAJxGn506YjtQ03qCZ4\u003d",
+    "salt": "LYjMKwYA9I68DSimtnjChg\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "toplaner@escrims.com"
+    }
   },
   {
-    "id": "1b75dc57-a6cb-40eb-a071-93598ab7163e",
+    "id": "e4c85b0c-dc36-4a04-b5e3-50bcca6c1d7f",
     "username": "MidLaner",
     "email": "midlaner@escrims.com",
-    "hashedPassword": "zAfo36tFnGdb3A+BDkqHApcpL96JLbLHMNT22moqCZM\u003d",
-    "salt": "3Q+ofzdiHibN+sVlfRnxaA\u003d\u003d",
+    "hashedPassword": "WWVfgiK3ax9TzKmJRcLFbI6/YGlsHYpr68JWpBCzeOQ\u003d",
+    "salt": "BuXfftWr8Ma1YLHcxA19PQ\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "midlaner@escrims.com"
+    }
   },
   {
-    "id": "ec52877b-1648-4e8c-9912-989db3994e42",
+    "id": "b568cd48-c799-4021-b8d9-14ecf1c40ba3",
     "username": "ADCPlayer",
     "email": "adcplayer@escrims.com",
-    "hashedPassword": "1dScwTSnd9+9zqTpxEr+/CjEE9fRYP+TuacIBQtNq+4\u003d",
-    "salt": "SZ1uwQ+kePOND+KqM6/+IQ\u003d\u003d",
+    "hashedPassword": "py/1ArKbkfhd5owLry8QTklqjWVB6RgZPfsBv1otOzg\u003d",
+    "salt": "OlC5H+yIp3tPO/5ZlCaXUw\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "adcplayer@escrims.com"
+    }
   },
   {
-    "id": "631cce9f-bf27-4a5c-91cb-177400597ee3",
+    "id": "efa5cda6-4ec8-461d-963e-89773fed3289",
     "username": "JungleMain",
     "email": "junglemain@escrims.com",
-    "hashedPassword": "ZR1uNuskYcrL0WKGRVLMcEYL2myEkwC1n8uSGzcfT9k\u003d",
-    "salt": "tuwMcVOvQ3eTGd9rC2hFgA\u003d\u003d",
+    "hashedPassword": "4OtqZl75Yg7X/4RyX+qfP76mOLq0MPT0/snK3bvUQsc\u003d",
+    "salt": "+O//WBP2fOrQDZUW4HJIFQ\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "junglemain@escrims.com"
+    }
   },
   {
-    "id": "034c7812-7639-474d-8fcd-b7ab8062d78d",
+    "id": "b1515ead-f09f-474f-882a-c1869bee8632",
     "username": "SupportPro",
     "email": "supportpro@escrims.com",
-    "hashedPassword": "UbrLQVS45IaPrd6hYzMsB45gjrO8rbsfSoWk+/qmJj4\u003d",
-    "salt": "QMXBwcVQjmampFOTOoQ/tA\u003d\u003d",
+    "hashedPassword": "4YGhebtrgSX7Rzbz98J5bJn0H59Az5pxPAtkTzvYA8o\u003d",
+    "salt": "ZzltD69ryn7we/H8hy94UA\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "supportpro@escrims.com"
+    }
   },
   {
-    "id": "07756bda-c718-4bea-9321-08e089207c21",
+    "id": "909df092-46fb-4d37-a253-e4aee9784fac",
     "username": "FlexPlayer",
     "email": "flexplayer@escrims.com",
-    "hashedPassword": "XqCS/ogr978iDALv67sRBbQ2Bs2VjRq8MN7yZxF3Vgg\u003d",
-    "salt": "qx99WI+12a29mdwShkPANQ\u003d\u003d",
+    "hashedPassword": "u+UHDcX/b+/pF3tII3JUSS+361zeQfYMUPMd2E0cpX4\u003d",
+    "salt": "A5WTb3twiTjL192sPwEyVw\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "flexplayer@escrims.com"
+    }
   },
   {
-    "id": "365bb666-cbe6-4514-94d1-3d186d0dbf95",
+    "id": "485409d7-20bd-47f5-aa40-37bf53ec1920",
     "username": "SoloQKing",
     "email": "soloqking@escrims.com",
-    "hashedPassword": "cWgO3G+7sczeEBeFQwXqYDPe6S70JABISfyvkbS2f28\u003d",
-    "salt": "wivnqGGYiEfcWuxbYm6V0w\u003d\u003d",
+    "hashedPassword": "1EXpbLBM4dBKpGgGE1J5OFD2SpqSxU3VSYPU+d3VAok\u003d",
+    "salt": "OuFau63RpWrU/uIbZVtxug\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "soloqking@escrims.com"
+    }
   },
   {
-    "id": "c09b22c4-e921-4baa-8630-de4221a07dd8",
+    "id": "eba0c61c-1483-46e3-94ff-53a8dac43be5",
     "username": "Player13",
     "email": "player13@escrims.com",
-    "hashedPassword": "dWbMPq+A+k9Cen4eV+Tt+zaUhoqaOqtz+K1TsZvdYmE\u003d",
-    "salt": "paicmF3eeoSlMlH+X+99EQ\u003d\u003d",
+    "hashedPassword": "OHlwrltezZWcoEJ2a256trH7vXsdXPE4vpOSeMYEuQg\u003d",
+    "salt": "sCmZFqz+mYr6524TtARt7w\u003d\u003d",
     "rol": "USER",
     "disponible": false,
-    "createdAt": "Oct 30, 2025, 6:35:24 PM",
-    "updatedAt": "Oct 30, 2025, 6:35:24 PM"
+    "createdAt": "Nov 1, 2025, 11:48:16 AM",
+    "updatedAt": "Nov 1, 2025, 11:48:16 AM",
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "SCRIM_CREATED_MATCH",
+      "CANCELADO",
+      "FINALIZADO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "player13@escrims.com"
+    }
   }
 ]

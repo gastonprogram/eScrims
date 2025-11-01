@@ -1,6 +1,7 @@
 package model.states;
 
 import model.Scrim;
+import model.notifications.core.NotificationService;
 import model.Postulacion;
 import model.Confirmacion;
 
@@ -41,8 +42,11 @@ public class LobbyArmadoState implements ScrimState {
         // Si ya fue procesada, no hacer nada (el controller ya cambió el estado)
         if (confirmacionEnScrim.isConfirmada()) {
             // Ya está confirmada, verificar si todos confirmaron
+
             if (todosConfirmaron(scrim)) {
                 scrim.setState(new ConfirmadoState());
+                // Notificar que todos confirmaron
+                NotificationService.getInstance().notifyConfirmadoTodos(scrim);
             }
         } else if (confirmacionEnScrim.isRechazada()) {
             // Ya está rechazada, volver a BUSCANDO

@@ -1,6 +1,7 @@
 package controller;
 
 import model.Usuario;
+import model.juegos.Juego;
 import model.Persistencia.RepositorioUsuario;
 import model.utils.PerfilValidator;
 
@@ -15,6 +16,7 @@ public class PerfilController {
 
     /**
      * Crea un nuevo controlador de perfil con el repositorio especificado.
+     * 
      * @param repositorioUsuario El repositorio de usuarios a utilizar
      */
     public PerfilController(RepositorioUsuario repositorioUsuario) {
@@ -23,12 +25,20 @@ public class PerfilController {
 
     /**
      * Edita y persiste el perfil del usuario.
+     * 
+     * @param usuario               El usuario a editar
+     * @param nuevoRango            El nuevo rango (String que se parseará a int)
+     * @param nuevosRolesPreferidos Lista de roles preferidos para el juego
+     *                              principal
+     * @param nuevoJuegoPrincipal   Objeto Juego (no String)
+     * @param nuevaRegion           Nueva región
+     * @param nuevaDisponibilidad   Nueva disponibilidad horaria
      */
     public boolean editarPerfil(
             Usuario usuario,
             String nuevoRango,
             List<String> nuevosRolesPreferidos,
-            String nuevoJuegoPrincipal,
+            Juego nuevoJuegoPrincipal,
             String nuevaRegion,
             String nuevaDisponibilidad) {
 
@@ -39,12 +49,15 @@ public class PerfilController {
             PerfilValidator.validarDisponibilidad(nuevaDisponibilidad);
             PerfilValidator.validarRoles(nuevosRolesPreferidos);
 
-            // Note: Aquí podría añadir validación para rango y juego principal si las necesitara
-
             // 2. Aplicar cambios al objeto Usuario
             usuario.setRangoPrincipal(nuevoRango);
-            usuario.setRolesPreferidos(nuevosRolesPreferidos);
-            usuario.setJuegoPrincipal(nuevoJuegoPrincipal);
+
+            // Solo establecer roles si hay un juego principal configurado
+            if (nuevoJuegoPrincipal != null) {
+                usuario.setJuegoPrincipal(nuevoJuegoPrincipal);
+                usuario.setRolesPreferidos(nuevosRolesPreferidos);
+            }
+
             usuario.setRegion(nuevaRegion);
             usuario.setDisponibilidad(nuevaDisponibilidad);
 

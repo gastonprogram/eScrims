@@ -80,9 +80,20 @@ public class InvitarJugadorAccion implements AccionOrganizador {
         ParticipanteScrim participante = new ParticipanteScrim(usuario, rolAsignado);
         organizador.agregarParticipante(participante);
 
-        // Agregar a la lista de postulaciones del scrim
-        if (!organizador.getScrim().getListaPostulaciones().contains(usuario.getUsername())) {
-            organizador.getScrim().getListaPostulaciones().add(usuario.getUsername());
+        // Crear y agregar postulación aceptada directamente (invitación = postulación
+        // pre-aprobada)
+        boolean yaPostulado = organizador.getScrim().getPostulacionesAceptadas().stream()
+                .anyMatch(p -> p.getUserId().equals(usuario.getId()));
+
+        if (!yaPostulado) {
+            model.Postulacion postulacion = new model.Postulacion(
+                    organizador.getScrim().getId(),
+                    usuario.getId(),
+                    0, // Rango no aplica para invitaciones directas
+                    0 // Latencia no aplica para invitaciones directas
+            );
+            postulacion.aceptar(); // Pre-aceptada porque es invitación del organizador
+            organizador.getScrim().postular(postulacion);
         }
     }
 
@@ -96,8 +107,9 @@ public class InvitarJugadorAccion implements AccionOrganizador {
         // Remover el participante
         organizador.removerParticipante(usuario.getUsername());
 
-        // Remover de la lista de postulaciones
-        organizador.getScrim().getListaPostulaciones().remove(usuario.getUsername());
+        // Remover la postulación aceptada asociada
+        organizador.getScrim().getPostulaciones().removeIf(
+                p -> p.getUserId().equals(usuario.getId()));
     }
 
     /**
