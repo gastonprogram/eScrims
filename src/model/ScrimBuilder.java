@@ -3,6 +3,7 @@ package model;
 import model.juegos.Juego;
 import model.utils.ScrimFormat;
 import model.utils.ScrimValidator;
+import model.notifications.core.NotificationService;
 import java.time.LocalDateTime;
 import java.util.List;
 
@@ -122,5 +123,20 @@ public class ScrimBuilder {
                 rolesRequeridos,
                 latenciaMaxima,
                 plazas);
+        Scrim scrim = new Scrim(
+            juego,
+            formato,
+            fechaHora,
+            rangoMin,
+            rangoMax,
+            rolesRequeridos,
+            latenciaMaxima,
+            plazas
+        );
+        
+        // Notificar a usuarios que coincidan con las preferencias del scrim
+        NotificationService.getInstance().notifyScrimCreated(scrim);
+        
+        return scrim;
     }
 }

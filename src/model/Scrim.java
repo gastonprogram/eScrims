@@ -185,11 +185,12 @@ public class Scrim {
 
     // Getters adicionales necesarios para el organizador y validaciones
 
+    // Getters adicionales
     public String getId() {
         return id;
     }
 
-    public Juego getJuego() {
+    public String getJuego() {
         return juego;
     }
 
@@ -211,6 +212,10 @@ public class Scrim {
 
     public int getLatenciaMax() {
         return latenciaMax;
+    }
+
+    public List<String> getRolesRequeridos() {
+        return rolesRequeridos;
     }
 
     public String getCreatedBy() {
