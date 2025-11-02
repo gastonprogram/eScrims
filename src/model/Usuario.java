@@ -28,6 +28,7 @@ public class Usuario {
     private Juego juegoPrincipal; // ✅ Objeto Juego en lugar de String
     private Map<String, List<String>> rolesPorJuego; // ✅ Roles organizados por juego
     private String disponibilidad;
+    private int latenciaPromedio; // Latencia en ms
 
     private boolean disponible;
 
@@ -35,6 +36,9 @@ public class Usuario {
 
     private Date createdAt;
     private Date updatedAt;
+
+    // Historial de comportamiento para matchmaking
+    private HistorialUsuario historial;
 
     // Preferencias de notificaciones (Observer pattern)
     private Set<NotificationEvent> subscribedEvents;
@@ -58,6 +62,8 @@ public class Usuario {
         this.rolesPorJuego = new HashMap<>();
         this.disponibilidad = "";
         this.disponible = true;
+        this.latenciaPromedio = 50; // Default: 50ms (buena latencia)
+        this.historial = new HistorialUsuario(this.id); // Inicializar historial con el ID
 
         // Inicializar preferencias de notificación con valores por defecto
         this.subscribedEvents = new HashSet<>();
@@ -67,6 +73,9 @@ public class Usuario {
         // Por defecto, suscribir a todos los eventos y usar email
         subscribeToAllEvents();
         addPreferredChannel(ChannelType.EMAIL, this.email);
+
+        // Inicializar historial de usuario
+        this.historial = new HistorialUsuario(this.id);
     }
 
     public void setPassword(String password) {
@@ -367,6 +376,44 @@ public class Usuario {
      */
     public Set<NotificationEvent> getSubscribedEvents() {
         return new HashSet<>(subscribedEvents);
+    }
+
+    // Métodos de gestión de historial
+
+    /**
+     * Obtiene el historial de comportamiento del usuario.
+     */
+    public HistorialUsuario getHistorial() {
+        return historial;
+    }
+
+    /**
+     * Establece el historial del usuario (útil para deserialización).
+     */
+    public void setHistorial(HistorialUsuario historial) {
+        this.historial = historial;
+    }
+
+    // Métodos de gestión de latencia
+
+    /**
+     * Obtiene la latencia promedio del usuario en ms.
+     */
+    public int getLatenciaPromedio() {
+        return latenciaPromedio;
+    }
+
+    /**
+     * Establece la latencia promedio del usuario.
+     * 
+     * @param latenciaPromedio latencia en ms (debe ser >= 0)
+     */
+    public void setLatenciaPromedio(int latenciaPromedio) {
+        if (latenciaPromedio < 0) {
+            throw new IllegalArgumentException("La latencia no puede ser negativa");
+        }
+        this.latenciaPromedio = latenciaPromedio;
+        this.updatedAt = new Date();
     }
 
 }

@@ -4,12 +4,17 @@ import model.Persistencia.RepositorioUsuario;
 import model.Usuario;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonDeserializer;
+import com.google.gson.JsonSerializer;
 import com.google.gson.reflect.TypeToken;
 
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -26,7 +31,28 @@ public class RepositorioUsuarioJSON implements RepositorioUsuario {
     private List<Usuario> usuarios;
 
     public RepositorioUsuarioJSON() {
+        // Register adapters for java.time to avoid reflection errors under the module
+        // system
+        DateTimeFormatter dtf = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
+        JsonSerializer<LocalDateTime> serLDT = (src, typeOfSrc, context) -> src == null ? null
+                : new com.google.gson.JsonPrimitive(src.format(dtf));
+        JsonDeserializer<LocalDateTime> deserLDT = (json, typeOfT,
+                context) -> json == null || json.getAsString().isEmpty()
+                        ? null
+                        : LocalDateTime.parse(json.getAsString(), dtf);
+
+        DateTimeFormatter df = DateTimeFormatter.ISO_LOCAL_DATE;
+        JsonSerializer<LocalDate> serLD = (src, typeOfSrc, context) -> src == null ? null
+                : new com.google.gson.JsonPrimitive(src.format(df));
+        JsonDeserializer<LocalDate> deserLD = (json, typeOfT, context) -> json == null || json.getAsString().isEmpty()
+                ? null
+                : LocalDate.parse(json.getAsString(), df);
+
         this.gson = new GsonBuilder()
+                .registerTypeAdapter(LocalDateTime.class, serLDT)
+                .registerTypeAdapter(LocalDateTime.class, deserLDT)
+                .registerTypeAdapter(LocalDate.class, serLD)
+                .registerTypeAdapter(LocalDate.class, deserLD)
                 .setPrettyPrinting()
                 .create();
         this.usuarios = cargarUsuarios();

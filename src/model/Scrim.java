@@ -41,6 +41,7 @@ public class Scrim {
     private String createdBy;
     private LocalDateTime createdAt;
     private ScrimState state;
+    private String estrategiaMatchmaking; // Estrategia de matchmaking: "MMR", "Latency", "History"
 
     /**
      * Constructor protegido porque usa ScrimBuilder para instanciarse.
@@ -72,6 +73,7 @@ public class Scrim {
         this.confirmaciones = new ArrayList<>();
         this.createdAt = LocalDateTime.now();
         this.state = new BuscandoState();
+        this.estrategiaMatchmaking = "MMR"; // Estrategia por defecto
     }
 
     // Métodos para el State Pattern
@@ -228,5 +230,13 @@ public class Scrim {
 
     public ScrimState getState() {
         return state;
+    }
+
+    public String getEstrategiaMatchmaking() {
+        return estrategiaMatchmaking;
+    }
+
+    public void setEstrategiaMatchmaking(String estrategiaMatchmaking) {
+        this.estrategiaMatchmaking = estrategiaMatchmaking;
     }
 }
