@@ -98,27 +98,32 @@ public class Scrim {
 
     // Métodos para el State Pattern
     public void postular(Postulacion postulacion) {
-        if (state == null) reconstruirEstado();
+        if (state == null)
+            reconstruirEstado();
         state.postular(this, postulacion);
     }
 
     public void confirmar(Confirmacion confirmacion) {
-        if (state == null) reconstruirEstado();
+        if (state == null)
+            reconstruirEstado();
         state.confirmar(this, confirmacion);
     }
 
     public void iniciar() {
-        if (state == null) reconstruirEstado();
+        if (state == null)
+            reconstruirEstado();
         state.iniciar(this);
     }
 
     public void finalizar() {
-        if (state == null) reconstruirEstado();
+        if (state == null)
+            reconstruirEstado();
         state.finalizar(this);
     }
 
     public void cancelar() {
-        if (state == null) reconstruirEstado();
+        if (state == null)
+            reconstruirEstado();
         state.cancelar(this);
     }
 

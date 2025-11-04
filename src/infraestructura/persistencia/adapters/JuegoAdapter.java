@@ -33,7 +33,7 @@ public class JuegoAdapter implements JsonSerializer<Juego>, JsonDeserializer<Jue
         }
 
         String nombreJuego = json.getAsString();
-        
+
         // Reconstruir la instancia del juego según el nombre
         switch (nombreJuego) {
             case "League of Legends":

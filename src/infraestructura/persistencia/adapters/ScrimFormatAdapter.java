@@ -34,7 +34,7 @@ public class ScrimFormatAdapter implements JsonSerializer<ScrimFormat>, JsonDese
         }
 
         String nombreFormato = json.getAsString();
-        
+
         // Reconstruir la instancia del formato según el nombre
         switch (nombreFormato) {
             case "Summoner's Rift 5v5":

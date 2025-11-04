@@ -49,19 +49,20 @@ public class RepositorioScrimMemoria implements RepositorioScrim {
      * Constructor privado para Singleton.
      */
     private RepositorioScrimMemoria() {
-        // Configurar Gson con adaptadores para java.time (igual que RepositorioUsuarioJSON)
+        // Configurar Gson con adaptadores para java.time (igual que
+        // RepositorioUsuarioJSON)
         DateTimeFormatter dtf = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
         JsonSerializer<LocalDateTime> serLDT = (src, typeOfSrc, context) -> src == null ? null
                 : new com.google.gson.JsonPrimitive(src.format(dtf));
-        JsonDeserializer<LocalDateTime> deserLDT = (json, typeOfT, context) -> 
-                json == null || json.getAsString().isEmpty() ? null
-                : LocalDateTime.parse(json.getAsString(), dtf);
+        JsonDeserializer<LocalDateTime> deserLDT = (json, typeOfT,
+                context) -> json == null || json.getAsString().isEmpty() ? null
+                        : LocalDateTime.parse(json.getAsString(), dtf);
 
         DateTimeFormatter df = DateTimeFormatter.ISO_LOCAL_DATE;
         JsonSerializer<LocalDate> serLD = (src, typeOfSrc, context) -> src == null ? null
                 : new com.google.gson.JsonPrimitive(src.format(df));
-        JsonDeserializer<LocalDate> deserLD = (json, typeOfT, context) -> 
-                json == null || json.getAsString().isEmpty() ? null
+        JsonDeserializer<LocalDate> deserLD = (json, typeOfT, context) -> json == null || json.getAsString().isEmpty()
+                ? null
                 : LocalDate.parse(json.getAsString(), df);
 
         this.gson = new GsonBuilder()
@@ -73,7 +74,7 @@ public class RepositorioScrimMemoria implements RepositorioScrim {
                 .registerTypeAdapter(ScrimFormat.class, new ScrimFormatAdapter())
                 .setPrettyPrinting()
                 .create();
-        
+
         this.scrims = cargarScrims();
     }
 
@@ -94,9 +95,10 @@ public class RepositorioScrimMemoria implements RepositorioScrim {
             }
 
             try (FileReader reader = new FileReader(ARCHIVO_JSON)) {
-                Type tipoListaScrims = new TypeToken<List<Scrim>>() {}.getType();
+                Type tipoListaScrims = new TypeToken<List<Scrim>>() {
+                }.getType();
                 List<Scrim> scrimsCargados = gson.fromJson(reader, tipoListaScrims);
-                
+
                 if (scrimsCargados != null) {
                     // Reconstruir el estado de cada scrim después de deserializar
                     for (Scrim scrim : scrimsCargados) {
