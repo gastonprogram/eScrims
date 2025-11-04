@@ -8,7 +8,6 @@ import dominio.acciones.AccionOrganizador;
 import dominio.modelo.Confirmacion;
 import dominio.modelo.ParticipanteScrim;
 import dominio.modelo.Scrim;
-import dominio.modelo.Confirmacion.EstadoConfirmacion;
 import dominio.roles.RolJuego;
 
 /**

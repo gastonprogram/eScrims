@@ -2,7 +2,6 @@
 # Archivos de compilación Java
 # =========================
 *.class
-*.jar
 *.war
 *.ear
 *.log
