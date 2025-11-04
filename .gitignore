@@ -40,8 +40,3 @@ Thumbs.db
 *.tmp
 *.swp
 *.bak
-
-# =========================
-# Dependencias (si se agregaran más adelante)
-# =========================
-lib/
