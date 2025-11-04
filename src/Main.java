@@ -1,14 +1,10 @@
-import controller.LoginController;
-import controller.RegisterController;
-import controller.CrearScrimController;
-import controller.BuscarScrimController;
-import model.Usuario;
-import model.Persistencia.RepositorioUsuario;
-import model.Persistencia.RepositorioFactory;
-import view.MenuView;
-import view.LoginView;
-import view.RegisterView;
-import java.util.Map;
+import dominio.modelo.Usuario;
+import infraestructura.persistencia.repository.RepositorioFactory;
+import infraestructura.persistencia.repository.RepositorioUsuario;
+import infraestructura.persistencia.repository.RepositorioScrim;
+import presentacion.view.LoginView;
+import presentacion.view.MenuView;
+import presentacion.view.RegisterView;
 
 /**
  * Clase principal de la aplicación eScrims.
@@ -22,9 +18,9 @@ public class Main {
     private static MenuView menuView;
     private static LoginView loginView;
     private static RegisterView registerView;
-    private static LoginController loginController;
-    private static RegisterController registerController;
+    private static aplicacion.services.AuthService authService;
     private static RepositorioUsuario repositorioUsuarios;
+    private static RepositorioScrim repositorioScrims;
 
     public static void main(String[] args) {
         inicializarAplicacion();
@@ -36,20 +32,17 @@ public class Main {
      * Inicializa todos los componentes necesarios de la aplicación.
      */
     private static void inicializarAplicacion() {
-        // Cargar usuarios desde persistencia
+        // Cargar repositorios desde persistencia
         repositorioUsuarios = RepositorioFactory.getRepositorioUsuario();
-        Map<String, Usuario> usuarios = repositorioUsuarios.listarTodos()
-                .stream()
-                .collect(java.util.stream.Collectors.toMap(Usuario::getUsername, u -> u));
+        repositorioScrims = RepositorioFactory.getRepositorioScrim();
+
+        // Inicializar servicio de autenticación
+        authService = new aplicacion.services.AuthService(repositorioUsuarios);
 
         // Inicializar vistas
         menuView = new MenuView();
         loginView = new LoginView();
         registerView = new RegisterView();
-
-        // Inicializar controladores
-        loginController = new LoginController(usuarios);
-        registerController = new RegisterController(usuarios);
 
         // Mostrar bienvenida
         menuView.mostrarBienvenida();
@@ -92,7 +85,8 @@ public class Main {
         String password = loginView.solicitarPassword();
 
         try {
-            if (loginController.autenticar(username, password)) {
+            Usuario usuario = authService.autenticar(username, password);
+            if (usuario != null) {
                 loginView.mostrarLoginExitoso(username);
                 menuView.presionarEnterParaContinuar();
 
@@ -149,11 +143,10 @@ public class Main {
                 return;
             }
 
-            // Registrar usuario
-            if (registerController.registrarUsuario(username, email, password, juegoPrincipal, rango)) {
-                // Persistir cambios
-                repositorioUsuarios.guardar(new Usuario(username, email, password));
+            // Registrar usuario usando el servicio de autenticación
+            Usuario nuevoUsuario = authService.registrarUsuario(username, email, password, juegoPrincipal, rango);
 
+            if (nuevoUsuario != null) {
                 registerView.mostrarRegistroExitoso(username);
                 menuView.presionarEnterParaContinuar();
             }
@@ -189,7 +182,7 @@ public class Main {
                     break;
                 case 4:
                     salir = true;
-                    loginController.logout();
+                    authService.logout();
                     loginView.mostrarLogoutExitoso();
                     menuView.presionarEnterParaContinuar();
                     break;
@@ -203,7 +196,7 @@ public class Main {
      * Muestra el menú de opciones para usuario logueado.
      */
     private static void mostrarMenuUsuario() {
-        Usuario usuario = loginController.getUsuarioLogueado();
+        Usuario usuario = authService.getUsuarioLogueado();
 
         System.out.println("\n" + "=".repeat(50));
         System.out.println("           MENÚ DE USUARIO - " + usuario.getUsername());
@@ -218,18 +211,20 @@ public class Main {
 
     /**
      * Maneja la creación de un scrim.
-     * La vista orquesta el flujo usando el controller.
+     * El controller coordina el flujo entre vista y servicio.
      */
     private static void manejarCrearScrim() {
         try {
-            Usuario usuario = loginController.getUsuarioLogueado();
+            Usuario usuario = authService.getUsuarioLogueado();
 
-            // Crear controller desacoplado
-            CrearScrimController controller = new CrearScrimController(usuario.getUsername());
+            // Crear vista y controller
+            presentacion.view.CrearScrimView vista = new presentacion.view.CrearScrimView();
+            aplicacion.services.ScrimService scrimService = new aplicacion.services.ScrimService(repositorioScrims);
+            presentacion.controller.ScrimController controller = new presentacion.controller.ScrimController(
+                    scrimService, vista, null, usuario.getId());
 
-            // La vista orquesta el flujo
-            view.CrearScrimView vista = new view.CrearScrimView();
-            vista.iniciarCreacion(controller);
+            // El controller coordina el flujo
+            controller.crearScrim();
 
             menuView.presionarEnterParaContinuar();
         } catch (Exception e) {
@@ -241,16 +236,20 @@ public class Main {
 
     /**
      * Maneja la búsqueda de scrims.
-     * La vista orquesta el flujo usando el controller.
+     * El controller coordina el flujo entre vista y servicio.
      */
     private static void manejarBuscarScrims() {
         try {
-            // Crear controller desacoplado
-            BuscarScrimController controller = new BuscarScrimController();
+            Usuario usuario = authService.getUsuarioLogueado();
 
-            // La vista orquesta el flujo
-            view.BuscarScrimView vista = new view.BuscarScrimView();
-            vista.iniciarBusqueda(controller);
+            // Crear vista y controller
+            presentacion.view.BuscarScrimView vista = new presentacion.view.BuscarScrimView();
+            aplicacion.services.ScrimService scrimService = new aplicacion.services.ScrimService(repositorioScrims);
+            presentacion.controller.ScrimController controller = new presentacion.controller.ScrimController(
+                    scrimService, null, vista, usuario.getId());
+
+            // El controller coordina el flujo
+            controller.buscarScrims();
 
             menuView.presionarEnterParaContinuar();
         } catch (Exception e) {

@@ -1,11 +1,13 @@
-import model.Persistencia.RepositorioFactory;
-import model.Persistencia.RepositorioUsuario;
-import model.Usuario;
-import model.juegos.LeagueOfLegends;
-import model.juegos.Juego;
+package test;
 
 import java.util.Arrays;
 import java.util.List;
+
+import dominio.juegos.Juego;
+import dominio.juegos.LeagueOfLegends;
+import dominio.modelo.Usuario;
+import infraestructura.persistencia.repository.RepositorioFactory;
+import infraestructura.persistencia.repository.RepositorioUsuario;
 
 /**
  * Clase de prueba para el RepositorioUsuarioJSON.

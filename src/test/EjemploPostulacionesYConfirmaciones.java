@@ -1,16 +1,19 @@
-import controller.PostulacionController;
-import controller.ConfirmacionController;
-import model.Scrim;
-import model.ScrimBuilder;
-import model.Usuario;
-import model.Postulacion;
-import model.Confirmacion;
-import model.juegos.LeagueOfLegends;
-import model.Persistencia.RepositorioFactory;
-import model.Persistencia.RepositorioScrim;
-import model.Persistencia.RepositorioUsuario;
+package test;
+
+import aplicacion.services.PostulacionService;
+import aplicacion.services.ConfirmacionService;
+import dominio.juegos.LeagueOfLegends;
+import dominio.modelo.Confirmacion;
+import dominio.modelo.Postulacion;
+import dominio.modelo.Scrim;
+import dominio.modelo.Usuario;
+import infraestructura.persistencia.repository.RepositorioFactory;
+import infraestructura.persistencia.repository.RepositorioScrim;
+import infraestructura.persistencia.repository.RepositorioUsuario;
 
 import java.time.LocalDateTime;
+
+import aplicacion.builders.ScrimBuilder;
 
 /**
  * Ejemplo de uso completo del sistema de postulaciones y confirmaciones.
@@ -64,7 +67,7 @@ public class EjemploPostulacionesYConfirmaciones {
             // Usamos el formato específico de LoL: Formato5v5LoL
             Scrim scrim = new ScrimBuilder()
                     .withJuego(LeagueOfLegends.getInstance())
-                    .withFormato(new model.formatos.Formato5v5LoL())
+                    .withFormato(new dominio.juegos.formatos.Formato5v5LoL())
                     .withRango(800, 1500) // Gold mínimo - Platinum máximo
                     .withLatenciaMaxima(100) // Máximo 100ms de latencia
                     .withFechaHora(LocalDateTime.now().plusHours(2))
@@ -86,62 +89,57 @@ public class EjemploPostulacionesYConfirmaciones {
             System.out.println("\n\n📝 PASO 2: Jugadores se postulan al scrim...");
             System.out.println("-".repeat(80));
 
-            PostulacionController postController = new PostulacionController();
+            PostulacionService postService = new PostulacionService(repoScrims, repoUsuarios);
 
             // Postulación 1: Diamond Player (cumple requisitos)
             System.out.println("\n🎮 Postulación de DiamondPlayer:");
             System.out.println("  Rango: 1200, Latencia: 45ms");
-            String resultado1 = postController.postularAScrim(
-                    scrim.getId(),
-                    jugador1.getId(),
-                    1200, // Diamond - cumple requisitos
-                    45 // Buena latencia
-            );
-            System.out.println("  → " + resultado1);
+            try {
+                postService.postularAScrim(scrim.getId(), jugador1.getId(), 1200, 45);
+                System.out.println("  → Postulación procesada exitosamente");
+            } catch (Exception e) {
+                System.out.println("  → " + e.getMessage());
+            }
 
             // Postulación 2: Gold Player (cumple requisitos)
             System.out.println("\n🎮 Postulación de GoldPlayer:");
             System.out.println("  Rango: 850, Latencia: 60ms");
-            String resultado2 = postController.postularAScrim(
-                    scrim.getId(),
-                    jugador2.getId(),
-                    850, // Gold - cumple requisitos
-                    60 // Buena latencia
-            );
-            System.out.println("  → " + resultado2);
+            try {
+                postService.postularAScrim(scrim.getId(), jugador2.getId(), 850, 60);
+                System.out.println("  → Postulación procesada exitosamente");
+            } catch (Exception e) {
+                System.out.println("  → " + e.getMessage());
+            }
 
             // Postulación 3: Silver Player (NO cumple - rango bajo)
             System.out.println("\n🎮 Postulación de SilverPlayer:");
             System.out.println("  Rango: 500, Latencia: 50ms");
-            String resultado3 = postController.postularAScrim(
-                    scrim.getId(),
-                    jugador3.getId(),
-                    500, // Silver - NO cumple requisito mínimo
-                    50 // Buena latencia
-            );
-            System.out.println("  → " + resultado3);
+            try {
+                postService.postularAScrim(scrim.getId(), jugador3.getId(), 500, 50);
+                System.out.println("  → Postulación procesada exitosamente");
+            } catch (Exception e) {
+                System.out.println("  → " + e.getMessage());
+            }
 
             // Postulación 4: Platinum Player (cumple requisitos)
             System.out.println("\n🎮 Postulación de PlatinumPlayer:");
             System.out.println("  Rango: 1400, Latencia: 70ms");
-            String resultado4 = postController.postularAScrim(
-                    scrim.getId(),
-                    jugador4.getId(),
-                    1400, // Platinum - cumple requisitos
-                    70 // Buena latencia
-            );
-            System.out.println("  → " + resultado4);
+            try {
+                postService.postularAScrim(scrim.getId(), jugador4.getId(), 1400, 70);
+                System.out.println("  → Postulación procesada exitosamente");
+            } catch (Exception e) {
+                System.out.println("  → " + e.getMessage());
+            }
 
             // Postulación 5: High Ping Player (NO cumple - latencia alta)
             System.out.println("\n🎮 Postulación de HighPingPlayer:");
             System.out.println("  Rango: 1000, Latencia: 150ms");
-            String resultado5 = postController.postularAScrim(
-                    scrim.getId(),
-                    jugador5.getId(),
-                    1000, // Gold - rango OK
-                    150 // Latencia MUY ALTA - NO cumple
-            );
-            System.out.println("  → " + resultado5);
+            try {
+                postService.postularAScrim(scrim.getId(), jugador5.getId(), 1000, 150);
+                System.out.println("  → Postulación procesada exitosamente");
+            } catch (Exception e) {
+                System.out.println("  → " + e.getMessage());
+            }
 
             // ============================================
             // PASO 3: REVISIÓN DE POSTULACIONES
@@ -178,9 +176,9 @@ public class EjemploPostulacionesYConfirmaciones {
             System.out.println("-".repeat(80));
 
             // Ya tenemos 3 aceptados (jugador1, jugador2, jugador4)
-            // Necesitamos 7 más para completar las 10 plazas
-            for (int i = 6; i <= 12; i++) {
-                Usuario jugador = new Usuario("Player" + i, "player" + i + "@escrims.com", "pass123");
+            // Crear postulaciones con el nuevo sistema
+            for (int i = 0; i < 10; i++) {
+                Usuario jugador = new Usuario("Player" + (i + 1), "player" + (i + 1) + "@escrims.com", "pass123");
                 repoUsuarios.guardar(jugador);
 
                 // Calcular rango que cumpla requisitos (800-1500)
@@ -189,13 +187,12 @@ public class EjemploPostulacionesYConfirmaciones {
                     rango = 800 + (i * 30); // Ajustar si se pasa
                 int latencia = 45 + (i * 5); // Latencias entre 45-95ms (cumple máx 100ms)
 
-                String resultado = postController.postularAScrim(
-                        scrim.getId(),
-                        jugador.getId(),
-                        rango,
-                        latencia);
-
-                System.out.println("Player" + i + ": " + resultado);
+                try {
+                    postService.postularAScrim(scrim.getId(), jugador.getId(), rango, latencia);
+                    System.out.println("Player" + (i + 1) + ": Postulación procesada exitosamente");
+                } catch (Exception e) {
+                    System.out.println("Player" + (i + 1) + ": " + e.getMessage());
+                }
             }
 
             // ============================================
@@ -224,13 +221,17 @@ public class EjemploPostulacionesYConfirmaciones {
             System.out.println("\n\n✅ PASO 6: Jugadores confirman asistencia...");
             System.out.println("-".repeat(80));
 
-            ConfirmacionController confController = new ConfirmacionController();
+            ConfirmacionService confService = new ConfirmacionService(repoScrims);
 
             // Todos los jugadores confirman
             int contador = 1;
             for (Confirmacion conf : scrim.getConfirmaciones()) {
-                String resultadoConf = confController.confirmarAsistencia(scrim.getId(), conf.getUserId());
-                System.out.println(contador + ". " + conf.getUserId() + ": " + resultadoConf);
+                try {
+                    confService.confirmarAsistencia(scrim.getId(), conf.getUserId());
+                    System.out.println(contador + ". " + conf.getUserId() + ": Confirmación exitosa");
+                } catch (Exception e) {
+                    System.out.println(contador + ". " + conf.getUserId() + ": Error - " + e.getMessage());
+                }
                 contador++;
             }
 

@@ -10,6 +10,7 @@
     "region": "",
     "rolesPorJuego": {},
     "disponibilidad": "",
+    "latenciaPromedio": 0,
     "disponible": true,
     "createdAt": "Nov 1, 2025, 12:17:52 PM",
     "updatedAt": "Nov 1, 2025, 12:17:52 PM",
@@ -39,6 +40,7 @@
     "region": "",
     "rolesPorJuego": {},
     "disponibilidad": "",
+    "latenciaPromedio": 0,
     "disponible": true,
     "createdAt": "Nov 1, 2025, 12:17:52 PM",
     "updatedAt": "Nov 1, 2025, 12:17:52 PM",
@@ -64,6 +66,7 @@
     "hashedPassword": "PpH5ii0eILe3E4OfBhg8u0OLwH797nwI6tLNiXH244g\u003d",
     "salt": "YM7t2v+lOQfy1DAQ2+kNrA\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -89,6 +92,7 @@
     "hashedPassword": "TGE+YFI8iM9rpMANiK0kVwvc8wijqXuiD6yIKqClYBE\u003d",
     "salt": "nXIKTawIek3hAZukqX1tbA\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Oct 30, 2025, 6:25:45 PM",
     "updatedAt": "Oct 30, 2025, 6:25:45 PM"
@@ -100,6 +104,7 @@
     "hashedPassword": "Hc4dTWS1A4HSbeE7/S+axKGG6yrA9KW8NFj6nNlINcE\u003d",
     "salt": "1Da3dNQTN7UAQ4DWdpA7VA\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Oct 30, 2025, 6:25:45 PM",
     "updatedAt": "Oct 30, 2025, 6:25:45 PM"
@@ -111,6 +116,7 @@
     "hashedPassword": "+BDPEbFBVpy6DmFfwzghKkWG23DI3FGEU/UnWnt0Ovk\u003d",
     "salt": "s4O1fVbStBFXuBjHDo00Qg\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Oct 30, 2025, 6:25:45 PM",
     "updatedAt": "Oct 30, 2025, 6:25:45 PM"
@@ -122,6 +128,7 @@
     "hashedPassword": "77G21ixrvtERb7M4O0zmGa+9MygYdTi5qa1eozwVYzs\u003d",
     "salt": "lsMXr0k4HWYnm0j34swf7Q\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Oct 30, 2025, 6:25:45 PM",
     "updatedAt": "Oct 30, 2025, 6:25:45 PM"
@@ -133,6 +140,7 @@
     "hashedPassword": "5nw0sVc5Hpi6vSLbvzQbr3ni+C3EEw1NJ4L7q/+wz38\u003d",
     "salt": "WyChtYH2eqK7Z93BL+MbRQ\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Oct 30, 2025, 6:25:45 PM",
     "updatedAt": "Oct 30, 2025, 6:25:45 PM"
@@ -144,6 +152,7 @@
     "hashedPassword": "vRXb7SserEhiQqpOYu6MbVGYguu4MK+0iymacTUeQmQ\u003d",
     "salt": "HOTD7rRpi9gxeEUhFr6Jew\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Oct 30, 2025, 6:25:45 PM",
     "updatedAt": "Oct 30, 2025, 6:25:45 PM"
@@ -155,6 +164,7 @@
     "hashedPassword": "9TU64VZog0XAMHCiClHvDszE7Xflk9HsaDBEmbI7eKM\u003d",
     "salt": "26/n9k5Ode5sY17MJH8wfw\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Oct 30, 2025, 6:25:45 PM",
     "updatedAt": "Oct 30, 2025, 6:25:45 PM"
@@ -166,6 +176,7 @@
     "hashedPassword": "EyOlkl5Tc7c7STdQP1vsS1xBOFag+UmpmriSTaHrbuU\u003d",
     "salt": "UTJlXY91nEJd1labEUrh6Q\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Oct 30, 2025, 6:25:45 PM",
     "updatedAt": "Oct 30, 2025, 6:25:45 PM"
@@ -177,6 +188,7 @@
     "hashedPassword": "VeFvGvusx5FKT5sGN0rNxVCksGPoRKGDshEW9KjoU9g\u003d",
     "salt": "IGGX4MqX32gZ2nB34T3sfg\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -202,6 +214,7 @@
     "hashedPassword": "jYXQ0HvMDoRr0ELgjQp51Jt/XFWuYmbl52qJuDFtw5s\u003d",
     "salt": "WphOk60XHhQ500+wbsZHbw\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -227,6 +240,7 @@
     "hashedPassword": "pcvfLnFQRufGwL0dYEUBZmPWXklD0sC987HlHXMXMFY\u003d",
     "salt": "5HTwnbUqFtY6MMJzyspgxw\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -252,6 +266,7 @@
     "hashedPassword": "pgVyQpu0dEL0Zk+r19/fJNhKk3L/AJvQczxfbsm9aB8\u003d",
     "salt": "+/v2N4Frjrfjkc8UthsokA\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -277,6 +292,7 @@
     "hashedPassword": "yz9NxeO18mRrHv66B2eHHyLbSmKErBIhaRmaA4Tn/3M\u003d",
     "salt": "j5+PieXm9H9IfKOTnM8Fqg\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -302,6 +318,7 @@
     "hashedPassword": "RQskSkJW2bOkAUG6AsCXd2s2KAJxGn506YjtQ03qCZ4\u003d",
     "salt": "LYjMKwYA9I68DSimtnjChg\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -327,6 +344,7 @@
     "hashedPassword": "WWVfgiK3ax9TzKmJRcLFbI6/YGlsHYpr68JWpBCzeOQ\u003d",
     "salt": "BuXfftWr8Ma1YLHcxA19PQ\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -352,6 +370,7 @@
     "hashedPassword": "py/1ArKbkfhd5owLry8QTklqjWVB6RgZPfsBv1otOzg\u003d",
     "salt": "OlC5H+yIp3tPO/5ZlCaXUw\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -377,6 +396,7 @@
     "hashedPassword": "4OtqZl75Yg7X/4RyX+qfP76mOLq0MPT0/snK3bvUQsc\u003d",
     "salt": "+O//WBP2fOrQDZUW4HJIFQ\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -402,6 +422,7 @@
     "hashedPassword": "4YGhebtrgSX7Rzbz98J5bJn0H59Az5pxPAtkTzvYA8o\u003d",
     "salt": "ZzltD69ryn7we/H8hy94UA\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -427,6 +448,7 @@
     "hashedPassword": "u+UHDcX/b+/pF3tII3JUSS+361zeQfYMUPMd2E0cpX4\u003d",
     "salt": "A5WTb3twiTjL192sPwEyVw\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -452,6 +474,7 @@
     "hashedPassword": "1EXpbLBM4dBKpGgGE1J5OFD2SpqSxU3VSYPU+d3VAok\u003d",
     "salt": "OuFau63RpWrU/uIbZVtxug\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -477,6 +500,7 @@
     "hashedPassword": "OHlwrltezZWcoEJ2a256trH7vXsdXPE4vpOSeMYEuQg\u003d",
     "salt": "sCmZFqz+mYr6524TtARt7w\u003d\u003d",
     "rol": "USER",
+    "latenciaPromedio": 0,
     "disponible": false,
     "createdAt": "Nov 1, 2025, 11:48:16 AM",
     "updatedAt": "Nov 1, 2025, 11:48:16 AM",
@@ -493,6 +517,43 @@
     ],
     "channelRecipients": {
       "EMAIL": "player13@escrims.com"
+    }
+  },
+  {
+    "id": "a3e3c426-1ca4-49e5-b3b1-ed09f4a3332e",
+    "username": "gastocash",
+    "email": "gastocash@gmail.com",
+    "hashedPassword": "qXujhDd4OqCbt7pw9ViwslG5IKniNjwcFk8YJ/Y8lK8\u003d",
+    "salt": "wHjBEpiYXAM/3wRsT9S2Cg\u003d\u003d",
+    "rangoPorJuego": {},
+    "rol": "USER",
+    "region": "",
+    "rolesPorJuego": {},
+    "disponibilidad": "",
+    "latenciaPromedio": 50,
+    "disponible": true,
+    "createdAt": "Nov 4, 2025, 4:40:33 PM",
+    "updatedAt": "Nov 4, 2025, 4:40:33 PM",
+    "historial": {
+      "userId": "a3e3c426-1ca4-49e5-b3b1-ed09f4a3332e",
+      "partidasJugadas": 0,
+      "partidasAbandonadas": 0,
+      "tasaFairPlay": 1.0,
+      "ultimaActividad": "2025-11-04T16:40:33.116693"
+    },
+    "subscribedEvents": [
+      "CONFIRMADO_TODOS",
+      "LOBBY_ARMADO",
+      "CANCELADO",
+      "EN_JUEGO",
+      "SCRIM_CREATED_MATCH",
+      "FINALIZADO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "gastocash@gmail.com"
     }
   }
 ]

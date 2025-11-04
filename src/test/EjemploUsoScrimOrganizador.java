@@ -1,15 +1,20 @@
+package test;
 
-import model.ParticipanteScrim;
-import model.Scrim;
-import model.ScrimBuilder;
-import model.ScrimOrganizador;
-import model.Usuario;
-import model.acciones.*;
-import model.formatos.Formato5v5LoL;
-import model.juegos.LeagueOfLegends;
-import model.roles.lol.*;
 import java.time.LocalDateTime;
 import java.util.Arrays;
+
+import aplicacion.builders.ScrimBuilder;
+import aplicacion.builders.ScrimOrganizador;
+import dominio.acciones.AccionOrganizador;
+import dominio.acciones.AsignarRolAccion;
+import dominio.acciones.InvitarJugadorAccion;
+import dominio.acciones.SwapJugadoresAccion;
+import dominio.juegos.LeagueOfLegends;
+import dominio.juegos.formatos.Formato5v5LoL;
+import dominio.modelo.ParticipanteScrim;
+import dominio.modelo.Scrim;
+import dominio.modelo.Usuario;
+import dominio.roles.lol.*;
 
 /**
  * Clase de ejemplo que demuestra el uso completo del sistema de scrims

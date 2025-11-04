@@ -1,13 +1,18 @@
 package CasosDeUso;
 
-import model.*;
-import model.juegos.LeagueOfLegends;
-import model.formatos.Formato5v5LoL;
-import model.formatos.FormatoARAMLoL;
-import model.notifications.types.*;
-import model.notifications.channels.NotificationChannel;
-import model.notifications.factory.NotificationChannelFactory;
 import java.time.LocalDateTime;
+
+import aplicacion.builders.ScrimBuilder;
+import dominio.juegos.LeagueOfLegends;
+import dominio.juegos.formatos.Formato5v5LoL;
+import dominio.juegos.formatos.FormatoARAMLoL;
+import dominio.modelo.Confirmacion;
+import dominio.modelo.Postulacion;
+import dominio.modelo.Scrim;
+import dominio.modelo.Usuario;
+import infraestructura.notificaciones.channels.NotificationChannel;
+import infraestructura.notificaciones.factory.NotificationChannelFactory;
+import infraestructura.notificaciones.types.*;
 
 /**
  * Ejemplos de uso del sistema de notificaciones.

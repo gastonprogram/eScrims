@@ -1,18 +1,20 @@
-import model.Usuario;
-import model.Scrim;
-import model.ScrimBuilder;
-import model.HistorialUsuario;
-import model.juegos.Juego;
-import model.juegos.LeagueOfLegends;
-import model.formatos.Formato5v5LoL;
-import model.matchmaking.MatchmakerService;
-import model.matchmaking.strategies.ByMMRStrategy;
-import model.matchmaking.strategies.ByLatencyStrategy;
-import model.matchmaking.strategies.ByHistoryStrategy;
+package test;
 
 import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
+
+import aplicacion.builders.ScrimBuilder;
+import aplicacion.services.MatchmakerService;
+import dominio.juegos.Juego;
+import dominio.juegos.LeagueOfLegends;
+import dominio.juegos.formatos.Formato5v5LoL;
+import dominio.modelo.HistorialUsuario;
+import dominio.modelo.Scrim;
+import dominio.modelo.Usuario;
+import infraestructura.matchmaking.strategies.ByHistoryStrategy;
+import infraestructura.matchmaking.strategies.ByLatencyStrategy;
+import infraestructura.matchmaking.strategies.ByMMRStrategy;
 
 /**
  * Ejemplo completo del sistema de estrategias de matchmaking.

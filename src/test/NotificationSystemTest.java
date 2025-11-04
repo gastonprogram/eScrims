@@ -1,10 +1,17 @@
-import model.*;
-import model.juegos.LeagueOfLegends;
-import model.notifications.core.NotificationService;
-import model.notifications.types.*;
-import model.notifications.channels.NotificationChannel;
-import model.notifications.factory.NotificationChannelFactory;
+package test;
+
 import java.time.LocalDateTime;
+
+import aplicacion.builders.ScrimBuilder;
+import dominio.juegos.LeagueOfLegends;
+import dominio.modelo.Confirmacion;
+import dominio.modelo.Postulacion;
+import dominio.modelo.Scrim;
+import dominio.modelo.Usuario;
+import infraestructura.notificaciones.channels.NotificationChannel;
+import infraestructura.notificaciones.core.NotificationService;
+import infraestructura.notificaciones.factory.NotificationChannelFactory;
+import infraestructura.notificaciones.types.*;
 
 /**
  * Test básico para verificar el sistema de notificaciones.
@@ -36,7 +43,7 @@ public class NotificationSystemTest {
         System.out.println("2. Creando un scrim...");
         Scrim scrim = new ScrimBuilder()
                 .withJuego(LeagueOfLegends.getInstance())
-                .withFormato(new model.formatos.Formato5v5LoL())
+                .withFormato(new dominio.juegos.formatos.Formato5v5LoL())
                 .withFechaHora(LocalDateTime.now().plusHours(2))
                 .withRango(1000, 2000)
                 .withLatenciaMaxima(50)

@@ -1,17 +1,21 @@
-import controller.PostulacionController;
-import controller.ConfirmacionController;
-import model.Scrim;
-import model.ScrimBuilder;
-import model.Usuario;
-import model.Postulacion;
-import model.Confirmacion;
-import model.juegos.LeagueOfLegends;
-import model.Persistencia.RepositorioFactory;
-import model.Persistencia.RepositorioScrim;
-import model.Persistencia.RepositorioUsuario;
+
+package test;
+
+import dominio.juegos.LeagueOfLegends;
+import dominio.modelo.Confirmacion;
+import dominio.modelo.Postulacion;
+import dominio.modelo.Scrim;
+import dominio.modelo.Usuario;
+import infraestructura.persistencia.repository.RepositorioFactory;
+import infraestructura.persistencia.repository.RepositorioScrim;
+import infraestructura.persistencia.repository.RepositorioUsuario;
+import aplicacion.services.PostulacionService;
+import aplicacion.services.ConfirmacionService;
 
 import java.time.LocalDateTime;
 import java.util.List;
+
+import aplicacion.builders.ScrimBuilder;
 
 /**
  * Ejemplo de uso del sistema desde la perspectiva del ORGANIZADOR.
@@ -52,7 +56,7 @@ public class EjemploGestionPostulacionesOrganizador {
             // ARAM es un formato válido de League of Legends
             Scrim scrim = new ScrimBuilder()
                     .withJuego(LeagueOfLegends.getInstance())
-                    .withFormato(new model.formatos.FormatoARAMLoL())
+                    .withFormato(new dominio.juegos.formatos.FormatoARAMLoL())
                     .withRango(500, 1000) // Bronze/Silver - Gold
                     .withLatenciaMaxima(80) // Máximo 80ms
                     .withFechaHora(LocalDateTime.now().plusHours(3))
@@ -68,7 +72,7 @@ public class EjemploGestionPostulacionesOrganizador {
             System.out.println("\n\n📝 PASO 2: Llegan postulaciones de jugadores...");
             System.out.println("-".repeat(80));
 
-            PostulacionController postController = new PostulacionController();
+            PostulacionService postService = new PostulacionService(repoScrims, repoUsuarios);
 
             // Crear jugadores y postularlos (necesitamos 10 para ARAM 5v5)
             String[][] jugadores = {
@@ -94,10 +98,16 @@ public class EjemploGestionPostulacionesOrganizador {
                 int rango = Integer.parseInt(jugadorData[1]);
                 int latencia = Integer.parseInt(jugadorData[2]);
 
-                String resultado = postController.postularAScrim(scrim.getId(), jugador.getId(), rango, latencia);
-
-                System.out.println("\n🎮 " + jugadorData[0] + " (Rango: " + rango + ", Latencia: " + latencia + "ms)");
-                System.out.println("   → " + resultado);
+                try {
+                    postService.postularAScrim(scrim.getId(), jugador.getId(), rango, latencia);
+                    System.out.println(
+                            "\n🎮 " + jugadorData[0] + " (Rango: " + rango + ", Latencia: " + latencia + "ms)");
+                    System.out.println("   → Postulación procesada exitosamente");
+                } catch (Exception e) {
+                    System.out.println(
+                            "\n🎮 " + jugadorData[0] + " (Rango: " + rango + ", Latencia: " + latencia + "ms)");
+                    System.out.println("   → " + e.getMessage());
+                }
             }
 
             // ============================================
@@ -106,7 +116,7 @@ public class EjemploGestionPostulacionesOrganizador {
             System.out.println("\n\n👀 PASO 3: Organizador revisa todas las postulaciones...");
             System.out.println("-".repeat(80));
 
-            List<Postulacion> todasPostulaciones = postController.listarTodasLasPostulaciones(
+            List<Postulacion> todasPostulaciones = postService.listarTodasLasPostulaciones(
                     scrim.getId(),
                     organizador.getId());
 
@@ -153,7 +163,7 @@ public class EjemploGestionPostulacionesOrganizador {
                 System.out.println("\n\n⚙️ PASO 4: Organizador gestiona postulaciones pendientes...");
                 System.out.println("-".repeat(80));
 
-                List<Postulacion> postulacionesPendientes = postController.listarPostulacionesPendientes(
+                List<Postulacion> postulacionesPendientes = postService.listarPostulacionesPendientes(
                         scrim.getId(),
                         organizador.getId());
 
@@ -164,27 +174,35 @@ public class EjemploGestionPostulacionesOrganizador {
                     Postulacion primeraPendiente = postulacionesPendientes.get(0);
                     System.out.println("\n💡 Organizador decide ACEPTAR a: " + primeraPendiente.getUserId());
 
-                    String resultado = postController.aceptarPostulacion(
-                            scrim.getId(),
-                            primeraPendiente.getUserId(),
-                            organizador.getId());
-                    System.out.println("   → " + resultado);
+                    try {
+                        postService.aceptarPostulacion(
+                                scrim.getId(),
+                                primeraPendiente.getUserId(),
+                                organizador.getId());
+                        System.out.println("   → Postulación aceptada exitosamente");
+                    } catch (Exception e) {
+                        System.out.println("   → Error: " + e.getMessage());
+                    }
                 }
 
                 // Rechaza otras si quedan
-                postulacionesPendientes = postController.listarPostulacionesPendientes(
+                postulacionesPendientes = postService.listarPostulacionesPendientes(
                         scrim.getId(),
                         organizador.getId());
 
                 for (Postulacion post : postulacionesPendientes) {
                     System.out.println("\n💡 Organizador decide RECHAZAR a: " + post.getUserId());
 
-                    String resultado = postController.rechazarPostulacion(
-                            scrim.getId(),
-                            post.getUserId(),
-                            organizador.getId(),
-                            "Preferimos jugadores con mejor experiencia");
-                    System.out.println("   → " + resultado);
+                    try {
+                        postService.rechazarPostulacion(
+                                scrim.getId(),
+                                post.getUserId(),
+                                organizador.getId(),
+                                "Preferimos jugadores con mejor experiencia");
+                        System.out.println("   → Postulación rechazada");
+                    } catch (Exception e) {
+                        System.out.println("   → Error: " + e.getMessage());
+                    }
                 }
             }
 
@@ -201,10 +219,10 @@ public class EjemploGestionPostulacionesOrganizador {
             if ("LOBBY_ARMADO".equals(scrim.getEstado())) {
                 System.out.println("\n✅ ¡LOBBY ARMADO! Confirmaciones generadas automáticamente.");
 
-                ConfirmacionController confController = new ConfirmacionController();
+                ConfirmacionService confService = new ConfirmacionService(repoScrims);
 
                 System.out.println("\n👥 Jugadores que deben confirmar:");
-                List<Confirmacion> confirmaciones = confController.listarConfirmaciones(
+                List<Confirmacion> confirmaciones = confService.listarConfirmaciones(
                         scrim.getId(),
                         organizador.getId());
 
@@ -221,15 +239,23 @@ public class EjemploGestionPostulacionesOrganizador {
                 // Primeros 2 confirman
                 List<Confirmacion> confs = scrim.getConfirmaciones();
                 for (int i = 0; i < Math.min(2, confs.size()); i++) {
-                    String resultado = confController.confirmarAsistencia(scrim.getId(), confs.get(i).getUserId());
-                    System.out.println((i + 1) + ". " + confs.get(i).getUserId() + ": " + resultado);
+                    try {
+                        confService.confirmarAsistencia(scrim.getId(), confs.get(i).getUserId());
+                        System.out.println((i + 1) + ". " + confs.get(i).getUserId() + ": Confirmación exitosa");
+                    } catch (Exception e) {
+                        System.out.println((i + 1) + ". " + confs.get(i).getUserId() + ": Error - " + e.getMessage());
+                    }
                 }
 
                 // El tercero RECHAZA
                 if (confs.size() > 2) {
                     System.out.println("\n⚠️ ¡" + confs.get(2).getUserId() + " rechaza la confirmación!");
-                    String resultado = confController.rechazarAsistencia(scrim.getId(), confs.get(2).getUserId());
-                    System.out.println("   → " + resultado);
+                    try {
+                        confService.rechazarAsistencia(scrim.getId(), confs.get(2).getUserId());
+                        System.out.println("   → Rechazo procesado exitosamente");
+                    } catch (Exception e) {
+                        System.out.println("   → Error: " + e.getMessage());
+                    }
 
                     // Recargar scrim para ver el cambio de estado
                     scrim = repoScrims.buscarPorId(scrim.getId());
@@ -248,8 +274,12 @@ public class EjemploGestionPostulacionesOrganizador {
                 if ("LOBBY_ARMADO".equals(scrim.getEstado())) {
                     // El cuarto confirma (solo si seguimos en LOBBY_ARMADO)
                     if (confs.size() > 3) {
-                        String resultado = confController.confirmarAsistencia(scrim.getId(), confs.get(3).getUserId());
-                        System.out.println("\n4. " + confs.get(3).getUserId() + ": " + resultado);
+                        try {
+                            confService.confirmarAsistencia(scrim.getId(), confs.get(3).getUserId());
+                            System.out.println("\n4. " + confs.get(3).getUserId() + ": Confirmación exitosa");
+                        } catch (Exception e) {
+                            System.out.println("\n4. " + confs.get(3).getUserId() + ": Error - " + e.getMessage());
+                        }
                     }
                 }
 
