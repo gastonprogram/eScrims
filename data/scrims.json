@@ -1,0 +1,25 @@
+[
+  {
+    "id": "09997940-fea4-4c60-b95a-12f0be8d54be",
+    "juego": "League of Legends",
+    "formato": "5v5 Summoner\u0027s Rift",
+    "rangoMin": 20,
+    "rangoMax": 60,
+    "latenciaMax": 60,
+    "fechaHora": "2025-12-31T20:30:00",
+    "plazas": 10,
+    "rolesRequeridos": [
+      "Top",
+      "Jungle",
+      "Mid",
+      "ADC",
+      "Support"
+    ],
+    "postulaciones": [],
+    "confirmaciones": [],
+    "createdBy": "a3e3c426-1ca4-49e5-b3b1-ed09f4a3332e",
+    "createdAt": "2025-11-04T17:19:22.2252698",
+    "estadoActual": "BUSCANDO",
+    "estrategiaMatchmaking": "MMR"
+  }
+]

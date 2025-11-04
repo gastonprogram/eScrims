@@ -7,6 +7,7 @@ import java.util.UUID;
 
 import dominio.estados.BuscandoState;
 import dominio.estados.ScrimState;
+import dominio.estados.ScrimStateFactory;
 import dominio.juegos.Juego;
 import dominio.valueobjects.formatosScrims.ScrimFormat;
 
@@ -42,7 +43,8 @@ public class Scrim {
     private List<Confirmacion> confirmaciones;
     private String createdBy;
     private LocalDateTime createdAt;
-    private ScrimState state;
+    private transient ScrimState state; // transient = no se serializa (evita referencias circulares)
+    private String estadoActual; // Estado serializable para persistencia
     private String estrategiaMatchmaking; // Estrategia de matchmaking: "MMR", "Latency", "History"
 
     /**
@@ -75,27 +77,48 @@ public class Scrim {
         this.confirmaciones = new ArrayList<>();
         this.createdAt = LocalDateTime.now();
         this.state = new BuscandoState();
+        this.estadoActual = "BUSCANDO";
         this.estrategiaMatchmaking = "MMR"; // Estrategia por defecto
+    }
+
+    /**
+     * Reconstruye el objeto ScrimState desde el String estadoActual.
+     * Este método debe llamarse después de deserializar desde JSON.
+     */
+    public void reconstruirEstado() {
+        if (state == null && estadoActual != null) {
+            state = ScrimStateFactory.crearEstado(estadoActual);
+        }
+        // Si todavía es null, usar estado por defecto
+        if (state == null) {
+            state = new BuscandoState();
+            estadoActual = "BUSCANDO";
+        }
     }
 
     // Métodos para el State Pattern
     public void postular(Postulacion postulacion) {
+        if (state == null) reconstruirEstado();
         state.postular(this, postulacion);
     }
 
     public void confirmar(Confirmacion confirmacion) {
+        if (state == null) reconstruirEstado();
         state.confirmar(this, confirmacion);
     }
 
     public void iniciar() {
+        if (state == null) reconstruirEstado();
         state.iniciar(this);
     }
 
     public void finalizar() {
+        if (state == null) reconstruirEstado();
         state.finalizar(this);
     }
 
     public void cancelar() {
+        if (state == null) reconstruirEstado();
         state.cancelar(this);
     }
 
@@ -181,9 +204,17 @@ public class Scrim {
     // Setter protegido para el state
     public void setState(ScrimState newState) {
         this.state = newState;
+        // Sincronizar el estado actual para persistencia
+        if (newState != null) {
+            this.estadoActual = newState.getEstado();
+        }
     }
 
     public String getEstado() {
+        // Si state es null (después de deserializar), usar estadoActual
+        if (state == null) {
+            return estadoActual != null ? estadoActual : "BUSCANDO";
+        }
         return state.getEstado();
     }
 

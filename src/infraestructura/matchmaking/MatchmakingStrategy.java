@@ -2,7 +2,6 @@ package infraestructura.matchmaking;
 
 import java.util.List;
 
-import aplicacion.services.MatchmakerService;
 import dominio.modelo.Scrim;
 import dominio.modelo.Usuario;
 
