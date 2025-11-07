@@ -7,7 +7,9 @@ import com.google.gson.JsonSerializer;
 import com.google.gson.reflect.TypeToken;
 
 import dominio.modelo.Usuario;
+import dominio.juegos.Juego;
 import infraestructura.persistencia.repository.RepositorioUsuario;
+import infraestructura.persistencia.adapters.JuegoAdapter;
 
 import java.io.FileReader;
 import java.io.FileWriter;
@@ -54,6 +56,7 @@ public class RepositorioUsuarioJSON implements RepositorioUsuario {
                 .registerTypeAdapter(LocalDateTime.class, deserLDT)
                 .registerTypeAdapter(LocalDate.class, serLD)
                 .registerTypeAdapter(LocalDate.class, deserLD)
+                .registerTypeAdapter(Juego.class, new JuegoAdapter())
                 .setPrettyPrinting()
                 .create();
         this.usuarios = cargarUsuarios();

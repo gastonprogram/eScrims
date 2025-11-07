@@ -5,35 +5,34 @@ import java.util.List;
 import aplicacion.services.UsuarioService;
 import dominio.juegos.Juego;
 import dominio.modelo.Usuario;
-import infraestructura.persistencia.repository.RepositorioUsuario;
 import presentacion.view.PerfilView;
 
 /**
- * Controller modernizado para la gestión de perfiles de usuario.
+ * EJEMPLO: Controller modernizado para la gestión de perfiles de usuario.
  * 
- * Compatible con la nueva estructura del PerfilView que maneja:
- * - Rangos por juego específico
+ * Funcionalidades actualizadas:
+ * - Gestión de rangos por juego específico
  * - Roles preferidos organizados por juego
  * - Edición de latencia promedio
  * - Selección enumerada para mejor UX
  * 
+ * Este es un ejemplo de cómo adaptar el controller existente
+ * para trabajar con la nueva estructura del Usuario y PerfilView.
+ * 
  * @author eScrims Team
  */
-public class PerfilController {
+public class PerfilControllerModernized {
 
     private final UsuarioService usuarioService;
     private final PerfilView view;
     private final String usuarioActualId;
-    private final RepositorioUsuario repositorioUsuario;
 
-    public PerfilController(UsuarioService usuarioService,
+    public PerfilControllerModernized(UsuarioService usuarioService,
             PerfilView view,
-            String usuarioActualId,
-            RepositorioUsuario repositorioUsuario) {
+            String usuarioActualId) {
         this.usuarioService = usuarioService;
         this.view = view;
         this.usuarioActualId = usuarioActualId;
-        this.repositorioUsuario = repositorioUsuario;
     }
 
     /**
@@ -126,7 +125,7 @@ public class PerfilController {
 
             // 4. Actualizar en el modelo
             usuario.setRangoParaJuego(nombreJuego, nuevoRango);
-            repositorioUsuario.guardar(usuario);
+            usuarioService.actualizar(usuario);
 
             view.mostrarExito("Rango actualizado exitosamente");
 
@@ -174,17 +173,10 @@ public class PerfilController {
                 return;
             }
 
-            // 5. Actualizar en el modelo - usar setRolesPreferidos con el juego principal
-            Juego juegoPrincipalOriginal = usuario.getJuegoPrincipal();
-            usuario.setJuegoPrincipal(juegoSeleccionado);
-            usuario.setRolesPreferidos(nuevosRoles);
-
-            // Restaurar el juego principal original si era diferente
-            if (juegoPrincipalOriginal != null && !juegoPrincipalOriginal.getNombre().equals(nombreJuego)) {
-                usuario.setJuegoPrincipal(juegoPrincipalOriginal);
-            }
-
-            repositorioUsuario.guardar(usuario);
+            // 5. Actualizar en el modelo
+            // Primero limpiar roles actuales para este juego
+            usuario.getRolesPorJuego().put(nombreJuego, nuevosRoles);
+            usuarioService.actualizar(usuario);
 
             view.mostrarExito("Roles actualizados exitosamente");
 
@@ -227,7 +219,7 @@ public class PerfilController {
 
             // Actualizar
             usuario.setRegion(nuevaRegion);
-            repositorioUsuario.guardar(usuario);
+            usuarioService.actualizar(usuario);
 
             view.mostrarExito("Región actualizada exitosamente");
 
@@ -269,7 +261,7 @@ public class PerfilController {
 
             // Actualizar
             usuario.setLatenciaPromedio(nuevaLatencia);
-            repositorioUsuario.guardar(usuario);
+            usuarioService.actualizar(usuario);
 
             view.mostrarExito("Latencia actualizada exitosamente");
 
@@ -292,7 +284,7 @@ public class PerfilController {
                 return;
             }
 
-            Usuario usuario = repositorioUsuario.buscarPorUsername(username);
+            Usuario usuario = usuarioService.buscarPorUsername(username);
             if (usuario == null) {
                 view.mostrarError("Usuario no encontrado: " + username);
                 return;

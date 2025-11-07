@@ -30,12 +30,14 @@ public class ScrimBuilder {
     private List<String> rolesRequeridos;
     private int latenciaMaxima;
     private int plazas;
+    private String estrategiaMatchmaking; // Estrategia de matchmaking
 
     public ScrimBuilder() {
         // Valores por defecto
         this.rangoMin = 0;
         this.rangoMax = Integer.MAX_VALUE;
         this.latenciaMaxima = -1; // -1 indica que no hay límite
+        this.estrategiaMatchmaking = "MMR"; // Estrategia por defecto
     }
 
     /**
@@ -104,6 +106,21 @@ public class ScrimBuilder {
         return this;
     }
 
+    /**
+     * Establece la estrategia de matchmaking para el scrim.
+     * 
+     * @param estrategia nombre de la estrategia ("MMR", "Latency", "History")
+     * @return este builder para encadenamiento
+     * @throws IllegalArgumentException si la estrategia es null o vacía
+     */
+    public ScrimBuilder withEstrategiaMatchmaking(String estrategia) {
+        if (estrategia == null || estrategia.trim().isEmpty()) {
+            throw new IllegalArgumentException("La estrategia de matchmaking no puede ser null o vacía");
+        }
+        this.estrategiaMatchmaking = estrategia;
+        return this;
+    }
+
     public Scrim build() {
         // Validaciones finales
         if (juego == null) {
@@ -125,6 +142,9 @@ public class ScrimBuilder {
                 rolesRequeridos,
                 latenciaMaxima,
                 plazas);
+
+        // Establecer la estrategia de matchmaking
+        scrim.setEstrategiaMatchmaking(estrategiaMatchmaking);
 
         // Notificar a usuarios que coincidan con las preferencias del scrim
         NotificationService.getInstance().notifyScrimCreated(scrim);

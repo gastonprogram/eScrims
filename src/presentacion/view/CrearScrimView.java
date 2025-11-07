@@ -9,6 +9,8 @@ import java.util.Scanner;
 import dominio.juegos.Juego;
 import dominio.juegos.LeagueOfLegends;
 import dominio.valueobjects.formatosScrims.ScrimFormat;
+import infraestructura.matchmaking.MatchmakingRegistry;
+import infraestructura.matchmaking.MatchmakingStrategy;
 
 /**
  * Vista para crear scrims mediante formularios en consola.
@@ -181,10 +183,43 @@ public class CrearScrimView {
     }
 
     /**
+     * Solicita al usuario seleccionar una estrategia de matchmaking.
+     */
+    public String solicitarEstrategiaMatchmaking() {
+        System.out.println("\n--- Estrategia de Matchmaking ---");
+        System.out.println("Seleccione cómo se emparejará a los jugadores:");
+
+        MatchmakingRegistry registry = MatchmakingRegistry.getInstance();
+        List<MatchmakingStrategy> estrategias = registry.getEstrategiasDisponibles();
+
+        for (int i = 0; i < estrategias.size(); i++) {
+            MatchmakingStrategy estrategia = estrategias.get(i);
+            System.out.println((i + 1) + ". " + estrategia.getNombre() +
+                    " - " + estrategia.getDescripcion());
+        }
+        System.out.println("0. Cancelar");
+        System.out.print("Opción: ");
+
+        try {
+            int opcion = Integer.parseInt(scanner.nextLine().trim());
+            if (opcion == 0) {
+                return null; // Cancelar
+            }
+            if (opcion > 0 && opcion <= estrategias.size()) {
+                return estrategias.get(opcion - 1).getNombre();
+            }
+        } catch (NumberFormatException e) {
+            System.err.println("✗ Opción inválida");
+        }
+
+        return solicitarEstrategiaMatchmaking(); // Reintentar
+    }
+
+    /**
      * Muestra un resumen del scrim antes de crearlo.
      */
     public boolean confirmarCreacion(String juego, String formato, LocalDateTime fechaHora,
-            int rangoMin, int rangoMax, int latenciaMax) {
+            int rangoMin, int rangoMax, int latenciaMax, String estrategiaMatchmaking) {
         System.out.println("\n" + "=".repeat(50));
         System.out.println("           RESUMEN DEL SCRIM");
         System.out.println("=".repeat(50));
@@ -195,6 +230,7 @@ public class CrearScrimView {
                 (rangoMax == Integer.MAX_VALUE ? "Sin límite" : rangoMax));
         System.out.println("Latencia máx:  " +
                 (latenciaMax == -1 ? "Sin límite" : latenciaMax + " ms"));
+        System.out.println("Matchmaking:   " + estrategiaMatchmaking);
         System.out.println("=".repeat(50));
 
         System.out.print("\n¿Confirmar creación? (s/n): ");

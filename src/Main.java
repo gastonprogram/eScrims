@@ -131,6 +131,13 @@ public class Main {
 
             registerView.mostrarProgreso(4, 5);
             String juegoPrincipal = registerView.solicitarJuegoPrincipal();
+            if (juegoPrincipal.isEmpty()) {
+                registerView.mostrarError("Número de juego inválido. Por favor, intente nuevamente.");
+                if (registerView.confirmarReintento()) {
+                    manejarRegistro();
+                }
+                return;
+            }
 
             registerView.mostrarProgreso(5, 5);
             int rango = registerView.solicitarRango();
@@ -178,9 +185,18 @@ public class Main {
                     manejarBuscarScrims();
                     break;
                 case 3:
-                    manejarEditarPerfil();
+                    manejarPostulacion();
                     break;
                 case 4:
+                    manejarConfirmaciones();
+                    break;
+                case 5:
+                    manejarGestionOrganizador();
+                    break;
+                case 6:
+                    manejarEditarPerfil();
+                    break;
+                case 7:
                     salir = true;
                     authService.logout();
                     loginView.mostrarLogoutExitoso();
@@ -203,8 +219,11 @@ public class Main {
         System.out.println("=".repeat(50));
         System.out.println("1. Crear Scrim");
         System.out.println("2. Buscar Scrims");
-        System.out.println("3. Editar Perfil");
-        System.out.println("4. Cerrar Sesión");
+        System.out.println("3. Postularse a un Scrim");
+        System.out.println("4. Gestionar Confirmaciones");
+        System.out.println("5. Gestionar mis Scrims (Organizador)");
+        System.out.println("6. Editar Perfil");
+        System.out.println("7. Cerrar Sesión");
         System.out.println("=".repeat(50));
         System.out.print("Seleccione una opción: ");
     }
@@ -261,11 +280,120 @@ public class Main {
 
     /**
      * Maneja la edición del perfil del usuario.
-     * TODO: Implementar cuando la clase Usuario tenga los getters necesarios
+     * Utiliza el PerfilController modernizado para gestionar todas las
+     * funcionalidades.
      */
     private static void manejarEditarPerfil() {
-        System.out.println("\n✗ Función en desarrollo. Próximamente disponible.");
-        menuView.presionarEnterParaContinuar();
+        try {
+            Usuario usuario = authService.getUsuarioLogueado();
+
+            // Crear vista modernizada y servicio
+            presentacion.view.PerfilView vista = new presentacion.view.PerfilView();
+            aplicacion.services.UsuarioService usuarioService = new aplicacion.services.UsuarioService(
+                    repositorioUsuarios);
+
+            // Crear controller modernizado
+            presentacion.controller.PerfilController controller = new presentacion.controller.PerfilController(
+                    usuarioService, vista, usuario.getId(), repositorioUsuarios);
+
+            // El controller gestiona todo el flujo de perfil
+            controller.gestionarPerfil();
+
+        } catch (Exception e) {
+            System.err.println("\n✗ Error en la gestión de perfil: " + e.getMessage());
+            e.printStackTrace();
+            menuView.presionarEnterParaContinuar();
+        }
+    }
+
+    /**
+     * Maneja la postulación a un scrim.
+     * El controller coordina el flujo entre vista y servicio.
+     * Usa los datos del perfil del usuario (rango y latencia).
+     */
+    private static void manejarPostulacion() {
+        try {
+            Usuario usuario = authService.getUsuarioLogueado();
+
+            // Crear vista simplificada y servicios
+            presentacion.view.PostulacionViewSimplificada vista = new presentacion.view.PostulacionViewSimplificada();
+            aplicacion.services.PostulacionService postulacionService = new aplicacion.services.PostulacionService(
+                    repositorioScrims, repositorioUsuarios);
+            aplicacion.services.ScrimService scrimService = new aplicacion.services.ScrimService(repositorioScrims);
+
+            // Crear controller simplificado pasando el objeto Usuario completo
+            presentacion.controller.PostulacionControllerSimplificado controller = new presentacion.controller.PostulacionControllerSimplificado(
+                    postulacionService, scrimService, vista, usuario);
+
+            // El controller coordina el flujo de postulación
+            controller.postularseAScrim();
+
+            menuView.presionarEnterParaContinuar();
+        } catch (Exception e) {
+            System.err.println("\n✗ Error en la postulación: " + e.getMessage());
+            e.printStackTrace();
+            menuView.presionarEnterParaContinuar();
+        }
+    }
+
+    /**
+     * Maneja el menú de confirmaciones (confirmar/rechazar asistencia).
+     * El controller coordina el flujo entre vista y servicio.
+     */
+    private static void manejarConfirmaciones() {
+        try {
+            Usuario usuario = authService.getUsuarioLogueado();
+
+            // Crear vista simplificada y servicio
+            presentacion.view.ConfirmacionViewSimplificada vista = new presentacion.view.ConfirmacionViewSimplificada();
+            aplicacion.services.ConfirmacionService confirmacionService = new aplicacion.services.ConfirmacionService(
+                    repositorioScrims);
+
+            // Crear controller simplificado
+            presentacion.controller.ConfirmacionControllerSimplificado controller = new presentacion.controller.ConfirmacionControllerSimplificado(
+                    confirmacionService, vista, usuario.getId());
+
+            // El controller coordina el flujo completo de confirmaciones (menú interno)
+            controller.gestionarConfirmaciones();
+
+            menuView.presionarEnterParaContinuar();
+        } catch (Exception e) {
+            System.err.println("\n✗ Error en confirmaciones: " + e.getMessage());
+            e.printStackTrace();
+            menuView.presionarEnterParaContinuar();
+        }
+    }
+
+    /**
+     * Maneja la gestión de scrims como organizador.
+     * El controller coordina el flujo entre vista y servicios.
+     */
+    private static void manejarGestionOrganizador() {
+        try {
+            Usuario usuario = authService.getUsuarioLogueado();
+
+            // Crear vista y servicios
+            presentacion.view.OrganizadorView vista = new presentacion.view.OrganizadorView();
+            aplicacion.services.PostulacionService postulacionService = new aplicacion.services.PostulacionService(
+                    repositorioScrims, repositorioUsuarios);
+            aplicacion.services.ConfirmacionService confirmacionService = new aplicacion.services.ConfirmacionService(
+                    repositorioScrims);
+            aplicacion.services.ScrimService scrimService = new aplicacion.services.ScrimService(
+                    repositorioScrims);
+
+            // Crear controller del organizador
+            presentacion.controller.OrganizadorController controller = new presentacion.controller.OrganizadorController(
+                    postulacionService, confirmacionService, scrimService, vista, usuario.getId());
+
+            // El controller coordina el flujo completo del organizador (menú interno)
+            controller.gestionarScrims();
+
+            menuView.presionarEnterParaContinuar();
+        } catch (Exception e) {
+            System.err.println("\n✗ Error en gestión de organizador: " + e.getMessage());
+            e.printStackTrace();
+            menuView.presionarEnterParaContinuar();
+        }
     }
 
     /**

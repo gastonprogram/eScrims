@@ -44,25 +44,60 @@ public class ScrimController {
      */
     public void crearScrim() {
         try {
-            // 1. Solicitar datos a la vista
+            crearScrimView.mostrarTitulo();
+
+            // 1. Solicitar datos básicos a la vista
             Juego juego = crearScrimView.solicitarJuego();
+            if (juego == null) {
+                crearScrimView.mostrarCancelacion();
+                return;
+            }
+
             ScrimFormat formato = crearScrimView.solicitarFormato(juego);
+            if (formato == null) {
+                crearScrimView.mostrarCancelacion();
+                return;
+            }
+
             LocalDateTime fechaHora = crearScrimView.solicitarFechaHora();
+            if (fechaHora == null) {
+                crearScrimView.mostrarCancelacion();
+                return;
+            }
+
             int rangoMin = crearScrimView.solicitarRangoMinimo();
             int rangoMax = crearScrimView.solicitarRangoMaximo();
             int latenciaMax = crearScrimView.solicitarLatenciaMaxima();
 
-            // 2. Llamar al servicio
-            Scrim scrim = scrimService.crearScrim(
+            // 2. Solicitar estrategia de matchmaking
+            String estrategiaMatchmaking = crearScrimView.solicitarEstrategiaMatchmaking();
+            if (estrategiaMatchmaking == null) {
+                crearScrimView.mostrarCancelacion();
+                return;
+            }
+
+            // 3. Confirmar creación
+            boolean confirmar = crearScrimView.confirmarCreacion(
+                    juego.getNombre(), formato.getFormatName(), fechaHora,
+                    rangoMin, rangoMax, latenciaMax, estrategiaMatchmaking);
+
+            if (!confirmar) {
+                crearScrimView.mostrarCancelacion();
+                return;
+            }
+
+            // 4. Llamar al servicio
+            Scrim scrim = scrimService.crearScrimConEstrategia(
                     juego, formato, fechaHora,
                     rangoMin, rangoMax, latenciaMax,
-                    usuarioActualId);
+                    estrategiaMatchmaking, usuarioActualId);
 
-            // 3. Mostrar resultado exitoso
+            // 5. Mostrar resultado exitoso
             crearScrimView.mostrarExito(
                     "¡Scrim creado exitosamente!\n" +
                             "ID: " + scrim.getId() + "\n" +
-                            "Estado: " + scrim.getState().getEstado());
+                            "Estado: " + scrim.getState().getEstado() + "\n" +
+                            "Estrategia: " + scrim.getEstrategiaMatchmaking());
 
         } catch (IllegalArgumentException e) {
             crearScrimView.mostrarError("Error de validación: " + e.getMessage());

@@ -2,17 +2,13 @@ package infraestructura.persistencia.adapters;
 
 import com.google.gson.*;
 import dominio.juegos.Juego;
-import dominio.juegos.LeagueOfLegends;
+import dominio.juegos.JuegosRegistry;
 
 import java.lang.reflect.Type;
 
 /**
- * Adaptador de Gson para serializar/deserializar objetos Juego.
- * 
- * Evita referencias circulares serializando solo el nombre del juego
- * y reconstruyendo la instancia correcta al deserializar.
- * 
- * @author eScrims Team
+ * Adaptador personalizado para serializar/deserializar objetos Juego
+ * con Gson, evitando problemas de referencias circulares.
  */
 public class JuegoAdapter implements JsonSerializer<Juego>, JsonDeserializer<Juego> {
 
@@ -21,7 +17,7 @@ public class JuegoAdapter implements JsonSerializer<Juego>, JsonDeserializer<Jue
         if (src == null) {
             return JsonNull.INSTANCE;
         }
-        // Serializar solo el nombre del juego
+        // Solo serializar el nombre del juego
         return new JsonPrimitive(src.getNombre());
     }
 
@@ -34,14 +30,8 @@ public class JuegoAdapter implements JsonSerializer<Juego>, JsonDeserializer<Jue
 
         String nombreJuego = json.getAsString();
 
-        // Reconstruir la instancia del juego según el nombre
-        switch (nombreJuego) {
-            case "League of Legends":
-                return LeagueOfLegends.getInstance();
-            // Aquí se pueden agregar más juegos en el futuro
-            default:
-                System.err.println("Juego desconocido: " + nombreJuego + ". Usando League of Legends por defecto.");
-                return LeagueOfLegends.getInstance();
-        }
+        // Buscar el juego en el registro usando el nombre
+        JuegosRegistry registry = JuegosRegistry.getInstance();
+        return registry.buscarPorNombre(nombreJuego);
     }
 }

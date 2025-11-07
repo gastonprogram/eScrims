@@ -1,5 +1,7 @@
 package aplicacion.services;
 
+import dominio.juegos.Juego;
+import dominio.juegos.JuegosRegistry;
 import dominio.modelo.Usuario;
 import infraestructura.persistencia.repository.RepositorioUsuario;
 
@@ -98,6 +100,23 @@ public class AuthService {
 
         // Crear el nuevo usuario
         Usuario nuevoUsuario = new Usuario(username.trim(), email.trim(), password);
+
+        // Configurar juego principal y rango si se proporcionaron
+        if (juegoPrincipal != null && !juegoPrincipal.trim().isEmpty()) {
+            // Obtener el objeto Juego usando JuegosRegistry
+            JuegosRegistry juegosRegistry = JuegosRegistry.getInstance();
+            Juego juegoObj = juegosRegistry.buscarPorNombre(juegoPrincipal.trim());
+
+            if (juegoObj != null) {
+                // Establecer el juego principal
+                nuevoUsuario.setJuegoPrincipal(juegoObj);
+
+                // Establecer el rango para ese juego si es válido
+                if (rango > 0 && rango <= 100) {
+                    nuevoUsuario.setRangoParaJuego(juegoPrincipal.trim(), rango);
+                }
+            }
+        }
 
         // Guardar en el repositorio
         repositorioUsuario.guardar(nuevoUsuario);

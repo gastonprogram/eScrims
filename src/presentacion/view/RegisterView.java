@@ -1,12 +1,18 @@
 package presentacion.view;
 
+import dominio.juegos.Juego;
+import dominio.juegos.JuegosRegistry;
+
+import java.util.List;
 import java.util.Scanner;
 
 public class RegisterView {
     private Scanner scanner;
+    private JuegosRegistry juegosRegistry;
 
     public RegisterView() {
         this.scanner = new Scanner(System.in);
+        this.juegosRegistry = JuegosRegistry.getInstance();
     }
 
     public void mostrarTituloRegistro() {
@@ -37,8 +43,27 @@ public class RegisterView {
     }
 
     public String solicitarJuegoPrincipal() {
-        System.out.print("Juego principal: ");
-        return scanner.nextLine().trim();
+        System.out.println("\nJuegos disponibles:");
+        List<Juego> juegos = juegosRegistry.getJuegosDisponibles();
+
+        for (int i = 0; i < juegos.size(); i++) {
+            System.out.println((i + 1) + ". " + juegos.get(i).getNombre());
+        }
+
+        System.out.print("\nSeleccione el número del juego principal: ");
+        try {
+            String input = scanner.nextLine().trim();
+            int numero = Integer.parseInt(input);
+
+            Juego juegoSeleccionado = juegosRegistry.obtenerPorNumero(numero);
+            if (juegoSeleccionado != null) {
+                return juegoSeleccionado.getNombre();
+            } else {
+                return ""; // Número inválido
+            }
+        } catch (NumberFormatException e) {
+            return ""; // Entrada inválida
+        }
     }
 
     public int solicitarRango() {

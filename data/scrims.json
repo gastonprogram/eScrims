@@ -1,12 +1,12 @@
 [
   {
-    "id": "09997940-fea4-4c60-b95a-12f0be8d54be",
+    "id": "98328423-3963-4152-9232-8b3151c5a748",
     "juego": "League of Legends",
     "formato": "5v5 Summoner\u0027s Rift",
     "rangoMin": 20,
-    "rangoMax": 60,
-    "latenciaMax": 60,
-    "fechaHora": "2025-12-31T20:30:00",
+    "rangoMax": 80,
+    "latenciaMax": 80,
+    "fechaHora": "2025-12-31T20:35:00",
     "plazas": 10,
     "rolesRequeridos": [
       "Top",
@@ -15,11 +15,22 @@
       "ADC",
       "Support"
     ],
-    "postulaciones": [],
+    "postulaciones": [
+      {
+        "id": "fb7bead0-bf18-4687-9a9f-56f6558c87d7",
+        "scrimId": "98328423-3963-4152-9232-8b3151c5a748",
+        "userId": "3a2ea85a-d869-469c-951f-9fb3f1019099",
+        "rangoUsuario": 60,
+        "latenciaUsuario": 50,
+        "estado": "ACEPTADA",
+        "fechaPostulacion": "2025-11-07T12:38:48.9088075",
+        "fechaActualizacion": "2025-11-07T12:38:48.9088075"
+      }
+    ],
     "confirmaciones": [],
-    "createdBy": "a3e3c426-1ca4-49e5-b3b1-ed09f4a3332e",
-    "createdAt": "2025-11-04T17:19:22.2252698",
+    "createdBy": "d7fd30c5-6fda-447d-8847-e23da3409196",
+    "createdAt": "2025-11-07T12:37:30.2752449",
     "estadoActual": "BUSCANDO",
-    "estrategiaMatchmaking": "MMR"
+    "estrategiaMatchmaking": "Latency"
   }
 ]
