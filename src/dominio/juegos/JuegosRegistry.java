@@ -29,12 +29,10 @@ public class JuegosRegistry {
      * Aquí se registran todos los juegos que el sistema soporta.
      */
     private void inicializarJuegos() {
-        // Por ahora solo League of Legends
+        // Agregar todos los juegos disponibles
         juegosDisponibles.add(LeagueOfLegends.getInstance());
-
-        // En el futuro se pueden agregar más juegos:
-        // juegosDisponibles.add(Valorant.getInstance());
-        // juegosDisponibles.add(CounterStrike.getInstance());
+        juegosDisponibles.add(CounterStrike.getInstance());
+        juegosDisponibles.add(Valorant.getInstance());
     }
 
     /**

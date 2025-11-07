@@ -194,9 +194,12 @@ public class Main {
                     manejarGestionOrganizador();
                     break;
                 case 6:
-                    manejarEditarPerfil();
+                    manejarEstadisticasYModeracion();
                     break;
                 case 7:
+                    manejarEditarPerfil();
+                    break;
+                case 8:
                     salir = true;
                     authService.logout();
                     loginView.mostrarLogoutExitoso();
@@ -222,8 +225,9 @@ public class Main {
         System.out.println("3. Postularse a un Scrim");
         System.out.println("4. Gestionar Confirmaciones");
         System.out.println("5. Gestionar mis Scrims (Organizador)");
-        System.out.println("6. Editar Perfil");
-        System.out.println("7. Cerrar Sesión");
+        System.out.println("6. Estadísticas y Moderación");
+        System.out.println("7. Editar Perfil");
+        System.out.println("8. Cerrar Sesión");
         System.out.println("=".repeat(50));
         System.out.print("Seleccione una opción: ");
     }
@@ -393,6 +397,176 @@ public class Main {
             System.err.println("\n✗ Error en gestión de organizador: " + e.getMessage());
             e.printStackTrace();
             menuView.presionarEnterParaContinuar();
+        }
+    }
+
+    /**
+     * Maneja las estadísticas y moderación.
+     * Gestiona el sistema de reportes, moderación y estadísticas de scrims.
+     */
+    private static void manejarEstadisticasYModeracion() {
+        try {
+            Usuario usuario = authService.getUsuarioLogueado();
+
+            // Crear vista y servicios necesarios
+            presentacion.view.EstadisticasView vista = new presentacion.view.EstadisticasView();
+            aplicacion.services.EstadisticasService estadisticasService = new aplicacion.services.EstadisticasService();
+            aplicacion.services.ScrimService scrimService = new aplicacion.services.ScrimService(repositorioScrims);
+
+            boolean salir = false;
+
+            while (!salir) {
+                vista.mostrarMenuCompleto();
+                int opcion = vista.leerOpcion();
+
+                switch (opcion) {
+                    case 1:
+                        // Registrar estadísticas de jugador (legacy)
+                        manejarRegistroEstadisticas(vista);
+                        break;
+                    case 2:
+                        // Ver estadísticas de scrim
+                        manejarVerEstadisticasScrim(vista, estadisticasService, scrimService);
+                        break;
+                    case 3:
+                        // Reportar conducta
+                        manejarReporteConducata(vista, estadisticasService, usuario);
+                        break;
+                    case 4:
+                        // Ver reportes de un usuario
+                        manejarVerReportes(vista, estadisticasService);
+                        break;
+                    case 5:
+                        // Ver estado de moderación de un usuario
+                        manejarVerEstadoModeracion(vista, estadisticasService);
+                        break;
+                    case 6:
+                        salir = true;
+                        break;
+                    default:
+                        vista.mostrarMensaje("Opción inválida. Por favor, seleccione una opción válida.");
+                }
+            }
+
+        } catch (Exception e) {
+            System.err.println("\n✗ Error en estadísticas y moderación: " + e.getMessage());
+            e.printStackTrace();
+            menuView.presionarEnterParaContinuar();
+        }
+    }
+
+    private static void manejarRegistroEstadisticas(presentacion.view.EstadisticasView vista) {
+        vista.mostrarMensaje("=== REGISTRO DE ESTADÍSTICAS ===");
+        
+        String usuarioId = vista.solicitarUsuarioId();
+        if (usuarioId.isEmpty()) {
+            vista.mostrarMensaje("Error: ID de usuario no puede estar vacío.");
+            return;
+        }
+
+        try {
+            // Crear estadísticas de ejemplo
+            dominio.estadisticas.EstadisticasPartido estadisticas = new dominio.estadisticas.EstadisticasPartido(1L);
+            dominio.estadisticas.EstadisticasJugador stats = new dominio.estadisticas.EstadisticasJugador(Long.parseLong(usuarioId));
+            stats.setKills(5);
+            stats.setDeaths(2);
+            stats.setAssists(8);
+            stats.setPuntuacion(85);
+            estadisticas.getEstadisticasPorJugador().put(Long.parseLong(usuarioId), stats);
+            
+            vista.mostrarResumen(estadisticas);
+            vista.mostrarMensaje("✓ Estadísticas registradas exitosamente.");
+        } catch (NumberFormatException e) {
+            vista.mostrarMensaje("Error: ID de usuario debe ser un número válido.");
+        } catch (Exception e) {
+            vista.mostrarMensaje("Error al registrar estadísticas: " + e.getMessage());
+        }
+    }
+
+    private static void manejarVerEstadisticasScrim(presentacion.view.EstadisticasView vista, aplicacion.services.EstadisticasService estadisticasService, aplicacion.services.ScrimService scrimService) {
+        String scrimId = vista.solicitarScrimId();
+        if (scrimId.isEmpty()) {
+            vista.mostrarMensaje("Error: ID de scrim no puede estar vacío.");
+            return;
+        }
+
+        try {
+            // Buscar primero en estadísticas existentes
+            java.util.Optional<dominio.estadisticas.EstadisticasScrim> estadisticasOpt = estadisticasService.buscarEstadisticas(scrimId);
+            if (estadisticasOpt.isPresent()) {
+                vista.mostrarEstadisticasScrim(estadisticasOpt.get());
+            } else {
+                // Intentar obtener el scrim del repositorio para crear estadísticas
+                try {
+                    dominio.modelo.Scrim scrim = scrimService.buscarPorId(scrimId);
+                    if (scrim != null) {
+                        dominio.estadisticas.EstadisticasScrim estadisticas = estadisticasService.obtenerEstadisticasParaScrim(scrim);
+                        vista.mostrarEstadisticasScrim(estadisticas);
+                    } else {
+                        vista.mostrarMensaje("No se encontró el scrim con ID: " + scrimId);
+                    }
+                } catch (RuntimeException e) {
+                    vista.mostrarMensaje("No se encontró el scrim con ID: " + scrimId);
+                }
+            }
+        } catch (Exception e) {
+            vista.mostrarMensaje("Error al obtener estadísticas: " + e.getMessage());
+        }
+    }
+
+    private static void manejarReporteConducata(presentacion.view.EstadisticasView vista, aplicacion.services.EstadisticasService estadisticasService, Usuario usuario) {
+        String scrimId = vista.solicitarScrimId();
+        String usuarioReportadoId = vista.solicitarUsuarioId();
+        
+        if (scrimId.isEmpty() || usuarioReportadoId.isEmpty()) {
+            vista.mostrarMensaje("Error: Todos los campos son obligatorios.");
+            return;
+        }
+
+        dominio.estadisticas.ReporteConducta.TipoReporte tipo = vista.solicitarTipoReporte();
+        dominio.estadisticas.ReporteConducta.Gravedad gravedad = vista.solicitarGravedad();
+        String descripcion = vista.solicitarDescripcion();
+
+        if (descripcion.isEmpty()) {
+            vista.mostrarMensaje("Error: La descripción no puede estar vacía.");
+            return;
+        }
+
+        try {
+            estadisticasService.reportarConducta(scrimId, tipo, gravedad, usuarioReportadoId, usuario.getId().toString(), descripcion);
+            vista.mostrarMensaje("✓ Reporte creado exitosamente.");
+        } catch (Exception e) {
+            vista.mostrarMensaje("Error al crear reporte: " + e.getMessage());
+        }
+    }
+
+    private static void manejarVerReportes(presentacion.view.EstadisticasView vista, aplicacion.services.EstadisticasService estadisticasService) {
+        String usuarioId = vista.solicitarUsuarioId();
+        if (usuarioId.isEmpty()) {
+            vista.mostrarMensaje("Error: ID de usuario no puede estar vacío.");
+            return;
+        }
+
+        try {
+            java.util.List<dominio.estadisticas.ReporteConducta> reportes = estadisticasService.getSistemaModeracion().getReportesUsuario(usuarioId);
+            vista.mostrarReportes(reportes);
+        } catch (Exception e) {
+            vista.mostrarMensaje("Error al obtener reportes: " + e.getMessage());
+        }
+    }
+
+    private static void manejarVerEstadoModeracion(presentacion.view.EstadisticasView vista, aplicacion.services.EstadisticasService estadisticasService) {
+        String usuarioId = vista.solicitarUsuarioId();
+        if (usuarioId.isEmpty()) {
+            vista.mostrarMensaje("Error: ID de usuario no puede estar vacío.");
+            return;
+        }
+
+        try {
+            dominio.estadisticas.SistemaModeracion moderacion = estadisticasService.getSistemaModeracion();
+            vista.mostrarEstadoModeracion(usuarioId, moderacion);
+        } catch (Exception e) {
+            vista.mostrarMensaje("Error al obtener estado de moderación: " + e.getMessage());
         }
     }
 

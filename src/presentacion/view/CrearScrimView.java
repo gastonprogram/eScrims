@@ -7,7 +7,7 @@ import java.util.List;
 import java.util.Scanner;
 
 import dominio.juegos.Juego;
-import dominio.juegos.LeagueOfLegends;
+import dominio.juegos.JuegosRegistry;
 import dominio.valueobjects.formatosScrims.ScrimFormat;
 import infraestructura.matchmaking.MatchmakingRegistry;
 import infraestructura.matchmaking.MatchmakingStrategy;
@@ -35,19 +35,24 @@ public class CrearScrimView {
     }
 
     /**
-     * Solicita al usuario seleccionar un juego.
-     * Por ahora solo League of Legends está disponible.
+     * Solicita al usuario seleccionar un juego de todos los disponibles.
      */
     public Juego solicitarJuego() {
         System.out.println("\n--- Seleccione el Juego ---");
-        System.out.println("1. League of Legends");
+
+        JuegosRegistry registry = JuegosRegistry.getInstance();
+        List<Juego> juegos = registry.getJuegosDisponibles();
+
+        for (int i = 0; i < juegos.size(); i++) {
+            System.out.println((i + 1) + ". " + juegos.get(i).getNombre());
+        }
         System.out.println("0. Cancelar");
         System.out.print("Opción: ");
 
         try {
             int opcion = Integer.parseInt(scanner.nextLine().trim());
-            if (opcion == 1) {
-                return LeagueOfLegends.getInstance();
+            if (opcion >= 1 && opcion <= juegos.size()) {
+                return juegos.get(opcion - 1);
             } else if (opcion == 0) {
                 return null; // Cancelar
             }

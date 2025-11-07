@@ -85,11 +85,11 @@
     }
   },
   {
-    "id": "6a82f267-684e-45e7-bf65-46119a4a1fc5",
+    "id": "7e27918e-9313-4966-8db6-24645a8fe818",
     "username": "organizador1",
     "email": "org1@example.com",
-    "hashedPassword": "c1/G9cWAvYm58mdwYekczY6fMDGVAy5EsWdtelRkPyk\u003d",
-    "salt": "7b4o+rDISFNqhW8lkfoNEw\u003d\u003d",
+    "hashedPassword": "nX3wSH0Z/3Sans3e4I7Z4le70robXQlRaQprqahHR5Q\u003d",
+    "salt": "jc8RDnB8Wc27DlyjwXVnPw\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 70
     },
@@ -100,14 +100,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "6a82f267-684e-45e7-bf65-46119a4a1fc5",
+      "userId": "7e27918e-9313-4966-8db6-24645a8fe818",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3242268"
+      "ultimaActividad": "2025-11-07T15:55:22.6440065"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -125,11 +125,11 @@
     }
   },
   {
-    "id": "eb4990c0-f942-40d1-85d6-3de56fd510ac",
+    "id": "a7991782-31f3-45e6-8136-3da61f934498",
     "username": "user1",
     "email": "user1@example.com",
-    "hashedPassword": "bFhZ9zHLmd66H04x1U7H4WGz519od6KFkN1Es69CEDQ\u003d",
-    "salt": "X97TOjUiORHWa188LvMdSA\u003d\u003d",
+    "hashedPassword": "iAfGbaFjbBk8eyA4q2YkcTTYXeF6SPgQSvJjg464mrI\u003d",
+    "salt": "KKZ5KtKB2Brndexjy4OfKg\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 44
     },
@@ -140,14 +140,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "eb4990c0-f942-40d1-85d6-3de56fd510ac",
+      "userId": "a7991782-31f3-45e6-8136-3da61f934498",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3395784"
+      "ultimaActividad": "2025-11-07T15:55:22.6581565"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -165,11 +165,11 @@
     }
   },
   {
-    "id": "310c2a59-17ca-413d-9169-ef8ac6ca67ff",
+    "id": "3c24fe6d-dd60-4bbd-ae6c-c6614e39853c",
     "username": "user2",
     "email": "user2@example.com",
-    "hashedPassword": "yMtdH7FT4IaCrf5umXd+CQXqyj57pWCIdrpuD2p5tF4\u003d",
-    "salt": "dPGa18IXFHPwrH+wcBv1PA\u003d\u003d",
+    "hashedPassword": "+zFMtIb2sEQuYNOSnm2agmbH2iKSntJfkOY1xdAOfcQ\u003d",
+    "salt": "sV4hBMWyA0c6u4eTAy87KA\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 48
     },
@@ -180,14 +180,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 70,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "310c2a59-17ca-413d-9169-ef8ac6ca67ff",
+      "userId": "3c24fe6d-dd60-4bbd-ae6c-c6614e39853c",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3440934"
+      "ultimaActividad": "2025-11-07T15:55:22.6641789"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -205,11 +205,11 @@
     }
   },
   {
-    "id": "a1540f20-eddf-4431-8545-f10eb299e137",
+    "id": "dddc80e4-86f5-47aa-bef4-8b44a93ca3d7",
     "username": "user3",
     "email": "user3@example.com",
-    "hashedPassword": "85Ro7Wh7LDcfSAZEL5u5lP9tED/wL5lPPXVngFpKPiQ\u003d",
-    "salt": "q+ivV5PYlA2fFMwhGXIuPw\u003d\u003d",
+    "hashedPassword": "22HMANVFyXlPWhjaUae3LhnMknLPPYCkvVI2h+vOicI\u003d",
+    "salt": "H8Z7/pRpUQdkYKYke0Ey8Q\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 52
     },
@@ -220,14 +220,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 90,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "a1540f20-eddf-4431-8545-f10eb299e137",
+      "userId": "dddc80e4-86f5-47aa-bef4-8b44a93ca3d7",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3490942"
+      "ultimaActividad": "2025-11-07T15:55:22.6681845"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -245,11 +245,11 @@
     }
   },
   {
-    "id": "b3ef741f-627a-406b-b70f-e7a5769bad3b",
+    "id": "3a273628-ffe6-4fd7-aae1-098235b4eb81",
     "username": "user4",
     "email": "user4@example.com",
-    "hashedPassword": "T0q8TjcTKe670Y60gM7SA5ONX4HYFphBqvqyl/3Wc5c\u003d",
-    "salt": "u+BzmZrMArZGE4KjlnpreA\u003d\u003d",
+    "hashedPassword": "I9W7DvhnvL61l1Fz08+mDosiB7TkeJ4E4Nd3ktqeRow\u003d",
+    "salt": "ZtPsk9ShgswyOLO7cz0hvQ\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 56
     },
@@ -260,14 +260,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 110,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "b3ef741f-627a-406b-b70f-e7a5769bad3b",
+      "userId": "3a273628-ffe6-4fd7-aae1-098235b4eb81",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3530936"
+      "ultimaActividad": "2025-11-07T15:55:22.6726967"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -285,11 +285,11 @@
     }
   },
   {
-    "id": "c078abba-a8f4-4c2c-b3bc-a5e3cfca602a",
+    "id": "74361005-3a4a-48dd-9c36-d433933b6d6f",
     "username": "user5",
     "email": "user5@example.com",
-    "hashedPassword": "donypfwE0nkhDSR6aegAG0qcKaJ/Ck5PV5AS1VlHSW0\u003d",
-    "salt": "xynodPnmuL7mNu9qeK0WIQ\u003d\u003d",
+    "hashedPassword": "EySyp9qYWcd5461/0V/oaa75gDimClwICBVuEdiq0f4\u003d",
+    "salt": "wHCDxgbQB+VaOzJ4jR71Gw\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 60
     },
@@ -300,14 +300,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 30,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "c078abba-a8f4-4c2c-b3bc-a5e3cfca602a",
+      "userId": "74361005-3a4a-48dd-9c36-d433933b6d6f",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3566305"
+      "ultimaActividad": "2025-11-07T15:55:22.6792074"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -325,11 +325,11 @@
     }
   },
   {
-    "id": "b80a2b07-1d1b-4175-8d9c-3a01758e3b10",
+    "id": "631fdf40-0cb2-49e2-8cc8-1fc36b2e02f3",
     "username": "user6",
     "email": "user6@example.com",
-    "hashedPassword": "pG03Vo+Me9cLRmuxfBatn/TvXZFsShsiPyNdArPJ6hc\u003d",
-    "salt": "NnYF2pFSuSLgVawKUNku8g\u003d\u003d",
+    "hashedPassword": "PBLimTtK5JK/MJWtvStKeH1qV+shWr7/+EZ0xfgUYoY\u003d",
+    "salt": "RV67HbZ4Xj1ptuzwev89Hw\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 64
     },
@@ -340,14 +340,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "b80a2b07-1d1b-4175-8d9c-3a01758e3b10",
+      "userId": "631fdf40-0cb2-49e2-8cc8-1fc36b2e02f3",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.361631"
+      "ultimaActividad": "2025-11-07T15:55:22.6827211"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -365,11 +365,11 @@
     }
   },
   {
-    "id": "b5af1981-b377-4aea-b3ea-37e50fef96fe",
+    "id": "f21786d2-e04b-41bf-bb93-f4a242ec0466",
     "username": "user7",
     "email": "user7@example.com",
-    "hashedPassword": "SlaqIoFZhk5GBDVAuxK6navqVk0QdCdHjWyN3PLsvpo\u003d",
-    "salt": "+6P0jdDrKBELyGGbSX5H/w\u003d\u003d",
+    "hashedPassword": "EQ6PWi52ADVqFGiepU2NocQ2Vu+2SX/Mptrne3Gmxj0\u003d",
+    "salt": "jof9j0vVRxIrKDoXh9TRGQ\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 68
     },
@@ -380,14 +380,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 70,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "b5af1981-b377-4aea-b3ea-37e50fef96fe",
+      "userId": "f21786d2-e04b-41bf-bb93-f4a242ec0466",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3671407"
+      "ultimaActividad": "2025-11-07T15:55:22.6867402"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -405,11 +405,11 @@
     }
   },
   {
-    "id": "678036ac-d286-4c79-b740-1a52d35182f9",
+    "id": "ce53bd37-9270-41eb-aa17-39bcd94d1600",
     "username": "user8",
     "email": "user8@example.com",
-    "hashedPassword": "ZDgE9yoF46SO8OvAbRfBz4FX0OYRDfdrjFrojmehVFU\u003d",
-    "salt": "bQhqdopn8w7o6n/2cnb4Kg\u003d\u003d",
+    "hashedPassword": "7Li9Uu0a/N8dC0onnD9Sf2Bqqn8s6n0Vvp5h35bawjk\u003d",
+    "salt": "KgLPiRauIrndtc1tp6a7Qw\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 72
     },
@@ -420,14 +420,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 90,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "678036ac-d286-4c79-b740-1a52d35182f9",
+      "userId": "ce53bd37-9270-41eb-aa17-39bcd94d1600",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.370142"
+      "ultimaActividad": "2025-11-07T15:55:22.6907424"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -445,11 +445,11 @@
     }
   },
   {
-    "id": "f70e2f3d-10ff-4984-85bc-31786b71b7eb",
+    "id": "56ae8b8c-deef-47a9-afa1-d2efc588dc8c",
     "username": "user9",
     "email": "user9@example.com",
-    "hashedPassword": "vubNz9tpvShMzSyYhSzKxufW8HG3DBkDCSSjNzPbrpU\u003d",
-    "salt": "c5MwPaUQUjqIagEwl94f1A\u003d\u003d",
+    "hashedPassword": "ztWK2yAIvUlDlE96RMe4SS3f2blsr242Ri6hHUkzrhI\u003d",
+    "salt": "zU8Mnv0UfmlEjbQcWH3lnw\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 76
     },
@@ -460,14 +460,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 110,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "f70e2f3d-10ff-4984-85bc-31786b71b7eb",
+      "userId": "56ae8b8c-deef-47a9-afa1-d2efc588dc8c",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3830244"
+      "ultimaActividad": "2025-11-07T15:55:22.7019723"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -485,11 +485,11 @@
     }
   },
   {
-    "id": "ce4daa9d-3bf8-4adc-ae4c-ec7aaa325dfd",
+    "id": "5a445405-529a-4896-882e-d2f98eacb7ff",
     "username": "user10",
     "email": "user10@example.com",
-    "hashedPassword": "WxhVaC0MPPFs7SiTyJEB7ti7Lv3n4H6b840Epywpcms\u003d",
-    "salt": "VjQbnVAgOf8zR5LETOlrmw\u003d\u003d",
+    "hashedPassword": "Vz2tijvHdeQBgcHF2+Q6BfXaQWc7JI7256RdGqlHFX0\u003d",
+    "salt": "i9mGz+Q7p6ff3VxNOlSShA\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 80
     },
@@ -500,14 +500,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 30,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "ce4daa9d-3bf8-4adc-ae4c-ec7aaa325dfd",
+      "userId": "5a445405-529a-4896-882e-d2f98eacb7ff",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3850303"
+      "ultimaActividad": "2025-11-07T15:55:22.7055055"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -525,11 +525,11 @@
     }
   },
   {
-    "id": "ca0f20eb-0505-42a1-b7d8-fb7a4c31fc95",
+    "id": "a404f0eb-e4bb-4e7e-87a8-548fb7cac3da",
     "username": "user11",
     "email": "user11@example.com",
-    "hashedPassword": "D2r3veimgbFiDvqvZrVMC5rKAcRg9CJM3eq+qtXocYA\u003d",
-    "salt": "5+f2WtpbZzbOONxkXQAXlQ\u003d\u003d",
+    "hashedPassword": "+LogbP01wUSVWtcBlUFiyvV0E6oPAyR4u22b6g4B1kg\u003d",
+    "salt": "sAcrS6OFW5IDNmtPKqH8uA\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 84
     },
@@ -540,14 +540,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "ca0f20eb-0505-42a1-b7d8-fb7a4c31fc95",
+      "userId": "a404f0eb-e4bb-4e7e-87a8-548fb7cac3da",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3870343"
+      "ultimaActividad": "2025-11-07T15:55:22.7074996"
     },
     "subscribedEvents": [
       "FINALIZADO",
@@ -565,11 +565,11 @@
     }
   },
   {
-    "id": "368265c2-6a10-4aa7-a43f-806690f3b36a",
+    "id": "59591613-fa1a-4b59-b458-99f9d11ff634",
     "username": "user12",
     "email": "user12@example.com",
-    "hashedPassword": "w8AtgFRuwh3XGKYVagDnD8TjPFUKRRQ7fyu4NrnP3CQ\u003d",
-    "salt": "nqR9dXYBoFpk4AVD2PNeBQ\u003d\u003d",
+    "hashedPassword": "Z/Q0/MJcDJBt+iDTNpoPHy8P1b0VJsZB/7c2rGNtHC8\u003d",
+    "salt": "v/zEErqAjx5QBmKPgznvAw\u003d\u003d",
     "rangoPorJuego": {
       "League of Legends": 88
     },
@@ -580,14 +580,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 70,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 1:16:03 PM",
-    "updatedAt": "Nov 7, 2025, 1:16:03 PM",
+    "createdAt": "Nov 7, 2025, 3:55:22 PM",
+    "updatedAt": "Nov 7, 2025, 3:55:22 PM",
     "historial": {
-      "userId": "368265c2-6a10-4aa7-a43f-806690f3b36a",
+      "userId": "59591613-fa1a-4b59-b458-99f9d11ff634",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T13:16:03.3900355"
+      "ultimaActividad": "2025-11-07T15:55:22.7095006"
     },
     "subscribedEvents": [
       "FINALIZADO",

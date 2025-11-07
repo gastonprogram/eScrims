@@ -7,6 +7,8 @@ import java.util.List;
 import java.util.Scanner;
 
 import dominio.modelo.Scrim;
+import dominio.juegos.JuegosRegistry;
+import dominio.juegos.Juego;
 
 /**
  * Vista para buscar scrims con filtros en consola.
@@ -35,16 +37,28 @@ public class BuscarScrimView {
      */
     public String solicitarJuego() {
         System.out.println("\n--- Filtrar por Juego ---");
-        System.out.println("1. League of Legends");
-        System.out.println("2. Cualquier juego (sin filtro)");
+
+        JuegosRegistry registry = JuegosRegistry.getInstance();
+        List<Juego> juegos = registry.getJuegosDisponibles();
+
+        for (int i = 0; i < juegos.size(); i++) {
+            System.out.println((i + 1) + ". " + juegos.get(i).getNombre());
+        }
+        System.out.println((juegos.size() + 1) + ". Cualquier juego (sin filtro)");
         System.out.print("Opción: ");
 
         String input = scanner.nextLine().trim();
-        if (input.isEmpty() || input.equals("2")) {
-            return null;
+        if (input.isEmpty() || input.equals(String.valueOf(juegos.size() + 1))) {
+            return null; // Sin filtro
         }
-        if (input.equals("1")) {
-            return "League of Legends";
+
+        try {
+            int opcion = Integer.parseInt(input);
+            if (opcion >= 1 && opcion <= juegos.size()) {
+                return juegos.get(opcion - 1).getNombre();
+            }
+        } catch (NumberFormatException e) {
+            // Entrada inválida, sin filtro
         }
 
         return null;
