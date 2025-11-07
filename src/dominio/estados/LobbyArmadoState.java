@@ -57,6 +57,11 @@ public class LobbyArmadoState implements ScrimState {
                     .findFirst()
                     .ifPresent(p -> scrim.getPostulaciones().remove(p));
 
+            // IMPORTANTE: Limpiar todas las confirmaciones cuando volvemos a BUSCANDO
+            // (Alguien no confirmó)
+            // para que cuando se vuelva a llenar, se generen confirmaciones frescas
+            scrim.getConfirmaciones().clear();
+
             // Volver a estado BUSCANDO (falta un jugador)
             scrim.setState(new BuscandoState());
         } else {

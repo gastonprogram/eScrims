@@ -7,7 +7,6 @@ import aplicacion.services.PostulacionService;
 import aplicacion.services.ScrimService;
 import dominio.modelo.Confirmacion;
 import dominio.modelo.Postulacion;
-import presentacion.controller.GestionMatchmakingController;
 import presentacion.view.GestionMatchmakingView;
 import presentacion.view.OrganizadorView;
 
