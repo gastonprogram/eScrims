@@ -393,7 +393,7 @@ public class TestScrimOrganizadorCompleto {
 
         System.out.println("\nConfirmando scrim...");
         organizador.confirmarScrim(); // Este método ya transferirá los roles
-        
+
         System.out.println("✓ Scrim confirmado exitosamente");
         System.out.println("✓ Estado actual: " + organizador.getScrim().getEstado());
         System.out.println("✓ Bloqueado para modificaciones: " + organizador.isBloqueado());
@@ -404,34 +404,34 @@ public class TestScrimOrganizadorCompleto {
      */
     private static void testVerificarPersistenciaRoles(Scrim scrim) {
         System.out.println("Verificando persistencia de roles...");
-        
+
         // Obtener confirmaciones con roles
         List<Confirmacion> confirmacionesConRoles = scrim.getConfirmacionesConRoles();
         List<Confirmacion> todasConfirmaciones = scrim.getConfirmacionesConfirmadas();
-        
+
         System.out.println("Total de confirmaciones: " + todasConfirmaciones.size());
         System.out.println("Confirmaciones con roles: " + confirmacionesConRoles.size());
-        
+
         if (confirmacionesConRoles.isEmpty()) {
             System.out.println("⚠ No se encontraron confirmaciones con roles persistidos");
         } else {
             System.out.println("\n✓ ROLES PERSISTIDOS EN CONFIRMACIONES:");
             for (Confirmacion conf : confirmacionesConRoles) {
-                System.out.printf("  %-12s: %s (Estado: %s)%n", 
-                    conf.getUserId(), 
-                    conf.getRolAsignado().getNombre(),
-                    conf.getEstado());
+                System.out.printf("  %-12s: %s (Estado: %s)%n",
+                        conf.getUserId(),
+                        conf.getRolAsignado().getNombre(),
+                        conf.getEstado());
             }
-            
+
             // Usar el servicio de persistencia para verificar
             String resumen = RolPersistenceService.obtenerResumenRoles(scrim);
             System.out.println("\nResumen desde RolPersistenceService:");
             System.out.println(resumen);
-            
+
             // Estadísticas adicionales
             boolean todosConRoles = RolPersistenceService.todosLosParticipantesTienenRoles(scrim);
             int rolesAsignados = RolPersistenceService.contarRolesAsignados(scrim);
-            
+
             System.out.println("Todos los participantes tienen roles: " + (todosConRoles ? "✓ SÍ" : "✗ NO"));
             System.out.println("Total de roles asignados: " + rolesAsignados);
         }

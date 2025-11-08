@@ -314,7 +314,7 @@ public class AccionesOrganizadorController {
             view.mostrarMensaje("\n⚠️  CONFIRMACIÓN DEL SCRIM");
             view.mostrarMensaje("Los roles asignados se guardarán permanentemente.");
             view.mostrarMensaje("Después de confirmar NO podrás hacer más cambios.");
-            
+
             view.solicitarConfirmacion(
                     "¿Confirmar scrim con roles asignados? (s/n): ");
             String confirmacion = scanner.nextLine();
@@ -322,13 +322,13 @@ public class AccionesOrganizadorController {
             if (confirmacion.toLowerCase().equals("s") || confirmacion.toLowerCase().equals("si")) {
                 // Usar el nuevo método que persiste roles
                 organizadorService.confirmarScrimConRoles(scrimId, usuarioId);
-                
+
                 view.mostrarExito("✅ ¡Scrim confirmado exitosamente con roles persistidos!");
-                
+
                 // Mostrar resumen de roles guardados
                 String resumenRoles = organizadorService.obtenerResumenRoles(scrimId);
                 view.mostrarMensaje("\n" + resumenRoles);
-                
+
             } else {
                 view.mostrarMensaje("Confirmación cancelada");
             }

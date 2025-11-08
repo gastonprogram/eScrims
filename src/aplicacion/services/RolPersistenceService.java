@@ -22,7 +22,7 @@ import dominio.roles.RolJuego;
 public class RolPersistenceService {
 
     /**
-     * Transfiere todos los roles asignados desde ParticipanteScrim 
+     * Transfiere todos los roles asignados desde ParticipanteScrim
      * hacia las Confirmaciones del Scrim para persistirlos.
      * 
      * @param organizador el organizador con los participantes y roles asignados
@@ -42,8 +42,8 @@ public class RolPersistenceService {
             }
         }
 
-        System.out.println("[RolPersistenceService] " + rolesTransferidos + 
-                          " roles transferidos a confirmaciones para persistencia.");
+        System.out.println("[RolPersistenceService] " + rolesTransferidos +
+                " roles transferidos a confirmaciones para persistencia.");
         return rolesTransferidos;
     }
 
@@ -60,12 +60,12 @@ public class RolPersistenceService {
 
         // Buscar la confirmación correspondiente
         for (Confirmacion confirmacion : scrim.getConfirmaciones()) {
-            if (confirmacion.getUserId().equals(userId) && 
-                confirmacion.getEstado() == Confirmacion.EstadoConfirmacion.PENDIENTE) {
-                
+            if (confirmacion.getUserId().equals(userId) &&
+                    confirmacion.getEstado() == Confirmacion.EstadoConfirmacion.PENDIENTE) {
+
                 confirmacion.setRolAsignado(rolAsignado);
-                System.out.println("[RolPersistenceService] Rol " + rolAsignado.getNombre() + 
-                                  " asignado a confirmación de " + userId);
+                System.out.println("[RolPersistenceService] Rol " + rolAsignado.getNombre() +
+                        " asignado a confirmación de " + userId);
                 return true;
             }
         }
@@ -107,8 +107,8 @@ public class RolPersistenceService {
                 .findFirst()
                 .ifPresent(confirmacion -> {
                     confirmacion.setRolAsignado(nuevoRol);
-                    System.out.println("[RolPersistenceService] Rol actualizado en confirmación: " + 
-                                      userId + " -> " + nuevoRol.getNombre());
+                    System.out.println("[RolPersistenceService] Rol actualizado en confirmación: " +
+                            userId + " -> " + nuevoRol.getNombre());
                 });
     }
 
@@ -123,15 +123,15 @@ public class RolPersistenceService {
         resumen.append("=== ROLES ASIGNADOS ===\n");
 
         List<Confirmacion> confirmacionesConRoles = scrim.getConfirmacionesConRoles();
-        
+
         if (confirmacionesConRoles.isEmpty()) {
             resumen.append("No hay roles asignados.\n");
         } else {
             for (Confirmacion confirmacion : confirmacionesConRoles) {
                 resumen.append(confirmacion.getUserId())
-                       .append(": ")
-                       .append(confirmacion.getRolAsignado().getNombre())
-                       .append("\n");
+                        .append(": ")
+                        .append(confirmacion.getRolAsignado().getNombre())
+                        .append("\n");
             }
         }
 
@@ -157,7 +157,7 @@ public class RolPersistenceService {
      */
     public static int contarRolesAsignados(Scrim scrim) {
         return (int) scrim.getConfirmacionesConfirmadas().stream()
-                          .filter(Confirmacion::tieneRolAsignado)
-                          .count();
+                .filter(Confirmacion::tieneRolAsignado)
+                .count();
     }
 }

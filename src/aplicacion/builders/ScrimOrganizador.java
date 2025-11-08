@@ -143,35 +143,36 @@ public class ScrimOrganizador {
             participante.confirmar();
 
             String userId = participante.getUserId();
-            
+
             // Buscar confirmación existente o crear una nueva
             Confirmacion confirmacion = scrim.getConfirmaciones().stream()
                     .filter(conf -> conf.getUserId().equals(userId))
                     .filter(conf -> conf.getEstado() == Confirmacion.EstadoConfirmacion.PENDIENTE)
                     .findFirst()
                     .orElse(null);
-            
+
             // Si no existe confirmación, crear una nueva
             if (confirmacion == null) {
                 confirmacion = new Confirmacion(scrim.getId(), userId);
                 scrim.getConfirmaciones().add(confirmacion);
                 System.out.println("[ScrimOrganizador] Creada nueva confirmación para " + userId);
             }
-            
+
             // Confirmar y transferir rol
             confirmacion.confirmar();
             if (participante.getRolAsignado() != null) {
                 confirmacion.setRolAsignado(participante.getRolAsignado());
-                System.out.println("[ScrimOrganizador] Rol " + 
-                    participante.getRolAsignado().getNombre() + 
-                    " asignado a " + userId + " persistido en confirmación.");
+                System.out.println("[ScrimOrganizador] Rol " +
+                        participante.getRolAsignado().getNombre() +
+                        " asignado a " + userId + " persistido en confirmación.");
             }
         }
 
         // Limpiar el historial ya que no se puede deshacer después de confirmar
         historialAcciones.clear();
 
-        System.out.println("[ScrimOrganizador] Scrim confirmado con roles asignados. No se pueden realizar más cambios.");
+        System.out
+                .println("[ScrimOrganizador] Scrim confirmado con roles asignados. No se pueden realizar más cambios.");
     }
 
     /**

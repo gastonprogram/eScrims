@@ -127,6 +127,7 @@ public class OrganizadorService {
 
     /**
      * Confirma el scrim y bloquea futuras modificaciones.
+     * 
      * @deprecated Usar confirmarScrimConRoles() para persistir roles asignados
      */
     @Deprecated
@@ -157,22 +158,23 @@ public class OrganizadorService {
      */
     public void confirmarScrimConRoles(String scrimId, String organizadorId) {
         ScrimOrganizador organizador = obtenerOrganizadorParaScrim(scrimId, organizadorId);
-        
+
         // Transferir todos los roles a las confirmaciones antes de confirmar
         int rolesTransferidos = RolPersistenceService.transferirRolesAConfirmaciones(
-            organizador, organizador.getScrim());
-        
-        // Confirmar el scrim (esto también transferirá roles, pero ya están sincronizados)
+                organizador, organizador.getScrim());
+
+        // Confirmar el scrim (esto también transferirá roles, pero ya están
+        // sincronizados)
         organizador.confirmarScrim();
-        
+
         // Persistir cambios
         guardarCambios(organizador.getScrim());
-        
+
         // Remover del cache ya que está bloqueado
         organizadoresActivos.remove(scrimId);
-        
-        System.out.println("[OrganizadorService] Scrim confirmado con " + rolesTransferidos + 
-                          " roles persistidos exitosamente.");
+
+        System.out.println("[OrganizadorService] Scrim confirmado con " + rolesTransferidos +
+                " roles persistidos exitosamente.");
     }
 
     /**
@@ -183,7 +185,7 @@ public class OrganizadorService {
         if (scrim == null) {
             throw new IllegalArgumentException("No existe un scrim con ID: " + scrimId);
         }
-        
+
         return RolPersistenceService.obtenerResumenRoles(scrim);
     }
 

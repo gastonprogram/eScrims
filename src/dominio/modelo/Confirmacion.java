@@ -37,7 +37,7 @@ public class Confirmacion {
     private EstadoConfirmacion estado;
     private LocalDateTime fechaSolicitud;
     private LocalDateTime fechaRespuesta;
-    
+
     /**
      * Rol asignado por el organizador del scrim.
      * Se establece cuando el organizador confirma el scrim con roles asignados.
