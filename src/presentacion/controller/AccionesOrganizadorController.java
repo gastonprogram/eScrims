@@ -77,22 +77,22 @@ public class AccionesOrganizadorController {
 
         view.mostrarScrimsDelOrganizador(scrims);
         view.solicitarInput("Selecciona el número del scrim a gestionar (1-" + scrims.size() + "): ");
-        
+
         try {
             int seleccion = scanner.nextInt();
             scanner.nextLine(); // Limpiar buffer
-            
+
             // Verificar que la selección esté en rango
             if (seleccion < 1 || seleccion > scrims.size()) {
                 view.mostrarError("Número fuera de rango. Debe estar entre 1 y " + scrims.size());
                 return;
             }
-            
+
             // Obtener el scrim seleccionado
             Scrim scrimSeleccionado = scrims.get(seleccion - 1);
-            
+
             gestionarScrimEspecifico(scrimSeleccionado.getId(), usuarioId);
-            
+
         } catch (Exception e) {
             view.mostrarError("Por favor ingresa un número válido");
             scanner.nextLine(); // Limpiar buffer en caso de error
@@ -297,16 +297,38 @@ public class AccionesOrganizadorController {
 
     /**
      * Confirma el scrim y lo bloquea para futuras modificaciones.
+     * Los roles asignados se persisten en las confirmaciones.
      */
     private void confirmarScrim(String scrimId, String usuarioId) {
         try {
+            if (organizadorService.estaBloqueado(scrimId, usuarioId)) {
+                view.mostrarError("El scrim ya está confirmado y bloqueado");
+                return;
+            }
+
+            // Mostrar participantes actuales y sus roles
+            List<ParticipanteScrim> participantes = organizadorService.obtenerParticipantes(scrimId, usuarioId);
+            view.mostrarParticipantes(participantes);
+
+            // Mostrar advertencia sobre la confirmación
+            view.mostrarMensaje("\n⚠️  CONFIRMACIÓN DEL SCRIM");
+            view.mostrarMensaje("Los roles asignados se guardarán permanentemente.");
+            view.mostrarMensaje("Después de confirmar NO podrás hacer más cambios.");
+            
             view.solicitarConfirmacion(
-                    "¿Estás seguro de que quieres confirmar el scrim? Esta acción no se puede deshacer. (s/n): ");
+                    "¿Confirmar scrim con roles asignados? (s/n): ");
             String confirmacion = scanner.nextLine();
 
             if (confirmacion.toLowerCase().equals("s") || confirmacion.toLowerCase().equals("si")) {
-                organizadorService.confirmarScrim(scrimId, usuarioId);
-                view.mostrarExito("Scrim confirmado. No se pueden realizar más cambios.");
+                // Usar el nuevo método que persiste roles
+                organizadorService.confirmarScrimConRoles(scrimId, usuarioId);
+                
+                view.mostrarExito("✅ ¡Scrim confirmado exitosamente con roles persistidos!");
+                
+                // Mostrar resumen de roles guardados
+                String resumenRoles = organizadorService.obtenerResumenRoles(scrimId);
+                view.mostrarMensaje("\n" + resumenRoles);
+                
             } else {
                 view.mostrarMensaje("Confirmación cancelada");
             }

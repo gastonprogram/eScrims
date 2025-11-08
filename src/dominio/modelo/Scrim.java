@@ -164,6 +164,31 @@ public class Scrim {
     }
 
     /**
+     * Retorna las confirmaciones confirmadas que tienen roles asignados.
+     * Útil para obtener la formación final del equipo con roles.
+     */
+    public List<Confirmacion> getConfirmacionesConRoles() {
+        return confirmaciones.stream()
+                .filter(Confirmacion::isConfirmada)
+                .filter(Confirmacion::tieneRolAsignado)
+                .toList();
+    }
+
+    /**
+     * Obtiene la confirmación de un usuario específico si está confirmada.
+     * 
+     * @param userId ID del usuario
+     * @return la confirmación del usuario o null si no existe o no está confirmada
+     */
+    public Confirmacion getConfirmacionUsuario(String userId) {
+        return confirmaciones.stream()
+                .filter(conf -> conf.getUserId().equals(userId))
+                .filter(Confirmacion::isConfirmada)
+                .findFirst()
+                .orElse(null);
+    }
+
+    /**
      * Verifica si un usuario ya se postuló a este scrim.
      */
     public boolean yaSePostulo(String userId) {

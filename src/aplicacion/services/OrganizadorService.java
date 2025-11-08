@@ -80,6 +80,7 @@ public class OrganizadorService {
 
     /**
      * Asigna un rol específico a un participante.
+     * Incluye sincronización de roles para persistencia.
      */
     public void asignarRol(String scrimId, String organizadorId, String participanteId, RolJuego nuevoRol) {
         ScrimOrganizador organizador = obtenerOrganizadorParaScrim(scrimId, organizadorId);
@@ -88,12 +89,16 @@ public class OrganizadorService {
         AsignarRolAccion accion = new AsignarRolAccion(participanteId, nuevoRol);
         organizador.ejecutarAccion(accion);
 
+        // Sincronizar roles con confirmaciones para mantener persistencia
+        RolPersistenceService.sincronizarRoles(organizador, organizador.getScrim());
+
         // Persistir cambios
         guardarCambios(organizador.getScrim());
     }
 
     /**
      * Intercambia las posiciones de dos jugadores.
+     * Incluye sincronización de roles para persistencia.
      */
     public void swapJugadores(String scrimId, String organizadorId, String jugador1Id, String jugador2Id) {
         ScrimOrganizador organizador = obtenerOrganizadorParaScrim(scrimId, organizadorId);
@@ -101,6 +106,9 @@ public class OrganizadorService {
         // Crear y ejecutar la acción
         SwapJugadoresAccion accion = new SwapJugadoresAccion(jugador1Id, jugador2Id);
         organizador.ejecutarAccion(accion);
+
+        // Sincronizar roles con confirmaciones para mantener persistencia
+        RolPersistenceService.sincronizarRoles(organizador, organizador.getScrim());
 
         // Persistir cambios
         guardarCambios(organizador.getScrim());
@@ -119,16 +127,11 @@ public class OrganizadorService {
 
     /**
      * Confirma el scrim y bloquea futuras modificaciones.
+     * @deprecated Usar confirmarScrimConRoles() para persistir roles asignados
      */
+    @Deprecated
     public void confirmarScrim(String scrimId, String organizadorId) {
-        ScrimOrganizador organizador = obtenerOrganizadorParaScrim(scrimId, organizadorId);
-        organizador.confirmarScrim();
-
-        // Persistir cambios
-        guardarCambios(organizador.getScrim());
-
-        // Remover del cache ya que está bloqueado
-        organizadoresActivos.remove(scrimId);
+        confirmarScrimConRoles(scrimId, organizadorId);
     }
 
     /**
@@ -145,6 +148,43 @@ public class OrganizadorService {
     public boolean puedeDeshacer(String scrimId, String organizadorId) {
         ScrimOrganizador organizador = obtenerOrganizadorParaScrim(scrimId, organizadorId);
         return organizador.getCantidadAccionesEnHistorial() > 0;
+    }
+
+    /**
+     * Confirma el scrim con persistencia de roles asignados.
+     * Los roles asignados por el organizador se transfieren a las confirmaciones
+     * para que persistan en el sistema después de la confirmación.
+     */
+    public void confirmarScrimConRoles(String scrimId, String organizadorId) {
+        ScrimOrganizador organizador = obtenerOrganizadorParaScrim(scrimId, organizadorId);
+        
+        // Transferir todos los roles a las confirmaciones antes de confirmar
+        int rolesTransferidos = RolPersistenceService.transferirRolesAConfirmaciones(
+            organizador, organizador.getScrim());
+        
+        // Confirmar el scrim (esto también transferirá roles, pero ya están sincronizados)
+        organizador.confirmarScrim();
+        
+        // Persistir cambios
+        guardarCambios(organizador.getScrim());
+        
+        // Remover del cache ya que está bloqueado
+        organizadoresActivos.remove(scrimId);
+        
+        System.out.println("[OrganizadorService] Scrim confirmado con " + rolesTransferidos + 
+                          " roles persistidos exitosamente.");
+    }
+
+    /**
+     * Obtiene un resumen de los roles asignados en el scrim.
+     */
+    public String obtenerResumenRoles(String scrimId) {
+        Scrim scrim = repositorioScrim.buscarPorId(scrimId);
+        if (scrim == null) {
+            throw new IllegalArgumentException("No existe un scrim con ID: " + scrimId);
+        }
+        
+        return RolPersistenceService.obtenerResumenRoles(scrim);
     }
 
     /**

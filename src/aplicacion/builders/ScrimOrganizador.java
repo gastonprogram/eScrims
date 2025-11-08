@@ -133,28 +133,45 @@ public class ScrimOrganizador {
      * ni deshacer las existentes.
      * 
      * También marca a todos los participantes como confirmados y
-     * actualiza las listas del scrim.
+     * actualiza las listas del scrim con los roles asignados.
      */
     public void confirmarScrim() {
         this.bloqueado = true;
 
-        // Confirmar todos los participantes
+        // Confirmar todos los participantes y transferir roles asignados
         for (ParticipanteScrim participante : participantes) {
             participante.confirmar();
 
-            // Buscar la confirmación del participante y marcarla como confirmada
             String userId = participante.getUserId();
-            scrim.getConfirmaciones().stream()
+            
+            // Buscar confirmación existente o crear una nueva
+            Confirmacion confirmacion = scrim.getConfirmaciones().stream()
                     .filter(conf -> conf.getUserId().equals(userId))
                     .filter(conf -> conf.getEstado() == Confirmacion.EstadoConfirmacion.PENDIENTE)
                     .findFirst()
-                    .ifPresent(Confirmacion::confirmar);
+                    .orElse(null);
+            
+            // Si no existe confirmación, crear una nueva
+            if (confirmacion == null) {
+                confirmacion = new Confirmacion(scrim.getId(), userId);
+                scrim.getConfirmaciones().add(confirmacion);
+                System.out.println("[ScrimOrganizador] Creada nueva confirmación para " + userId);
+            }
+            
+            // Confirmar y transferir rol
+            confirmacion.confirmar();
+            if (participante.getRolAsignado() != null) {
+                confirmacion.setRolAsignado(participante.getRolAsignado());
+                System.out.println("[ScrimOrganizador] Rol " + 
+                    participante.getRolAsignado().getNombre() + 
+                    " asignado a " + userId + " persistido en confirmación.");
+            }
         }
 
         // Limpiar el historial ya que no se puede deshacer después de confirmar
         historialAcciones.clear();
 
-        System.out.println("[ScrimOrganizador] Scrim confirmado. No se pueden realizar más cambios.");
+        System.out.println("[ScrimOrganizador] Scrim confirmado con roles asignados. No se pueden realizar más cambios.");
     }
 
     /**

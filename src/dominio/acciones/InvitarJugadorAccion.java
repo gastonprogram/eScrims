@@ -89,10 +89,10 @@ public class InvitarJugadorAccion implements AccionOrganizador {
             dominio.modelo.Postulacion postulacion = new dominio.modelo.Postulacion(
                     organizador.getScrim().getId(),
                     usuario.getId(),
-                    0, // Rango no aplica para invitaciones directas
-                    0 // Latencia no aplica para invitaciones directas
+                    15, // Rango medio que pase validación (entre 1 y 30)
+                    25 // Latencia que pase validación (menor a 50)
             );
-            postulacion.aceptar(); // Pre-aceptada porque es invitación del organizador
+            // No pre-aceptamos la postulación, dejamos que el estado del scrim la maneje
             organizador.getScrim().postular(postulacion);
         }
     }

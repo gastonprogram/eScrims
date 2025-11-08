@@ -50,7 +50,7 @@ public class AccionesOrganizadorView {
         System.out.println("\n" + "=".repeat(60));
         System.out.println("                 TUS SCRIMS");
         System.out.println("=".repeat(60));
-        
+
         for (int i = 0; i < scrims.size(); i++) {
             Scrim scrim = scrims.get(i);
             System.out.printf("%d. ID: %-10s | Juego: %-20s | Estado: %s%n",
@@ -60,7 +60,9 @@ public class AccionesOrganizadorView {
                     scrim.getEstado().toString());
         }
         System.out.println("=".repeat(60));
-    }    /**
+    }
+
+    /**
      * Muestra información detallada del scrim actual.
      */
     public void mostrarInformacionScrim(String scrimId, List<ParticipanteScrim> participantes,
