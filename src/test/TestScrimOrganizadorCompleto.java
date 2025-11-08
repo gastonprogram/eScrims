@@ -14,7 +14,7 @@ import dominio.modelo.Scrim;
 import dominio.modelo.Usuario;
 import dominio.roles.lol.*;
 import dominio.valueobjects.formatosScrims.ScrimFormat;
-import infraestructura.persistencia.implementacion.RepositorioScrimMemoria;
+import infraestructura.persistencia.implementacion.RepositorioScrimJson;
 import infraestructura.persistencia.implementacion.RepositorioUsuarioJSON;
 
 import java.time.LocalDateTime;
@@ -45,7 +45,7 @@ public class TestScrimOrganizadorCompleto {
 
         try {
             // Setup inicial
-            RepositorioScrimMemoria repoScrims = RepositorioScrimMemoria.getInstance();
+            RepositorioScrimJson repoScrims = RepositorioScrimJson.getInstance();
             RepositorioUsuarioJSON repoUsuarios = new RepositorioUsuarioJSON();
             repoScrims.limpiar();
 

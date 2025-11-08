@@ -133,8 +133,64 @@ public class ConfirmacionViewSimplificada {
     // ========== VER MI CONFIRMACIÓN ==========
 
     /**
-     * Solicita el ID del scrim para ver el estado de mi confirmación.
+     * Muestra la lista de scrims donde tengo confirmaciones para seleccionar uno.
      */
+    public void mostrarScrimsConMisConfirmaciones(List<Scrim> scrims, String miUserId) {
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("         📊 MIS CONFIRMACIONES EN SCRIMS");
+        System.out.println("=".repeat(60));
+
+        if (scrims.isEmpty()) {
+            System.out.println("\n📭 No tienes confirmaciones en ningún scrim");
+            System.out.println("   Las confirmaciones aparecen cuando te postulan a un scrim que se llena");
+            return;
+        }
+
+        System.out.printf("\n📋 Tienes confirmaciones en %d scrim(s):\n", scrims.size());
+
+        for (int i = 0; i < scrims.size(); i++) {
+            Scrim scrim = scrims.get(i);
+            System.out.println("\n" + "-".repeat(60));
+            System.out.printf("%d. 📋 ID: %s\n", i + 1, scrim.getId());
+            System.out.printf("   🎮 Juego: %s | Formato: %s\n",
+                    scrim.getJuego().getNombre(),
+                    scrim.getFormato().getFormatName());
+            System.out.printf("   📅 Fecha/Hora: %s\n", scrim.getFechaHora());
+            System.out.printf("   📊 Estado del scrim: %s\n", scrim.getState().getEstado());
+
+            // Buscar mi confirmación en este scrim
+            scrim.getConfirmaciones().stream()
+                    .filter(c -> c.getUserId().equals(miUserId))
+                    .findFirst()
+                    .ifPresent(miConfirmacion -> {
+                        String estadoEmoji = getEstadoEmoji(miConfirmacion.getEstado());
+                        System.out.printf("   %s Mi estado: %s\n", estadoEmoji, miConfirmacion.getEstado());
+                    });
+        }
+
+        System.out.println("-".repeat(60));
+    }
+
+    /**
+     * Solicita el número del scrim para ver mi confirmación.
+     */
+    public int solicitarNumeroScrimParaVer(int cantidadScrims) {
+        System.out.printf("\n📋 Ingrese el número del scrim (1-%d) o '0' para cancelar: ", cantidadScrims);
+        try {
+            String input = scanner.nextLine().trim();
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            return -1; // Valor inválido
+        }
+    }
+
+    /**
+     * Solicita el ID del scrim para ver el estado de mi confirmación.
+     * 
+     * @deprecated Usar selección numerada con mostrarScrimsConMisConfirmaciones() y
+     *             solicitarNumeroScrimParaVer()
+     */
+    @Deprecated
     public String solicitarIdScrimParaVer() {
         System.out.println("\n" + "=".repeat(60));
         System.out.println("           📊 VER ESTADO DE MI CONFIRMACIÓN");

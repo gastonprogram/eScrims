@@ -38,17 +38,17 @@ import infraestructura.persistencia.repository.RepositorioScrim;
  * 
  * @author eScrims Team
  */
-public class RepositorioScrimMemoria implements RepositorioScrim {
+public class RepositorioScrimJson implements RepositorioScrim {
 
     private static final String ARCHIVO_JSON = "data/scrims.json";
     private final Gson gson;
-    private static RepositorioScrimMemoria instance;
+    private static RepositorioScrimJson instance;
     private List<Scrim> scrims;
 
     /**
      * Constructor privado para Singleton.
      */
-    private RepositorioScrimMemoria() {
+    private RepositorioScrimJson() {
         // Configurar Gson con adaptadores para java.time (igual que
         // RepositorioUsuarioJSON)
         DateTimeFormatter dtf = DateTimeFormatter.ISO_LOCAL_DATE_TIME;
@@ -138,9 +138,9 @@ public class RepositorioScrimMemoria implements RepositorioScrim {
      * 
      * @return instancia del repositorio
      */
-    public static synchronized RepositorioScrimMemoria getInstance() {
+    public static synchronized RepositorioScrimJson getInstance() {
         if (instance == null) {
-            instance = new RepositorioScrimMemoria();
+            instance = new RepositorioScrimJson();
         }
         return instance;
     }

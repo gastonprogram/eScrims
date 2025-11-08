@@ -7,7 +7,7 @@ import dominio.juegos.LeagueOfLegends;
 import dominio.modelo.Scrim;
 import dominio.modelo.Usuario;
 import dominio.valueobjects.formatosScrims.ScrimFormat;
-import infraestructura.persistencia.implementacion.RepositorioScrimMemoria;
+import infraestructura.persistencia.implementacion.RepositorioScrimJson;
 import infraestructura.persistencia.implementacion.RepositorioUsuarioJSON;
 
 import java.time.LocalDateTime;
@@ -35,7 +35,7 @@ public class SimulacionCreadorScrim {
         System.out.println("--- INICIANDO SIMULACIÓN (CREADOR) ---");
 
         // Repositorios y servicios
-        RepositorioScrimMemoria repoScrims = RepositorioScrimMemoria.getInstance();
+        RepositorioScrimJson repoScrims = RepositorioScrimJson.getInstance();
         RepositorioUsuarioJSON repoUsuarios = new RepositorioUsuarioJSON();
 
         ScrimService scrimService = new ScrimService(repoScrims);

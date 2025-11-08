@@ -48,8 +48,59 @@ public class OrganizadorView {
     // ========== GESTIÓN DE POSTULACIONES ==========
 
     /**
-     * Solicita el ID del scrim a gestionar.
+     * Muestra los scrims del organizador y permite seleccionar uno por número.
      */
+    public void mostrarMisScrims(List<dominio.modelo.Scrim> scrims) {
+        System.out.println("\n" + "=".repeat(60));
+        System.out.println("              👑 MIS SCRIMS COMO ORGANIZADOR");
+        System.out.println("=".repeat(60));
+
+        if (scrims.isEmpty()) {
+            System.out.println("\n📭 No tienes scrims como organizador");
+            System.out.println("   Puedes crear uno desde el menú principal");
+            return;
+        }
+
+        System.out.printf("\n📋 Tienes %d scrim(s) como organizador:\n", scrims.size());
+
+        for (int i = 0; i < scrims.size(); i++) {
+            dominio.modelo.Scrim scrim = scrims.get(i);
+            System.out.println("\n" + "-".repeat(60));
+            System.out.printf("%d. 📋 ID: %s\n", i + 1, scrim.getId());
+            System.out.printf("   🎮 Juego: %s | Formato: %s\n",
+                    scrim.getJuego().getNombre(),
+                    scrim.getFormato().getFormatName());
+            System.out.printf("   📅 Fecha/Hora: %s\n", scrim.getFechaHora());
+            System.out.printf("   📊 Estado: %s\n", scrim.getState().getEstado());
+            
+            // Mostrar estadísticas rápidas
+            int postulaciones = scrim.getPostulaciones().size();
+            int confirmaciones = scrim.getConfirmaciones().size();
+            System.out.printf("   📨 Postulaciones: %d | ✅ Confirmaciones: %d\n", postulaciones, confirmaciones);
+        }
+
+        System.out.println("-".repeat(60));
+    }
+
+    /**
+     * Solicita el número del scrim a gestionar.
+     */
+    public int solicitarNumeroScrim(int cantidadScrims) {
+        System.out.printf("\n📋 Ingrese el número del scrim (1-%d) o '0' para cancelar: ", cantidadScrims);
+        try {
+            String input = scanner.nextLine().trim();
+            return Integer.parseInt(input);
+        } catch (NumberFormatException e) {
+            return -1; // Valor inválido
+        }
+    }
+
+    /**
+     * Solicita el ID del scrim a gestionar.
+     * 
+     * @deprecated Usar selección numerada con mostrarMisScrims() y solicitarNumeroScrim()
+     */
+    @Deprecated
     public String solicitarIdScrim() {
         System.out.print("\n📋 ID del scrim: ");
         return scanner.nextLine().trim();
