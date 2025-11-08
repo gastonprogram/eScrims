@@ -84,10 +84,10 @@ public class OrganizadorController {
         try {
             // 1. Obtener mis scrims como organizador
             List<dominio.modelo.Scrim> misScrims = scrimService.obtenerScrimsPorOrganizador(organizadorId);
-            
+
             // 2. Mostrar lista numerada de mis scrims
             view.mostrarMisScrims(misScrims);
-            
+
             // Si no hay scrims, salir
             if (misScrims.isEmpty()) {
                 return;
@@ -136,10 +136,10 @@ public class OrganizadorController {
         try {
             // 1. Obtener mis scrims como organizador
             List<dominio.modelo.Scrim> misScrims = scrimService.obtenerScrimsPorOrganizador(organizadorId);
-            
+
             // 2. Mostrar lista numerada de mis scrims
             view.mostrarMisScrims(misScrims);
-            
+
             // Si no hay scrims, salir
             if (misScrims.isEmpty()) {
                 return;
@@ -239,10 +239,10 @@ public class OrganizadorController {
         try {
             // 1. Obtener mis scrims como organizador
             List<dominio.modelo.Scrim> misScrims = scrimService.obtenerScrimsPorOrganizador(organizadorId);
-            
+
             // 2. Mostrar lista numerada de mis scrims
             view.mostrarMisScrims(misScrims);
-            
+
             // Si no hay scrims, salir
             if (misScrims.isEmpty()) {
                 return;
@@ -293,10 +293,10 @@ public class OrganizadorController {
         try {
             // 1. Obtener mis scrims como organizador
             List<dominio.modelo.Scrim> misScrims = scrimService.obtenerScrimsPorOrganizador(organizadorId);
-            
+
             // 2. Mostrar lista numerada de mis scrims
             view.mostrarMisScrims(misScrims);
-            
+
             // Si no hay scrims, salir
             if (misScrims.isEmpty()) {
                 return;

@@ -5,6 +5,8 @@ import dominio.estadisticas.EstadisticasScrim;
 import dominio.estadisticas.EstadisticasJugador;
 import dominio.estadisticas.ReporteConducta;
 import dominio.estadisticas.Comentario;
+import dominio.juegos.Juego;
+import dominio.valueobjects.formatosScrims.ScrimFormat;
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
 import com.google.gson.TypeAdapter;
@@ -12,6 +14,8 @@ import com.google.gson.stream.JsonReader;
 import com.google.gson.stream.JsonWriter;
 import com.google.gson.stream.JsonToken;
 import com.google.gson.reflect.TypeToken;
+import infraestructura.persistencia.adapters.JuegoAdapter;
+import infraestructura.persistencia.adapters.ScrimFormatAdapter;
 import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
@@ -42,6 +46,8 @@ public class RepositorioEstadisticasJSON implements RepositorioEstadisticas {
         this.gson = new GsonBuilder()
                 .setPrettyPrinting()
                 .registerTypeAdapter(LocalDateTime.class, new LocalDateTimeAdapter())
+                .registerTypeAdapter(Juego.class, new JuegoAdapter())
+                .registerTypeAdapter(ScrimFormat.class, new ScrimFormatAdapter())
                 .create();
         cargarDatos();
     }

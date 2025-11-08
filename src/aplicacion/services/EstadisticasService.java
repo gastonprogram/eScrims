@@ -76,6 +76,13 @@ public class EstadisticasService {
     }
 
     /**
+     * Actualiza las estadísticas de un scrim en la persistencia.
+     */
+    public void actualizarEstadisticas(EstadisticasScrim estadisticas) {
+        repositorioEstadisticas.actualizarEstadisticasScrim(estadisticas);
+    }
+
+    /**
      * Obtiene todas las estadísticas de scrims guardadas.
      */
     public List<EstadisticasScrim> obtenerTodasLasEstadisticasScrims() {

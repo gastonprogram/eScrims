@@ -72,7 +72,7 @@ public class OrganizadorView {
                     scrim.getFormato().getFormatName());
             System.out.printf("   📅 Fecha/Hora: %s\n", scrim.getFechaHora());
             System.out.printf("   📊 Estado: %s\n", scrim.getState().getEstado());
-            
+
             // Mostrar estadísticas rápidas
             int postulaciones = scrim.getPostulaciones().size();
             int confirmaciones = scrim.getConfirmaciones().size();
@@ -98,7 +98,8 @@ public class OrganizadorView {
     /**
      * Solicita el ID del scrim a gestionar.
      * 
-     * @deprecated Usar selección numerada con mostrarMisScrims() y solicitarNumeroScrim()
+     * @deprecated Usar selección numerada con mostrarMisScrims() y
+     *             solicitarNumeroScrim()
      */
     @Deprecated
     public String solicitarIdScrim() {

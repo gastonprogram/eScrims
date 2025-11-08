@@ -85,14 +85,13 @@ public class EstadisticasView {
 
     public void mostrarMenuCompleto() {
         System.out.println("\n=== MÓDULO DE ESTADÍSTICAS Y MODERACIÓN ===");
-        System.out.println("1. Registrar estadísticas de jugador");
-        System.out.println("2. Ver estadísticas de scrim");
-        System.out.println("3. Finalizar scrim en juego");
-        System.out.println("4. Reportar conducta");
-        System.out.println("5. Ver reportes de un usuario");
-        System.out.println("6. Ver estado de moderación de un usuario");
-        System.out.println("7. Gestionar comentarios");
-        System.out.println("8. Volver al menú principal");
+        System.out.println("1. Ver estadísticas de mis scrims");
+        System.out.println("2. Finalizar scrim en juego");
+        System.out.println("3. Reportar conducta");
+        System.out.println("4. Ver reportes de un usuario");
+        System.out.println("5. Ver estado de moderación de un usuario");
+        System.out.println("6. Gestionar comentarios");
+        System.out.println("7. Volver al menú principal");
         System.out.print("Seleccione una opción: ");
     }
 

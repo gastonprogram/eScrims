@@ -489,34 +489,30 @@ public class Main {
 
                 switch (opcion) {
                     case 1:
-                        // Registrar estadísticas de jugador (legacy)
-                        manejarRegistroEstadisticas(vista);
-                        break;
-                    case 2:
-                        // Ver estadísticas de scrim
+                        // Ver estadísticas de mis scrims
                         manejarVerEstadisticasScrim(vista, estadisticasService, scrimService);
                         break;
-                    case 3:
+                    case 2:
                         // Finalizar scrim en juego
                         manejarFinalizarScrimEnJuego(vista, estadisticasService, scrimService);
                         break;
-                    case 4:
+                    case 3:
                         // Reportar conducta
                         manejarReporteConducata(vista, estadisticasService, usuario);
                         break;
-                    case 5:
+                    case 4:
                         // Ver reportes de un usuario
                         manejarVerReportes(vista, estadisticasService);
                         break;
-                    case 6:
+                    case 5:
                         // Ver estado de moderación de un usuario
                         manejarVerEstadoModeracion(vista, estadisticasService);
                         break;
-                    case 7:
+                    case 6:
                         // Gestionar comentarios
                         manejarGestionComentarios(vista, estadisticasService, usuario);
                         break;
-                    case 8:
+                    case 7:
                         salir = true;
                         break;
                     default:
@@ -531,68 +527,42 @@ public class Main {
         }
     }
 
-    private static void manejarRegistroEstadisticas(presentacion.view.EstadisticasView vista) {
-        vista.mostrarMensaje("=== REGISTRO DE ESTADÍSTICAS ===");
-
-        String usuarioId = vista.solicitarUsuarioId();
-        if (usuarioId.isEmpty()) {
-            vista.mostrarMensaje("Error: ID de usuario no puede estar vacío.");
-            return;
-        }
-
-        try {
-            // Crear estadísticas de ejemplo usando la nueva estructura integrada
-            dominio.estadisticas.EstadisticasScrim estadisticas = new dominio.estadisticas.EstadisticasScrim(
-                    "scrim-demo");
-
-            // Registrar estadísticas del jugador directamente en el scrim
-            estadisticas.registrarEstadisticasJugador(usuarioId, 5, 8, 2, 85);
-
-            // Designar como MVP si las estadísticas son buenas
-            estadisticas.designarMVP(usuarioId);
-
-            vista.mostrarResumen(estadisticas);
-            vista.mostrarMensaje("✓ Estadísticas registradas exitosamente.");
-        } catch (Exception e) {
-            vista.mostrarMensaje("Error al registrar estadísticas: " + e.getMessage());
-        }
-    }
-
     private static void manejarVerEstadisticasScrim(presentacion.view.EstadisticasView vista,
             aplicacion.services.EstadisticasService estadisticasService,
             aplicacion.services.ScrimService scrimService) {
 
         try {
-            // Obtener lista de todos los scrims disponibles
-            java.util.List<dominio.modelo.Scrim> todosLosScrims = repositorioScrims.obtenerTodos();
+            Usuario usuario = authService.getUsuarioLogueado();
+
+            // Obtener solo los scrims del usuario logueado que tengan estadísticas
+            java.util.List<dominio.modelo.Scrim> misScrimsConEstadisticas = repositorioScrims.obtenerTodos().stream()
+                    .filter(scrim -> scrim.getCreatedBy().equals(usuario.getId())) // Solo mis scrims
+                    .filter(scrim -> "FINALIZADO".equals(scrim.getEstado())) // Solo finalizados
+                    .filter(scrim -> estadisticasService.buscarEstadisticas(scrim.getId()).isPresent()) // Solo con
+                                                                                                        // estadísticas
+                    .toList();
+
+            if (misScrimsConEstadisticas.isEmpty()) {
+                vista.mostrarMensaje("No tienes scrims finalizados con estadísticas.");
+                vista.mostrarMensaje("Las estadísticas se generan automáticamente al finalizar un scrim.");
+                return;
+            }
 
             // Permitir al usuario seleccionar por número en lugar de escribir ID
-            String scrimId = vista.seleccionarScrimDeNumero(todosLosScrims);
+            String scrimId = vista.seleccionarScrimDeNumero(misScrimsConEstadisticas);
 
             if (scrimId == null) {
                 vista.mostrarMensaje("Operación cancelada.");
                 return;
             }
 
-            // Buscar primero en estadísticas existentes
+            // Buscar las estadísticas existentes
             java.util.Optional<dominio.estadisticas.EstadisticasScrim> estadisticasOpt = estadisticasService
                     .buscarEstadisticas(scrimId);
             if (estadisticasOpt.isPresent()) {
                 vista.mostrarEstadisticasScrim(estadisticasOpt.get());
             } else {
-                // Intentar obtener el scrim del repositorio para crear estadísticas
-                try {
-                    dominio.modelo.Scrim scrim = scrimService.buscarPorId(scrimId);
-                    if (scrim != null) {
-                        dominio.estadisticas.EstadisticasScrim estadisticas = estadisticasService
-                                .obtenerEstadisticasParaScrim(scrim);
-                        vista.mostrarEstadisticasScrim(estadisticas);
-                    } else {
-                        vista.mostrarMensaje("No se encontró el scrim con ID: " + scrimId);
-                    }
-                } catch (RuntimeException e) {
-                    vista.mostrarMensaje("No se encontró el scrim con ID: " + scrimId);
-                }
+                vista.mostrarMensaje("No se encontraron estadísticas para este scrim.");
             }
         } catch (Exception e) {
             vista.mostrarMensaje("Error al obtener estadísticas: " + e.getMessage());
