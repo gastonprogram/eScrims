@@ -92,8 +92,9 @@ public class EstadisticasView {
             System.out.println("Fin: " + estadisticas.getFechaHoraFin());
             System.out.println("Duración: " + estadisticas.getDuracionMinutos() + " minutos");
         }
-        System.out.println("Ganador: " + (estadisticas.getGanador() != null ? estadisticas.getGanador() : "Sin determinar"));
-        
+        System.out.println(
+                "Ganador: " + (estadisticas.getGanador() != null ? estadisticas.getGanador() : "Sin determinar"));
+
         System.out.println("\n=== ESTADÍSTICAS DE EQUIPOS ===");
         if (!estadisticas.getVictoriasPorEquipo().isEmpty()) {
             System.out.println("Equipo | Victorias | Derrotas");
@@ -110,14 +111,13 @@ public class EstadisticasView {
         System.out.println("Total participantes: " + estadisticas.getParticipantesTotales());
         System.out.println("Abandonos: " + estadisticas.getParticipantesAbandonaron());
         System.out.printf("Tasa de abandono: %.2f%%%n", estadisticas.calcularTasaAbandono());
-        
+
         System.out.println("\n=== REPORTES DE CONDUCTA ===");
         System.out.println("Total de reportes: " + estadisticas.getReportes().size());
         if (!estadisticas.getReportes().isEmpty()) {
             System.out.println("\nReportes:");
-            estadisticas.getReportes().forEach(reporte -> 
-                System.out.println("- " + reporte.getTipo() + " (" + reporte.getGravedad() + "): " + reporte.getDescripcion())
-            );
+            estadisticas.getReportes().forEach(reporte -> System.out.println(
+                    "- " + reporte.getTipo() + " (" + reporte.getGravedad() + "): " + reporte.getDescripcion()));
         }
     }
 
@@ -128,19 +128,18 @@ public class EstadisticasView {
         }
 
         System.out.println("\n=== REPORTES DE CONDUCTA ===");
-        System.out.printf("%-10s | %-15s | %-20s | %-15s | %-10s | %-30s%n", 
-            "ID", "Usuario", "Tipo", "Gravedad", "Estado", "Descripción");
+        System.out.printf("%-10s | %-15s | %-20s | %-15s | %-10s | %-30s%n",
+                "ID", "Usuario", "Tipo", "Gravedad", "Estado", "Descripción");
         System.out.println("-".repeat(110));
-        
+
         for (ReporteConducta reporte : reportes) {
             System.out.printf("%-10s | %-15s | %-20s | %-15s | %-10s | %-30s%n",
-                reporte.getId().substring(0, 8),
-                reporte.getUsuarioReportadoId(),
-                reporte.getTipo(),
-                reporte.getGravedad(),
-                reporte.isRevisado() ? (reporte.isSancionado() ? "Sancionado" : "Revisado") : "Pendiente",
-                reporte.getDescripcion().substring(0, Math.min(30, reporte.getDescripcion().length()))
-            );
+                    reporte.getId().substring(0, 8),
+                    reporte.getUsuarioReportadoId(),
+                    reporte.getTipo(),
+                    reporte.getGravedad(),
+                    reporte.isRevisado() ? (reporte.isSancionado() ? "Sancionado" : "Revisado") : "Pendiente",
+                    reporte.getDescripcion().substring(0, Math.min(30, reporte.getDescripcion().length())));
         }
     }
 
@@ -149,7 +148,7 @@ public class EstadisticasView {
         System.out.println("Usuario: " + usuarioId);
         System.out.println("Strikes actuales: " + moderacion.getStrikes(usuarioId));
         System.out.println("Total reportes: " + moderacion.getReportesUsuario(usuarioId).size());
-        
+
         if (moderacion.estaPenalizado(usuarioId)) {
             long horasRestantes = moderacion.getTiempoRestantePenalizacion(usuarioId);
             System.out.println("🔴 PENALIZADO - Horas restantes: " + horasRestantes);
@@ -177,7 +176,7 @@ public class EstadisticasView {
             System.out.println((i + 1) + ". " + tipos[i]);
         }
         System.out.print("Seleccione tipo de reporte (1-" + tipos.length + "): ");
-        
+
         try {
             int opcion = Integer.parseInt(scanner.nextLine());
             if (opcion >= 1 && opcion <= tipos.length) {
@@ -186,7 +185,7 @@ public class EstadisticasView {
         } catch (NumberFormatException e) {
             // Fall through to default
         }
-        
+
         System.out.println("Opción inválida, usando OTRO por defecto.");
         return ReporteConducta.TipoReporte.OTRO;
     }
@@ -198,7 +197,7 @@ public class EstadisticasView {
             System.out.println((i + 1) + ". " + gravedades[i]);
         }
         System.out.print("Seleccione gravedad (1-" + gravedades.length + "): ");
-        
+
         try {
             int opcion = Integer.parseInt(scanner.nextLine());
             if (opcion >= 1 && opcion <= gravedades.length) {
@@ -207,7 +206,7 @@ public class EstadisticasView {
         } catch (NumberFormatException e) {
             // Fall through to default
         }
-        
+
         System.out.println("Opción inválida, usando LEVE por defecto.");
         return ReporteConducta.Gravedad.LEVE;
     }

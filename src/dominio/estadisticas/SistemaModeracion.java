@@ -14,7 +14,7 @@ import java.util.*;
 public class SistemaModeracion {
     private static final int MAX_STRIKES = 3;
     private static final int COOLDOWN_HORAS = 24;
-    
+
     private Map<String, Integer> strikesPorUsuario;
     private Map<String, LocalDateTime> cooldownUsuarios;
     private Map<String, List<ReporteConducta>> reportesPorUsuario;
@@ -29,15 +29,15 @@ public class SistemaModeracion {
 
     public void registrarReporte(ReporteConducta reporte) {
         String usuarioId = reporte.getUsuarioReportadoId();
-        
+
         // Agregar a la lista de reportes del usuario
         reportesPorUsuario.computeIfAbsent(usuarioId, k -> new ArrayList<>()).add(reporte);
-        
+
         // Aplicar strike si corresponde
         if (reporte.getGravedad() != ReporteConducta.Gravedad.LEVE) {
             int strikes = strikesPorUsuario.getOrDefault(usuarioId, 0) + 1;
             strikesPorUsuario.put(usuarioId, strikes);
-            
+
             if (strikes >= MAX_STRIKES) {
                 aplicarPenalizacion(usuarioId, strikes);
             }
@@ -48,7 +48,7 @@ public class SistemaModeracion {
         int horasPenalizacion = strikes * 24; // 24h por cada strike
         LocalDateTime finPenalizacion = LocalDateTime.now().plusHours(horasPenalizacion);
         penalizacionesActivas.put(usuarioId, finPenalizacion);
-        
+
         // Reiniciar strikes después de aplicar penalización
         strikesPorUsuario.put(usuarioId, 0);
     }
@@ -104,11 +104,11 @@ public class SistemaModeracion {
 
     public void limpiarReportesAntiguos(int dias) {
         LocalDateTime limite = LocalDateTime.now().minusDays(dias);
-        
+
         reportesPorUsuario.forEach((usuarioId, reportes) -> {
             reportes.removeIf(reporte -> reporte.getFechaHora().isBefore(limite));
         });
-        
+
         // Limpiar usuarios sin reportes
         reportesPorUsuario.entrySet().removeIf(entry -> entry.getValue().isEmpty());
     }

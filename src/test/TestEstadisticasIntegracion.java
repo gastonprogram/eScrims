@@ -23,14 +23,13 @@ public class TestEstadisticasIntegracion {
 
         // Crear un scrim de prueba
         Scrim scrim = new Scrim(
-            LeagueOfLegends.getInstance(),
-            new Formato5v5LoL(),
-            LocalDateTime.now().plusHours(1),
-            40, 80,
-            new ArrayList<>(),
-            200, 10
-        );
-        
+                LeagueOfLegends.getInstance(),
+                new Formato5v5LoL(),
+                LocalDateTime.now().plusHours(1),
+                40, 80,
+                new ArrayList<>(),
+                200, 10);
+
         System.out.println("Scrim creado: " + scrim.getId());
 
         // 1. Registrar resultado
@@ -40,13 +39,12 @@ public class TestEstadisticasIntegracion {
 
         // 2. Reportar conducta tóxica
         estadisticasService.reportarConducta(
-            scrim.getId(),
-            ReporteConducta.TipoReporte.ABUSO_VERBAL,
-            ReporteConducta.Gravedad.MODERADO,
-            "usuario123",
-            "reportador456",
-            "Lenguaje inapropiado durante la partida"
-        );
+                scrim.getId(),
+                ReporteConducta.TipoReporte.ABUSO_VERBAL,
+                ReporteConducta.Gravedad.MODERADO,
+                "usuario123",
+                "reportador456",
+                "Lenguaje inapropiado durante la partida");
 
         // 3. Verificar reporte
         System.out.println("Reportes totales en scrim: " + stats.getTotalReportes());
@@ -58,22 +56,20 @@ public class TestEstadisticasIntegracion {
 
         // 5. Reportar otro incidente grave para superar strikes
         estadisticasService.reportarConducta(
-            scrim.getId(),
-            ReporteConducta.TipoReporte.FEED_INTENCIONAL,
-            ReporteConducta.Gravedad.GRAVE,
-            "usuario123",
-            "reportador789",
-            "Feed intencional durante toda la partida"
-        );
+                scrim.getId(),
+                ReporteConducta.TipoReporte.FEED_INTENCIONAL,
+                ReporteConducta.Gravedad.GRAVE,
+                "usuario123",
+                "reportador789",
+                "Feed intencional durante toda la partida");
 
         estadisticasService.reportarConducta(
-            scrim.getId(),
-            ReporteConducta.TipoReporte.ABANDONO,
-            ReporteConducta.Gravedad.GRAVE,
-            "usuario123",
-            "reportador101",
-            "Abandonó la partida sin avisar"
-        );
+                scrim.getId(),
+                ReporteConducta.TipoReporte.ABANDONO,
+                ReporteConducta.Gravedad.GRAVE,
+                "usuario123",
+                "reportador101",
+                "Abandonó la partida sin avisar");
 
         strikes = moderacion.getStrikes("usuario123");
         boolean penalizado = moderacion.estaPenalizado("usuario123");

@@ -92,15 +92,47 @@ public class EstadisticasScrim {
     }
 
     // Getters
-    public String getScrimId() { return scrimId; }
-    public Map<String, Integer> getVictoriasPorEquipo() { return victoriasPorEquipo; }
-    public Map<String, Integer> getDerrotasPorEquipo() { return derrotasPorEquipo; }
-    public Map<String, Integer> getPuntuacionPromedio() { return puntuacionPromedio; }
-    public List<ReporteConducta> getReportes() { return reportes; }
-    public LocalDateTime getFechaHoraInicio() { return fechaHoraInicio; }
-    public LocalDateTime getFechaHoraFin() { return fechaHoraFin; }
-    public String getGanador() { return ganador; }
-    public int getDuracionMinutos() { return duracionMinutos; }
-    public int getParticipantesTotales() { return participantesTotales; }
-    public int getParticipantesAbandonaron() { return participantesAbandonaron; }
+    public String getScrimId() {
+        return scrimId;
+    }
+
+    public Map<String, Integer> getVictoriasPorEquipo() {
+        return victoriasPorEquipo;
+    }
+
+    public Map<String, Integer> getDerrotasPorEquipo() {
+        return derrotasPorEquipo;
+    }
+
+    public Map<String, Integer> getPuntuacionPromedio() {
+        return puntuacionPromedio;
+    }
+
+    public List<ReporteConducta> getReportes() {
+        return reportes;
+    }
+
+    public LocalDateTime getFechaHoraInicio() {
+        return fechaHoraInicio;
+    }
+
+    public LocalDateTime getFechaHoraFin() {
+        return fechaHoraFin;
+    }
+
+    public String getGanador() {
+        return ganador;
+    }
+
+    public int getDuracionMinutos() {
+        return duracionMinutos;
+    }
+
+    public int getParticipantesTotales() {
+        return participantesTotales;
+    }
+
+    public int getParticipantesAbandonaron() {
+        return participantesAbandonaron;
+    }
 }

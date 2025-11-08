@@ -39,8 +39,9 @@ public class EstadisticasService {
      * Registra un reporte de conducta y lo envía al sistema de moderación.
      */
     public void reportarConducta(String scrimId, ReporteConducta.TipoReporte tipo, ReporteConducta.Gravedad gravedad,
-                                 String usuarioReportadoId, String usuarioReportadorId, String descripcion) {
-        ReporteConducta reporte = new ReporteConducta(scrimId, usuarioReportadoId, usuarioReportadorId, tipo, gravedad, descripcion);
+            String usuarioReportadoId, String usuarioReportadorId, String descripcion) {
+        ReporteConducta reporte = new ReporteConducta(scrimId, usuarioReportadoId, usuarioReportadorId, tipo, gravedad,
+                descripcion);
         // almacenar en estadisticas
         EstadisticasScrim e = estadisticasPorScrim.computeIfAbsent(scrimId, id -> new EstadisticasScrim(id));
         e.agregarReporte(reporte);

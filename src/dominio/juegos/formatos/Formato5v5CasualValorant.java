@@ -14,7 +14,7 @@ import dominio.valueobjects.formatosScrims.ScrimFormat;
 public class Formato5v5CasualValorant implements ScrimFormat {
 
     private static final int PLAYERS_PER_TEAM = 5;
-    private static final String FORMAT_NAME = "5v5 Casual";
+    private static final String FORMAT_NAME = "5v5 Casual Valorant";
 
     /**
      * Obtiene la cantidad de jugadores por equipo.

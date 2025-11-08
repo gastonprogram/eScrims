@@ -1,8 +1,7 @@
 package infraestructura.persistencia.adapters;
 
 import com.google.gson.*;
-import dominio.juegos.formatos.Formato5v5LoL;
-import dominio.juegos.formatos.FormatoARAMLoL;
+import dominio.juegos.formatos.*;
 import dominio.valueobjects.formatosScrims.ScrimFormat;
 
 import java.lang.reflect.Type;
@@ -37,13 +36,29 @@ public class ScrimFormatAdapter implements JsonSerializer<ScrimFormat>, JsonDese
 
         // Reconstruir la instancia del formato según el nombre
         switch (nombreFormato) {
-            case "Summoner's Rift 5v5":
+            // League of Legends
+            case "5v5 Summoner's Rift":
                 return new Formato5v5LoL();
-            case "ARAM 5v5":
+            case "5v5 ARAM":
                 return new FormatoARAMLoL();
+
+            // Counter-Strike
+            case "5v5 Competitive CS":
+                return new Formato5v5CompetitiveCS();
+            case "2v2 Wingman CS":
+                return new Formato2v2WingmanCS();
+
+            // Valorant
+            case "5v5 Casual Valorant":
+                return new Formato5v5CasualValorant();
+            case "5v5 Swift Valorant":
+                return new Formato5v5SwiftValorant();
+            case "5v5 Competitive Valorant":
+                return new Formato5v5CompetitiveValorant();
+
             // Aquí se pueden agregar más formatos en el futuro
             default:
-                System.err.println("Formato desconocido: " + nombreFormato + ". Usando 5v5 por defecto.");
+                System.err.println("Formato desconocido: " + nombreFormato + ". Usando 5v5 LoL por defecto.");
                 return new Formato5v5LoL();
         }
     }

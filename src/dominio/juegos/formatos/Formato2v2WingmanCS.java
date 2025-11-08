@@ -14,7 +14,7 @@ import dominio.valueobjects.formatosScrims.ScrimFormat;
 public class Formato2v2WingmanCS implements ScrimFormat {
 
     private static final int PLAYERS_PER_TEAM = 2;
-    private static final String FORMAT_NAME = "2v2 Wingman";
+    private static final String FORMAT_NAME = "2v2 Wingman CS";
 
     /**
      * Obtiene la cantidad de jugadores por equipo.

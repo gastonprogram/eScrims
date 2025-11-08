@@ -34,7 +34,7 @@ public class ReporteConducta {
     private String comentariosModerador;
 
     public ReporteConducta(String scrimId, String usuarioReportadoId, String usuarioReportadorId,
-                           TipoReporte tipo, Gravedad gravedad, String descripcion) {
+            TipoReporte tipo, Gravedad gravedad, String descripcion) {
         this.id = UUID.randomUUID().toString();
         this.scrimId = scrimId;
         this.usuarioReportadoId = usuarioReportadoId;
@@ -48,21 +48,61 @@ public class ReporteConducta {
     }
 
     // Getters y Setters
-    public String getId() { return id; }
-    public String getScrimId() { return scrimId; }
-    public String getUsuarioReportadoId() { return usuarioReportadoId; }
-    public String getUsuarioReportadorId() { return usuarioReportadorId; }
-    public TipoReporte getTipo() { return tipo; }
-    public Gravedad getGravedad() { return gravedad; }
-    public String getDescripcion() { return descripcion; }
-    public LocalDateTime getFechaHora() { return fechaHora; }
-    public boolean isRevisado() { return revisado; }
-    public boolean isSancionado() { return sancionado; }
-    public String getComentariosModerador() { return comentariosModerador; }
+    public String getId() {
+        return id;
+    }
 
-    public void setRevisado(boolean revisado) { this.revisado = revisado; }
-    public void setSancionado(boolean sancionado) { this.sancionado = sancionado; }
-    public void setComentariosModerador(String comentariosModerador) { this.comentariosModerador = comentariosModerador; }
+    public String getScrimId() {
+        return scrimId;
+    }
+
+    public String getUsuarioReportadoId() {
+        return usuarioReportadoId;
+    }
+
+    public String getUsuarioReportadorId() {
+        return usuarioReportadorId;
+    }
+
+    public TipoReporte getTipo() {
+        return tipo;
+    }
+
+    public Gravedad getGravedad() {
+        return gravedad;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public LocalDateTime getFechaHora() {
+        return fechaHora;
+    }
+
+    public boolean isRevisado() {
+        return revisado;
+    }
+
+    public boolean isSancionado() {
+        return sancionado;
+    }
+
+    public String getComentariosModerador() {
+        return comentariosModerador;
+    }
+
+    public void setRevisado(boolean revisado) {
+        this.revisado = revisado;
+    }
+
+    public void setSancionado(boolean sancionado) {
+        this.sancionado = sancionado;
+    }
+
+    public void setComentariosModerador(String comentariosModerador) {
+        this.comentariosModerador = comentariosModerador;
+    }
 
     @Override
     public String toString() {
