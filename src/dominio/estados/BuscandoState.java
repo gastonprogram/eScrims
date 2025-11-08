@@ -3,6 +3,13 @@ package dominio.estados;
 import dominio.modelo.Confirmacion;
 import dominio.modelo.Postulacion;
 import dominio.modelo.Scrim;
+import dominio.modelo.Usuario;
+import infraestructura.notificaciones.ScrimNotificationObserver;
+import infraestructura.persistencia.repository.RepositorioFactory;
+import infraestructura.persistencia.repository.RepositorioUsuario;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Estado BUSCANDO: el scrim está buscando jugadores para completar el cupo.
@@ -75,6 +82,15 @@ public class BuscandoState implements ScrimState {
     @Override
     public void cancelar(Scrim scrim) {
         scrim.setState(new CanceladoState());
+        
+        // Notificar cancelación
+        try {
+            List<Usuario> participantes = obtenerUsuariosParticipantes(scrim);
+            ScrimNotificationObserver observer = new ScrimNotificationObserver();
+            observer.notificarCancelado(scrim, participantes, "Scrim cancelado por el organizador");
+        } catch (Exception e) {
+            System.err.println("Error al enviar notificaciones: " + e.getMessage());
+        }
     }
 
     @Override
@@ -95,5 +111,22 @@ public class BuscandoState implements ScrimState {
 
         // Cambiar estado
         scrim.setState(new LobbyArmadoState());
+        
+        // Notificar a todos los participantes
+        try {
+            List<Usuario> participantes = obtenerUsuariosParticipantes(scrim);
+            ScrimNotificationObserver observer = new ScrimNotificationObserver();
+            observer.notificarLobbyArmado(scrim, participantes);
+        } catch (Exception e) {
+            System.err.println("Error al enviar notificaciones: " + e.getMessage());
+        }
+    }
+    
+    private List<Usuario> obtenerUsuariosParticipantes(Scrim scrim) {
+        RepositorioUsuario repo = RepositorioFactory.getRepositorioUsuario();
+        return scrim.getPostulacionesAceptadas().stream()
+                .map(p -> repo.buscarPorId(p.getUserId()))
+                .filter(u -> u != null)
+                .collect(Collectors.toList());
     }
 }

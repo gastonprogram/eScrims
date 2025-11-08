@@ -3,7 +3,13 @@ package dominio.estados;
 import dominio.modelo.Confirmacion;
 import dominio.modelo.Postulacion;
 import dominio.modelo.Scrim;
-import infraestructura.notificaciones.core.NotificationService;
+import dominio.modelo.Usuario;
+import infraestructura.notificaciones.ScrimNotificationObserver;
+import infraestructura.persistencia.repository.RepositorioFactory;
+import infraestructura.persistencia.repository.RepositorioUsuario;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 /**
  * Estado LOBBY_ARMADO: todos los cupos están llenos con jugadores aceptados.
@@ -45,8 +51,15 @@ public class LobbyArmadoState implements ScrimState {
 
             if (todosConfirmaron(scrim)) {
                 scrim.setState(new ConfirmadoState());
+                
                 // Notificar que todos confirmaron
-                NotificationService.getInstance().notifyConfirmadoTodos(scrim);
+                try {
+                    List<Usuario> participantes = obtenerUsuariosParticipantes(scrim);
+                    ScrimNotificationObserver observer = new ScrimNotificationObserver();
+                    observer.notificarConfirmadoTodos(scrim, participantes);
+                } catch (Exception e) {
+                    System.err.println("Error al enviar notificaciones: " + e.getMessage());
+                }
             }
         } else if (confirmacionEnScrim.isRechazada()) {
             // Ya está rechazada, volver a BUSCANDO
@@ -85,6 +98,15 @@ public class LobbyArmadoState implements ScrimState {
     @Override
     public void cancelar(Scrim scrim) {
         scrim.setState(new CanceladoState());
+        
+        // Notificar cancelación
+        try {
+            List<Usuario> participantes = obtenerUsuariosParticipantes(scrim);
+            ScrimNotificationObserver observer = new ScrimNotificationObserver();
+            observer.notificarCancelado(scrim, participantes, "Scrim cancelado por el organizador");
+        } catch (Exception e) {
+            System.err.println("Error al enviar notificaciones: " + e.getMessage());
+        }
     }
 
     @Override
@@ -101,5 +123,13 @@ public class LobbyArmadoState implements ScrimState {
                 .count();
 
         return confirmadas == scrim.getPlazas();
+    }
+    
+    private List<Usuario> obtenerUsuariosParticipantes(Scrim scrim) {
+        RepositorioUsuario repo = RepositorioFactory.getRepositorioUsuario();
+        return scrim.getConfirmaciones().stream()
+                .map(c -> repo.buscarPorId(c.getUserId()))
+                .filter(u -> u != null)
+                .collect(Collectors.toList());
     }
 }

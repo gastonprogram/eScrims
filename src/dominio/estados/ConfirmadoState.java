@@ -1,10 +1,16 @@
 package dominio.estados;
 
 import java.time.LocalDateTime;
+import java.util.List;
+import java.util.stream.Collectors;
 
 import dominio.modelo.Confirmacion;
 import dominio.modelo.Postulacion;
 import dominio.modelo.Scrim;
+import dominio.modelo.Usuario;
+import infraestructura.notificaciones.ScrimNotificationObserver;
+import infraestructura.persistencia.repository.RepositorioFactory;
+import infraestructura.persistencia.repository.RepositorioUsuario;
 
 /**
  * Estado CONFIRMADO: todos los jugadores han confirmado su asistencia.
@@ -48,6 +54,15 @@ public class ConfirmadoState implements ScrimState {
         }
 
         scrim.setState(new EnJuegoState());
+        
+        // Notificar inicio del juego
+        try {
+            List<Usuario> participantes = obtenerUsuariosParticipantes(scrim);
+            ScrimNotificationObserver observer = new ScrimNotificationObserver();
+            observer.notificarEnJuego(scrim, participantes);
+        } catch (Exception e) {
+            System.err.println("Error al enviar notificaciones: " + e.getMessage());
+        }
     }
 
     @Override
@@ -59,10 +74,27 @@ public class ConfirmadoState implements ScrimState {
     @Override
     public void cancelar(Scrim scrim) {
         scrim.setState(new CanceladoState());
+        
+        // Notificar cancelación
+        try {
+            List<Usuario> participantes = obtenerUsuariosParticipantes(scrim);
+            ScrimNotificationObserver observer = new ScrimNotificationObserver();
+            observer.notificarCancelado(scrim, participantes, "Scrim cancelado antes del inicio");
+        } catch (Exception e) {
+            System.err.println("Error al enviar notificaciones: " + e.getMessage());
+        }
     }
 
     @Override
     public String getEstado() {
         return "CONFIRMADO";
+    }
+    
+    private List<Usuario> obtenerUsuariosParticipantes(Scrim scrim) {
+        RepositorioUsuario repo = RepositorioFactory.getRepositorioUsuario();
+        return scrim.getConfirmacionesConfirmadas().stream()
+                .map(c -> repo.buscarPorId(c.getUserId()))
+                .filter(u -> u != null)
+                .collect(Collectors.toList());
     }
 }
