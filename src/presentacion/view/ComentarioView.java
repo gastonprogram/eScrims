@@ -11,7 +11,7 @@ public class ComentarioView {
         this.scanner = new Scanner(System.in);
     }
 
-    public Comentario solicitarComentario(Long jugadorId, Long partidoId) {
+    public Comentario solicitarComentario(String jugadorId, String scrimId) {
         System.out.println("\n--- Dejar Comentario ---");
 
         System.out.print("Rating (1-5 estrellas): ");
@@ -20,7 +20,7 @@ public class ComentarioView {
         System.out.print("Comentario: ");
         String contenido = scanner.nextLine();
 
-        return new Comentario(jugadorId, partidoId, contenido, rating);
+        return new Comentario(jugadorId, scrimId, contenido, rating);
     }
 
     public void mostrarComentariosPendientes(java.util.List<Comentario> comentarios) {

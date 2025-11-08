@@ -82,8 +82,37 @@ public class OrganizadorController {
      */
     private void verPostulacionesPendientes() {
         try {
-            String scrimId = view.solicitarIdScrim();
+            // 1. Obtener mis scrims como organizador
+            List<dominio.modelo.Scrim> misScrims = scrimService.obtenerScrimsPorOrganizador(organizadorId);
 
+            // 2. Mostrar lista numerada de mis scrims
+            view.mostrarMisScrims(misScrims);
+
+            // Si no hay scrims, salir
+            if (misScrims.isEmpty()) {
+                return;
+            }
+
+            // 3. Solicitar número del scrim (1-based index)
+            int numeroScrim = view.solicitarNumeroScrim(misScrims.size());
+
+            // Permitir cancelar
+            if (numeroScrim == 0) {
+                view.mostrarInfo("Operación cancelada");
+                return;
+            }
+
+            // Validar que el número esté en rango
+            if (numeroScrim < 1 || numeroScrim > misScrims.size()) {
+                view.mostrarError("Número inválido. Debe ser entre 1 y " + misScrims.size());
+                return;
+            }
+
+            // 4. Obtener el scrim seleccionado (convertir de 1-based a 0-based index)
+            dominio.modelo.Scrim scrimSeleccionado = misScrims.get(numeroScrim - 1);
+            String scrimId = scrimSeleccionado.getId();
+
+            // 5. Obtener y mostrar postulaciones pendientes
             List<Postulacion> pendientes = postulacionService.listarPostulacionesPendientes(
                     scrimId, organizadorId);
 
@@ -105,10 +134,37 @@ public class OrganizadorController {
      */
     private void gestionarPostulaciones() {
         try {
-            // 1. Solicitar ID del scrim
-            String scrimId = view.solicitarIdScrim();
+            // 1. Obtener mis scrims como organizador
+            List<dominio.modelo.Scrim> misScrims = scrimService.obtenerScrimsPorOrganizador(organizadorId);
 
-            // 2. Obtener postulaciones pendientes
+            // 2. Mostrar lista numerada de mis scrims
+            view.mostrarMisScrims(misScrims);
+
+            // Si no hay scrims, salir
+            if (misScrims.isEmpty()) {
+                return;
+            }
+
+            // 3. Solicitar número del scrim (1-based index)
+            int numeroScrim = view.solicitarNumeroScrim(misScrims.size());
+
+            // Permitir cancelar
+            if (numeroScrim == 0) {
+                view.mostrarInfo("Operación cancelada");
+                return;
+            }
+
+            // Validar que el número esté en rango
+            if (numeroScrim < 1 || numeroScrim > misScrims.size()) {
+                view.mostrarError("Número inválido. Debe ser entre 1 y " + misScrims.size());
+                return;
+            }
+
+            // 4. Obtener el scrim seleccionado (convertir de 1-based a 0-based index)
+            dominio.modelo.Scrim scrimSeleccionado = misScrims.get(numeroScrim - 1);
+            String scrimId = scrimSeleccionado.getId();
+
+            // 5. Obtener postulaciones pendientes
             List<Postulacion> pendientes = postulacionService.listarPostulacionesPendientes(
                     scrimId, organizadorId);
 
@@ -117,10 +173,10 @@ public class OrganizadorController {
                 return;
             }
 
-            // 3. Mostrar postulaciones
+            // 6. Mostrar postulaciones
             view.mostrarPostulacionesPendientes(pendientes);
 
-            // 4. Solicitar acción
+            // 7. Solicitar acción
             String accion = view.solicitarAccion();
 
             if ("salir".equalsIgnoreCase(accion)) {
@@ -134,7 +190,7 @@ public class OrganizadorController {
 
             String userId = view.seleccionarPostulante(pendientes);
 
-            // 5. Ejecutar acción
+            // 8. Ejecutar acción
             if ("aceptar".equalsIgnoreCase(accion)) {
                 aceptarPostulacion(scrimId, userId);
             } else if ("rechazar".equalsIgnoreCase(accion)) {
@@ -181,8 +237,37 @@ public class OrganizadorController {
      */
     private void verTodasLasPostulaciones() {
         try {
-            String scrimId = view.solicitarIdScrim();
+            // 1. Obtener mis scrims como organizador
+            List<dominio.modelo.Scrim> misScrims = scrimService.obtenerScrimsPorOrganizador(organizadorId);
 
+            // 2. Mostrar lista numerada de mis scrims
+            view.mostrarMisScrims(misScrims);
+
+            // Si no hay scrims, salir
+            if (misScrims.isEmpty()) {
+                return;
+            }
+
+            // 3. Solicitar número del scrim (1-based index)
+            int numeroScrim = view.solicitarNumeroScrim(misScrims.size());
+
+            // Permitir cancelar
+            if (numeroScrim == 0) {
+                view.mostrarInfo("Operación cancelada");
+                return;
+            }
+
+            // Validar que el número esté en rango
+            if (numeroScrim < 1 || numeroScrim > misScrims.size()) {
+                view.mostrarError("Número inválido. Debe ser entre 1 y " + misScrims.size());
+                return;
+            }
+
+            // 4. Obtener el scrim seleccionado (convertir de 1-based a 0-based index)
+            dominio.modelo.Scrim scrimSeleccionado = misScrims.get(numeroScrim - 1);
+            String scrimId = scrimSeleccionado.getId();
+
+            // 5. Obtener todas las postulaciones
             List<Postulacion> postulaciones = postulacionService.listarTodasLasPostulaciones(
                     scrimId, organizadorId);
 
@@ -206,10 +291,37 @@ public class OrganizadorController {
      */
     private void verEstadoConfirmaciones() {
         try {
-            // 1. Solicitar ID del scrim
-            String scrimId = view.solicitarIdScrim();
+            // 1. Obtener mis scrims como organizador
+            List<dominio.modelo.Scrim> misScrims = scrimService.obtenerScrimsPorOrganizador(organizadorId);
 
-            // 2. Obtener confirmaciones
+            // 2. Mostrar lista numerada de mis scrims
+            view.mostrarMisScrims(misScrims);
+
+            // Si no hay scrims, salir
+            if (misScrims.isEmpty()) {
+                return;
+            }
+
+            // 3. Solicitar número del scrim (1-based index)
+            int numeroScrim = view.solicitarNumeroScrim(misScrims.size());
+
+            // Permitir cancelar
+            if (numeroScrim == 0) {
+                view.mostrarInfo("Operación cancelada");
+                return;
+            }
+
+            // Validar que el número esté en rango
+            if (numeroScrim < 1 || numeroScrim > misScrims.size()) {
+                view.mostrarError("Número inválido. Debe ser entre 1 y " + misScrims.size());
+                return;
+            }
+
+            // 4. Obtener el scrim seleccionado (convertir de 1-based a 0-based index)
+            dominio.modelo.Scrim scrimSeleccionado = misScrims.get(numeroScrim - 1);
+            String scrimId = scrimSeleccionado.getId();
+
+            // 5. Obtener confirmaciones
             List<Confirmacion> confirmaciones = confirmacionService.listarConfirmaciones(
                     scrimId, organizadorId);
 
@@ -218,10 +330,10 @@ public class OrganizadorController {
                 return;
             }
 
-            // 3. Mostrar lista de confirmaciones
+            // 6. Mostrar lista de confirmaciones
             view.mostrarListaConfirmaciones(confirmaciones);
 
-            // 4. Mostrar estadísticas
+            // 7. Mostrar estadísticas
             long confirmadas = confirmaciones.stream()
                     .filter(c -> c.getEstado() == Confirmacion.EstadoConfirmacion.CONFIRMADA)
                     .count();
@@ -234,7 +346,7 @@ public class OrganizadorController {
 
             view.mostrarEstadisticas(confirmadas, pendientes, rechazadas);
 
-            // 5. Mostrar confirmaciones pendientes si las hay
+            // 8. Mostrar confirmaciones pendientes si las hay
             if (pendientes > 0) {
                 List<Confirmacion> confirmacionesPendientes = confirmacionService
                         .listarConfirmacionesPendientes(scrimId, organizadorId);

@@ -184,14 +184,44 @@ public class ConfirmacionControllerSimplificado {
     }
 
     /**
-     * Muestra la confirmación del usuario actual para un scrim.
+     * Muestra la confirmación del usuario actual para un scrim seleccionado.
      */
     private void verMiConfirmacion() {
         try {
-            String scrimId = view.solicitarIdScrimParaVer();
+            // 1. Obtener todos los scrims donde tengo confirmaciones (pendientes,
+            // confirmadas o rechazadas)
+            List<Scrim> scrimsConMisConfirmaciones = confirmacionService
+                    .obtenerScrimsConConfirmacion(usuarioActualId);
 
-            Confirmacion confirmacion = confirmacionService.obtenerConfirmacion(
-                    scrimId, usuarioActualId);
+            // 2. Mostrar lista numerada de scrims
+            view.mostrarScrimsConMisConfirmaciones(scrimsConMisConfirmaciones, usuarioActualId);
+
+            // Si no hay scrims, salir
+            if (scrimsConMisConfirmaciones.isEmpty()) {
+                return;
+            }
+
+            // 3. Solicitar número del scrim (1-based index)
+            int numeroScrim = view.solicitarNumeroScrimParaVer(scrimsConMisConfirmaciones.size());
+
+            // Permitir cancelar
+            if (numeroScrim == 0) {
+                view.mostrarInfo("Operación cancelada");
+                return;
+            }
+
+            // Validar que el número esté en rango
+            if (numeroScrim < 1 || numeroScrim > scrimsConMisConfirmaciones.size()) {
+                view.mostrarError("Número inválido. Debe ser entre 1 y " + scrimsConMisConfirmaciones.size());
+                return;
+            }
+
+            // 4. Obtener el scrim seleccionado (convertir de 1-based a 0-based index)
+            Scrim scrimSeleccionado = scrimsConMisConfirmaciones.get(numeroScrim - 1);
+            String scrimId = scrimSeleccionado.getId();
+
+            // 5. Obtener y mostrar mi confirmación
+            Confirmacion confirmacion = confirmacionService.obtenerConfirmacion(scrimId, usuarioActualId);
 
             if (confirmacion == null) {
                 view.mostrarInfo("No tienes una confirmación para este scrim");

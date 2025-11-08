@@ -8,17 +8,17 @@ public class Comentario {
     }
 
     private Long id;
-    private Long jugadorId;
-    private Long partidoId;
+    private String jugadorId; // Cambiado de Long a String para usar IDs directos
+    private String scrimId; // Cambiado de partidoId (Long) a scrimId (String) para consistencia
     private String contenido;
     private int rating; // 1-5 estrellas
     private EstadoModeracion estado;
     private LocalDateTime fechaCreacion;
     private String motivoRechazo;
 
-    public Comentario(Long jugadorId, Long partidoId, String contenido, int rating) {
+    public Comentario(String jugadorId, String scrimId, String contenido, int rating) {
         this.jugadorId = jugadorId;
-        this.partidoId = partidoId;
+        this.scrimId = scrimId;
         this.contenido = contenido;
         this.rating = Math.max(1, Math.min(5, rating));
         this.estado = EstadoModeracion.PENDIENTE;
@@ -34,12 +34,12 @@ public class Comentario {
         this.id = id;
     }
 
-    public Long getJugadorId() {
+    public String getJugadorId() {
         return jugadorId;
     }
 
-    public Long getPartidoId() {
-        return partidoId;
+    public String getScrimId() {
+        return scrimId;
     }
 
     public String getContenido() {

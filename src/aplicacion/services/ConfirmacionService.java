@@ -197,4 +197,18 @@ public class ConfirmacionService {
                                 c.getEstado() == Confirmacion.EstadoConfirmacion.PENDIENTE))
                 .collect(Collectors.toList());
     }
+
+    /**
+     * Obtiene todos los scrims donde el usuario tiene alguna confirmación
+     * (pendiente, confirmada o rechazada).
+     * 
+     * @param userId ID del usuario
+     * @return Lista de scrims con confirmaciones del usuario
+     */
+    public List<Scrim> obtenerScrimsConConfirmacion(String userId) {
+        return repositorioScrim.obtenerTodos().stream()
+                .filter(scrim -> scrim.getConfirmaciones().stream()
+                        .anyMatch(c -> c.getUserId().equals(userId)))
+                .collect(Collectors.toList());
+    }
 }

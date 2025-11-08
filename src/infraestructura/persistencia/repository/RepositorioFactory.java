@@ -1,7 +1,8 @@
 package infraestructura.persistencia.repository;
 
-import infraestructura.persistencia.implementacion.RepositorioScrimMemoria;
+import infraestructura.persistencia.implementacion.RepositorioScrimJson;
 import infraestructura.persistencia.implementacion.RepositorioUsuarioJSON;
+import infraestructura.persistencia.implementacion.RepositorioEstadisticasJSON;
 
 /**
  * Factory para crear instancias de los repositorios de la aplicación.
@@ -12,6 +13,7 @@ public class RepositorioFactory {
 
     private static RepositorioUsuario repositorioUsuario;
     private static RepositorioScrim repositorioScrim;
+    private static RepositorioEstadisticas repositorioEstadisticas;
 
     /**
      * Obtiene una instancia del repositorio de usuarios.
@@ -32,9 +34,21 @@ public class RepositorioFactory {
      */
     public static synchronized RepositorioScrim getRepositorioScrim() {
         if (repositorioScrim == null) {
-            repositorioScrim = RepositorioScrimMemoria.getInstance();
+            repositorioScrim = RepositorioScrimJson.getInstance();
         }
         return repositorioScrim;
+    }
+
+    /**
+     * Obtiene una instancia del repositorio de estadísticas.
+     * 
+     * @return Una implementación de RepositorioEstadisticas
+     */
+    public static synchronized RepositorioEstadisticas getRepositorioEstadisticas() {
+        if (repositorioEstadisticas == null) {
+            repositorioEstadisticas = new RepositorioEstadisticasJSON();
+        }
+        return repositorioEstadisticas;
     }
 
     /**
@@ -55,5 +69,15 @@ public class RepositorioFactory {
      */
     public static synchronized void setRepositorioScrim(RepositorioScrim repositorio) {
         repositorioScrim = repositorio;
+    }
+
+    /**
+     * Permite inyectar una implementación personalizada de RepositorioEstadisticas.
+     * Útil para pruebas unitarias.
+     * 
+     * @param repositorio La implementación de RepositorioEstadisticas a utilizar
+     */
+    public static synchronized void setRepositorioEstadisticas(RepositorioEstadisticas repositorio) {
+        repositorioEstadisticas = repositorio;
     }
 }

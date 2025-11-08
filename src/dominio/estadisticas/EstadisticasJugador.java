@@ -1,19 +1,35 @@
 package dominio.estadisticas;
 
+/**
+ * Estadísticas individuales de un jugador en un scrim específico.
+ * Contiene métricas como kills, assists, deaths, puntuación y estado de MVP.
+ */
 public class EstadisticasJugador {
-    private Long jugadorId;
+    private String jugadorId; // Cambiado de Long a String para consistencia
     private int kills;
     private int assists;
     private int deaths;
     private int puntuacion;
     private boolean esMVP;
 
-    public EstadisticasJugador(Long jugadorId) {
+    public EstadisticasJugador(String jugadorId) {
         this.jugadorId = jugadorId;
         this.kills = 0;
         this.assists = 0;
         this.deaths = 0;
         this.puntuacion = 0;
+        this.esMVP = false;
+    }
+
+    /**
+     * Constructor completo para establecer todas las estadísticas de una vez.
+     */
+    public EstadisticasJugador(String jugadorId, int kills, int assists, int deaths, int puntuacion) {
+        this.jugadorId = jugadorId;
+        this.kills = kills;
+        this.assists = assists;
+        this.deaths = deaths;
+        this.puntuacion = puntuacion;
         this.esMVP = false;
     }
 
@@ -25,7 +41,7 @@ public class EstadisticasJugador {
     }
 
     // Getters y setters
-    public Long getJugadorId() {
+    public String getJugadorId() { // Cambiado retorno de Long a String
         return jugadorId;
     }
 
