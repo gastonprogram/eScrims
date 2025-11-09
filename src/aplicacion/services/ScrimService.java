@@ -316,4 +316,116 @@ public class ScrimService {
             throw new RuntimeException("No se pudo guardar el cambio de estrategia");
         }
     }
+
+    /**
+     * Inicia una partida de scrim.
+     * Cambia el estado del scrim a EN_JUEGO y persiste los cambios automáticamente.
+     * 
+     * @param scrimId El ID del scrim a iniciar
+     * @return El scrim actualizado
+     * @throws IllegalArgumentException Si el ID es inválido o el scrim no existe
+     * @throws IllegalStateException Si el scrim no está en estado CONFIRMADO
+     */
+    public Scrim iniciarPartida(String scrimId) {
+        if (scrimId == null || scrimId.trim().isEmpty()) {
+            throw new IllegalArgumentException("El ID del scrim es requerido");
+        }
+
+        // Buscar el scrim y reconstruir su estado si es necesario
+        Scrim scrim = repositorioScrim.buscarPorId(scrimId.trim());
+        if (scrim == null) {
+            throw new IllegalArgumentException("No se encontró el scrim con ID: " + scrimId);
+        }
+
+        // Reconstruir estado si es null (después de deserializar)
+        if (scrim.getState() == null) {
+            scrim.reconstruirEstado();
+        }
+
+        // Iniciar la partida (esto cambia el estado a EN_JUEGO)
+        scrim.iniciar();
+
+        // Persistir los cambios
+        boolean actualizado = repositorioScrim.actualizar(scrim);
+        if (!actualizado) {
+            throw new RuntimeException("No se pudo guardar el cambio de estado del scrim");
+        }
+
+        return scrim;
+    }
+
+    /**
+     * Finaliza una partida de scrim.
+     * Cambia el estado del scrim a FINALIZADO, genera estadísticas automáticas 
+     * y persiste los cambios.
+     * 
+     * @param scrimId El ID del scrim a finalizar
+     * @return El scrim actualizado
+     * @throws IllegalArgumentException Si el ID es inválido o el scrim no existe
+     * @throws IllegalStateException Si el scrim no está en estado EN_JUEGO
+     */
+    public Scrim finalizarPartida(String scrimId) {
+        if (scrimId == null || scrimId.trim().isEmpty()) {
+            throw new IllegalArgumentException("El ID del scrim es requerido");
+        }
+
+        // Buscar el scrim y reconstruir su estado si es necesario
+        Scrim scrim = repositorioScrim.buscarPorId(scrimId.trim());
+        if (scrim == null) {
+            throw new IllegalArgumentException("No se encontró el scrim con ID: " + scrimId);
+        }
+
+        // Reconstruir estado si es null (después de deserializar)
+        if (scrim.getState() == null) {
+            scrim.reconstruirEstado();
+        }
+
+        // Finalizar la partida (esto cambia el estado a FINALIZADO y genera estadísticas)
+        scrim.finalizar();
+
+        // Persistir los cambios
+        boolean actualizado = repositorioScrim.actualizar(scrim);
+        if (!actualizado) {
+            throw new RuntimeException("No se pudo guardar el cambio de estado del scrim");
+        }
+
+        return scrim;
+    }
+
+    /**
+     * Cancela un scrim.
+     * Cambia el estado del scrim a CANCELADO y persiste los cambios automáticamente.
+     * 
+     * @param scrimId El ID del scrim a cancelar
+     * @return El scrim actualizado
+     * @throws IllegalArgumentException Si el ID es inválido o el scrim no existe
+     * @throws IllegalStateException Si el scrim está en un estado que no permite cancelación
+     */
+    public Scrim cancelarScrim(String scrimId) {
+        if (scrimId == null || scrimId.trim().isEmpty()) {
+            throw new IllegalArgumentException("El ID del scrim es requerido");
+        }
+
+        // Buscar el scrim y reconstruir su estado si es necesario
+        Scrim scrim = repositorioScrim.buscarPorId(scrimId.trim());
+        if (scrim == null) {
+            throw new IllegalArgumentException("No se encontró el scrim con ID: " + scrimId);
+        }
+
+        // Reconstruir estado si es null (después de deserializar)
+        if (scrim.getState() == null) {
+            scrim.reconstruirEstado();
+        }
+
+        // Cancelar el scrim (esto cambia el estado a CANCELADO)
+        scrim.cancelar();
+
+        // Persistir los cambios
+        boolean actualizado = repositorioScrim.actualizar(scrim);
+        if (!actualizado) {
+            throw new RuntimeException("No se pudo guardar el cambio de estado del scrim");
+        }
+
+        return scrim;
+    }
 }

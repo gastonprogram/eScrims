@@ -8,7 +8,7 @@ import dominio.modelo.Confirmacion;
 import dominio.modelo.Postulacion;
 import dominio.modelo.Scrim;
 import dominio.modelo.Usuario;
-import infraestructura.notificaciones.ScrimNotificationObserver;
+import infraestructura.notificaciones.observer.ScrimNotificationObserver;
 import infraestructura.persistencia.repository.RepositorioFactory;
 import infraestructura.persistencia.repository.RepositorioUsuario;
 

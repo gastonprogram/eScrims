@@ -7,7 +7,7 @@ import compartido.validators.ScrimValidator;
 import dominio.juegos.Juego;
 import dominio.modelo.Scrim;
 import dominio.valueobjects.formatosScrims.ScrimFormat;
-import infraestructura.notificaciones.core.NotificationService;
+import infraestructura.notificaciones.observer.ScrimNotificationObserver;
 
 /**
  * Builder para construir instancias de Scrim de forma fluida y segura.
@@ -147,7 +147,7 @@ public class ScrimBuilder {
         scrim.setEstrategiaMatchmaking(estrategiaMatchmaking);
 
         // Notificar a usuarios que coincidan con las preferencias del scrim
-        NotificationService.getInstance().notifyScrimCreated(scrim);
+        ScrimNotificationObserver.notificarScrimCreado(scrim);
 
         return scrim;
     }

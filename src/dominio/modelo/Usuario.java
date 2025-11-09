@@ -6,10 +6,10 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
+import compartido.utils.ChannelType;
+import compartido.utils.NotificationEvent;
 import dominio.juegos.Juego;
 import dominio.valueobjects.Rol;
-import infraestructura.notificaciones.types.ChannelType;
-import infraestructura.notificaciones.types.NotificationEvent;
 import infraestructura.seguridad.PasswordHasher;
 
 import java.util.HashSet;
@@ -297,18 +297,22 @@ public class Usuario {
 
     /**
      * Suscribe al usuario a un tipo de evento.
+     * @return this (para encadenamiento fluent)
      */
-    public void subscribeToEvent(NotificationEvent event) {
+    public Usuario subscribeToEvent(NotificationEvent event) {
         this.subscribedEvents.add(event);
         this.updatedAt = new Date();
+        return this;
     }
 
     /**
      * Cancela la suscripción del usuario a un tipo de evento.
+     * @return this (para encadenamiento fluent)
      */
-    public void unsubscribeFromEvent(NotificationEvent event) {
+    public Usuario unsubscribeFromEvent(NotificationEvent event) {
         this.subscribedEvents.remove(event);
         this.updatedAt = new Date();
+        return this;
     }
 
     /**
@@ -320,20 +324,24 @@ public class Usuario {
 
     /**
      * Suscribe al usuario a todos los tipos de eventos.
+     * @return this (para encadenamiento fluent)
      */
-    public void subscribeToAllEvents() {
+    public Usuario subscribeToAllEvents() {
         for (NotificationEvent event : NotificationEvent.values()) {
             subscribedEvents.add(event);
         }
         this.updatedAt = new Date();
+        return this;
     }
 
     /**
      * Cancela todas las suscripciones del usuario.
+     * @return this (para encadenamiento fluent)
      */
-    public void unsubscribeFromAllEvents() {
+    public Usuario unsubscribeFromAllEvents() {
         subscribedEvents.clear();
         this.updatedAt = new Date();
+        return this;
     }
 
     /**
@@ -342,20 +350,24 @@ public class Usuario {
      * @param channelType Tipo de canal (PUSH, EMAIL, DISCORD, SLACK)
      * @param recipient   Identificador del destinatario (email, token, webhook,
      *                    etc.)
+     * @return this (para encadenamiento fluent)
      */
-    public void addPreferredChannel(ChannelType channelType, String recipient) {
+    public Usuario addPreferredChannel(ChannelType channelType, String recipient) {
         this.preferredChannels.add(channelType);
         this.channelRecipients.put(channelType, recipient);
         this.updatedAt = new Date();
+        return this;
     }
 
     /**
      * Remueve un canal preferido.
+     * @return this (para encadenamiento fluent)
      */
-    public void removePreferredChannel(ChannelType channelType) {
+    public Usuario removePreferredChannel(ChannelType channelType) {
         this.preferredChannels.remove(channelType);
         this.channelRecipients.remove(channelType);
         this.updatedAt = new Date();
+        return this;
     }
 
     /**
@@ -377,6 +389,132 @@ public class Usuario {
      */
     public Set<NotificationEvent> getSubscribedEvents() {
         return new HashSet<>(subscribedEvents);
+    }
+
+    // ==================== MÉTODOS DE CONVENIENCIA PARA NOTIFICACIONES ====================
+    
+    /**
+     * Suscribe solo a eventos de cambios de estado del scrim.
+     * @return this (para encadenamiento fluent)
+     */
+    public Usuario suscribirSoloEstados() {
+        unsubscribeFromAllEvents();
+        subscribeToEvent(NotificationEvent.LOBBY_ARMADO);
+        subscribeToEvent(NotificationEvent.CONFIRMADO);
+        subscribeToEvent(NotificationEvent.EN_JUEGO);
+        subscribeToEvent(NotificationEvent.FINALIZADO);
+        subscribeToEvent(NotificationEvent.CANCELADO);
+        return this;
+    }
+    
+    /**
+     * Suscribe solo a eventos importantes (confirmado, en juego, finalizado).
+     * @return this (para encadenamiento fluent)
+     */
+    public Usuario suscribirSoloImportantes() {
+        unsubscribeFromAllEvents();
+        subscribeToEvent(NotificationEvent.CONFIRMADO);
+        subscribeToEvent(NotificationEvent.EN_JUEGO);
+        subscribeToEvent(NotificationEvent.FINALIZADO);
+        return this;
+    }
+    
+    /**
+     * Configura solo email como canal.
+     * @return this (para encadenamiento fluent)
+     */
+    public Usuario soloEmail(String email) {
+        removePreferredChannel(ChannelType.DISCORD);
+        removePreferredChannel(ChannelType.PUSH);
+        addPreferredChannel(ChannelType.EMAIL, email);
+        return this;
+    }
+    
+    /**
+     * Configura solo Discord como canal.
+     * @return this (para encadenamiento fluent)
+     */
+    public Usuario soloDiscord(String discordId) {
+        removePreferredChannel(ChannelType.EMAIL);
+        removePreferredChannel(ChannelType.PUSH);
+        addPreferredChannel(ChannelType.DISCORD, discordId);
+        return this;
+    }
+    
+    /**
+     * Configura solo Push como canal.
+     * @return this (para encadenamiento fluent)
+     */
+    public Usuario soloPush(String fcmToken) {
+        removePreferredChannel(ChannelType.EMAIL);
+        removePreferredChannel(ChannelType.DISCORD);
+        addPreferredChannel(ChannelType.PUSH, fcmToken);
+        return this;
+    }
+    
+    /**
+     * Configura todos los canales.
+     * @return this (para encadenamiento fluent)
+     */
+    public Usuario todosLosCanales(String email, String discordId, String fcmToken) {
+        if (email != null && !email.isEmpty()) {
+            addPreferredChannel(ChannelType.EMAIL, email);
+        }
+        if (discordId != null && !discordId.isEmpty()) {
+            addPreferredChannel(ChannelType.DISCORD, discordId);
+        }
+        if (fcmToken != null && !fcmToken.isEmpty()) {
+            addPreferredChannel(ChannelType.PUSH, fcmToken);
+        }
+        return this;
+    }
+    
+    /**
+     * Muestra un resumen de las preferencias de notificaciones configuradas.
+     */
+    public String mostrarResumenNotificaciones() {
+        StringBuilder sb = new StringBuilder();
+        sb.append("===================================================\n");
+        sb.append("  PREFERENCIAS DE NOTIFICACIONES\n");
+        sb.append("  Usuario: ").append(username).append("\n");
+        sb.append("===================================================\n\n");
+        
+        sb.append("[CANALES] CANALES CONFIGURADOS:\n");
+        if (preferredChannels.isEmpty()) {
+            sb.append("  [WARN] Ningun canal configurado\n");
+        } else {
+            for (ChannelType canal : preferredChannels) {
+                String destinatario = channelRecipients.get(canal);
+                sb.append("  [OK] ").append(canal).append(": ").append(destinatario).append("\n");
+            }
+        }
+        
+        sb.append("\n[NOTIF] EVENTOS SUSCRITOS:\n");
+        if (subscribedEvents.isEmpty()) {
+            sb.append("  [WARN] No suscrito a ningun evento\n");
+        } else {
+            for (NotificationEvent evento : subscribedEvents) {
+                sb.append("  [OK] ").append(evento).append("\n");
+            }
+        }
+        
+        sb.append("\n===================================================\n");
+        return sb.toString();
+    }
+    
+    /**
+     * Resetea todas las preferencias de notificación a los valores por defecto.
+     * @return this (para encadenamiento fluent)
+     */
+    public Usuario resetearPreferenciasNotificacion() {
+        unsubscribeFromAllEvents();
+        removePreferredChannel(ChannelType.DISCORD);
+        removePreferredChannel(ChannelType.PUSH);
+        
+        subscribeToAllEvents();
+        addPreferredChannel(ChannelType.EMAIL, this.email);
+        
+        return this;
     }
 
     // Métodos de gestión de historial

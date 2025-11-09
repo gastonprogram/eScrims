@@ -15,9 +15,12 @@ import java.io.FileReader;
 import java.io.FileWriter;
 import java.io.IOException;
 import java.lang.reflect.Type;
+import java.text.SimpleDateFormat;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
+import java.util.Date;
+import java.util.Locale;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -51,11 +54,35 @@ public class RepositorioUsuarioJSON implements RepositorioUsuario {
                 ? null
                 : LocalDate.parse(json.getAsString(), df);
 
+        // Adapter para java.util.Date - serializar en formato ISO
+        JsonSerializer<Date> serDate = (src, typeOfSrc, context) -> {
+            if (src == null) return null;
+            SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
+            return new com.google.gson.JsonPrimitive(sdf.format(src));
+        };
+        JsonDeserializer<Date> deserDate = (json, typeOfT, context) -> {
+            if (json == null || json.getAsString().isEmpty()) return null;
+            try {
+                SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss.SSS");
+                return sdf.parse(json.getAsString());
+            } catch (Exception e) {
+                // Intentar con el formato viejo por compatibilidad
+                try {
+                    SimpleDateFormat oldFormat = new SimpleDateFormat("MMM d, yyyy, h:mm:ss a", Locale.ENGLISH);
+                    return oldFormat.parse(json.getAsString());
+                } catch (Exception ex) {
+                    return null;
+                }
+            }
+        };
+
         this.gson = new GsonBuilder()
                 .registerTypeAdapter(LocalDateTime.class, serLDT)
                 .registerTypeAdapter(LocalDateTime.class, deserLDT)
                 .registerTypeAdapter(LocalDate.class, serLD)
                 .registerTypeAdapter(LocalDate.class, deserLD)
+                .registerTypeAdapter(Date.class, serDate)
+                .registerTypeAdapter(Date.class, deserDate)
                 .registerTypeAdapter(Juego.class, new JuegoAdapter())
                 .setPrettyPrinting()
                 .create();

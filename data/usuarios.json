@@ -1,47 +1,184 @@
 [
   {
-    "id": "d7fd30c5-6fda-447d-8847-e23da3409196",
-    "username": "gaston",
-    "email": "gaston@gmail.com",
-    "hashedPassword": "sU1rQIt45hXwx5mpOmqsv3JG2c7zC2Dks02BtMJb/JM\u003d",
-    "salt": "ycLTZeVFGMXQJ4x5/AUXYA\u003d\u003d",
-    "rangoPorJuego": {
-      "League of Legends": 60
-    },
+    "id": "a5c4ef8c-6be4-40c4-86b4-77e9db5dbf81",
+    "username": "Gusabelu2",
+    "email": "gusabelu2@gmail.com",
+    "hashedPassword": "cNS0Fq1IUKPeRzYIc6EJT2luFMFjxlRIMUBveCiAwBk\u003d",
+    "salt": "XKi9yqKmk4b4z0di0SGzjw\u003d\u003d",
+    "rangoPorJuego": {},
     "rol": "USER",
-    "region": "LAS",
-    "juegoPrincipal": "League of Legends",
-    "rolesPorJuego": {
-      "League of Legends": [
-        "Top",
-        "Mid"
-      ]
-    },
+    "region": "",
+    "rolesPorJuego": {},
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "Nov 7, 2025, 12:15:21 PM",
-    "updatedAt": "Nov 7, 2025, 12:24:13 PM",
+    "createdAt": "2025-11-09T19:28:04.503",
+    "updatedAt": "2025-11-09T19:28:04.506",
     "historial": {
-      "userId": "d7fd30c5-6fda-447d-8847-e23da3409196",
+      "userId": "a5c4ef8c-6be4-40c4-86b4-77e9db5dbf81",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-07T12:15:22.012386"
+      "ultimaActividad": "2025-11-09T19:28:04.5061066"
     },
     "subscribedEvents": [
-      "CONFIRMADO_TODOS",
-      "SCRIM_CREATED_MATCH",
-      "LOBBY_ARMADO",
       "EN_JUEGO",
       "FINALIZADO",
-      "CANCELADO"
+      "CONFIRMADO",
+      "LOBBY_ARMADO",
+      "CANCELADO",
+      "BUSCANDO"
     ],
     "preferredChannels": [
       "EMAIL"
     ],
     "channelRecipients": {
-      "EMAIL": "gaston@gmail.com"
+      "EMAIL": "gusabelu2@gmail.com"
+    }
+  },
+  {
+    "id": "646d823d-ecce-452c-89ce-d82431ffdecd",
+    "username": "AWPGod",
+    "email": "awpgod@escrims.com",
+    "hashedPassword": "fgM0xDmgD0+mhGGoKTSEYIyEj4v0XOQTYqpMJapfKIs\u003d",
+    "salt": "y1lDyrzU/t2k2mdZXEGp1Q\u003d\u003d",
+    "rangoPorJuego": {},
+    "rol": "USER",
+    "region": "",
+    "rolesPorJuego": {},
+    "disponibilidad": "",
+    "latenciaPromedio": 50,
+    "disponible": true,
+    "createdAt": "2025-11-09T19:28:04.508",
+    "updatedAt": "2025-11-09T19:28:04.508",
+    "historial": {
+      "userId": "646d823d-ecce-452c-89ce-d82431ffdecd",
+      "partidasJugadas": 0,
+      "partidasAbandonadas": 0,
+      "tasaFairPlay": 1.0,
+      "ultimaActividad": "2025-11-09T19:28:04.5081081"
+    },
+    "subscribedEvents": [
+      "EN_JUEGO",
+      "FINALIZADO",
+      "CONFIRMADO",
+      "LOBBY_ARMADO",
+      "CANCELADO",
+      "BUSCANDO"
+    ],
+    "preferredChannels": [
+      "DISCORD"
+    ],
+    "channelRecipients": {
+      "DISCORD": "@AWPGod#5678"
+    }
+  },
+  {
+    "id": "8989b6b8-47aa-44f0-b05d-7b200812cf95",
+    "username": "SupportKing",
+    "email": "supportking@escrims.com",
+    "hashedPassword": "NMOEM+zbYHg5eFexeUW9lDGDtd29V0It5BMtQH+8064\u003d",
+    "salt": "pnvGDKfdHJyzq5Y/O2+Ofg\u003d\u003d",
+    "rangoPorJuego": {},
+    "rol": "USER",
+    "region": "",
+    "rolesPorJuego": {},
+    "disponibilidad": "",
+    "latenciaPromedio": 50,
+    "disponible": true,
+    "createdAt": "2025-11-09T19:28:04.508",
+    "updatedAt": "2025-11-09T19:28:04.508",
+    "historial": {
+      "userId": "8989b6b8-47aa-44f0-b05d-7b200812cf95",
+      "partidasJugadas": 0,
+      "partidasAbandonadas": 0,
+      "tasaFairPlay": 1.0,
+      "ultimaActividad": "2025-11-09T19:28:04.5081081"
+    },
+    "subscribedEvents": [
+      "EN_JUEGO",
+      "FINALIZADO",
+      "CONFIRMADO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "supportking@escrims.com"
+    }
+  },
+  {
+    "id": "01b13bf9-3ede-4234-bb7b-6825ca1d8a1b",
+    "username": "Gastocash",
+    "email": "gusabelu3@gmail.com",
+    "hashedPassword": "ItlGRpRaNkstsIFr0wwcJ/oNqekA21BRA8CsG9k61lo\u003d",
+    "salt": "JTTWiB8exyw9npKk56my3Q\u003d\u003d",
+    "rangoPorJuego": {},
+    "rol": "USER",
+    "region": "",
+    "rolesPorJuego": {},
+    "disponibilidad": "",
+    "latenciaPromedio": 50,
+    "disponible": true,
+    "createdAt": "2025-11-09T19:28:04.509",
+    "updatedAt": "2025-11-09T19:28:04.509",
+    "historial": {
+      "userId": "01b13bf9-3ede-4234-bb7b-6825ca1d8a1b",
+      "partidasJugadas": 0,
+      "partidasAbandonadas": 0,
+      "tasaFairPlay": 1.0,
+      "ultimaActividad": "2025-11-09T19:28:04.509612"
+    },
+    "subscribedEvents": [
+      "EN_JUEGO",
+      "FINALIZADO",
+      "CONFIRMADO",
+      "LOBBY_ARMADO",
+      "CANCELADO",
+      "BUSCANDO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "gusabelu3@gmail.com"
+    }
+  },
+  {
+    "id": "7e4eb48b-2967-41ef-90c5-fa0ed1f129da",
+    "username": "ProOrganizer",
+    "email": "gusabelu1@gmail.com",
+    "hashedPassword": "qWNJxvBdtXuQ2kuMt+Vog+AXG/EFqLr3d+LxyciOaSM\u003d",
+    "salt": "fElJetfGSjZTK7XFUqQ2rw\u003d\u003d",
+    "rangoPorJuego": {},
+    "rol": "USER",
+    "region": "",
+    "rolesPorJuego": {},
+    "disponibilidad": "",
+    "latenciaPromedio": 50,
+    "disponible": true,
+    "createdAt": "2025-11-09T19:28:04.509",
+    "updatedAt": "2025-11-09T19:28:04.509",
+    "historial": {
+      "userId": "7e4eb48b-2967-41ef-90c5-fa0ed1f129da",
+      "partidasJugadas": 0,
+      "partidasAbandonadas": 0,
+      "tasaFairPlay": 1.0,
+      "ultimaActividad": "2025-11-09T19:28:04.509612"
+    },
+    "subscribedEvents": [
+      "EN_JUEGO",
+      "FINALIZADO",
+      "CONFIRMADO",
+      "LOBBY_ARMADO",
+      "CANCELADO",
+      "BUSCANDO"
+    ],
+    "preferredChannels": [
+      "DISCORD"
+    ],
+    "channelRecipients": {
+      "DISCORD": "@ProOrganizer#1234"
     }
   }
 ]

@@ -6,6 +6,10 @@ import java.util.stream.Collectors;
 import dominio.modelo.Confirmacion;
 import dominio.modelo.Postulacion;
 import dominio.modelo.Scrim;
+import dominio.modelo.Usuario;
+import infraestructura.persistencia.repository.RepositorioUsuario;
+import infraestructura.notificaciones.observer.ScrimNotificationObserver;
+import infraestructura.persistencia.repository.RepositorioFactory;
 import dominio.estadisticas.EstadisticasScrim;
 import aplicacion.services.EstadisticasService;
 
@@ -49,6 +53,15 @@ public class EnJuegoState implements ScrimState {
 
         // Cambiar estado a finalizado
         scrim.setState(new FinalizadoState());
+
+        // Notificar finalización del juego
+        try {
+            List<Usuario> participantes = obtenerUsuariosParticipantes(scrim);
+            ScrimNotificationObserver observer = new ScrimNotificationObserver();
+            observer.notificarFinalizado(scrim, participantes);
+        } catch (Exception e) {
+            System.err.println("Error al enviar notificaciones: " + e.getMessage());
+        }
     }
 
     /**

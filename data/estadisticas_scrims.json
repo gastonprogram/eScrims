@@ -1,0 +1,1757 @@
+{
+  "a87c0d0a-05e5-4e71-8795-5df93707eafd": {
+    "scrimId": "a87c0d0a-05e5-4e71-8795-5df93707eafd",
+    "scrimReferencia": {
+      "id": "a87c0d0a-05e5-4e71-8795-5df93707eafd",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T18:10:23.8777542",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "c56ae399-f6a8-4262-b9f3-c4fa92a1ffa3",
+          "scrimId": "a87c0d0a-05e5-4e71-8795-5df93707eafd",
+          "userId": "c5681e43-3416-4196-9537-76dfc78c13c1",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:10:22.9452701",
+          "fechaActualizacion": "2025-11-09T18:10:22.9452701"
+        },
+        {
+          "id": "0ad11a0a-dcbf-49c9-9634-404da78f2d38",
+          "scrimId": "a87c0d0a-05e5-4e71-8795-5df93707eafd",
+          "userId": "d9bae3f7-3b5c-49de-851b-3908d41a2887",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:10:23.4610582",
+          "fechaActualizacion": "2025-11-09T18:10:23.4610582"
+        },
+        {
+          "id": "ea61e245-740d-4a3a-ab8a-5d3afa03d777",
+          "scrimId": "a87c0d0a-05e5-4e71-8795-5df93707eafd",
+          "userId": "ff6abcff-44b2-4b81-81bd-e2f4ad3d3126",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:10:23.9691172",
+          "fechaActualizacion": "2025-11-09T18:10:23.9691172"
+        },
+        {
+          "id": "59b3ef90-3e70-45c4-84e9-7e42ccf7c14f",
+          "scrimId": "a87c0d0a-05e5-4e71-8795-5df93707eafd",
+          "userId": "d4ea73ab-a17c-4a7f-ba65-4740930f3324",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:10:24.4788151",
+          "fechaActualizacion": "2025-11-09T18:10:24.4788151"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "966c44c7-52b3-4f6e-b511-2139a2745983",
+          "scrimId": "a87c0d0a-05e5-4e71-8795-5df93707eafd",
+          "userId": "c5681e43-3416-4196-9537-76dfc78c13c1",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:10:24.4788151",
+          "fechaRespuesta": "2025-11-09T18:10:30.3839179"
+        },
+        {
+          "id": "4a1bd00b-1bd7-4718-b8e9-ffcae515ff0a",
+          "scrimId": "a87c0d0a-05e5-4e71-8795-5df93707eafd",
+          "userId": "d9bae3f7-3b5c-49de-851b-3908d41a2887",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:10:24.4788151",
+          "fechaRespuesta": "2025-11-09T18:10:30.3864359"
+        },
+        {
+          "id": "d4c84006-eb66-40bb-bfd0-4a9ff9ee3a5a",
+          "scrimId": "a87c0d0a-05e5-4e71-8795-5df93707eafd",
+          "userId": "ff6abcff-44b2-4b81-81bd-e2f4ad3d3126",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:10:24.4788151",
+          "fechaRespuesta": "2025-11-09T18:10:30.3884696"
+        },
+        {
+          "id": "32a07c9e-2afd-4a08-abe1-9f9f7f28e5c4",
+          "scrimId": "a87c0d0a-05e5-4e71-8795-5df93707eafd",
+          "userId": "d4ea73ab-a17c-4a7f-ba65-4740930f3324",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:10:24.4788151",
+          "fechaRespuesta": "2025-11-09T18:10:30.3894776"
+        }
+      ],
+      "createdBy": "522281be-25cd-47ff-90ec-134e89d4f552",
+      "createdAt": "2025-11-09T18:10:13.8791114",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "d4ea73ab-a17c-4a7f-ba65-4740930f3324": {
+        "jugadorId": "d4ea73ab-a17c-4a7f-ba65-4740930f3324",
+        "kills": 8,
+        "assists": 14,
+        "deaths": 6,
+        "puntuacion": 69,
+        "esMVP": false
+      },
+      "ff6abcff-44b2-4b81-81bd-e2f4ad3d3126": {
+        "jugadorId": "ff6abcff-44b2-4b81-81bd-e2f4ad3d3126",
+        "kills": 6,
+        "assists": 2,
+        "deaths": 6,
+        "puntuacion": 61,
+        "esMVP": false
+      },
+      "c5681e43-3416-4196-9537-76dfc78c13c1": {
+        "jugadorId": "c5681e43-3416-4196-9537-76dfc78c13c1",
+        "kills": 8,
+        "assists": 19,
+        "deaths": 6,
+        "puntuacion": 67,
+        "esMVP": false
+      },
+      "d9bae3f7-3b5c-49de-851b-3908d41a2887": {
+        "jugadorId": "d9bae3f7-3b5c-49de-851b-3908d41a2887",
+        "kills": 1,
+        "assists": 9,
+        "deaths": 6,
+        "puntuacion": 61,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T18:10:47.7949761",
+    "fechaHoraFin": "2025-11-09T18:10:47.8004848",
+    "ganador": "Alpha Flash",
+    "duracionMinutos": 30
+  },
+  "3689e6a0-08cd-4dde-99fd-69532e27e991": {
+    "scrimId": "3689e6a0-08cd-4dde-99fd-69532e27e991",
+    "scrimReferencia": {
+      "id": "3689e6a0-08cd-4dde-99fd-69532e27e991",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T18:14:54.5582306",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "cabab475-47b2-4962-aa72-baf9523c03a6",
+          "scrimId": "3689e6a0-08cd-4dde-99fd-69532e27e991",
+          "userId": "fa3b2de0-a260-42c5-b65a-f9e70658ca31",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:14:58.4084614",
+          "fechaActualizacion": "2025-11-09T18:14:58.4084614"
+        },
+        {
+          "id": "faf2acbb-e8a4-443c-b0cc-fa83fc886e43",
+          "scrimId": "3689e6a0-08cd-4dde-99fd-69532e27e991",
+          "userId": "0163b977-3789-479e-b085-f9c27c8f0324",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:14:58.9212322",
+          "fechaActualizacion": "2025-11-09T18:14:58.9212322"
+        },
+        {
+          "id": "98037d46-6b65-4327-968f-90ab40472956",
+          "scrimId": "3689e6a0-08cd-4dde-99fd-69532e27e991",
+          "userId": "37783642-d69b-4de4-af35-a03ed77bed6e",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:14:59.423976",
+          "fechaActualizacion": "2025-11-09T18:14:59.423976"
+        },
+        {
+          "id": "66db1cd3-3d0a-45be-8383-15b8556d6302",
+          "scrimId": "3689e6a0-08cd-4dde-99fd-69532e27e991",
+          "userId": "416755f7-3568-4153-871d-85f5bcc22579",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:14:59.9350776",
+          "fechaActualizacion": "2025-11-09T18:14:59.9354201"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "e29cadb7-7461-469e-a932-8c66f001cb6c",
+          "scrimId": "3689e6a0-08cd-4dde-99fd-69532e27e991",
+          "userId": "fa3b2de0-a260-42c5-b65a-f9e70658ca31",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:14:59.9354201",
+          "fechaRespuesta": "2025-11-09T18:15:10.520036"
+        },
+        {
+          "id": "90245321-fd89-4de6-8b64-02aba0880444",
+          "scrimId": "3689e6a0-08cd-4dde-99fd-69532e27e991",
+          "userId": "0163b977-3789-479e-b085-f9c27c8f0324",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:14:59.9354201",
+          "fechaRespuesta": "2025-11-09T18:15:10.523041"
+        },
+        {
+          "id": "b4a7cb1f-f41b-43fd-ade5-ef3d2c918ff2",
+          "scrimId": "3689e6a0-08cd-4dde-99fd-69532e27e991",
+          "userId": "37783642-d69b-4de4-af35-a03ed77bed6e",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:14:59.9354201",
+          "fechaRespuesta": "2025-11-09T18:15:10.5245515"
+        },
+        {
+          "id": "fb7de8d7-b9e6-4df2-a022-2846329962df",
+          "scrimId": "3689e6a0-08cd-4dde-99fd-69532e27e991",
+          "userId": "416755f7-3568-4153-871d-85f5bcc22579",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:14:59.9354201",
+          "fechaRespuesta": "2025-11-09T18:15:10.5255496"
+        }
+      ],
+      "createdBy": "5034b50a-7dca-4da9-80e2-2db48398f876",
+      "createdAt": "2025-11-09T18:14:44.5582306",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "416755f7-3568-4153-871d-85f5bcc22579": {
+        "jugadorId": "416755f7-3568-4153-871d-85f5bcc22579",
+        "kills": 9,
+        "assists": 1,
+        "deaths": 3,
+        "puntuacion": 83,
+        "esMVP": false
+      },
+      "0163b977-3789-479e-b085-f9c27c8f0324": {
+        "jugadorId": "0163b977-3789-479e-b085-f9c27c8f0324",
+        "kills": 10,
+        "assists": 11,
+        "deaths": 7,
+        "puntuacion": 90,
+        "esMVP": false
+      },
+      "fa3b2de0-a260-42c5-b65a-f9e70658ca31": {
+        "jugadorId": "fa3b2de0-a260-42c5-b65a-f9e70658ca31",
+        "kills": 10,
+        "assists": 15,
+        "deaths": 4,
+        "puntuacion": 88,
+        "esMVP": false
+      },
+      "37783642-d69b-4de4-af35-a03ed77bed6e": {
+        "jugadorId": "37783642-d69b-4de4-af35-a03ed77bed6e",
+        "kills": 6,
+        "assists": 19,
+        "deaths": 5,
+        "puntuacion": 86,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T18:15:32.9189174",
+    "fechaHoraFin": "2025-11-09T18:15:32.9219196",
+    "ganador": "Obsidian Heroes",
+    "duracionMinutos": 39
+  },
+  "13dc657a-ea70-419f-8d2e-ba3e50fcaa11": {
+    "scrimId": "13dc657a-ea70-419f-8d2e-ba3e50fcaa11",
+    "scrimReferencia": {
+      "id": "13dc657a-ea70-419f-8d2e-ba3e50fcaa11",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T18:19:22.7776254",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "612e32e6-0e19-4311-af05-397e5a8ba83f",
+          "scrimId": "13dc657a-ea70-419f-8d2e-ba3e50fcaa11",
+          "userId": "9f327736-ff02-4c38-a5ad-35c0243a9929",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:19:26.5260059",
+          "fechaActualizacion": "2025-11-09T18:19:26.5260059"
+        },
+        {
+          "id": "794efe0a-d260-4b83-a7d3-2324fb9d9ff8",
+          "scrimId": "13dc657a-ea70-419f-8d2e-ba3e50fcaa11",
+          "userId": "0c04f95c-6dc2-47f2-907b-8d98bd9e03a4",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:19:27.0375888",
+          "fechaActualizacion": "2025-11-09T18:19:27.0375888"
+        },
+        {
+          "id": "f407b29c-6126-4b61-88d4-b60f92b979b3",
+          "scrimId": "13dc657a-ea70-419f-8d2e-ba3e50fcaa11",
+          "userId": "e351c9d4-4728-4b92-9b01-ac8f94790699",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:19:27.5520764",
+          "fechaActualizacion": "2025-11-09T18:19:27.5520764"
+        },
+        {
+          "id": "b5b00080-48bf-466a-bb47-fd4d8a04d35c",
+          "scrimId": "13dc657a-ea70-419f-8d2e-ba3e50fcaa11",
+          "userId": "d6377b11-6735-47d0-8b73-b3ea6c38dbdf",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:19:28.0670844",
+          "fechaActualizacion": "2025-11-09T18:19:28.0670844"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "1fa2ad2c-48e8-4869-82b7-966cf7780cef",
+          "scrimId": "13dc657a-ea70-419f-8d2e-ba3e50fcaa11",
+          "userId": "9f327736-ff02-4c38-a5ad-35c0243a9929",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:19:28.0670844",
+          "fechaRespuesta": "2025-11-09T18:19:38.9177494"
+        },
+        {
+          "id": "60c02989-1159-4fbb-893c-900825d1986d",
+          "scrimId": "13dc657a-ea70-419f-8d2e-ba3e50fcaa11",
+          "userId": "0c04f95c-6dc2-47f2-907b-8d98bd9e03a4",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:19:28.0670844",
+          "fechaRespuesta": "2025-11-09T18:19:38.9222609"
+        },
+        {
+          "id": "8bec5bea-5f77-40b7-8e73-bd8a8a1aab63",
+          "scrimId": "13dc657a-ea70-419f-8d2e-ba3e50fcaa11",
+          "userId": "e351c9d4-4728-4b92-9b01-ac8f94790699",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:19:28.0670844",
+          "fechaRespuesta": "2025-11-09T18:19:38.9222609"
+        },
+        {
+          "id": "6995cda0-a92f-4947-9bd7-4449eb6529a5",
+          "scrimId": "13dc657a-ea70-419f-8d2e-ba3e50fcaa11",
+          "userId": "d6377b11-6735-47d0-8b73-b3ea6c38dbdf",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:19:28.0670844",
+          "fechaRespuesta": "2025-11-09T18:19:38.9237674"
+        }
+      ],
+      "createdBy": "3cd01992-f1da-4824-a93d-712f71805024",
+      "createdAt": "2025-11-09T18:19:12.7786318",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "0c04f95c-6dc2-47f2-907b-8d98bd9e03a4": {
+        "jugadorId": "0c04f95c-6dc2-47f2-907b-8d98bd9e03a4",
+        "kills": 9,
+        "assists": 15,
+        "deaths": 2,
+        "puntuacion": 75,
+        "esMVP": false
+      },
+      "e351c9d4-4728-4b92-9b01-ac8f94790699": {
+        "jugadorId": "e351c9d4-4728-4b92-9b01-ac8f94790699",
+        "kills": 11,
+        "assists": 5,
+        "deaths": 4,
+        "puntuacion": 77,
+        "esMVP": false
+      },
+      "9f327736-ff02-4c38-a5ad-35c0243a9929": {
+        "jugadorId": "9f327736-ff02-4c38-a5ad-35c0243a9929",
+        "kills": 10,
+        "assists": 20,
+        "deaths": 8,
+        "puntuacion": 76,
+        "esMVP": false
+      },
+      "d6377b11-6735-47d0-8b73-b3ea6c38dbdf": {
+        "jugadorId": "d6377b11-6735-47d0-8b73-b3ea6c38dbdf",
+        "kills": 6,
+        "assists": 3,
+        "deaths": 3,
+        "puntuacion": 95,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T18:20:00.8742822",
+    "fechaHoraFin": "2025-11-09T18:20:00.8777949",
+    "ganador": "Obsidian Crusaders",
+    "duracionMinutos": 37
+  },
+  "6b7a2267-cd4f-4719-b999-e0d98f2919df": {
+    "scrimId": "6b7a2267-cd4f-4719-b999-e0d98f2919df",
+    "scrimReferencia": {
+      "id": "6b7a2267-cd4f-4719-b999-e0d98f2919df",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T18:43:22.286154",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "a6c39da6-bb1b-4b6d-9e1c-ce957c4a8af5",
+          "scrimId": "6b7a2267-cd4f-4719-b999-e0d98f2919df",
+          "userId": "6c382a15-dfa2-4494-bbef-d4a93d7cf676",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:43:26.1537157",
+          "fechaActualizacion": "2025-11-09T18:43:26.1537157"
+        },
+        {
+          "id": "6fb45d10-ed94-42fc-8384-5a8bbe3b2b8c",
+          "scrimId": "6b7a2267-cd4f-4719-b999-e0d98f2919df",
+          "userId": "7fa211ce-41b1-4085-9944-7ddde25d674c",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:43:26.6617126",
+          "fechaActualizacion": "2025-11-09T18:43:26.6617126"
+        },
+        {
+          "id": "36fd4046-0e7d-4d52-bbb8-3f4c81d31227",
+          "scrimId": "6b7a2267-cd4f-4719-b999-e0d98f2919df",
+          "userId": "b5ce3771-a74d-4f6f-8787-e3cd0681b758",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:43:27.1769392",
+          "fechaActualizacion": "2025-11-09T18:43:27.1769392"
+        },
+        {
+          "id": "48e90550-012c-419e-95e4-ef43f1bd6ed7",
+          "scrimId": "6b7a2267-cd4f-4719-b999-e0d98f2919df",
+          "userId": "04636699-2297-481b-a1d9-1488842ca5d6",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:43:27.6844549",
+          "fechaActualizacion": "2025-11-09T18:43:27.6844549"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "e995f981-89e9-4eec-b321-5a287643da8b",
+          "scrimId": "6b7a2267-cd4f-4719-b999-e0d98f2919df",
+          "userId": "6c382a15-dfa2-4494-bbef-d4a93d7cf676",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:43:27.6844549",
+          "fechaRespuesta": "2025-11-09T18:43:38.259076"
+        },
+        {
+          "id": "93d51793-7650-4479-905b-af48bb8c4165",
+          "scrimId": "6b7a2267-cd4f-4719-b999-e0d98f2919df",
+          "userId": "7fa211ce-41b1-4085-9944-7ddde25d674c",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:43:27.6844549",
+          "fechaRespuesta": "2025-11-09T18:43:38.2620756"
+        },
+        {
+          "id": "5f09ed12-eee0-4297-be65-d1f4fb227ec1",
+          "scrimId": "6b7a2267-cd4f-4719-b999-e0d98f2919df",
+          "userId": "b5ce3771-a74d-4f6f-8787-e3cd0681b758",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:43:27.6844549",
+          "fechaRespuesta": "2025-11-09T18:43:38.2630751"
+        },
+        {
+          "id": "5d6d85c5-88c0-4720-8ab3-78edc2e41c0f",
+          "scrimId": "6b7a2267-cd4f-4719-b999-e0d98f2919df",
+          "userId": "04636699-2297-481b-a1d9-1488842ca5d6",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:43:27.6844549",
+          "fechaRespuesta": "2025-11-09T18:43:38.2640764"
+        }
+      ],
+      "createdBy": "6507e7a0-b0a8-414f-9e76-88e747be58d8",
+      "createdAt": "2025-11-09T18:43:12.286154",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "6c382a15-dfa2-4494-bbef-d4a93d7cf676": {
+        "jugadorId": "6c382a15-dfa2-4494-bbef-d4a93d7cf676",
+        "kills": 10,
+        "assists": 14,
+        "deaths": 6,
+        "puntuacion": 76,
+        "esMVP": false
+      },
+      "04636699-2297-481b-a1d9-1488842ca5d6": {
+        "jugadorId": "04636699-2297-481b-a1d9-1488842ca5d6",
+        "kills": 12,
+        "assists": 4,
+        "deaths": 7,
+        "puntuacion": 74,
+        "esMVP": false
+      },
+      "b5ce3771-a74d-4f6f-8787-e3cd0681b758": {
+        "jugadorId": "b5ce3771-a74d-4f6f-8787-e3cd0681b758",
+        "kills": 7,
+        "assists": 9,
+        "deaths": 7,
+        "puntuacion": 84,
+        "esMVP": false
+      },
+      "7fa211ce-41b1-4085-9944-7ddde25d674c": {
+        "jugadorId": "7fa211ce-41b1-4085-9944-7ddde25d674c",
+        "kills": 13,
+        "assists": 2,
+        "deaths": 7,
+        "puntuacion": 68,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T18:44:00.6544117",
+    "fechaHoraFin": "2025-11-09T18:44:00.6590113",
+    "ganador": "Neon Force",
+    "duracionMinutos": 17
+  },
+  "a94a35a5-5a7d-433f-945f-d798c0ba2afe": {
+    "scrimId": "a94a35a5-5a7d-433f-945f-d798c0ba2afe",
+    "scrimReferencia": {
+      "id": "a94a35a5-5a7d-433f-945f-d798c0ba2afe",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T18:45:14.6110868",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "9496620b-3286-4b03-b91f-1e603b95dcc2",
+          "scrimId": "a94a35a5-5a7d-433f-945f-d798c0ba2afe",
+          "userId": "6a1e2f8e-f12c-4e1f-9265-b54b631f8fba",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:45:18.1205608",
+          "fechaActualizacion": "2025-11-09T18:45:18.1205608"
+        },
+        {
+          "id": "7fdc43cd-0bc9-4b61-9a4d-3bcf0b5f03c9",
+          "scrimId": "a94a35a5-5a7d-433f-945f-d798c0ba2afe",
+          "userId": "4c25334f-0cb4-447b-b217-431894e0d974",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:45:18.634403",
+          "fechaActualizacion": "2025-11-09T18:45:18.634403"
+        },
+        {
+          "id": "2e375171-a8c6-4717-9f4f-ef97b874b5e7",
+          "scrimId": "a94a35a5-5a7d-433f-945f-d798c0ba2afe",
+          "userId": "4be66b8a-8e2e-448b-9051-05e8935b5af6",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:45:19.1474427",
+          "fechaActualizacion": "2025-11-09T18:45:19.1474427"
+        },
+        {
+          "id": "38df114c-832d-4118-81ef-e4e68b070cdc",
+          "scrimId": "a94a35a5-5a7d-433f-945f-d798c0ba2afe",
+          "userId": "2bfdf4e7-b2b7-4242-b6cf-ad85217ff6d1",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:45:19.6643242",
+          "fechaActualizacion": "2025-11-09T18:45:19.6643242"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "7018f900-80cd-4e28-ac1b-944201ec5f01",
+          "scrimId": "a94a35a5-5a7d-433f-945f-d798c0ba2afe",
+          "userId": "6a1e2f8e-f12c-4e1f-9265-b54b631f8fba",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:45:19.6643242",
+          "fechaRespuesta": "2025-11-09T18:45:29.9902709"
+        },
+        {
+          "id": "d356d2b6-2d4c-499b-8370-d91828b85084",
+          "scrimId": "a94a35a5-5a7d-433f-945f-d798c0ba2afe",
+          "userId": "4c25334f-0cb4-447b-b217-431894e0d974",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:45:19.6643242",
+          "fechaRespuesta": "2025-11-09T18:45:29.9937873"
+        },
+        {
+          "id": "acd30aca-f03c-4efa-b6f6-79eaa8b9f7f6",
+          "scrimId": "a94a35a5-5a7d-433f-945f-d798c0ba2afe",
+          "userId": "4be66b8a-8e2e-448b-9051-05e8935b5af6",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:45:19.6643242",
+          "fechaRespuesta": "2025-11-09T18:45:29.9957924"
+        },
+        {
+          "id": "599c135b-fced-4127-944f-d4e3d673a98d",
+          "scrimId": "a94a35a5-5a7d-433f-945f-d798c0ba2afe",
+          "userId": "2bfdf4e7-b2b7-4242-b6cf-ad85217ff6d1",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:45:19.6643242",
+          "fechaRespuesta": "2025-11-09T18:45:29.9967918"
+        }
+      ],
+      "createdBy": "16b811a3-6168-40f3-bae8-1baff7f82a53",
+      "createdAt": "2025-11-09T18:45:04.6125945",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "6a1e2f8e-f12c-4e1f-9265-b54b631f8fba": {
+        "jugadorId": "6a1e2f8e-f12c-4e1f-9265-b54b631f8fba",
+        "kills": 4,
+        "assists": 6,
+        "deaths": 6,
+        "puntuacion": 91,
+        "esMVP": false
+      },
+      "4c25334f-0cb4-447b-b217-431894e0d974": {
+        "jugadorId": "4c25334f-0cb4-447b-b217-431894e0d974",
+        "kills": 2,
+        "assists": 5,
+        "deaths": 6,
+        "puntuacion": 61,
+        "esMVP": false
+      },
+      "4be66b8a-8e2e-448b-9051-05e8935b5af6": {
+        "jugadorId": "4be66b8a-8e2e-448b-9051-05e8935b5af6",
+        "kills": 12,
+        "assists": 16,
+        "deaths": 5,
+        "puntuacion": 70,
+        "esMVP": false
+      },
+      "2bfdf4e7-b2b7-4242-b6cf-ad85217ff6d1": {
+        "jugadorId": "2bfdf4e7-b2b7-4242-b6cf-ad85217ff6d1",
+        "kills": 9,
+        "assists": 12,
+        "deaths": 6,
+        "puntuacion": 69,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T18:45:51.3161499",
+    "fechaHoraFin": "2025-11-09T18:45:51.3196583",
+    "ganador": "Gold Crusaders",
+    "duracionMinutos": 51
+  },
+  "cc126f9d-f059-41f7-a321-848effc6f26a": {
+    "scrimId": "cc126f9d-f059-41f7-a321-848effc6f26a",
+    "scrimReferencia": {
+      "id": "cc126f9d-f059-41f7-a321-848effc6f26a",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T18:48:11.484273",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "0c4b3d01-0f8b-44ee-8b8b-f96fba550d4d",
+          "scrimId": "cc126f9d-f059-41f7-a321-848effc6f26a",
+          "userId": "7066deb6-b85c-402e-b19c-4f5a304f8dae",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:48:14.7246799",
+          "fechaActualizacion": "2025-11-09T18:48:14.7246799"
+        },
+        {
+          "id": "aed1d7a9-25da-4b31-83d2-687f45730ee9",
+          "scrimId": "cc126f9d-f059-41f7-a321-848effc6f26a",
+          "userId": "3e4dda56-93d9-4895-89d7-4ec021378ef8",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:48:15.2340841",
+          "fechaActualizacion": "2025-11-09T18:48:15.2340841"
+        },
+        {
+          "id": "e75c66b7-2af1-4f22-8bf1-001e55c6b3de",
+          "scrimId": "cc126f9d-f059-41f7-a321-848effc6f26a",
+          "userId": "d735e943-3113-45ce-8a48-0413009c7654",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:48:15.7401308",
+          "fechaActualizacion": "2025-11-09T18:48:15.7401308"
+        },
+        {
+          "id": "0dc898a6-591b-4656-b456-ee5983374e89",
+          "scrimId": "cc126f9d-f059-41f7-a321-848effc6f26a",
+          "userId": "b0be01fc-c508-432a-b0b3-e0458ba0e107",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:48:16.2540372",
+          "fechaActualizacion": "2025-11-09T18:48:16.2540372"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "f8477215-506c-4008-904d-33ee8b2e3fd1",
+          "scrimId": "cc126f9d-f059-41f7-a321-848effc6f26a",
+          "userId": "7066deb6-b85c-402e-b19c-4f5a304f8dae",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:48:16.2540372",
+          "fechaRespuesta": "2025-11-09T18:48:26.76048"
+        },
+        {
+          "id": "d46ed46a-6126-4f72-8bdb-dff9e4b8164d",
+          "scrimId": "cc126f9d-f059-41f7-a321-848effc6f26a",
+          "userId": "3e4dda56-93d9-4895-89d7-4ec021378ef8",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:48:16.2540372",
+          "fechaRespuesta": "2025-11-09T18:48:26.7619848"
+        },
+        {
+          "id": "792c7d2c-5e3c-4388-921a-66456c47e34d",
+          "scrimId": "cc126f9d-f059-41f7-a321-848effc6f26a",
+          "userId": "d735e943-3113-45ce-8a48-0413009c7654",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:48:16.2540372",
+          "fechaRespuesta": "2025-11-09T18:48:26.7645742"
+        },
+        {
+          "id": "d0e91449-4c2e-4171-852a-2dd50bc4bc68",
+          "scrimId": "cc126f9d-f059-41f7-a321-848effc6f26a",
+          "userId": "b0be01fc-c508-432a-b0b3-e0458ba0e107",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:48:16.2540372",
+          "fechaRespuesta": "2025-11-09T18:48:26.7645742"
+        }
+      ],
+      "createdBy": "3c5dbb0e-08b3-4bd3-8b39-7ddb9c3de51d",
+      "createdAt": "2025-11-09T18:48:01.484273",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "d735e943-3113-45ce-8a48-0413009c7654": {
+        "jugadorId": "d735e943-3113-45ce-8a48-0413009c7654",
+        "kills": 2,
+        "assists": 8,
+        "deaths": 3,
+        "puntuacion": 62,
+        "esMVP": false
+      },
+      "3e4dda56-93d9-4895-89d7-4ec021378ef8": {
+        "jugadorId": "3e4dda56-93d9-4895-89d7-4ec021378ef8",
+        "kills": 7,
+        "assists": 11,
+        "deaths": 4,
+        "puntuacion": 99,
+        "esMVP": false
+      },
+      "b0be01fc-c508-432a-b0b3-e0458ba0e107": {
+        "jugadorId": "b0be01fc-c508-432a-b0b3-e0458ba0e107",
+        "kills": 2,
+        "assists": 19,
+        "deaths": 5,
+        "puntuacion": 79,
+        "esMVP": false
+      },
+      "7066deb6-b85c-402e-b19c-4f5a304f8dae": {
+        "jugadorId": "7066deb6-b85c-402e-b19c-4f5a304f8dae",
+        "kills": 13,
+        "assists": 19,
+        "deaths": 8,
+        "puntuacion": 67,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T18:48:49.1909454",
+    "fechaHoraFin": "2025-11-09T18:48:49.1937444",
+    "ganador": "Delta Flash",
+    "duracionMinutos": 29
+  },
+  "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa": {
+    "scrimId": "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa",
+    "scrimReferencia": {
+      "id": "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T18:52:00.1329426",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "0bfa6b52-a40c-4b03-a371-6703e6437d83",
+          "scrimId": "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa",
+          "userId": "42b01c00-3ca4-43ec-b048-8e899599b176",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:52:03.7238022",
+          "fechaActualizacion": "2025-11-09T18:52:03.7238022"
+        },
+        {
+          "id": "4910a2f9-55be-4f21-a2c3-3237cfeb65e8",
+          "scrimId": "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa",
+          "userId": "111d046c-1a13-4ab0-b871-f59b46e637b1",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:52:04.2362573",
+          "fechaActualizacion": "2025-11-09T18:52:04.2362573"
+        },
+        {
+          "id": "667c8105-3111-4081-8244-b0b1c8a63566",
+          "scrimId": "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa",
+          "userId": "2262a76e-ae8b-43ea-8ccb-2dfb0c68afd4",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:52:04.7453757",
+          "fechaActualizacion": "2025-11-09T18:52:04.7453757"
+        },
+        {
+          "id": "7506d83a-19a6-4615-b2e8-32f86ec6e333",
+          "scrimId": "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa",
+          "userId": "4885f17b-4fc1-47c8-ab0a-605c876e7e34",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:52:05.253575",
+          "fechaActualizacion": "2025-11-09T18:52:05.253575"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "6ce12efa-bc60-4cfd-9c1c-6657ddd3b1a2",
+          "scrimId": "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa",
+          "userId": "42b01c00-3ca4-43ec-b048-8e899599b176",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:52:05.253575",
+          "fechaRespuesta": "2025-11-09T18:52:16.3842052"
+        },
+        {
+          "id": "3d34b033-9ee7-47f4-8dcf-294da84c751e",
+          "scrimId": "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa",
+          "userId": "111d046c-1a13-4ab0-b871-f59b46e637b1",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:52:05.253575",
+          "fechaRespuesta": "2025-11-09T18:52:16.3862037"
+        },
+        {
+          "id": "a21c6f5d-be39-4434-b8eb-8442b9bda10c",
+          "scrimId": "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa",
+          "userId": "2262a76e-ae8b-43ea-8ccb-2dfb0c68afd4",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:52:05.253575",
+          "fechaRespuesta": "2025-11-09T18:52:16.3877096"
+        },
+        {
+          "id": "75690ae7-0a8d-42f5-887f-38ac6faeff29",
+          "scrimId": "f7bbdb0a-ce93-4ef8-87b7-c86348cc7daa",
+          "userId": "4885f17b-4fc1-47c8-ab0a-605c876e7e34",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:52:05.253575",
+          "fechaRespuesta": "2025-11-09T18:52:16.3887156"
+        }
+      ],
+      "createdBy": "e5770fca-9741-4549-abbe-e4a4523c7762",
+      "createdAt": "2025-11-09T18:51:50.1329426",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "4885f17b-4fc1-47c8-ab0a-605c876e7e34": {
+        "jugadorId": "4885f17b-4fc1-47c8-ab0a-605c876e7e34",
+        "kills": 6,
+        "assists": 20,
+        "deaths": 4,
+        "puntuacion": 61,
+        "esMVP": false
+      },
+      "2262a76e-ae8b-43ea-8ccb-2dfb0c68afd4": {
+        "jugadorId": "2262a76e-ae8b-43ea-8ccb-2dfb0c68afd4",
+        "kills": 11,
+        "assists": 10,
+        "deaths": 7,
+        "puntuacion": 89,
+        "esMVP": false
+      },
+      "42b01c00-3ca4-43ec-b048-8e899599b176": {
+        "jugadorId": "42b01c00-3ca4-43ec-b048-8e899599b176",
+        "kills": 3,
+        "assists": 2,
+        "deaths": 1,
+        "puntuacion": 60,
+        "esMVP": false
+      },
+      "111d046c-1a13-4ab0-b871-f59b46e637b1": {
+        "jugadorId": "111d046c-1a13-4ab0-b871-f59b46e637b1",
+        "kills": 15,
+        "assists": 18,
+        "deaths": 8,
+        "puntuacion": 60,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T18:52:38.2010224",
+    "fechaHoraFin": "2025-11-09T18:52:38.2035245",
+    "ganador": "Alpha Clutch",
+    "duracionMinutos": 38
+  },
+  "8c98f400-9768-424f-a2be-86df1df92b07": {
+    "scrimId": "8c98f400-9768-424f-a2be-86df1df92b07",
+    "scrimReferencia": {
+      "id": "8c98f400-9768-424f-a2be-86df1df92b07",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T18:57:39.5467644",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "d31cd247-806d-47b0-af5e-b71f207193b0",
+          "scrimId": "8c98f400-9768-424f-a2be-86df1df92b07",
+          "userId": "01aeefeb-a9af-4617-b77b-53b1c24750bb",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:57:42.9068904",
+          "fechaActualizacion": "2025-11-09T18:57:42.9068904"
+        },
+        {
+          "id": "2ef6afc2-f46c-430f-b0a8-0a8b095e420e",
+          "scrimId": "8c98f400-9768-424f-a2be-86df1df92b07",
+          "userId": "3236dd05-d5d7-4b37-ae9f-43c20e182428",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:57:43.4203765",
+          "fechaActualizacion": "2025-11-09T18:57:43.4203765"
+        },
+        {
+          "id": "ed57dd7d-8de8-40ff-b5f8-eb45bc7ab767",
+          "scrimId": "8c98f400-9768-424f-a2be-86df1df92b07",
+          "userId": "049b7a80-76de-4579-9710-a6b690642f70",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:57:43.9314742",
+          "fechaActualizacion": "2025-11-09T18:57:43.9314742"
+        },
+        {
+          "id": "a9273ab2-faab-469e-a6da-18a417c1d187",
+          "scrimId": "8c98f400-9768-424f-a2be-86df1df92b07",
+          "userId": "50bcf750-1ab9-49dd-b857-9320303b9860",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T18:57:44.4461792",
+          "fechaActualizacion": "2025-11-09T18:57:44.4461792"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "77a06468-904d-4c26-b31c-8291866df69e",
+          "scrimId": "8c98f400-9768-424f-a2be-86df1df92b07",
+          "userId": "01aeefeb-a9af-4617-b77b-53b1c24750bb",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:57:44.4467486",
+          "fechaRespuesta": "2025-11-09T18:57:54.5110611"
+        },
+        {
+          "id": "7457b5e7-8a31-46de-a665-6558423f583b",
+          "scrimId": "8c98f400-9768-424f-a2be-86df1df92b07",
+          "userId": "3236dd05-d5d7-4b37-ae9f-43c20e182428",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:57:44.4467486",
+          "fechaRespuesta": "2025-11-09T18:57:54.5130679"
+        },
+        {
+          "id": "3017e06c-dfce-4992-9a62-61f90dd5e6fa",
+          "scrimId": "8c98f400-9768-424f-a2be-86df1df92b07",
+          "userId": "049b7a80-76de-4579-9710-a6b690642f70",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:57:44.4467486",
+          "fechaRespuesta": "2025-11-09T18:57:54.5145723"
+        },
+        {
+          "id": "23b413ea-9186-43cd-a960-595c3d1def09",
+          "scrimId": "8c98f400-9768-424f-a2be-86df1df92b07",
+          "userId": "50bcf750-1ab9-49dd-b857-9320303b9860",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T18:57:44.4467486",
+          "fechaRespuesta": "2025-11-09T18:57:54.5155779"
+        }
+      ],
+      "createdBy": "9073026c-8367-407d-9c99-edb75024a2aa",
+      "createdAt": "2025-11-09T18:57:29.5467644",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "049b7a80-76de-4579-9710-a6b690642f70": {
+        "jugadorId": "049b7a80-76de-4579-9710-a6b690642f70",
+        "kills": 12,
+        "assists": 15,
+        "deaths": 7,
+        "puntuacion": 71,
+        "esMVP": false
+      },
+      "50bcf750-1ab9-49dd-b857-9320303b9860": {
+        "jugadorId": "50bcf750-1ab9-49dd-b857-9320303b9860",
+        "kills": 12,
+        "assists": 3,
+        "deaths": 2,
+        "puntuacion": 98,
+        "esMVP": false
+      },
+      "01aeefeb-a9af-4617-b77b-53b1c24750bb": {
+        "jugadorId": "01aeefeb-a9af-4617-b77b-53b1c24750bb",
+        "kills": 2,
+        "assists": 6,
+        "deaths": 3,
+        "puntuacion": 70,
+        "esMVP": false
+      },
+      "3236dd05-d5d7-4b37-ae9f-43c20e182428": {
+        "jugadorId": "3236dd05-d5d7-4b37-ae9f-43c20e182428",
+        "kills": 12,
+        "assists": 1,
+        "deaths": 2,
+        "puntuacion": 89,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T18:58:16.2556254",
+    "fechaHoraFin": "2025-11-09T18:58:16.2591328",
+    "ganador": "Prime Rush",
+    "duracionMinutos": 39
+  },
+  "af97324a-b83e-4ced-b2f6-48a14ffbbdff": {
+    "scrimId": "af97324a-b83e-4ced-b2f6-48a14ffbbdff",
+    "scrimReferencia": {
+      "id": "af97324a-b83e-4ced-b2f6-48a14ffbbdff",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T19:04:36.0550894",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "339ef107-cdca-49b9-bf3c-0f0103c057ee",
+          "scrimId": "af97324a-b83e-4ced-b2f6-48a14ffbbdff",
+          "userId": "737adaa0-5641-40bb-8727-a67e3fc3b895",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:04:41.1454835",
+          "fechaActualizacion": "2025-11-09T19:04:41.1459906"
+        },
+        {
+          "id": "3cb040dd-fe30-4995-ad43-7652859eed80",
+          "scrimId": "af97324a-b83e-4ced-b2f6-48a14ffbbdff",
+          "userId": "08a68695-2031-4fdf-a982-0012aa64e05d",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:04:41.6593739",
+          "fechaActualizacion": "2025-11-09T19:04:41.6593739"
+        },
+        {
+          "id": "1d22342e-201d-4b13-94e8-7a8e29d9cf21",
+          "scrimId": "af97324a-b83e-4ced-b2f6-48a14ffbbdff",
+          "userId": "84a9e0d7-a0ec-4436-8935-56e9d594b1b9",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:04:42.1709066",
+          "fechaActualizacion": "2025-11-09T19:04:42.1709066"
+        },
+        {
+          "id": "8cdc0490-ab90-495f-933b-c4e91a50323e",
+          "scrimId": "af97324a-b83e-4ced-b2f6-48a14ffbbdff",
+          "userId": "675f3dc3-da52-4bba-b4eb-b3013675c793",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:04:42.6808933",
+          "fechaActualizacion": "2025-11-09T19:04:42.6808933"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "9c4b16bc-64e3-4bd3-acac-9a9905a6717b",
+          "scrimId": "af97324a-b83e-4ced-b2f6-48a14ffbbdff",
+          "userId": "737adaa0-5641-40bb-8727-a67e3fc3b895",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:04:42.6808933",
+          "fechaRespuesta": "2025-11-09T19:04:54.1823828"
+        },
+        {
+          "id": "88abd4f1-2c26-470f-9518-1fb6b89c2e8a",
+          "scrimId": "af97324a-b83e-4ced-b2f6-48a14ffbbdff",
+          "userId": "08a68695-2031-4fdf-a982-0012aa64e05d",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:04:42.6808933",
+          "fechaRespuesta": "2025-11-09T19:04:54.1859049"
+        },
+        {
+          "id": "6d6ce75c-43fc-4e01-a517-a09a5914e140",
+          "scrimId": "af97324a-b83e-4ced-b2f6-48a14ffbbdff",
+          "userId": "84a9e0d7-a0ec-4436-8935-56e9d594b1b9",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:04:42.6808933",
+          "fechaRespuesta": "2025-11-09T19:04:54.1859049"
+        },
+        {
+          "id": "6bd2aa90-a253-4b73-8567-95f7a241b9d4",
+          "scrimId": "af97324a-b83e-4ced-b2f6-48a14ffbbdff",
+          "userId": "675f3dc3-da52-4bba-b4eb-b3013675c793",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:04:42.6808933",
+          "fechaRespuesta": "2025-11-09T19:04:54.1874092"
+        }
+      ],
+      "createdBy": "9203c4dc-bd54-4a31-9bf5-388b814b644e",
+      "createdAt": "2025-11-09T19:04:26.0560904",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "675f3dc3-da52-4bba-b4eb-b3013675c793": {
+        "jugadorId": "675f3dc3-da52-4bba-b4eb-b3013675c793",
+        "kills": 11,
+        "assists": 9,
+        "deaths": 2,
+        "puntuacion": 81,
+        "esMVP": false
+      },
+      "737adaa0-5641-40bb-8727-a67e3fc3b895": {
+        "jugadorId": "737adaa0-5641-40bb-8727-a67e3fc3b895",
+        "kills": 4,
+        "assists": 15,
+        "deaths": 6,
+        "puntuacion": 84,
+        "esMVP": false
+      },
+      "08a68695-2031-4fdf-a982-0012aa64e05d": {
+        "jugadorId": "08a68695-2031-4fdf-a982-0012aa64e05d",
+        "kills": 2,
+        "assists": 20,
+        "deaths": 1,
+        "puntuacion": 67,
+        "esMVP": false
+      },
+      "84a9e0d7-a0ec-4436-8935-56e9d594b1b9": {
+        "jugadorId": "84a9e0d7-a0ec-4436-8935-56e9d594b1b9",
+        "kills": 7,
+        "assists": 12,
+        "deaths": 7,
+        "puntuacion": 70,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T19:05:18.826342",
+    "fechaHoraFin": "2025-11-09T19:05:18.8338528",
+    "ganador": "Matrix Unit",
+    "duracionMinutos": 24
+  },
+  "857352ca-1a30-40bf-b8da-0504ddf2bf2c": {
+    "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+    "scrimReferencia": {
+      "id": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T19:15:56.7452266",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "900a433e-520e-40b3-b5f9-43f31c861926",
+          "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+          "userId": "86d64a7c-3be0-4dd2-892f-94b1b16380f7",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:15:51.4947625",
+          "fechaActualizacion": "2025-11-09T19:15:51.4947625"
+        },
+        {
+          "id": "54406288-a889-4974-9973-fd9a67cb8af1",
+          "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+          "userId": "cab48b60-34aa-4a48-852b-e40da823be8f",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:15:52.0052503",
+          "fechaActualizacion": "2025-11-09T19:15:52.0052503"
+        },
+        {
+          "id": "1da9ee98-ecc0-4c66-b8c3-7457ee8605b5",
+          "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+          "userId": "afb4a075-c8b1-4a0b-96a7-fdce9dbc7b44",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:15:52.5186512",
+          "fechaActualizacion": "2025-11-09T19:15:52.5186512"
+        },
+        {
+          "id": "acdfec70-af05-4902-a17e-43b5b784fb67",
+          "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+          "userId": "ab754fa1-6089-4251-8300-7e9276a9e0ea",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:15:53.0332694",
+          "fechaActualizacion": "2025-11-09T19:15:53.0332694"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "6e081c5f-4087-48e8-bd75-9eafe8685afe",
+          "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+          "userId": "86d64a7c-3be0-4dd2-892f-94b1b16380f7",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:15:53.0332694",
+          "fechaRespuesta": "2025-11-09T19:15:57.1733616"
+        },
+        {
+          "id": "f25ded9d-a08e-493a-a65b-c043bd3cdc50",
+          "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+          "userId": "cab48b60-34aa-4a48-852b-e40da823be8f",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:15:53.0332694",
+          "fechaRespuesta": "2025-11-09T19:15:57.1763698"
+        },
+        {
+          "id": "4ce1a365-f9eb-4e67-927d-345b7eff4801",
+          "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+          "userId": "afb4a075-c8b1-4a0b-96a7-fdce9dbc7b44",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:15:53.0332694",
+          "fechaRespuesta": "2025-11-09T19:15:57.1773681"
+        },
+        {
+          "id": "b7b6e313-5166-4131-8d0b-5e6a5b85f732",
+          "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+          "userId": "ab754fa1-6089-4251-8300-7e9276a9e0ea",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:15:53.0332694",
+          "fechaRespuesta": "2025-11-09T19:15:57.1783666"
+        }
+      ],
+      "createdBy": "8070bb55-e087-45dd-830a-b4ef1654fb0b",
+      "createdAt": "2025-11-09T19:15:46.7462227",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "86d64a7c-3be0-4dd2-892f-94b1b16380f7": {
+        "jugadorId": "86d64a7c-3be0-4dd2-892f-94b1b16380f7",
+        "kills": 1,
+        "assists": 12,
+        "deaths": 2,
+        "puntuacion": 73,
+        "esMVP": false
+      },
+      "cab48b60-34aa-4a48-852b-e40da823be8f": {
+        "jugadorId": "cab48b60-34aa-4a48-852b-e40da823be8f",
+        "kills": 9,
+        "assists": 9,
+        "deaths": 7,
+        "puntuacion": 73,
+        "esMVP": false
+      },
+      "afb4a075-c8b1-4a0b-96a7-fdce9dbc7b44": {
+        "jugadorId": "afb4a075-c8b1-4a0b-96a7-fdce9dbc7b44",
+        "kills": 10,
+        "assists": 11,
+        "deaths": 8,
+        "puntuacion": 95,
+        "esMVP": false
+      },
+      "ab754fa1-6089-4251-8300-7e9276a9e0ea": {
+        "jugadorId": "ab754fa1-6089-4251-8300-7e9276a9e0ea",
+        "kills": 5,
+        "assists": 3,
+        "deaths": 1,
+        "puntuacion": 67,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T19:16:06.3908711",
+    "fechaHoraFin": "2025-11-09T19:16:06.4015049",
+    "ganador": "Silver Heroes",
+    "duracionMinutos": 27
+  },
+  "f73be377-5121-4af3-a27c-5dc777595aa1": {
+    "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
+    "scrimReferencia": {
+      "id": "f73be377-5121-4af3-a27c-5dc777595aa1",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T19:18:59.7066862",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "4157fa17-cf88-481b-9dca-0f4e1068482c",
+          "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
+          "userId": "e844f1a5-57e0-4f8a-a104-8195f319d458",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:18:57.6248225",
+          "fechaActualizacion": "2025-11-09T19:18:57.6248225"
+        },
+        {
+          "id": "7aff01c1-35f7-4c4f-b229-17e86b5d0003",
+          "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
+          "userId": "656a8d31-e30e-4c9d-9a61-d941f536f68e",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:18:58.1389032",
+          "fechaActualizacion": "2025-11-09T19:18:58.1394378"
+        },
+        {
+          "id": "01687ba5-223a-400f-9bcc-802b1ee7bf7e",
+          "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
+          "userId": "359cec39-7cb2-4aec-812c-25fe4c1cb9b2",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:18:58.650799",
+          "fechaActualizacion": "2025-11-09T19:18:58.6511736"
+        },
+        {
+          "id": "e7b9fc9e-481c-4565-916f-4dd6c4a6e5cb",
+          "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
+          "userId": "1e18850b-885e-4860-8422-47c364efa9b2",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:18:59.1633988",
+          "fechaActualizacion": "2025-11-09T19:18:59.1633988"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "d799bb45-733c-49d1-b8e2-9beface41d0b",
+          "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
+          "userId": "e844f1a5-57e0-4f8a-a104-8195f319d458",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:18:59.1633988",
+          "fechaRespuesta": "2025-11-09T19:19:06.6590315"
+        },
+        {
+          "id": "c9c84fb5-4617-43d3-8803-675137193f73",
+          "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
+          "userId": "656a8d31-e30e-4c9d-9a61-d941f536f68e",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:18:59.1633988",
+          "fechaRespuesta": "2025-11-09T19:19:06.6625421"
+        },
+        {
+          "id": "03d07ccb-4767-43b3-b924-32b4c6a0addf",
+          "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
+          "userId": "359cec39-7cb2-4aec-812c-25fe4c1cb9b2",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:18:59.1633988",
+          "fechaRespuesta": "2025-11-09T19:19:06.6640493"
+        },
+        {
+          "id": "9a7d949e-c649-4131-927d-4753b32f0fee",
+          "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
+          "userId": "1e18850b-885e-4860-8422-47c364efa9b2",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:18:59.1633988",
+          "fechaRespuesta": "2025-11-09T19:19:06.6650558"
+        }
+      ],
+      "createdBy": "35534dff-9683-4fbd-81bb-7968ec4d662b",
+      "createdAt": "2025-11-09T19:18:49.7074961",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "656a8d31-e30e-4c9d-9a61-d941f536f68e": {
+        "jugadorId": "656a8d31-e30e-4c9d-9a61-d941f536f68e",
+        "kills": 11,
+        "assists": 5,
+        "deaths": 7,
+        "puntuacion": 81,
+        "esMVP": false
+      },
+      "359cec39-7cb2-4aec-812c-25fe4c1cb9b2": {
+        "jugadorId": "359cec39-7cb2-4aec-812c-25fe4c1cb9b2",
+        "kills": 5,
+        "assists": 10,
+        "deaths": 7,
+        "puntuacion": 95,
+        "esMVP": false
+      },
+      "e844f1a5-57e0-4f8a-a104-8195f319d458": {
+        "jugadorId": "e844f1a5-57e0-4f8a-a104-8195f319d458",
+        "kills": 13,
+        "assists": 4,
+        "deaths": 2,
+        "puntuacion": 65,
+        "esMVP": false
+      },
+      "1e18850b-885e-4860-8422-47c364efa9b2": {
+        "jugadorId": "1e18850b-885e-4860-8422-47c364efa9b2",
+        "kills": 15,
+        "assists": 16,
+        "deaths": 4,
+        "puntuacion": 73,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T19:19:21.7198766",
+    "fechaHoraFin": "2025-11-09T19:19:21.7309038",
+    "ganador": "Amber Guardians",
+    "duracionMinutos": 45
+  },
+  "a27674b5-8a86-43b6-9a80-75fc89cb3482": {
+    "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+    "scrimReferencia": {
+      "id": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T19:20:55.250618",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "b3bb15ab-f1ba-4d95-97ec-3df2ea56612c",
+          "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+          "userId": "dabe71a0-5e31-4096-81d2-bb66f21c152e",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:20:50.2806033",
+          "fechaActualizacion": "2025-11-09T19:20:50.2806033"
+        },
+        {
+          "id": "5305b1cb-b45a-4013-80cb-5c96dd9aee45",
+          "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+          "userId": "c4a332a6-2d70-4f7f-84b8-2f85f9dcef27",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:20:50.7933105",
+          "fechaActualizacion": "2025-11-09T19:20:50.7933105"
+        },
+        {
+          "id": "71bff34f-28d3-41a8-ac10-5affe128533d",
+          "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+          "userId": "020a650c-15d2-472b-a25a-ce4471d91b15",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:20:51.3080911",
+          "fechaActualizacion": "2025-11-09T19:20:51.3080911"
+        },
+        {
+          "id": "c8d111e9-e6b1-45c3-a739-3cee5b4ce29c",
+          "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+          "userId": "d3562eb1-6541-488b-9039-db36426d1d7a",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:20:51.8160833",
+          "fechaActualizacion": "2025-11-09T19:20:51.8160833"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "16a8887e-6c40-480c-9974-b46acc9a3f99",
+          "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+          "userId": "dabe71a0-5e31-4096-81d2-bb66f21c152e",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:20:51.8160833",
+          "fechaRespuesta": "2025-11-09T19:20:56.8271409"
+        },
+        {
+          "id": "933b316f-daf6-4a38-a3f7-9fcff99ab5e9",
+          "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+          "userId": "c4a332a6-2d70-4f7f-84b8-2f85f9dcef27",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:20:51.8160833",
+          "fechaRespuesta": "2025-11-09T19:20:56.8301474"
+        },
+        {
+          "id": "8ba7c665-1feb-4064-8c03-8fd474a02cfc",
+          "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+          "userId": "020a650c-15d2-472b-a25a-ce4471d91b15",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:20:51.8160833",
+          "fechaRespuesta": "2025-11-09T19:20:56.8311531"
+        },
+        {
+          "id": "dddfa45f-7fff-459d-88e9-9e945626b20b",
+          "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+          "userId": "d3562eb1-6541-488b-9039-db36426d1d7a",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:20:51.8160833",
+          "fechaRespuesta": "2025-11-09T19:20:56.8331517"
+        }
+      ],
+      "createdBy": "103a9c8c-f4e9-446c-aa6d-cb2fba032e8c",
+      "createdAt": "2025-11-09T19:20:45.250618",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "dabe71a0-5e31-4096-81d2-bb66f21c152e": {
+        "jugadorId": "dabe71a0-5e31-4096-81d2-bb66f21c152e",
+        "kills": 6,
+        "assists": 13,
+        "deaths": 1,
+        "puntuacion": 89,
+        "esMVP": false
+      },
+      "c4a332a6-2d70-4f7f-84b8-2f85f9dcef27": {
+        "jugadorId": "c4a332a6-2d70-4f7f-84b8-2f85f9dcef27",
+        "kills": 13,
+        "assists": 16,
+        "deaths": 7,
+        "puntuacion": 92,
+        "esMVP": false
+      },
+      "020a650c-15d2-472b-a25a-ce4471d91b15": {
+        "jugadorId": "020a650c-15d2-472b-a25a-ce4471d91b15",
+        "kills": 15,
+        "assists": 2,
+        "deaths": 4,
+        "puntuacion": 64,
+        "esMVP": false
+      },
+      "d3562eb1-6541-488b-9039-db36426d1d7a": {
+        "jugadorId": "d3562eb1-6541-488b-9039-db36426d1d7a",
+        "kills": 2,
+        "assists": 2,
+        "deaths": 4,
+        "puntuacion": 94,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T19:21:12.0518537",
+    "fechaHoraFin": "2025-11-09T19:21:12.0573609",
+    "ganador": "Neon Strike",
+    "duracionMinutos": 28
+  },
+  "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4": {
+    "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+    "scrimReferencia": {
+      "id": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 50,
+      "fechaHora": "2025-11-09T19:28:19.5435024",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "8aaf37cf-3cd6-490a-aa6a-6812553070b7",
+          "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+          "userId": "a5c4ef8c-6be4-40c4-86b4-77e9db5dbf81",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:28:20.1477191",
+          "fechaActualizacion": "2025-11-09T19:28:20.1487252"
+        },
+        {
+          "id": "ca7dc275-e596-4472-8b79-af7586f49c68",
+          "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+          "userId": "646d823d-ecce-452c-89ce-d82431ffdecd",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:28:20.6624683",
+          "fechaActualizacion": "2025-11-09T19:28:20.6624683"
+        },
+        {
+          "id": "bfa83a29-a2bd-4124-9930-29e90a09f203",
+          "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+          "userId": "8989b6b8-47aa-44f0-b05d-7b200812cf95",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:28:21.1764571",
+          "fechaActualizacion": "2025-11-09T19:28:21.1764571"
+        },
+        {
+          "id": "9e096f69-49a6-44b0-91d0-9b3c4632c2a6",
+          "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+          "userId": "01b13bf9-3ede-4234-bb7b-6825ca1d8a1b",
+          "rangoUsuario": 1800,
+          "latenciaUsuario": 20,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-09T19:28:21.6870954",
+          "fechaActualizacion": "2025-11-09T19:28:21.6870954"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "f426c13f-f057-4387-9a49-d7ebf6cbc294",
+          "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+          "userId": "a5c4ef8c-6be4-40c4-86b4-77e9db5dbf81",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:28:21.6870954",
+          "fechaRespuesta": "2025-11-09T19:28:31.9893091"
+        },
+        {
+          "id": "d9c209ee-5292-4c91-a752-e6509085062e",
+          "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+          "userId": "646d823d-ecce-452c-89ce-d82431ffdecd",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:28:21.6870954",
+          "fechaRespuesta": "2025-11-09T19:28:31.9923244"
+        },
+        {
+          "id": "f6cac438-7047-4a34-b811-b1930b695d98",
+          "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+          "userId": "8989b6b8-47aa-44f0-b05d-7b200812cf95",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:28:21.6870954",
+          "fechaRespuesta": "2025-11-09T19:28:31.9933232"
+        },
+        {
+          "id": "6f2d057e-4b93-4ce7-88f3-b21c7cde5745",
+          "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+          "userId": "01b13bf9-3ede-4234-bb7b-6825ca1d8a1b",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-09T19:28:21.6870954",
+          "fechaRespuesta": "2025-11-09T19:28:31.9933232"
+        }
+      ],
+      "createdBy": "7e4eb48b-2967-41ef-90c5-fa0ed1f129da",
+      "createdAt": "2025-11-09T19:28:09.5435024",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "646d823d-ecce-452c-89ce-d82431ffdecd": {
+        "jugadorId": "646d823d-ecce-452c-89ce-d82431ffdecd",
+        "kills": 10,
+        "assists": 6,
+        "deaths": 7,
+        "puntuacion": 87,
+        "esMVP": false
+      },
+      "01b13bf9-3ede-4234-bb7b-6825ca1d8a1b": {
+        "jugadorId": "01b13bf9-3ede-4234-bb7b-6825ca1d8a1b",
+        "kills": 7,
+        "assists": 13,
+        "deaths": 1,
+        "puntuacion": 68,
+        "esMVP": false
+      },
+      "a5c4ef8c-6be4-40c4-86b4-77e9db5dbf81": {
+        "jugadorId": "a5c4ef8c-6be4-40c4-86b4-77e9db5dbf81",
+        "kills": 7,
+        "assists": 8,
+        "deaths": 5,
+        "puntuacion": 63,
+        "esMVP": false
+      },
+      "8989b6b8-47aa-44f0-b05d-7b200812cf95": {
+        "jugadorId": "8989b6b8-47aa-44f0-b05d-7b200812cf95",
+        "kills": 5,
+        "assists": 6,
+        "deaths": 5,
+        "puntuacion": 81,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-09T19:28:57.6045519",
+    "fechaHoraFin": "2025-11-09T19:28:57.6080614",
+    "ganador": "Amber Heroes",
+    "duracionMinutos": 18
+  }
+}
