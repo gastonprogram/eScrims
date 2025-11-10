@@ -1,10 +1,10 @@
 [
   {
-    "id": "4d20a4d0-c160-4bae-8b84-12c9bce65355",
+    "id": "32e448e3-cd26-4399-89b7-ca3edce01379",
     "username": "Organizador_Test",
     "email": "org@test.com",
-    "hashedPassword": "aIBSK98jQettqSspwlb6cHHur5WhRDR9LHW6MmEu91Y\u003d",
-    "salt": "18okoMP0SohlKhmQ/uwmSg\u003d\u003d",
+    "hashedPassword": "902bFBdvCtFgZtHRSw8ajipvgpT413OUlCp+5yiNDA4\u003d",
+    "salt": "ia2eyGIpT50tdZWkDOITLg\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -12,22 +12,22 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T17:43:29.459",
-    "updatedAt": "2025-11-10T17:43:29.459",
+    "createdAt": "2025-11-10T19:39:30.023",
+    "updatedAt": "2025-11-10T19:39:30.023",
     "historial": {
-      "userId": "4d20a4d0-c160-4bae-8b84-12c9bce65355",
+      "userId": "32e448e3-cd26-4399-89b7-ca3edce01379",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T17:43:29.4592615"
+      "ultimaActividad": "2025-11-10T19:39:30.023057"
     },
     "subscribedEvents": [
+      "CANCELADO",
+      "FINALIZADO",
       "CONFIRMADO",
       "LOBBY_ARMADO",
-      "FINALIZADO",
-      "EN_JUEGO",
       "BUSCANDO",
-      "CANCELADO"
+      "EN_JUEGO"
     ],
     "preferredChannels": [
       "EMAIL"
@@ -37,11 +37,11 @@
     }
   },
   {
-    "id": "fad2d7ad-bb77-4724-a98b-992fdee5988d",
+    "id": "6d0edb7c-32c0-434b-a778-bc970c0e8f6d",
     "username": "Player1",
     "email": "p1@test.com",
-    "hashedPassword": "FgPBdzjwEaJnWWcnuX3TKRv6GMws6ZPscfhbXtZZgYI\u003d",
-    "salt": "NooWCSNmV8UQUA7n+/44Ng\u003d\u003d",
+    "hashedPassword": "h8z1M6LXUYhl2DjNSreX8PTzE4rHZtqfizzFAEo2OIA\u003d",
+    "salt": "xpz3zLc4EoDFWNDTj16kQA\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -49,22 +49,22 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T17:43:29.459",
-    "updatedAt": "2025-11-10T17:43:29.459",
+    "createdAt": "2025-11-10T19:39:30.023",
+    "updatedAt": "2025-11-10T19:39:30.023",
     "historial": {
-      "userId": "fad2d7ad-bb77-4724-a98b-992fdee5988d",
+      "userId": "6d0edb7c-32c0-434b-a778-bc970c0e8f6d",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T17:43:29.4592615"
+      "ultimaActividad": "2025-11-10T19:39:30.023057"
     },
     "subscribedEvents": [
+      "CANCELADO",
+      "FINALIZADO",
       "CONFIRMADO",
       "LOBBY_ARMADO",
-      "FINALIZADO",
-      "EN_JUEGO",
       "BUSCANDO",
-      "CANCELADO"
+      "EN_JUEGO"
     ],
     "preferredChannels": [
       "EMAIL"
@@ -74,11 +74,11 @@
     }
   },
   {
-    "id": "8e2b3448-cb24-4c2d-8cd7-41a7673294e7",
+    "id": "c3af1eb8-c182-4c3a-99c9-fb3db9c1d09a",
     "username": "Player2",
     "email": "p2@test.com",
-    "hashedPassword": "m3UfBXqxnCKOkFAmtKRLGPXuwlUYPwTpzjs8AWmz+Co\u003d",
-    "salt": "PW1BFOgTNpyENnE3L3fHSQ\u003d\u003d",
+    "hashedPassword": "3mInxu+SZS8sI7euS/WH3CmMjsRZ3ZRBUqWBUqW0X38\u003d",
+    "salt": "IoUYTF5C/YxaTgAjldCh/w\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -86,22 +86,22 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T17:43:29.459",
-    "updatedAt": "2025-11-10T17:43:29.459",
+    "createdAt": "2025-11-10T19:39:30.023",
+    "updatedAt": "2025-11-10T19:39:30.023",
     "historial": {
-      "userId": "8e2b3448-cb24-4c2d-8cd7-41a7673294e7",
+      "userId": "c3af1eb8-c182-4c3a-99c9-fb3db9c1d09a",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T17:43:29.4592615"
+      "ultimaActividad": "2025-11-10T19:39:30.023057"
     },
     "subscribedEvents": [
+      "CANCELADO",
+      "FINALIZADO",
       "CONFIRMADO",
       "LOBBY_ARMADO",
-      "FINALIZADO",
-      "EN_JUEGO",
       "BUSCANDO",
-      "CANCELADO"
+      "EN_JUEGO"
     ],
     "preferredChannels": [
       "EMAIL"
@@ -111,11 +111,11 @@
     }
   },
   {
-    "id": "e74e890b-1f9b-42ef-a706-572c5cface32",
+    "id": "d0722511-ec89-42c0-aa29-13c7152135f0",
     "username": "Player3",
     "email": "p3@test.com",
-    "hashedPassword": "j82Jn+TCDJAlzUWnGEUEYYhn6hVUeB58mMiOP0YBR7U\u003d",
-    "salt": "eojNQcVrDddBcGz1mHcNbA\u003d\u003d",
+    "hashedPassword": "Y/h4WshMWrJIED9AxVzPs3tFwlsBLvhSH2AGwWgs8z4\u003d",
+    "salt": "5Ccw0/d2a+lnjKamfkk64Q\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -123,22 +123,22 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T17:43:29.459",
-    "updatedAt": "2025-11-10T17:43:29.459",
+    "createdAt": "2025-11-10T19:39:30.023",
+    "updatedAt": "2025-11-10T19:39:30.023",
     "historial": {
-      "userId": "e74e890b-1f9b-42ef-a706-572c5cface32",
+      "userId": "d0722511-ec89-42c0-aa29-13c7152135f0",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T17:43:29.4592615"
+      "ultimaActividad": "2025-11-10T19:39:30.023057"
     },
     "subscribedEvents": [
+      "CANCELADO",
+      "FINALIZADO",
       "CONFIRMADO",
       "LOBBY_ARMADO",
-      "FINALIZADO",
-      "EN_JUEGO",
       "BUSCANDO",
-      "CANCELADO"
+      "EN_JUEGO"
     ],
     "preferredChannels": [
       "EMAIL"
@@ -148,11 +148,11 @@
     }
   },
   {
-    "id": "ba03de18-9f1d-4024-9bca-6790d8dffc45",
+    "id": "bd5a4346-ed7a-427c-981d-4e8d2111e177",
     "username": "Player4",
     "email": "p4@test.com",
-    "hashedPassword": "s9haXUAajltbuNrYQuJ0rrL/fkIT25XlIGf46OxkDe8\u003d",
-    "salt": "tUJ+t2UEAQFnrkePaAyFQg\u003d\u003d",
+    "hashedPassword": "7Fkp8XRBPqE0WMUmULMBzTm9enjr+/2fq1srDP3/6tY\u003d",
+    "salt": "Rl+lJcm/4sQZvJUf2d4F9w\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -160,22 +160,22 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T17:43:29.459",
-    "updatedAt": "2025-11-10T17:43:29.459",
+    "createdAt": "2025-11-10T19:39:30.023",
+    "updatedAt": "2025-11-10T19:39:30.023",
     "historial": {
-      "userId": "ba03de18-9f1d-4024-9bca-6790d8dffc45",
+      "userId": "bd5a4346-ed7a-427c-981d-4e8d2111e177",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T17:43:29.4592615"
+      "ultimaActividad": "2025-11-10T19:39:30.023057"
     },
     "subscribedEvents": [
+      "CANCELADO",
+      "FINALIZADO",
       "CONFIRMADO",
       "LOBBY_ARMADO",
-      "FINALIZADO",
-      "EN_JUEGO",
       "BUSCANDO",
-      "CANCELADO"
+      "EN_JUEGO"
     ],
     "preferredChannels": [
       "EMAIL"
@@ -185,11 +185,11 @@
     }
   },
   {
-    "id": "2252be88-ec8b-46ad-9bcb-a63d6116447e",
+    "id": "a299bd9d-0c67-4b29-a564-5bde02ed1c35",
     "username": "Player5",
     "email": "p5@test.com",
-    "hashedPassword": "9yTWwS5A1c4+QbDdbqYsSOoRKQmP5CWTuTAuOCH/bxw\u003d",
-    "salt": "XQbB4L4TyqCzTixWlknTGA\u003d\u003d",
+    "hashedPassword": "rT99BuULQgWUHWeOFbQe6G/zKYp4lcJy6fWD2vV5MOw\u003d",
+    "salt": "kmUaikLOKc6q9mxUfD3nbQ\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -197,28 +197,65 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T17:43:27.446",
-    "updatedAt": "2025-11-10T17:43:27.446",
+    "createdAt": "2025-11-10T19:39:30.040",
+    "updatedAt": "2025-11-10T19:39:30.040",
     "historial": {
-      "userId": "2252be88-ec8b-46ad-9bcb-a63d6116447e",
+      "userId": "a299bd9d-0c67-4b29-a564-5bde02ed1c35",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T17:43:27.446326"
+      "ultimaActividad": "2025-11-10T19:39:30.0404648"
     },
     "subscribedEvents": [
+      "CANCELADO",
+      "FINALIZADO",
       "CONFIRMADO",
       "LOBBY_ARMADO",
-      "FINALIZADO",
-      "EN_JUEGO",
       "BUSCANDO",
-      "CANCELADO"
+      "EN_JUEGO"
     ],
     "preferredChannels": [
       "EMAIL"
     ],
     "channelRecipients": {
       "EMAIL": "p5@test.com"
+    }
+  },
+  {
+    "id": "f3c2292a-dded-40e1-9b4b-bf3528ca814b",
+    "username": "Player6",
+    "email": "p6@test.com",
+    "hashedPassword": "PWzM1xChp27ZHYP4Y+QP2+phMie89nCXC/LzOp8cuUQ\u003d",
+    "salt": "dQQAnRzN/VyeIgOVmuPDEQ\u003d\u003d",
+    "rangoPorJuego": {},
+    "rol": "USER",
+    "region": "",
+    "rolesPorJuego": {},
+    "disponibilidad": "",
+    "latenciaPromedio": 50,
+    "disponible": true,
+    "createdAt": "2025-11-10T19:39:30.040",
+    "updatedAt": "2025-11-10T19:39:30.040",
+    "historial": {
+      "userId": "f3c2292a-dded-40e1-9b4b-bf3528ca814b",
+      "partidasJugadas": 0,
+      "partidasAbandonadas": 0,
+      "tasaFairPlay": 1.0,
+      "ultimaActividad": "2025-11-10T19:39:30.0404648"
+    },
+    "subscribedEvents": [
+      "CANCELADO",
+      "FINALIZADO",
+      "CONFIRMADO",
+      "LOBBY_ARMADO",
+      "BUSCANDO",
+      "EN_JUEGO"
+    ],
+    "preferredChannels": [
+      "EMAIL"
+    ],
+    "channelRecipients": {
+      "EMAIL": "p6@test.com"
     }
   }
 ]

@@ -1,0 +1,128 @@
+[
+  {
+    "id": 1,
+    "jugadorId": "c1619dde-c295-4749-a788-c4182403cb5f",
+    "scrimId": "1f267401-a6ea-4178-8d46-ee4c559dd4e4",
+    "contenido": "El manejo del AWP en el equipo fue muy bueno",
+    "rating": 5,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:13:29.8429919"
+  },
+  {
+    "id": 2,
+    "jugadorId": "96af2239-95a6-4b58-a7bd-43b99b5a9f44",
+    "scrimId": "1f267401-a6ea-4178-8d46-ee4c559dd4e4",
+    "contenido": "El equipo era malo y no supieron trabajar en conjunto",
+    "rating": 1,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:13:29.8439921"
+  },
+  {
+    "id": 1,
+    "jugadorId": "08307703-0b0f-4eaa-94e1-8f144f2f9557",
+    "scrimId": "1f171a17-3420-4107-8a29-fa3b20a03745",
+    "contenido": "Excelente partida! GG WP a todos",
+    "rating": 5,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:35:02.7180649"
+  },
+  {
+    "id": 2,
+    "jugadorId": "7834d86e-704d-4889-9296-fded3be82b6b",
+    "scrimId": "1f171a17-3420-4107-8a29-fa3b20a03745",
+    "contenido": "Buena coordinacion del equipo",
+    "rating": 4,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:35:02.7180649"
+  },
+  {
+    "id": 3,
+    "jugadorId": "f40d7ade-1395-400d-addf-99fbb6ca15fe",
+    "scrimId": "1f171a17-3420-4107-8a29-fa3b20a03745",
+    "contenido": "Estuvo reñido pero lo logramos!",
+    "rating": 4,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:35:02.7190668"
+  },
+  {
+    "id": 1,
+    "jugadorId": "cc1eeeee-57a3-440c-bb2b-6bfc56f4c01e",
+    "scrimId": "d2a7ada5-a6a6-49f8-bb66-c00c61b22eb6",
+    "contenido": "Excelente partida! GG WP a todos",
+    "rating": 5,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:37:13.3202079"
+  },
+  {
+    "id": 2,
+    "jugadorId": "d204c27c-208c-4a14-aaa7-023a0078300e",
+    "scrimId": "d2a7ada5-a6a6-49f8-bb66-c00c61b22eb6",
+    "contenido": "Buena coordinacion del equipo",
+    "rating": 4,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:37:13.3217198"
+  },
+  {
+    "id": 3,
+    "jugadorId": "cfe04848-63d3-4c3e-b637-bec76410b9ad",
+    "scrimId": "d2a7ada5-a6a6-49f8-bb66-c00c61b22eb6",
+    "contenido": "Estuvo muy complicado!",
+    "rating": 4,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:37:13.3227264"
+  },
+  {
+    "id": 1,
+    "jugadorId": "57150242-84e5-4a97-bab1-c517d5b9b713",
+    "scrimId": "ddd682dd-8250-4488-b75d-357b89cf8cb4",
+    "contenido": "Excelente partida! GG WP a todos",
+    "rating": 5,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:38:35.3842526"
+  },
+  {
+    "id": 2,
+    "jugadorId": "94a1758d-3607-4d43-8e2b-246f40d1d789",
+    "scrimId": "ddd682dd-8250-4488-b75d-357b89cf8cb4",
+    "contenido": "Buena coordinacion del equipo",
+    "rating": 4,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:38:35.3852528"
+  },
+  {
+    "id": 3,
+    "jugadorId": "d52ac34c-2a4d-433d-b466-7ee087c30745",
+    "scrimId": "ddd682dd-8250-4488-b75d-357b89cf8cb4",
+    "contenido": "Estuvo muy complicado!",
+    "rating": 4,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:38:35.3862535"
+  },
+  {
+    "id": 1,
+    "jugadorId": "bd5a4346-ed7a-427c-981d-4e8d2111e177",
+    "scrimId": "5cf53db6-6d4f-4f6d-95ae-be81da61fd89",
+    "contenido": "Excelente partida! GG WP a todos",
+    "rating": 5,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:39:30.1004016"
+  },
+  {
+    "id": 2,
+    "jugadorId": "c3af1eb8-c182-4c3a-99c9-fb3db9c1d09a",
+    "scrimId": "5cf53db6-6d4f-4f6d-95ae-be81da61fd89",
+    "contenido": "Buena coordinacion del equipo",
+    "rating": 4,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:39:30.1014065"
+  },
+  {
+    "id": 3,
+    "jugadorId": "a299bd9d-0c67-4b29-a564-5bde02ed1c35",
+    "scrimId": "5cf53db6-6d4f-4f6d-95ae-be81da61fd89",
+    "contenido": "Estuvo muy complicado!",
+    "rating": 4,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:39:30.102412"
+  }
+]

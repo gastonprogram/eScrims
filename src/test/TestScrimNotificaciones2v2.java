@@ -33,7 +33,7 @@ public class TestScrimNotificaciones2v2 {
             RepositorioUsuarioJSON repoUsuarios = new RepositorioUsuarioJSON();
             // RepositorioUsuario repoUsuarios = RepositorioFactory.getRepositorioUsuario();
             RepositorioScrim repoScrims = RepositorioFactory.getRepositorioScrim();
-            
+
             // Servicios
             ScrimService scrimService = new ScrimService(repoScrims);
 
@@ -57,7 +57,7 @@ public class TestScrimNotificaciones2v2 {
             // 2. Crear el Scrim 2v2 Wingman
             System.out.println("\n" + "=".repeat(60));
             System.out.println("[PASO 2] Creando Scrim 2v2 Wingman CS\n");
-            
+
             Scrim scrim = new ScrimBuilder()
                     .withJuego(CounterStrike.getInstance())
                     .withFormato(new Formato2v2WingmanCS())
@@ -68,7 +68,7 @@ public class TestScrimNotificaciones2v2 {
                     .build();
 
             scrim.setCreatedBy(organizador.getId());
-            
+
             repoScrims.guardar(scrim);
 
             System.out.println("[OK] Scrim guardado:");
@@ -85,7 +85,7 @@ public class TestScrimNotificaciones2v2 {
             System.out.println("[PASO 3] Jugadores postulandose al scrim\n");
 
             PostulacionService postService = new PostulacionService(repoScrims, repoUsuarios);
-            
+
             postService.postularAScrim(scrim.getId(), jugador1.getId(), 1500, 30);
             System.out.println("[OK] " + jugador1.getUsername() + " se postulo");
             Thread.sleep(500);
@@ -122,7 +122,7 @@ public class TestScrimNotificaciones2v2 {
                     System.out.println((i + 1) + ". " + confs.get(i).getUserId() + ": Error - " + e.getMessage());
                 }
             }
-            
+
             System.out.println("\n[OK] Todos confirmaron su participacion");
             System.out.println("[NOTIF] Notificaciones enviadas segun cambios de estado\n");
             Thread.sleep(5000);
@@ -130,9 +130,9 @@ public class TestScrimNotificaciones2v2 {
             // 6. Comenzar partida
             System.out.println("\n" + "=".repeat(60));
             System.out.println("[PASO 5] Comenzando la partida\n");
-            
+
             scrimService.iniciarPartida(scrim.getId());
-            
+
             System.out.println("[OK] Estado cambiado a: EN_JUEGO");
             System.out.println("[NOTIF] Notificaciones enviadas (EN_JUEGO)");
             System.out.println("[GAME] La partida ha comenzado! Buena suerte\n");
@@ -141,9 +141,9 @@ public class TestScrimNotificaciones2v2 {
             // 7. Finalizar partida
             System.out.println("\n" + "=".repeat(60));
             System.out.println("[PASO 6] Finalizando la partida\n");
-            
+
             scrimService.finalizarPartida(scrim.getId());
-            
+
             System.out.println("[OK] Estado cambiado a: FINALIZADO");
             System.out.println("[NOTIF] Notificaciones enviadas (FINALIZADO)");
             System.out.println("[WIN] Excelente partida!\n");
@@ -162,7 +162,7 @@ public class TestScrimNotificaciones2v2 {
             System.out.println("     - " + jugador2.getUsername() + ": Discord + Push");
             System.out.println("     - " + jugador3.getUsername() + ": Solo eventos importantes (Email)");
             System.out.println("     - " + jugador4.getUsername() + ": Email + Discord + Push");
-            
+
             System.out.println("\n================================================================");
             System.out.println("                    TEST COMPLETADO");
             System.out.println("================================================================");
@@ -175,61 +175,61 @@ public class TestScrimNotificaciones2v2 {
 
     private static Usuario crearOrganizador() {
         Usuario usuario = new Usuario("ProOrganizer", "gusabelu1@gmail.com", "password123");
-        
+
         usuario.addPreferredChannel(ChannelType.DISCORD, "@ProOrganizer#1234")
-               .removePreferredChannel(ChannelType.EMAIL);
-        
+                .removePreferredChannel(ChannelType.EMAIL);
+
         System.out.println("[USER] Organizador: " + usuario.getUsername());
         System.out.println("       Canales: DISCORD, PUSH | Eventos: TODOS");
-        
+
         return usuario;
     }
 
     private static Usuario crearJugador1() {
         Usuario usuario = new Usuario("Gusabelu2", "gusabelu2@gmail.com", "password123");
-        
+
         // Solo email, todos los eventos (ya viene por defecto)
         usuario.soloEmail("gusabelu2@gmail.com");
-        
+
         System.out.println("[USER] Jugador 1: " + usuario.getUsername());
         System.out.println("       Canales: EMAIL | Eventos: TODOS");
-        
+
         return usuario;
     }
 
     private static Usuario crearJugador2() {
         Usuario usuario = new Usuario("AWPGod", "awpgod@escrims.com", "password123");
-        
+
         // Discord + Push, todos los eventos
         usuario.addPreferredChannel(ChannelType.DISCORD, "@AWPGod#5678")
-               .removePreferredChannel(ChannelType.EMAIL);
-        
+                .removePreferredChannel(ChannelType.EMAIL);
+
         System.out.println("[USER] Jugador 2: " + usuario.getUsername());
         System.out.println("       Canales: DISCORD, PUSH | Eventos: TODOS");
-        
+
         return usuario;
     }
 
     private static Usuario crearJugador3() {
         Usuario usuario = new Usuario("SupportKing", "supportking@escrims.com", "password123");
-        
+
         usuario.soloEmail("supportking@escrims.com")
-               .suscribirSoloImportantes();
-        
+                .suscribirSoloImportantes();
+
         System.out.println("[USER] Jugador 3: " + usuario.getUsername());
         System.out.println("       Canales: EMAIL | Eventos: Solo importantes (CONFIRMADO, EN_JUEGO, FINALIZADO)");
-        
+
         return usuario;
     }
 
     private static Usuario crearJugador4() {
         Usuario usuario = new Usuario("Gastocash", "gusabelu3@gmail.com", "password123");
-        
+
         usuario.soloEmail("gusabelu3@gmail.com");
 
         System.out.println("[USER] Jugador 4: " + usuario.getUsername());
         System.out.println("       Canales: EMAIL | Eventos: TODOS");
-        
+
         return usuario;
     }
 }
