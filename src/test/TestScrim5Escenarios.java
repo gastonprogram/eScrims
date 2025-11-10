@@ -31,7 +31,7 @@ import java.util.Random;
  * Counter-Strike.
  * Incluye interfaz de selección para ejecutar cada test individualmente.
  */
-public class TestScrim4Escenarios {
+public class TestScrim5Escenarios {
 
     // Repositorios y servicios compartidos
     private static RepositorioUsuarioJSON repoUsuarios;

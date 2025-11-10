@@ -124,5 +124,32 @@
     "rating": 4,
     "estado": "PENDIENTE",
     "fechaCreacion": "2025-11-10T19:39:30.102412"
+  },
+  {
+    "id": 1,
+    "jugadorId": "bd51713d-9438-4f3a-ab61-5c643dc71409",
+    "scrimId": "be9f25eb-62a5-476f-8507-6abe93fd216f",
+    "contenido": "Excelente partida! GG WP a todos",
+    "rating": 5,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:41:01.5140387"
+  },
+  {
+    "id": 2,
+    "jugadorId": "32ce0523-6729-41fa-878f-4f92eef54662",
+    "scrimId": "be9f25eb-62a5-476f-8507-6abe93fd216f",
+    "contenido": "Buena coordinacion del equipo",
+    "rating": 4,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:41:01.5150375"
+  },
+  {
+    "id": 3,
+    "jugadorId": "e07c99ad-7da0-4d12-ad9d-b21a5125ac8b",
+    "scrimId": "be9f25eb-62a5-476f-8507-6abe93fd216f",
+    "contenido": "Estuvo muy complicado!",
+    "rating": 4,
+    "estado": "PENDIENTE",
+    "fechaCreacion": "2025-11-10T19:41:01.516038"
   }
 ]
