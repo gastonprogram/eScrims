@@ -113,9 +113,7 @@ public class Scrim {
         if (state == null)
             reconstruirEstado();
 
-        System.out.println("Estado Test1: " + this.getEstado());
         state.iniciar(this);
-        System.out.println("Estado Test2: " + this.getEstado());
     }
 
     public void finalizar() {

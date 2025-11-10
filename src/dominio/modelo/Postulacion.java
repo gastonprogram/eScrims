@@ -61,13 +61,11 @@ public class Postulacion {
      * Acepta la postulación.
      */
     public void aceptar() {
-        System.out.println(this.estado);
         if (estado != EstadoPostulacion.PENDIENTE) {
             throw new IllegalStateException("Solo se pueden aceptar postulaciones pendientes");
         }
         this.estado = EstadoPostulacion.ACEPTADA;
         this.fechaActualizacion = LocalDateTime.now();
-        System.out.println(this.estado);
     }
 
     /**

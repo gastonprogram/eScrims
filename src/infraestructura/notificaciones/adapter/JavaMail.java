@@ -45,7 +45,7 @@ public class JavaMail implements IAdapterJavaMail {
                 message.setText("Hola " + notif.getDestinatario().getUsername() + ",\n\n" + 
                               notif.getMensaje() + "\n\n---\nEnviado desde eScrims");
                 
-                Transport.send(message);
+                // Transport.send(message);
                 System.out.println("[OK] Email enviado a: " + email + 
                     " (" + notif.getDestinatario().getUsername() + ")");
                 

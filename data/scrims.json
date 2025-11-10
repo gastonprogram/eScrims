@@ -1,362 +1,309 @@
 [
   {
-    "id": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
+    "id": "22f2b940-eff1-4b84-b7cc-8a1aeda0c08a",
     "juego": "Counter-Strike",
     "formato": "2v2 Wingman CS",
     "rangoMin": 1000,
     "rangoMax": 2000,
     "latenciaMax": 50,
-    "fechaHora": "2025-11-09T19:15:56.7452266",
+    "fechaHora": "2025-11-10T17:48:23.2871886",
     "plazas": 4,
     "postulaciones": [
       {
-        "id": "900a433e-520e-40b3-b5f9-43f31c861926",
-        "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
-        "userId": "86d64a7c-3be0-4dd2-892f-94b1b16380f7",
+        "id": "bf2ca28d-449b-4642-915e-b611fe723853",
+        "scrimId": "22f2b940-eff1-4b84-b7cc-8a1aeda0c08a",
+        "userId": "fff4569d-a287-4d87-8891-f67496c10ae4",
         "rangoUsuario": 1500,
         "latenciaUsuario": 30,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:15:51.4947625",
-        "fechaActualizacion": "2025-11-09T19:15:51.4947625"
+        "fechaPostulacion": "2025-11-10T17:43:23.3465239",
+        "fechaActualizacion": "2025-11-10T17:43:23.3465239"
       },
       {
-        "id": "54406288-a889-4974-9973-fd9a67cb8af1",
-        "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
-        "userId": "cab48b60-34aa-4a48-852b-e40da823be8f",
+        "id": "ebf762ba-c151-42e3-a793-5f707ed505a5",
+        "scrimId": "22f2b940-eff1-4b84-b7cc-8a1aeda0c08a",
+        "userId": "42cb8778-5ca9-487a-bf97-a5f07b7ae59a",
         "rangoUsuario": 1600,
         "latenciaUsuario": 25,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:15:52.0052503",
-        "fechaActualizacion": "2025-11-09T19:15:52.0052503"
+        "fechaPostulacion": "2025-11-10T17:43:23.3497036",
+        "fechaActualizacion": "2025-11-10T17:43:23.3497036"
       },
       {
-        "id": "1da9ee98-ecc0-4c66-b8c3-7457ee8605b5",
-        "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
-        "userId": "afb4a075-c8b1-4a0b-96a7-fdce9dbc7b44",
+        "id": "a0f97a7e-4fad-4f26-9238-8a3b6c2320a0",
+        "scrimId": "22f2b940-eff1-4b84-b7cc-8a1aeda0c08a",
+        "userId": "4d92d011-c221-4bf0-be10-111de80b8554",
         "rangoUsuario": 1550,
         "latenciaUsuario": 35,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:15:52.5186512",
-        "fechaActualizacion": "2025-11-09T19:15:52.5186512"
+        "fechaPostulacion": "2025-11-10T17:43:23.350741",
+        "fechaActualizacion": "2025-11-10T17:43:23.350741"
       },
       {
-        "id": "acdfec70-af05-4902-a17e-43b5b784fb67",
-        "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
-        "userId": "ab754fa1-6089-4251-8300-7e9276a9e0ea",
-        "rangoUsuario": 1800,
-        "latenciaUsuario": 20,
+        "id": "5e740ccf-0a09-408b-84ac-2753355ef332",
+        "scrimId": "22f2b940-eff1-4b84-b7cc-8a1aeda0c08a",
+        "userId": "a6a0a7eb-df26-4374-a69a-6e647d69cc09",
+        "rangoUsuario": 1700,
+        "latenciaUsuario": 40,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:15:53.0332694",
-        "fechaActualizacion": "2025-11-09T19:15:53.0332694"
+        "fechaPostulacion": "2025-11-10T17:43:23.3522482",
+        "fechaActualizacion": "2025-11-10T17:43:23.3522482"
       }
     ],
     "confirmaciones": [
       {
-        "id": "6e081c5f-4087-48e8-bd75-9eafe8685afe",
-        "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
-        "userId": "86d64a7c-3be0-4dd2-892f-94b1b16380f7",
+        "id": "2a0b4aa3-5837-434b-a77e-b478f62c9eec",
+        "scrimId": "22f2b940-eff1-4b84-b7cc-8a1aeda0c08a",
+        "userId": "fff4569d-a287-4d87-8891-f67496c10ae4",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:15:53.0332694",
-        "fechaRespuesta": "2025-11-09T19:15:57.1733616"
+        "fechaSolicitud": "2025-11-10T17:43:23.3522482",
+        "fechaRespuesta": "2025-11-10T17:43:23.3550185"
       },
       {
-        "id": "f25ded9d-a08e-493a-a65b-c043bd3cdc50",
-        "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
-        "userId": "cab48b60-34aa-4a48-852b-e40da823be8f",
+        "id": "6ee8e8bb-8e4e-415d-8fc3-c2a4786b34f0",
+        "scrimId": "22f2b940-eff1-4b84-b7cc-8a1aeda0c08a",
+        "userId": "42cb8778-5ca9-487a-bf97-a5f07b7ae59a",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:15:53.0332694",
-        "fechaRespuesta": "2025-11-09T19:15:57.1763698"
+        "fechaSolicitud": "2025-11-10T17:43:23.3522482",
+        "fechaRespuesta": "2025-11-10T17:43:23.3622063"
       },
       {
-        "id": "4ce1a365-f9eb-4e67-927d-345b7eff4801",
-        "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
-        "userId": "afb4a075-c8b1-4a0b-96a7-fdce9dbc7b44",
+        "id": "eed02e62-4f7b-42e1-9390-c80851a0ca3b",
+        "scrimId": "22f2b940-eff1-4b84-b7cc-8a1aeda0c08a",
+        "userId": "4d92d011-c221-4bf0-be10-111de80b8554",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:15:53.0332694",
-        "fechaRespuesta": "2025-11-09T19:15:57.1773681"
+        "fechaSolicitud": "2025-11-10T17:43:23.3522482",
+        "fechaRespuesta": "2025-11-10T17:43:23.3622063"
       },
       {
-        "id": "b7b6e313-5166-4131-8d0b-5e6a5b85f732",
-        "scrimId": "857352ca-1a30-40bf-b8da-0504ddf2bf2c",
-        "userId": "ab754fa1-6089-4251-8300-7e9276a9e0ea",
+        "id": "233ee6c6-dc06-4e53-924d-4bebb9590dfc",
+        "scrimId": "22f2b940-eff1-4b84-b7cc-8a1aeda0c08a",
+        "userId": "a6a0a7eb-df26-4374-a69a-6e647d69cc09",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:15:53.0332694",
-        "fechaRespuesta": "2025-11-09T19:15:57.1783666"
+        "fechaSolicitud": "2025-11-10T17:43:23.3522482",
+        "fechaRespuesta": "2025-11-10T17:43:23.3622063"
       }
     ],
-    "createdBy": "8070bb55-e087-45dd-830a-b4ef1654fb0b",
-    "createdAt": "2025-11-09T19:15:46.7462227",
+    "createdBy": "cf0b2310-f3b2-49f4-96da-298b9cf12d10",
+    "createdAt": "2025-11-10T17:43:23.2871886",
     "estadoActual": "FINALIZADO",
     "estrategiaMatchmaking": "MMR"
   },
   {
-    "id": "f73be377-5121-4af3-a27c-5dc777595aa1",
+    "id": "86ed9878-783e-453c-9e31-9adc2ead1e79",
     "juego": "Counter-Strike",
     "formato": "2v2 Wingman CS",
     "rangoMin": 1000,
     "rangoMax": 2000,
     "latenciaMax": 50,
-    "fechaHora": "2025-11-09T19:18:59.7066862",
+    "fechaHora": "2025-11-10T17:48:25.4072634",
     "plazas": 4,
     "postulaciones": [
       {
-        "id": "4157fa17-cf88-481b-9dca-0f4e1068482c",
-        "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
-        "userId": "e844f1a5-57e0-4f8a-a104-8195f319d458",
+        "id": "a34a9b72-a1de-4548-a3ff-61b37cac3d59",
+        "scrimId": "86ed9878-783e-453c-9e31-9adc2ead1e79",
+        "userId": "e6d68208-eaf9-4873-b683-8f588c7b3a17",
         "rangoUsuario": 1500,
         "latenciaUsuario": 30,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:18:57.6248225",
-        "fechaActualizacion": "2025-11-09T19:18:57.6248225"
+        "fechaPostulacion": "2025-11-10T17:43:25.4102645",
+        "fechaActualizacion": "2025-11-10T17:43:25.4102645"
       },
       {
-        "id": "7aff01c1-35f7-4c4f-b229-17e86b5d0003",
-        "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
-        "userId": "656a8d31-e30e-4c9d-9a61-d941f536f68e",
+        "id": "055ca79c-2a50-415a-a4be-e8ecf980fa9a",
+        "scrimId": "86ed9878-783e-453c-9e31-9adc2ead1e79",
+        "userId": "9057ae98-3a6c-4e96-ae69-5b456ada9a41",
         "rangoUsuario": 1600,
         "latenciaUsuario": 25,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:18:58.1389032",
-        "fechaActualizacion": "2025-11-09T19:18:58.1394378"
+        "fechaPostulacion": "2025-11-10T17:43:25.4113488",
+        "fechaActualizacion": "2025-11-10T17:43:25.4113488"
       },
       {
-        "id": "01687ba5-223a-400f-9bcc-802b1ee7bf7e",
-        "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
-        "userId": "359cec39-7cb2-4aec-812c-25fe4c1cb9b2",
+        "id": "d2f06cf9-4b35-4ea0-8e2c-42d94359ce5b",
+        "scrimId": "86ed9878-783e-453c-9e31-9adc2ead1e79",
+        "userId": "290a385d-e4cb-4873-8378-4460ac2d6def",
         "rangoUsuario": 1550,
         "latenciaUsuario": 35,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:18:58.650799",
-        "fechaActualizacion": "2025-11-09T19:18:58.6511736"
+        "fechaPostulacion": "2025-11-10T17:43:25.4122705",
+        "fechaActualizacion": "2025-11-10T17:43:25.4122705"
       },
       {
-        "id": "e7b9fc9e-481c-4565-916f-4dd6c4a6e5cb",
-        "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
-        "userId": "1e18850b-885e-4860-8422-47c364efa9b2",
-        "rangoUsuario": 1800,
-        "latenciaUsuario": 20,
+        "id": "1b052a3b-102d-4076-9e75-c7a53dde9cd1",
+        "scrimId": "86ed9878-783e-453c-9e31-9adc2ead1e79",
+        "userId": "6668e24c-4af6-417e-9318-04c5a6f4870e",
+        "rangoUsuario": 1700,
+        "latenciaUsuario": 40,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:18:59.1633988",
-        "fechaActualizacion": "2025-11-09T19:18:59.1633988"
+        "fechaPostulacion": "2025-11-10T17:43:25.4122705",
+        "fechaActualizacion": "2025-11-10T17:43:25.4122705"
       }
     ],
     "confirmaciones": [
       {
-        "id": "d799bb45-733c-49d1-b8e2-9beface41d0b",
-        "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
-        "userId": "e844f1a5-57e0-4f8a-a104-8195f319d458",
+        "id": "54cd5dd6-b1c1-4aa1-9bdd-3922145e3820",
+        "scrimId": "86ed9878-783e-453c-9e31-9adc2ead1e79",
+        "userId": "e6d68208-eaf9-4873-b683-8f588c7b3a17",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:18:59.1633988",
-        "fechaRespuesta": "2025-11-09T19:19:06.6590315"
+        "fechaSolicitud": "2025-11-10T17:43:25.4122705",
+        "fechaRespuesta": "2025-11-10T17:43:25.4132274"
       },
       {
-        "id": "c9c84fb5-4617-43d3-8803-675137193f73",
-        "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
-        "userId": "656a8d31-e30e-4c9d-9a61-d941f536f68e",
+        "id": "94364645-1614-4219-9f06-bd063d59ac9e",
+        "scrimId": "86ed9878-783e-453c-9e31-9adc2ead1e79",
+        "userId": "9057ae98-3a6c-4e96-ae69-5b456ada9a41",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:18:59.1633988",
-        "fechaRespuesta": "2025-11-09T19:19:06.6625421"
+        "fechaSolicitud": "2025-11-10T17:43:25.4122705",
+        "fechaRespuesta": "2025-11-10T17:43:25.4132274"
       },
       {
-        "id": "03d07ccb-4767-43b3-b924-32b4c6a0addf",
-        "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
-        "userId": "359cec39-7cb2-4aec-812c-25fe4c1cb9b2",
+        "id": "6eb44d17-05ee-4b33-86fd-7b931132f39f",
+        "scrimId": "86ed9878-783e-453c-9e31-9adc2ead1e79",
+        "userId": "290a385d-e4cb-4873-8378-4460ac2d6def",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:18:59.1633988",
-        "fechaRespuesta": "2025-11-09T19:19:06.6640493"
+        "fechaSolicitud": "2025-11-10T17:43:25.4122705",
+        "fechaRespuesta": "2025-11-10T17:43:25.4142842"
       },
       {
-        "id": "9a7d949e-c649-4131-927d-4753b32f0fee",
-        "scrimId": "f73be377-5121-4af3-a27c-5dc777595aa1",
-        "userId": "1e18850b-885e-4860-8422-47c364efa9b2",
+        "id": "5d2e4528-74c9-4e99-a487-ee5edf665cca",
+        "scrimId": "86ed9878-783e-453c-9e31-9adc2ead1e79",
+        "userId": "6668e24c-4af6-417e-9318-04c5a6f4870e",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:18:59.1633988",
-        "fechaRespuesta": "2025-11-09T19:19:06.6650558"
+        "fechaSolicitud": "2025-11-10T17:43:25.4122705",
+        "fechaRespuesta": "2025-11-10T17:43:25.4148822"
       }
     ],
-    "createdBy": "35534dff-9683-4fbd-81bb-7968ec4d662b",
-    "createdAt": "2025-11-09T19:18:49.7074961",
-    "estadoActual": "FINALIZADO",
+    "createdBy": "f1af1099-3340-4bf2-bcea-7da8774d26ad",
+    "createdAt": "2025-11-10T17:43:25.4072634",
+    "estadoActual": "CANCELADO",
     "estrategiaMatchmaking": "MMR"
   },
   {
-    "id": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
+    "id": "f470484c-6fc1-4ba1-855f-36f2aa67d801",
     "juego": "Counter-Strike",
     "formato": "2v2 Wingman CS",
     "rangoMin": 1000,
     "rangoMax": 2000,
     "latenciaMax": 50,
-    "fechaHora": "2025-11-09T19:20:55.250618",
+    "fechaHora": "2025-11-10T17:48:27.4251634",
     "plazas": 4,
     "postulaciones": [
       {
-        "id": "b3bb15ab-f1ba-4d95-97ec-3df2ea56612c",
-        "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
-        "userId": "dabe71a0-5e31-4096-81d2-bb66f21c152e",
+        "id": "67d2e388-8cfd-432c-adc7-8cd6fe2eadff",
+        "scrimId": "f470484c-6fc1-4ba1-855f-36f2aa67d801",
+        "userId": "a620d4be-f077-4f23-805e-cd84e4a1e1d8",
         "rangoUsuario": 1500,
         "latenciaUsuario": 30,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:20:50.2806033",
-        "fechaActualizacion": "2025-11-09T19:20:50.2806033"
+        "fechaPostulacion": "2025-11-10T17:43:27.4251634",
+        "fechaActualizacion": "2025-11-10T17:43:27.4251634"
       },
       {
-        "id": "5305b1cb-b45a-4013-80cb-5c96dd9aee45",
-        "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
-        "userId": "c4a332a6-2d70-4f7f-84b8-2f85f9dcef27",
+        "id": "ffc86e5e-b901-4317-9c19-40624b323a1d",
+        "scrimId": "f470484c-6fc1-4ba1-855f-36f2aa67d801",
+        "userId": "6e76394d-f3c8-48ba-917b-0f9541af1610",
         "rangoUsuario": 1600,
         "latenciaUsuario": 25,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:20:50.7933105",
-        "fechaActualizacion": "2025-11-09T19:20:50.7933105"
+        "fechaPostulacion": "2025-11-10T17:43:27.4251634",
+        "fechaActualizacion": "2025-11-10T17:43:27.4251634"
       },
       {
-        "id": "71bff34f-28d3-41a8-ac10-5affe128533d",
-        "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
-        "userId": "020a650c-15d2-472b-a25a-ce4471d91b15",
+        "id": "49144809-c7d8-49ba-aec1-eb191c0c3681",
+        "scrimId": "f470484c-6fc1-4ba1-855f-36f2aa67d801",
+        "userId": "a4421bcb-6c00-4153-8bf6-328d7df37f92",
         "rangoUsuario": 1550,
         "latenciaUsuario": 35,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:20:51.3080911",
-        "fechaActualizacion": "2025-11-09T19:20:51.3080911"
+        "fechaPostulacion": "2025-11-10T17:43:27.4251634",
+        "fechaActualizacion": "2025-11-10T17:43:27.4251634"
       },
       {
-        "id": "c8d111e9-e6b1-45c3-a739-3cee5b4ce29c",
-        "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
-        "userId": "d3562eb1-6541-488b-9039-db36426d1d7a",
-        "rangoUsuario": 1800,
-        "latenciaUsuario": 20,
+        "id": "a256ba36-2b53-4db7-b567-09f822eb05dd",
+        "scrimId": "f470484c-6fc1-4ba1-855f-36f2aa67d801",
+        "userId": "2252be88-ec8b-46ad-9bcb-a63d6116447e",
+        "rangoUsuario": 1650,
+        "latenciaUsuario": 45,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:20:51.8160833",
-        "fechaActualizacion": "2025-11-09T19:20:51.8160833"
+        "fechaPostulacion": "2025-11-10T17:43:27.4474822",
+        "fechaActualizacion": "2025-11-10T17:43:27.4474822"
       }
     ],
     "confirmaciones": [
       {
-        "id": "16a8887e-6c40-480c-9974-b46acc9a3f99",
-        "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
-        "userId": "dabe71a0-5e31-4096-81d2-bb66f21c152e",
+        "id": "f5153a69-2b9a-4b9d-97d3-c2f366d66a4a",
+        "scrimId": "f470484c-6fc1-4ba1-855f-36f2aa67d801",
+        "userId": "a620d4be-f077-4f23-805e-cd84e4a1e1d8",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:20:51.8160833",
-        "fechaRespuesta": "2025-11-09T19:20:56.8271409"
+        "fechaSolicitud": "2025-11-10T17:43:27.4474822",
+        "fechaRespuesta": "2025-11-10T17:43:27.448488"
       },
       {
-        "id": "933b316f-daf6-4a38-a3f7-9fcff99ab5e9",
-        "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
-        "userId": "c4a332a6-2d70-4f7f-84b8-2f85f9dcef27",
+        "id": "c3cedc16-0b73-44d7-a310-de13c9d5ecd8",
+        "scrimId": "f470484c-6fc1-4ba1-855f-36f2aa67d801",
+        "userId": "6e76394d-f3c8-48ba-917b-0f9541af1610",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:20:51.8160833",
-        "fechaRespuesta": "2025-11-09T19:20:56.8301474"
+        "fechaSolicitud": "2025-11-10T17:43:27.4474822",
+        "fechaRespuesta": "2025-11-10T17:43:27.4524878"
       },
       {
-        "id": "8ba7c665-1feb-4064-8c03-8fd474a02cfc",
-        "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
-        "userId": "020a650c-15d2-472b-a25a-ce4471d91b15",
+        "id": "4f31f8f8-652f-410b-a709-0d8c3340f200",
+        "scrimId": "f470484c-6fc1-4ba1-855f-36f2aa67d801",
+        "userId": "a4421bcb-6c00-4153-8bf6-328d7df37f92",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:20:51.8160833",
-        "fechaRespuesta": "2025-11-09T19:20:56.8311531"
+        "fechaSolicitud": "2025-11-10T17:43:27.4474822",
+        "fechaRespuesta": "2025-11-10T17:43:27.4529702"
       },
       {
-        "id": "dddfa45f-7fff-459d-88e9-9e945626b20b",
-        "scrimId": "a27674b5-8a86-43b6-9a80-75fc89cb3482",
-        "userId": "d3562eb1-6541-488b-9039-db36426d1d7a",
+        "id": "41edb55c-1744-4d69-8fd7-2245da55607a",
+        "scrimId": "f470484c-6fc1-4ba1-855f-36f2aa67d801",
+        "userId": "2252be88-ec8b-46ad-9bcb-a63d6116447e",
         "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:20:51.8160833",
-        "fechaRespuesta": "2025-11-09T19:20:56.8331517"
+        "fechaSolicitud": "2025-11-10T17:43:27.4474822",
+        "fechaRespuesta": "2025-11-10T17:43:27.4546298"
       }
     ],
-    "createdBy": "103a9c8c-f4e9-446c-aa6d-cb2fba032e8c",
-    "createdAt": "2025-11-09T19:20:45.250618",
-    "estadoActual": "FINALIZADO",
+    "createdBy": "6287e7d3-bef2-4eed-81f7-740002e656ab",
+    "createdAt": "2025-11-10T17:43:27.4251634",
+    "estadoActual": "CONFIRMADO",
     "estrategiaMatchmaking": "MMR"
   },
   {
-    "id": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
+    "id": "949042c4-7ae5-4330-822c-b624faa493bb",
     "juego": "Counter-Strike",
     "formato": "2v2 Wingman CS",
     "rangoMin": 1000,
     "rangoMax": 2000,
     "latenciaMax": 50,
-    "fechaHora": "2025-11-09T19:28:19.5435024",
+    "fechaHora": "2025-11-10T17:48:29.4592615",
     "plazas": 4,
     "postulaciones": [
       {
-        "id": "8aaf37cf-3cd6-490a-aa6a-6812553070b7",
-        "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
-        "userId": "a5c4ef8c-6be4-40c4-86b4-77e9db5dbf81",
+        "id": "9fef71f3-7f05-4088-b678-5acd58086732",
+        "scrimId": "949042c4-7ae5-4330-822c-b624faa493bb",
+        "userId": "fad2d7ad-bb77-4724-a98b-992fdee5988d",
         "rangoUsuario": 1500,
         "latenciaUsuario": 30,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:28:20.1477191",
-        "fechaActualizacion": "2025-11-09T19:28:20.1487252"
+        "fechaPostulacion": "2025-11-10T17:43:29.4592615",
+        "fechaActualizacion": "2025-11-10T17:43:29.4592615"
       },
       {
-        "id": "ca7dc275-e596-4472-8b79-af7586f49c68",
-        "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
-        "userId": "646d823d-ecce-452c-89ce-d82431ffdecd",
+        "id": "5c53d711-fcd7-4f86-96d9-afabec8e0f38",
+        "scrimId": "949042c4-7ae5-4330-822c-b624faa493bb",
+        "userId": "8e2b3448-cb24-4c2d-8cd7-41a7673294e7",
         "rangoUsuario": 1600,
         "latenciaUsuario": 25,
         "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:28:20.6624683",
-        "fechaActualizacion": "2025-11-09T19:28:20.6624683"
-      },
-      {
-        "id": "bfa83a29-a2bd-4124-9930-29e90a09f203",
-        "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
-        "userId": "8989b6b8-47aa-44f0-b05d-7b200812cf95",
-        "rangoUsuario": 1550,
-        "latenciaUsuario": 35,
-        "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:28:21.1764571",
-        "fechaActualizacion": "2025-11-09T19:28:21.1764571"
-      },
-      {
-        "id": "9e096f69-49a6-44b0-91d0-9b3c4632c2a6",
-        "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
-        "userId": "01b13bf9-3ede-4234-bb7b-6825ca1d8a1b",
-        "rangoUsuario": 1800,
-        "latenciaUsuario": 20,
-        "estado": "ACEPTADA",
-        "fechaPostulacion": "2025-11-09T19:28:21.6870954",
-        "fechaActualizacion": "2025-11-09T19:28:21.6870954"
+        "fechaPostulacion": "2025-11-10T17:43:29.4592615",
+        "fechaActualizacion": "2025-11-10T17:43:29.4592615"
       }
     ],
-    "confirmaciones": [
-      {
-        "id": "f426c13f-f057-4387-9a49-d7ebf6cbc294",
-        "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
-        "userId": "a5c4ef8c-6be4-40c4-86b4-77e9db5dbf81",
-        "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:28:21.6870954",
-        "fechaRespuesta": "2025-11-09T19:28:31.9893091"
-      },
-      {
-        "id": "d9c209ee-5292-4c91-a752-e6509085062e",
-        "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
-        "userId": "646d823d-ecce-452c-89ce-d82431ffdecd",
-        "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:28:21.6870954",
-        "fechaRespuesta": "2025-11-09T19:28:31.9923244"
-      },
-      {
-        "id": "f6cac438-7047-4a34-b811-b1930b695d98",
-        "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
-        "userId": "8989b6b8-47aa-44f0-b05d-7b200812cf95",
-        "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:28:21.6870954",
-        "fechaRespuesta": "2025-11-09T19:28:31.9933232"
-      },
-      {
-        "id": "6f2d057e-4b93-4ce7-88f3-b21c7cde5745",
-        "scrimId": "9f0e0f14-85a4-4a1a-862a-b60296d7cfa4",
-        "userId": "01b13bf9-3ede-4234-bb7b-6825ca1d8a1b",
-        "estado": "CONFIRMADA",
-        "fechaSolicitud": "2025-11-09T19:28:21.6870954",
-        "fechaRespuesta": "2025-11-09T19:28:31.9933232"
-      }
-    ],
-    "createdBy": "7e4eb48b-2967-41ef-90c5-fa0ed1f129da",
-    "createdAt": "2025-11-09T19:28:09.5435024",
-    "estadoActual": "FINALIZADO",
+    "confirmaciones": [],
+    "createdBy": "4d20a4d0-c160-4bae-8b84-12c9bce65355",
+    "createdAt": "2025-11-10T17:43:29.4592615",
+    "estadoActual": "CANCELADO",
     "estrategiaMatchmaking": "MMR"
   }
 ]
