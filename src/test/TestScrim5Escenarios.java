@@ -18,7 +18,6 @@ import dominio.modelo.Confirmacion;
 import dominio.modelo.Scrim;
 import dominio.modelo.Usuario;
 import infraestructura.matchmaking.strategies.ByLatencyStrategy;
-import infraestructura.matchmaking.strategies.ByMMRStrategy;
 import infraestructura.persistencia.implementacion.RepositorioUsuarioJSON;
 import infraestructura.persistencia.repository.RepositorioFactory;
 import infraestructura.persistencia.repository.RepositorioScrim;
@@ -509,7 +508,7 @@ public class TestScrim5Escenarios {
             int rango = u.getRangoPorJuego().get(juegoNombre);
             int latencia = u.getLatenciaPromedio();
             postulacionService.postularAScrim(scrim.getId(), u.getId(), rango, latencia);
-            System.out.println("  ✓ " + u.getUsername() + " postulado");
+            System.out.println("  [OK] " + u.getUsername() + " postulado");
         }
         System.out.println("  [OK] Postulaciones completadas");
 
@@ -528,7 +527,7 @@ public class TestScrim5Escenarios {
         System.out.println("[6/9] Todos confirman asistencia...");
         for (Confirmacion conf : scrim.getConfirmaciones()) {
             confirmacionService.confirmarAsistencia(scrim.getId(), conf.getUserId());
-            System.out.println("  ✓ Confirmacion de " + conf.getUserId());
+            System.out.println("  [OK] Confirmacion de " + conf.getUserId());
         }
 
         scrim = repoScrims.buscarPorId(scrim.getId());
@@ -582,7 +581,7 @@ public class TestScrim5Escenarios {
         scrim = repoScrims.buscarPorId(scrim.getId());
         EstadisticasScrim stats = estadisticasService.obtenerEstadisticasParaScrim(scrim);
 
-        System.out.println("\n📊 ESTADISTICAS DEL SCRIM");
+        System.out.println("\n[ESTADISTICAS] ESTADISTICAS DEL SCRIM");
         System.out.println("  Scrim ID: " + stats.getScrimId());
         System.out.println("  Fecha Inicio: " + stats.getFechaHoraInicio());
         System.out.println("  Fecha Fin: " + stats.getFechaHoraFin());
@@ -593,14 +592,14 @@ public class TestScrim5Escenarios {
         List<EstadisticasJugador> jugadores = new java.util.ArrayList<>(stats.obtenerTodasLasEstadisticas());
         jugadores.sort((j1, j2) -> Double.compare(j2.getKDA(), j1.getKDA()));
 
-        System.out.println("\n🏆 RANKING POR KDA:");
-        System.out.println("  ┌" + "─".repeat(60) + "┐");
-        System.out.println("  │ Pos │  Jugador     │  K/D/A      │ KDA   │ Score  │");
-        System.out.println("  ├" + "─".repeat(60) + "┤");
+        System.out.println("\n[RANKING] RANKING POR KDA:");
+        System.out.println("  +" + "-".repeat(60) + "+");
+        System.out.println("  | Pos |  Jugador     |  K/D/A      | KDA   | Score  |");
+        System.out.println("  +" + "-".repeat(60) + "+");
 
         for (int i = 0; i < jugadores.size(); i++) {
             EstadisticasJugador j = jugadores.get(i);
-            String mvpMark = (j.isEsMVP()) ? "👑 " : "   ";
+            String mvpMark = (j.isEsMVP()) ? "[MVP] " : "      ";
             String pos = String.format("%s%d", mvpMark, i + 1);
             String jugadorNombre = j.getJugadorId();
             if (jugadorNombre.length() > 12) {
@@ -611,42 +610,42 @@ public class TestScrim5Escenarios {
             String kdaValue = String.format("%.2f", j.getKDA());
             String score = String.format("%6d", j.getPuntuacion());
 
-            System.out.printf("  │ %-4s│ %s │ %-11s │ %-5s │ %s │%n",
+            System.out.printf("  | %-4s| %s | %-11s | %-5s | %s |%n",
                     pos, usuario, kda, kdaValue, score);
         }
-        System.out.println("  └" + "─".repeat(60) + "┘");
+        System.out.println("  +" + "-".repeat(60) + "+");
 
         // Mostrar MVP
         EstadisticasJugador mvp = stats.obtenerMVP();
         if (mvp != null) {
-            System.out.println("\n🌟 MVP DEL PARTIDO: " + mvp.getJugadorId());
+            System.out.println("\n[MVP] MVP DEL PARTIDO: " + mvp.getJugadorId());
             System.out.println("   KDA: " + String.format("%.2f", mvp.getKDA()) +
                     " | Score: " + mvp.getPuntuacion() +
                     " | " + mvp.getKills() + "/" + mvp.getDeaths() + "/" + mvp.getAssists());
         }
 
         // Mostrar comentarios
-        System.out.println("\n💬 COMENTARIOS:");
+        System.out.println("\n[COMENTARIOS] COMENTARIOS:");
         List<Comentario> comentarios = estadisticasService.obtenerComentariosDeScrim(scrim.getId());
 
         if (comentarios.isEmpty()) {
             System.out.println("   (No hay comentarios aprobados)");
         } else {
             for (Comentario c : comentarios) {
-                System.out.println("  ┌" + "─".repeat(90) + "┐");
-                System.out.println("  │ " + c.getJugadorId() + " - " + c.getFechaCreacion());
-                System.out.println("  │ \"" + c.getContenido() + "\"");
-                System.out.println("  │ Rating: " + c.getRating());
-                System.out.println("  └" + "─".repeat(90) + "┘");
+                System.out.println("  +" + "-".repeat(90) + "+");
+                System.out.println("  | " + c.getJugadorId() + " - " + c.getFechaCreacion());
+                System.out.println("  | \"" + c.getContenido() + "\"");
+                System.out.println("  | Rating: " + c.getRating());
+                System.out.println("  +" + "-".repeat(90) + "+");
             }
         }
 
         System.out.println("\n" + "=".repeat(70));
         System.out.println("  >>> TEST 5 COMPLETADO EXITOSAMENTE <<<");
-        System.out.println("  ✓ Matchmaking realizado");
-        System.out.println("  ✓ Estadisticas generadas automaticamente");
-        System.out.println("  ✓ Comentarios agregados");
-        System.out.println("  ✓ Rankings y MVP mostrados");
+        System.out.println("  [OK] Matchmaking realizado");
+        System.out.println("  [OK] Estadisticas generadas automaticamente");
+        System.out.println("  [OK] Comentarios agregados");
+        System.out.println("  [OK] Rankings y MVP mostrados");
         System.out.println("=".repeat(70));
     }
 
