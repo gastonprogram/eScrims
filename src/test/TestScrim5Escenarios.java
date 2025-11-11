@@ -18,7 +18,6 @@ import dominio.modelo.Confirmacion;
 import dominio.modelo.Scrim;
 import dominio.modelo.Usuario;
 import infraestructura.matchmaking.strategies.ByLatencyStrategy;
-import infraestructura.matchmaking.strategies.ByMMRStrategy;
 import infraestructura.persistencia.implementacion.RepositorioUsuarioJSON;
 import infraestructura.persistencia.repository.RepositorioFactory;
 import infraestructura.persistencia.repository.RepositorioScrim;
@@ -611,10 +610,10 @@ public class TestScrim5Escenarios {
             String kdaValue = String.format("%.2f", j.getKDA());
             String score = String.format("%6d", j.getPuntuacion());
 
-            System.out.printf("  │ %-4s│ %s │ %-11s │ %-5s │ %s │%n",
+            System.out.printf("  | %-4s| %s | %-11s | %-5s | %s |%n",
                     pos, usuario, kda, kdaValue, score);
         }
-        System.out.println("  └" + "─".repeat(60) + "┘");
+        System.out.println("  +" + "-".repeat(60) + "+");
 
         // Mostrar MVP
         EstadisticasJugador mvp = stats.obtenerMVP();
@@ -633,11 +632,11 @@ public class TestScrim5Escenarios {
             System.out.println("   (No hay comentarios aprobados)");
         } else {
             for (Comentario c : comentarios) {
-                System.out.println("  ┌" + "─".repeat(90) + "┐");
-                System.out.println("  │ " + c.getJugadorId() + " - " + c.getFechaCreacion());
-                System.out.println("  │ \"" + c.getContenido() + "\"");
-                System.out.println("  │ Rating: " + c.getRating());
-                System.out.println("  └" + "─".repeat(90) + "┘");
+                System.out.println("  +" + "-".repeat(90) + "+");
+                System.out.println("  | " + c.getJugadorId() + " - " + c.getFechaCreacion());
+                System.out.println("  | \"" + c.getContenido() + "\"");
+                System.out.println("  | Rating: " + c.getRating());
+                System.out.println("  +" + "-".repeat(90) + "+");
             }
         }
 
