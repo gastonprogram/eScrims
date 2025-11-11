@@ -45,7 +45,7 @@ public class PerfilView {
      */
     public String mostrarMenuPerfil() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("               🎮 GESTIÓN DE PERFIL");
+        System.out.println("               - GESTIÓN DE PERFIL");
         System.out.println("=".repeat(60));
         System.out.println("1. Ver Mi Perfil Completo");
         System.out.println("2. Editar Rango por Juego");
@@ -66,40 +66,40 @@ public class PerfilView {
      */
     public void mostrarPerfilCompleto(Usuario usuario) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("                   👤 MI PERFIL");
+        System.out.println("                   - MI PERFIL");
         System.out.println("=".repeat(60));
 
         // Información básica
-        System.out.printf("👤 Username:     %s\n", usuario.getUsername());
-        System.out.printf("📧 Email:        %s\n", usuario.getEmail());
-        System.out.printf("🌍 Región:       %s\n",
+        System.out.printf("- Username:     %s\n", usuario.getUsername());
+        System.out.printf("- Email:        %s\n", usuario.getEmail());
+        System.out.printf("- Región:       %s\n",
                 usuario.getRegion().isEmpty() ? "No configurada" : usuario.getRegion());
-        System.out.printf("📡 Latencia:     %d ms\n", usuario.getLatenciaPromedio());
+        System.out.printf("- Latencia:     %d ms\n", usuario.getLatenciaPromedio());
 
         // Rangos por juego
-        System.out.println("\n🎯 RANGOS POR JUEGO:");
+        System.out.println("\n- RANGOS POR JUEGO:");
         Map<String, Integer> rangos = usuario.getRangoPorJuego();
         if (rangos.isEmpty()) {
-            System.out.println("   📭 No hay rangos configurados");
+            System.out.println("   - No hay rangos configurados");
         } else {
-            rangos.forEach((juego, rango) -> System.out.printf("   🎮 %s: %d\n", juego, rango));
+            rangos.forEach((juego, rango) -> System.out.printf("   - %s: %d\n", juego, rango));
         }
 
         // Roles por juego
-        System.out.println("\n👥 ROLES PREFERIDOS POR JUEGO:");
+        System.out.println("\n- ROLES PREFERIDOS POR JUEGO:");
         boolean tieneRoles = false;
         List<Juego> juegosDisponibles = juegosRegistry.getJuegosDisponibles();
 
         for (Juego juego : juegosDisponibles) {
             List<String> roles = usuario.getRolesPreferidosParaJuego(juego.getNombre());
             if (!roles.isEmpty()) {
-                System.out.printf("   🎮 %s: %s\n", juego.getNombre(), String.join(", ", roles));
+                System.out.printf("   - %s: %s\n", juego.getNombre(), String.join(", ", roles));
                 tieneRoles = true;
             }
         }
 
         if (!tieneRoles) {
-            System.out.println("   📭 No hay roles configurados");
+            System.out.println("   - No hay roles configurados");
         }
 
         System.out.println("=".repeat(60));
@@ -110,19 +110,19 @@ public class PerfilView {
      */
     public void mostrarPerfilOtroUsuario(Usuario usuario) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("                 👤 PERFIL DE USUARIO");
+        System.out.println("                 - PERFIL DE USUARIO");
         System.out.println("=".repeat(60));
 
-        System.out.printf("👤 Username:     %s\n", usuario.getUsername());
-        System.out.printf("🌍 Región:       %s\n", usuario.getRegion().isEmpty() ? "No visible" : usuario.getRegion());
+        System.out.printf("- Username:     %s\n", usuario.getUsername());
+        System.out.printf("- Región:       %s\n", usuario.getRegion().isEmpty() ? "No visible" : usuario.getRegion());
 
         // Mostrar solo rangos (sin roles por privacidad)
-        System.out.println("\n🎯 RANGOS:");
+        System.out.println("\n- RANGOS:");
         Map<String, Integer> rangos = usuario.getRangoPorJuego();
         if (rangos.isEmpty()) {
-            System.out.println("   📭 No hay rangos públicos");
+            System.out.println("   - No hay rangos públicos");
         } else {
-            rangos.forEach((juego, rango) -> System.out.printf("   🎮 %s: %d\n", juego, rango));
+            rangos.forEach((juego, rango) -> System.out.printf("   - %s: %d\n", juego, rango));
         }
 
         System.out.println("=".repeat(60));
@@ -135,7 +135,7 @@ public class PerfilView {
      */
     public Juego solicitarJuegoParaRango() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("            🎯 EDITAR RANGO POR JUEGO");
+        System.out.println("            - EDITAR RANGO POR JUEGO");
         System.out.println("=".repeat(60));
 
         List<Juego> juegos = juegosRegistry.getJuegosDisponibles();
@@ -172,8 +172,8 @@ public class PerfilView {
     public int solicitarNuevoRango(String nombreJuego, Integer rangoActual) {
         String rangoActualStr = rangoActual != null ? rangoActual.toString() : "No configurado";
 
-        System.out.printf("\n🎮 Juego: %s\n", nombreJuego);
-        System.out.printf("🎯 Rango actual: %s\n", rangoActualStr);
+        System.out.printf("\n- Juego: %s\n", nombreJuego);
+        System.out.printf("- Rango actual: %s\n", rangoActualStr);
         System.out.print("\nIngrese el nuevo rango (1-100) o '0' para cancelar: ");
 
         try {
@@ -202,7 +202,7 @@ public class PerfilView {
      */
     public Juego solicitarJuegoParaRoles() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("          👥 GESTIONAR ROLES POR JUEGO");
+        System.out.println("          - GESTIONAR ROLES POR JUEGO");
         System.out.println("=".repeat(60));
 
         List<Juego> juegos = juegosRegistry.getJuegosDisponibles();
@@ -237,13 +237,13 @@ public class PerfilView {
      * Muestra los roles actuales y permite seleccionar nuevos roles.
      */
     public List<String> solicitarNuevosRoles(Juego juego, List<String> rolesActuales) {
-        System.out.printf("\n🎮 Juego: %s\n", juego.getNombre());
+        System.out.printf("\n- Juego: %s\n", juego.getNombre());
 
         // Mostrar roles actuales
         if (rolesActuales.isEmpty()) {
-            System.out.println("👥 Roles actuales: Ninguno configurado");
+            System.out.println("- Roles actuales: Ninguno configurado");
         } else {
-            System.out.printf("👥 Roles actuales: %s\n", String.join(", ", rolesActuales));
+            System.out.printf("- Roles actuales: %s\n", String.join(", ", rolesActuales));
         }
 
         // Mostrar roles disponibles
@@ -298,10 +298,10 @@ public class PerfilView {
      */
     public String solicitarNuevaRegion(String regionActual) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("               🌍 CAMBIAR REGIÓN");
+        System.out.println("               - CAMBIAR REGIÓN");
         System.out.println("=".repeat(60));
 
-        System.out.printf("🌍 Región actual: %s\n", regionActual.isEmpty() ? "No configurada" : regionActual);
+        System.out.printf("- Región actual: %s\n", regionActual.isEmpty() ? "No configurada" : regionActual);
 
         System.out.println("\nRegiones disponibles:");
         System.out.println("1. LAS (Latinoamérica Sur)");
@@ -347,10 +347,10 @@ public class PerfilView {
      */
     public int solicitarNuevaLatencia(int latenciaActual) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("             📡 AJUSTAR LATENCIA PROMEDIO");
+        System.out.println("             - AJUSTAR LATENCIA PROMEDIO");
         System.out.println("=".repeat(60));
 
-        System.out.printf("📡 Latencia actual: %d ms\n", latenciaActual);
+        System.out.printf("- Latencia actual: %d ms\n", latenciaActual);
 
         System.out.println("\nReferencia de latencia:");
         System.out.println("• 0-30 ms: Excelente");
@@ -386,9 +386,9 @@ public class PerfilView {
      */
     public String solicitarUsernameUsuario() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("            👤 VER PERFIL DE OTRO USUARIO");
+        System.out.println("            - VER PERFIL DE OTRO USUARIO");
         System.out.println("=".repeat(60));
-        System.out.print("\n👤 Ingrese el username del usuario: ");
+        System.out.print("\n- Ingrese el username del usuario: ");
         return scanner.nextLine().trim();
     }
 
@@ -410,21 +410,21 @@ public class PerfilView {
      * Muestra un mensaje de éxito.
      */
     public void mostrarExito(String mensaje) {
-        System.out.println("\n✅ " + mensaje);
+        System.out.println("\n- " + mensaje);
     }
 
     /**
      * Muestra un mensaje de error.
      */
     public void mostrarError(String mensaje) {
-        System.err.println("\n❌ " + mensaje);
+        System.err.println("\n- " + mensaje);
     }
 
     /**
      * Muestra un mensaje informativo.
      */
     public void mostrarInfo(String mensaje) {
-        System.out.println("\nℹ️  " + mensaje);
+        System.out.println("\n- " + mensaje);
     }
 
     /**

@@ -3625,5 +3625,275 @@
     "fechaHoraFin": "2025-11-10T19:41:01.506707",
     "ganador": "Green Gladiators",
     "duracionMinutos": 38
+  },
+  "32af73a6-3b91-4325-ae21-c9835d188d6e": {
+    "scrimId": "32af73a6-3b91-4325-ae21-c9835d188d6e",
+    "scrimReferencia": {
+      "id": "32af73a6-3b91-4325-ae21-c9835d188d6e",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 80,
+      "fechaHora": "2025-11-11T12:51:59.0339329",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "5cfc8af4-616f-4d1a-a36e-deaad58cb784",
+          "scrimId": "32af73a6-3b91-4325-ae21-c9835d188d6e",
+          "userId": "bae39d6c-acf7-4df0-9649-84b68722da7e",
+          "rangoUsuario": 1500,
+          "latenciaUsuario": 30,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-11T12:46:59.2309167",
+          "fechaActualizacion": "2025-11-11T12:46:59.2309167"
+        },
+        {
+          "id": "fb2b243c-e5e0-48e0-891d-4f91791f9823",
+          "scrimId": "32af73a6-3b91-4325-ae21-c9835d188d6e",
+          "userId": "a1287b1a-cbb2-4ae3-bb96-de4c12f887b0",
+          "rangoUsuario": 1600,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-11T12:46:59.2399231",
+          "fechaActualizacion": "2025-11-11T12:46:59.2399231"
+        },
+        {
+          "id": "005065af-795e-407e-83f1-2e68edf85e49",
+          "scrimId": "32af73a6-3b91-4325-ae21-c9835d188d6e",
+          "userId": "7570f163-ea4d-4af2-85c1-7744dbc7ef36",
+          "rangoUsuario": 1550,
+          "latenciaUsuario": 35,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-11T12:46:59.2509234",
+          "fechaActualizacion": "2025-11-11T12:46:59.2509234"
+        },
+        {
+          "id": "08fd560d-6cf9-43e2-bdc2-addbf9df1fb0",
+          "scrimId": "32af73a6-3b91-4325-ae21-c9835d188d6e",
+          "userId": "18699b63-76a1-4eb5-9c3a-55e7be60ea86",
+          "rangoUsuario": 1700,
+          "latenciaUsuario": 40,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-11T12:46:59.256926",
+          "fechaActualizacion": "2025-11-11T12:46:59.256926"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "da560ab2-9f49-4b92-b425-18289196ba20",
+          "scrimId": "32af73a6-3b91-4325-ae21-c9835d188d6e",
+          "userId": "bae39d6c-acf7-4df0-9649-84b68722da7e",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-11T12:46:59.256926",
+          "fechaRespuesta": "2025-11-11T12:46:59.2819236"
+        },
+        {
+          "id": "e19936fc-2310-4c46-90da-06eadcf208fc",
+          "scrimId": "32af73a6-3b91-4325-ae21-c9835d188d6e",
+          "userId": "a1287b1a-cbb2-4ae3-bb96-de4c12f887b0",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-11T12:46:59.2579234",
+          "fechaRespuesta": "2025-11-11T12:46:59.2889232"
+        },
+        {
+          "id": "8df92380-ec94-4565-9a0e-566dd64c0cb5",
+          "scrimId": "32af73a6-3b91-4325-ae21-c9835d188d6e",
+          "userId": "7570f163-ea4d-4af2-85c1-7744dbc7ef36",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-11T12:46:59.2579234",
+          "fechaRespuesta": "2025-11-11T12:46:59.2949245"
+        },
+        {
+          "id": "5178d14a-c646-46b7-9eb2-fd87ca1b3f38",
+          "scrimId": "32af73a6-3b91-4325-ae21-c9835d188d6e",
+          "userId": "18699b63-76a1-4eb5-9c3a-55e7be60ea86",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-11T12:46:59.2579234",
+          "fechaRespuesta": "2025-11-11T12:46:59.3009237"
+        }
+      ],
+      "createdBy": "ee400d62-2268-4d2b-a89a-8b20a8cade65",
+      "createdAt": "2025-11-11T12:46:59.0409321",
+      "estadoActual": "FINALIZADO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "18699b63-76a1-4eb5-9c3a-55e7be60ea86": {
+        "jugadorId": "18699b63-76a1-4eb5-9c3a-55e7be60ea86",
+        "kills": 3,
+        "assists": 2,
+        "deaths": 8,
+        "puntuacion": 99,
+        "esMVP": false
+      },
+      "7570f163-ea4d-4af2-85c1-7744dbc7ef36": {
+        "jugadorId": "7570f163-ea4d-4af2-85c1-7744dbc7ef36",
+        "kills": 3,
+        "assists": 20,
+        "deaths": 5,
+        "puntuacion": 76,
+        "esMVP": false
+      },
+      "a1287b1a-cbb2-4ae3-bb96-de4c12f887b0": {
+        "jugadorId": "a1287b1a-cbb2-4ae3-bb96-de4c12f887b0",
+        "kills": 2,
+        "assists": 13,
+        "deaths": 4,
+        "puntuacion": 76,
+        "esMVP": false
+      },
+      "bae39d6c-acf7-4df0-9649-84b68722da7e": {
+        "jugadorId": "bae39d6c-acf7-4df0-9649-84b68722da7e",
+        "kills": 11,
+        "assists": 16,
+        "deaths": 6,
+        "puntuacion": 88,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-11T12:46:59.3842164",
+    "fechaHoraFin": "2025-11-11T12:46:59.3912162",
+    "ganador": "Omega Crew",
+    "duracionMinutos": 39
+  },
+  "dca4fd49-abc5-4233-8e70-f7771e7e3fd5": {
+    "scrimId": "dca4fd49-abc5-4233-8e70-f7771e7e3fd5",
+    "scrimReferencia": {
+      "id": "dca4fd49-abc5-4233-8e70-f7771e7e3fd5",
+      "juego": "Counter-Strike",
+      "formato": "2v2 Wingman CS",
+      "rangoMin": 1000,
+      "rangoMax": 2000,
+      "latenciaMax": 80,
+      "fechaHora": "2025-11-11T12:52:07.6724459",
+      "plazas": 4,
+      "postulaciones": [
+        {
+          "id": "77a37032-ffcc-4057-a88c-cfee67ba5de8",
+          "scrimId": "dca4fd49-abc5-4233-8e70-f7771e7e3fd5",
+          "userId": "661fece0-8710-4595-8548-d795f6b5dfa0",
+          "rangoUsuario": 1806,
+          "latenciaUsuario": 25,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-11T12:47:07.7073301",
+          "fechaActualizacion": "2025-11-11T12:47:07.7073301"
+        },
+        {
+          "id": "187302c6-ea46-40c2-aef3-732056e97984",
+          "scrimId": "dca4fd49-abc5-4233-8e70-f7771e7e3fd5",
+          "userId": "77d45d3b-fc16-4974-8f8f-98c9639e3b3e",
+          "rangoUsuario": 1063,
+          "latenciaUsuario": 38,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-11T12:47:07.7133291",
+          "fechaActualizacion": "2025-11-11T12:47:07.7133291"
+        },
+        {
+          "id": "8d6f12cf-a4e7-4876-89d7-50b781c96405",
+          "scrimId": "dca4fd49-abc5-4233-8e70-f7771e7e3fd5",
+          "userId": "c90857fb-54a6-41bf-8532-2b516fc2273b",
+          "rangoUsuario": 1155,
+          "latenciaUsuario": 39,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-11T12:47:07.7173278",
+          "fechaActualizacion": "2025-11-11T12:47:07.7173278"
+        },
+        {
+          "id": "784f7ee1-d483-46da-9692-94dff0749a2c",
+          "scrimId": "dca4fd49-abc5-4233-8e70-f7771e7e3fd5",
+          "userId": "b2f6ad00-e786-434d-9633-558d7b212246",
+          "rangoUsuario": 1549,
+          "latenciaUsuario": 49,
+          "estado": "ACEPTADA",
+          "fechaPostulacion": "2025-11-11T12:47:07.721329",
+          "fechaActualizacion": "2025-11-11T12:47:07.721329"
+        }
+      ],
+      "confirmaciones": [
+        {
+          "id": "37dd6a23-0063-4e2f-8b2a-7de97292065b",
+          "scrimId": "dca4fd49-abc5-4233-8e70-f7771e7e3fd5",
+          "userId": "661fece0-8710-4595-8548-d795f6b5dfa0",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-11T12:47:07.721329",
+          "fechaRespuesta": "2025-11-11T12:47:07.7253291"
+        },
+        {
+          "id": "236d2801-f727-445c-9d3e-4480816cfaed",
+          "scrimId": "dca4fd49-abc5-4233-8e70-f7771e7e3fd5",
+          "userId": "77d45d3b-fc16-4974-8f8f-98c9639e3b3e",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-11T12:47:07.721329",
+          "fechaRespuesta": "2025-11-11T12:47:07.7303293"
+        },
+        {
+          "id": "191e8fd5-bdef-48a7-b44e-4d123c738bac",
+          "scrimId": "dca4fd49-abc5-4233-8e70-f7771e7e3fd5",
+          "userId": "c90857fb-54a6-41bf-8532-2b516fc2273b",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-11T12:47:07.721329",
+          "fechaRespuesta": "2025-11-11T12:47:07.7353293"
+        },
+        {
+          "id": "be67a5df-b236-468f-bb7d-14262c7c0326",
+          "scrimId": "dca4fd49-abc5-4233-8e70-f7771e7e3fd5",
+          "userId": "b2f6ad00-e786-434d-9633-558d7b212246",
+          "estado": "CONFIRMADA",
+          "fechaSolicitud": "2025-11-11T12:47:07.721329",
+          "fechaRespuesta": "2025-11-11T12:47:07.7403288"
+        }
+      ],
+      "createdBy": "576e45b9-d791-49cc-9770-5e94d1190375",
+      "createdAt": "2025-11-11T12:47:07.6724459",
+      "estadoActual": "EN_JUEGO",
+      "estrategiaMatchmaking": "MMR"
+    },
+    "estadisticasPorJugador": {
+      "77d45d3b-fc16-4974-8f8f-98c9639e3b3e": {
+        "jugadorId": "77d45d3b-fc16-4974-8f8f-98c9639e3b3e",
+        "kills": 8,
+        "assists": 4,
+        "deaths": 8,
+        "puntuacion": 84,
+        "esMVP": false
+      },
+      "c90857fb-54a6-41bf-8532-2b516fc2273b": {
+        "jugadorId": "c90857fb-54a6-41bf-8532-2b516fc2273b",
+        "kills": 14,
+        "assists": 17,
+        "deaths": 5,
+        "puntuacion": 75,
+        "esMVP": false
+      },
+      "661fece0-8710-4595-8548-d795f6b5dfa0": {
+        "jugadorId": "661fece0-8710-4595-8548-d795f6b5dfa0",
+        "kills": 12,
+        "assists": 18,
+        "deaths": 1,
+        "puntuacion": 66,
+        "esMVP": false
+      },
+      "b2f6ad00-e786-434d-9633-558d7b212246": {
+        "jugadorId": "b2f6ad00-e786-434d-9633-558d7b212246",
+        "kills": 12,
+        "assists": 6,
+        "deaths": 7,
+        "puntuacion": 91,
+        "esMVP": false
+      }
+    },
+    "victoriasPorEquipo": {},
+    "derrotasPorEquipo": {},
+    "puntuacionPromedio": {},
+    "reportes": [],
+    "fechaHoraInicio": "2025-11-11T12:47:07.74933",
+    "fechaHoraFin": "2025-11-11T12:47:07.7533299",
+    "ganador": "Neon Squad",
+    "duracionMinutos": 26
   }
 }

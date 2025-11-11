@@ -40,7 +40,7 @@ public class EjemploUsoScrimOrganizador {
         Usuario usuario4 = new Usuario("Rookie", "rookie@example.com", "password123");
         Usuario usuario5 = new Usuario("Mata", "mata@example.com", "password123");
 
-        System.out.println("✓ Usuarios creados");
+        System.out.println("Usuarios creados");
 
         // 2. Crear un scrim de League of Legends
         LeagueOfLegends lol = LeagueOfLegends.getInstance();
@@ -55,12 +55,12 @@ public class EjemploUsoScrimOrganizador {
                 .withLatenciaMaxima(50)
                 .build();
 
-        System.out.println("✓ Scrim creado: " + lol.getNombre() + " - " + scrim.getFormato().getFormatName());
+        System.out.println("Scrim creado: " + lol.getNombre() + " - " + scrim.getFormato().getFormatName());
         System.out.println();
 
         // 3. Crear el organizador del scrim
         ScrimOrganizador organizador = new ScrimOrganizador(scrim);
-        System.out.println("✓ Organizador creado");
+        System.out.println("Organizador creado");
         System.out.println();
 
         // 4. Invitar jugadores con sus roles
@@ -109,8 +109,8 @@ public class EjemploUsoScrimOrganizador {
         // 9. Confirmar el scrim (esto bloquea futuras modificaciones)
         System.out.println("\n--- Confirmando scrim ---");
         organizador.confirmarScrim();
-        System.out.println("✓ Scrim confirmado. Estado: " + scrim.getEstado());
-        System.out.println("✓ Bloqueado: " + organizador.isBloqueado());
+        System.out.println("Scrim confirmado. Estado: " + scrim.getEstado());
+        System.out.println("Bloqueado: " + organizador.isBloqueado());
 
         // 10. Intentar hacer cambios después de confirmar (debe fallar)
         System.out.println("\n--- Intentando cambiar rol después de confirmar ---");
@@ -118,7 +118,7 @@ public class EjemploUsoScrimOrganizador {
             AccionOrganizador cambioInvalido = new AsignarRolAccion("Faker", new RolTopLoL());
             organizador.ejecutarAccion(cambioInvalido);
         } catch (IllegalStateException e) {
-            System.out.println("✓ Error esperado: " + e.getMessage());
+            System.out.println("Error esperado: " + e.getMessage());
         }
 
         System.out.println("\n=== Ejemplo completado exitosamente ===");

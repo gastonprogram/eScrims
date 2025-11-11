@@ -75,7 +75,7 @@ public class RepositorioUsuarioJSONTest {
             throw new AssertionError("El nombre de usuario no coincide");
         }
 
-        System.out.println("✓ Prueba de guardar y buscar completada con éxito");
+        System.out.println("- Prueba de guardar y buscar completada con éxito");
     }
 
     private static void testActualizarUsuario() {
@@ -124,7 +124,7 @@ public class RepositorioUsuarioJSONTest {
             throw new AssertionError("La disponibilidad no se actualizó correctamente");
         }
 
-        System.out.println("✓ Prueba de actualización completada con éxito");
+        System.out.println("Prueba de actualización completada con éxito");
         System.out.println("  - Rango: " + actualizado.getRangoPrincipal());
         System.out.println("  - Juego: " + actualizado.getJuegoPrincipalNombre());
         System.out.println("  - Roles: " + String.join(", ", actualizado.getRolesPreferidos()));
@@ -171,7 +171,7 @@ public class RepositorioUsuarioJSONTest {
             throw new AssertionError("Debería tener roles para League of Legends");
         }
 
-        System.out.println("✓ Prueba de roles por juego completada con éxito");
+        System.out.println("Prueba de roles por juego completada con éxito");
         System.out.println("  - Roles actuales: " + String.join(", ", roles));
         System.out.println("  - Roles para LoL: " + String.join(", ", rolesLol));
 
@@ -202,7 +202,7 @@ public class RepositorioUsuarioJSONTest {
             throw new AssertionError("El usuario no debería existir después de eliminarlo");
         }
 
-        System.out.println("✓ Prueba de eliminación completada con éxito");
+        System.out.println("Prueba de eliminación completada con éxito");
     }
 
     private static void testListarUsuarios() {
@@ -240,6 +240,6 @@ public class RepositorioUsuarioJSONTest {
         if (!encontrado2)
             throw new AssertionError("Falta el usuario 2 en la lista");
 
-        System.out.println("✓ Prueba de listado completada con éxito");
+        System.out.println("Prueba de listado completada con éxito");
     }
 }

@@ -64,7 +64,7 @@ public class TestScrimOrganizadorCompleto {
             Usuario jugador4 = crearUsuario(repoUsuarios, "Gumayusi", "guma@t1.com");
             Usuario jugador5 = crearUsuario(repoUsuarios, "Keria", "keria@t1.com");
 
-            System.out.println("✓ Usuarios creados: " + organizador.getUsername() + ", " +
+            System.out.println("- Usuarios creados: " + organizador.getUsername() + ", " +
                     jugador1.getUsername() + ", " + jugador2.getUsername() + ", " +
                     jugador3.getUsername() + ", " + jugador4.getUsername() + ", " +
                     jugador5.getUsername());
@@ -75,14 +75,14 @@ public class TestScrimOrganizadorCompleto {
 
             Scrim scrim = crearScrim(organizador);
             repoScrims.guardar(scrim);
-            System.out.println("✓ Scrim creado: ID=" + scrim.getId() + ", Juego=" + scrim.getJuego().getNombre());
+            System.out.println("- Scrim creado: ID=" + scrim.getId() + ", Juego=" + scrim.getJuego().getNombre());
 
             // 3. CREAR SCRIM ORGANIZADOR
             System.out.println("\n3. INICIALIZANDO SCRIM ORGANIZADOR");
             System.out.println("-".repeat(50));
 
             ScrimOrganizador scrimOrganizador = new ScrimOrganizador(scrim);
-            System.out.println("✓ ScrimOrganizador inicializado");
+            System.out.println("- ScrimOrganizador inicializado");
             System.out.println("  - Participantes actuales: " + scrimOrganizador.getParticipantes().size());
             System.out.println("  - Estado bloqueado: " + scrimOrganizador.isBloqueado());
             System.out.println("  - Acciones en historial: " + scrimOrganizador.getCantidadAccionesEnHistorial());
@@ -134,11 +134,11 @@ public class TestScrimOrganizadorCompleto {
             testOrganizadorService(organizadorService, scrim.getId(), organizador.getId());
 
             System.out.println("\n" + "=".repeat(80));
-            System.out.println("            ✓ TEST COMPLETADO EXITOSAMENTE");
+            System.out.println("            - TEST COMPLETADO EXITOSAMENTE");
             System.out.println("=".repeat(80));
 
         } catch (Exception e) {
-            System.err.println("\n✗ ERROR EN EL TEST: " + e.getMessage());
+            System.err.println("\n- ERROR EN EL TEST: " + e.getMessage());
             e.printStackTrace();
         }
     }
@@ -150,7 +150,7 @@ public class TestScrimOrganizadorCompleto {
         // Verificar si ya existe
         Usuario existente = repo.buscarPorId(username);
         if (existente != null) {
-            System.out.println("⚠ Usuario " + username + " ya existía, usando el existente");
+            System.out.println("- Usuario " + username + " ya existía, usando el existente");
             return existente;
         }
 
@@ -192,27 +192,27 @@ public class TestScrimOrganizadorCompleto {
         // Zeus - Top
         InvitarJugadorAccion invitarZeus = new InvitarJugadorAccion(jugador1, new RolTopLoL());
         organizador.ejecutarAccion(invitarZeus);
-        System.out.println("✓ " + jugador1.getUsername() + " invitado como Top");
+        System.out.println("- " + jugador1.getUsername() + " invitado como Top");
 
         // Canyon - Jungle
         InvitarJugadorAccion invitarCanyon = new InvitarJugadorAccion(jugador2, new RolJungleLoL());
         organizador.ejecutarAccion(invitarCanyon);
-        System.out.println("✓ " + jugador2.getUsername() + " invitado como Jungle");
+        System.out.println("- " + jugador2.getUsername() + " invitado como Jungle");
 
         // Chovy - Mid
         InvitarJugadorAccion invitarChovy = new InvitarJugadorAccion(jugador3, new RolMidLoL());
         organizador.ejecutarAccion(invitarChovy);
-        System.out.println("✓ " + jugador3.getUsername() + " invitado como Mid");
+        System.out.println("- " + jugador3.getUsername() + " invitado como Mid");
 
         // Gumayusi - ADC
         InvitarJugadorAccion invitarGuma = new InvitarJugadorAccion(jugador4, new RolADCLoL());
         organizador.ejecutarAccion(invitarGuma);
-        System.out.println("✓ " + jugador4.getUsername() + " invitado como ADC");
+        System.out.println("- " + jugador4.getUsername() + " invitado como ADC");
 
         // Keria - Support
         InvitarJugadorAccion invitarKeria = new InvitarJugadorAccion(jugador5, new RolSupportLoL());
         organizador.ejecutarAccion(invitarKeria);
-        System.out.println("✓ " + jugador5.getUsername() + " invitado como Support");
+        System.out.println("- " + jugador5.getUsername() + " invitado como Support");
 
         System.out.println("Total de acciones en historial: " + organizador.getCantidadAccionesEnHistorial());
     }
@@ -241,18 +241,18 @@ public class TestScrimOrganizadorCompleto {
         try {
             // Esto debería fallar porque Mid ya está ocupado por Chovy
             organizador.ejecutarAccion(cambiarZeus);
-            System.out.println("✗ ERROR: Debería haber fallado - rol ya ocupado");
+            System.out.println("- ERROR: Debería haber fallado - rol ya ocupado");
         } catch (IllegalArgumentException e) {
-            System.out.println("✓ Validación correcta: " + e.getMessage());
+            System.out.println("- Validación correcta: " + e.getMessage());
         }
 
         // Cambiar Chovy a un rol libre (asumiendo que hay uno)
         AsignarRolAccion liberarMid = new AsignarRolAccion("Chovy", new RolTopLoL());
         try {
             organizador.ejecutarAccion(liberarMid);
-            System.out.println("✗ ERROR: Debería haber fallado - Top ya ocupado por Zeus");
+            System.out.println("- ERROR: Debería haber fallado - Top ya ocupado por Zeus");
         } catch (IllegalArgumentException e) {
-            System.out.println("✓ Validación correcta: " + e.getMessage());
+            System.out.println("- Validación correcta: " + e.getMessage());
         }
     }
 
@@ -262,7 +262,7 @@ public class TestScrimOrganizadorCompleto {
         // Intercambiar Zeus (Top) con Canyon (Jungle)
         SwapJugadoresAccion swap = new SwapJugadoresAccion("Zeus", "Canyon");
         organizador.ejecutarAccion(swap);
-        System.out.println("✓ Intercambio realizado: Zeus <-> Canyon");
+        System.out.println("- Intercambio realizado: Zeus <-> Canyon");
 
         // Mostrar el nuevo estado
         System.out.println("Estado después del swap:");
@@ -282,7 +282,7 @@ public class TestScrimOrganizadorCompleto {
 
         // Deshacer la última acción (el swap)
         organizador.deshacerUltimaAccion();
-        System.out.println("✓ Última acción deshecha");
+        System.out.println("- Última acción deshecha");
 
         int accionesDespues = organizador.getCantidadAccionesEnHistorial();
         System.out.println("Acciones después de deshacer: " + accionesDespues);
@@ -304,22 +304,22 @@ public class TestScrimOrganizadorCompleto {
         try {
             InvitarJugadorAccion invitarDuplicado = new InvitarJugadorAccion(jugadorExistente, new RolTopLoL());
             organizador.ejecutarAccion(invitarDuplicado);
-            System.out.println("✗ ERROR: Debería haber fallado - jugador duplicado");
+            System.out.println("- ERROR: Debería haber fallado - jugador duplicado");
         } catch (IllegalStateException e) {
-            System.out.println("✓ Validación correcta: " + e.getMessage());
+            System.out.println("- Validación correcta: " + e.getMessage());
         } catch (IllegalArgumentException e) {
-            System.out.println("✓ Validación correcta: " + e.getMessage());
+            System.out.println("- Validación correcta: " + e.getMessage());
         }
 
         // Intentar swap con usuario inexistente
         try {
             SwapJugadoresAccion swapInvalido = new SwapJugadoresAccion("Zeus", "UsuarioInexistente");
             organizador.ejecutarAccion(swapInvalido);
-            System.out.println("✗ ERROR: Debería haber fallado - usuario inexistente");
+            System.out.println("- ERROR: Debería haber fallado - usuario inexistente");
         } catch (IllegalStateException e) {
-            System.out.println("✓ Validación correcta: " + e.getMessage());
+            System.out.println("- Validación correcta: " + e.getMessage());
         } catch (IllegalArgumentException e) {
-            System.out.println("✓ Validación correcta: " + e.getMessage());
+            System.out.println("- Validación correcta: " + e.getMessage());
         }
     }
 
@@ -332,16 +332,16 @@ public class TestScrimOrganizadorCompleto {
         organizador.confirmarScrim();
 
         boolean despuesBloqueo = organizador.isBloqueado();
-        System.out.println("✓ Scrim confirmado");
+        System.out.println("- Scrim confirmado");
         System.out.println("Bloqueado después de confirmar: " + despuesBloqueo);
 
         // Intentar hacer una acción después de confirmar (debería fallar)
         try {
             AsignarRolAccion accionDespuesConfirmar = new AsignarRolAccion("Zeus", new RolSupportLoL());
             organizador.ejecutarAccion(accionDespuesConfirmar);
-            System.out.println("✗ ERROR: Debería haber fallado - scrim bloqueado");
+            System.out.println("- ERROR: Debería haber fallado - scrim bloqueado");
         } catch (IllegalStateException e) {
-            System.out.println("✓ Validación correcta: " + e.getMessage());
+            System.out.println("- Validación correcta: " + e.getMessage());
         }
     }
 
@@ -353,19 +353,19 @@ public class TestScrimOrganizadorCompleto {
         try {
             // Obtener scrims del organizador
             List<Scrim> scrims = service.obtenerScrimsDelOrganizador(organizadorId);
-            System.out.println("✓ Scrims del organizador: " + scrims.size());
+            System.out.println("- Scrims del organizador: " + scrims.size());
 
             // Verificar estado bloqueado
             boolean bloqueado = service.estaBloqueado(scrimId, organizadorId);
-            System.out.println("✓ Estado bloqueado verificado: " + bloqueado);
+            System.out.println("- Estado bloqueado verificado: " + bloqueado);
 
             // Obtener participantes
             List<ParticipanteScrim> participantes = service.obtenerParticipantes(scrimId, organizadorId);
-            System.out.println("✓ Participantes obtenidos: " + participantes.size());
+            System.out.println("- Participantes obtenidos: " + participantes.size());
 
             // Verificar historial
             int acciones = service.getCantidadAccionesEnHistorial(scrimId, organizadorId);
-            System.out.println("✓ Acciones en historial: " + acciones);
+            System.out.println("- Acciones en historial: " + acciones);
 
             if (participantes.size() > 0) {
                 System.out.println("Participantes encontrados en el servicio:");
@@ -376,7 +376,7 @@ public class TestScrimOrganizadorCompleto {
             }
 
         } catch (Exception e) {
-            System.out.println("⚠ Service test limitado debido a estado bloqueado: " + e.getMessage());
+            System.out.println("- Service test limitado debido a estado bloqueado: " + e.getMessage());
         }
     }
 
@@ -394,9 +394,9 @@ public class TestScrimOrganizadorCompleto {
         System.out.println("\nConfirmando scrim...");
         organizador.confirmarScrim(); // Este método ya transferirá los roles
 
-        System.out.println("✓ Scrim confirmado exitosamente");
-        System.out.println("✓ Estado actual: " + organizador.getScrim().getEstado());
-        System.out.println("✓ Bloqueado para modificaciones: " + organizador.isBloqueado());
+        System.out.println("- Scrim confirmado exitosamente");
+        System.out.println("- Estado actual: " + organizador.getScrim().getEstado());
+        System.out.println("- Bloqueado para modificaciones: " + organizador.isBloqueado());
     }
 
     /**
@@ -413,9 +413,9 @@ public class TestScrimOrganizadorCompleto {
         System.out.println("Confirmaciones con roles: " + confirmacionesConRoles.size());
 
         if (confirmacionesConRoles.isEmpty()) {
-            System.out.println("⚠ No se encontraron confirmaciones con roles persistidos");
+            System.out.println("- No se encontraron confirmaciones con roles persistidos");
         } else {
-            System.out.println("\n✓ ROLES PERSISTIDOS EN CONFIRMACIONES:");
+            System.out.println("\n- ROLES PERSISTIDOS EN CONFIRMACIONES:");
             for (Confirmacion conf : confirmacionesConRoles) {
                 System.out.printf("  %-12s: %s (Estado: %s)%n",
                         conf.getUserId(),
@@ -432,7 +432,7 @@ public class TestScrimOrganizadorCompleto {
             boolean todosConRoles = RolPersistenceService.todosLosParticipantesTienenRoles(scrim);
             int rolesAsignados = RolPersistenceService.contarRolesAsignados(scrim);
 
-            System.out.println("Todos los participantes tienen roles: " + (todosConRoles ? "✓ SÍ" : "✗ NO"));
+            System.out.println("Todos los participantes tienen roles: " + (todosConRoles ? "SÍ" : "NO"));
             System.out.println("Total de roles asignados: " + rolesAsignados);
         }
     }

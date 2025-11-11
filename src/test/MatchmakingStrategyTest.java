@@ -43,18 +43,18 @@ public class MatchmakingStrategyTest {
                 // ============================================
                 // PASO 1: CREAR POOL DE USUARIOS CANDIDATOS
                 // ============================================
-                System.out.println("\n📋 PASO 1: Creando pool de candidatos con perfiles variados...");
+                System.out.println("\nPASO 1: Creando pool de candidatos con perfiles variados...");
                 System.out.println("-".repeat(80));
 
                 List<Usuario> poolCandidatos = crearPoolCandidatos();
 
-                System.out.println("✓ " + poolCandidatos.size() + " candidatos creados\n");
+                System.out.println("- " + poolCandidatos.size() + " candidatos creados\n");
                 mostrarPoolCandidatos(poolCandidatos);
 
                 // ============================================
                 // PASO 2: CREAR SCRIM
                 // ============================================
-                System.out.println("\n\n🎯 PASO 2: Creando scrim con requisitos...");
+                System.out.println("\n\nPASO 2: Creando scrim con requisitos...");
                 System.out.println("-".repeat(80));
 
                 Scrim scrim = new ScrimBuilder()
@@ -74,7 +74,7 @@ public class MatchmakingStrategyTest {
                 // ============================================
                 // PASO 3: ESTRATEGIA BY MMR
                 // ============================================
-                System.out.println("\n\n🔵 PASO 3: Aplicando estrategia BY MMR...");
+                System.out.println("\n\nPASO 3: Aplicando estrategia BY MMR...");
                 System.out.println("-".repeat(80));
 
                 MatchmakerService serviceMMR = new MatchmakerService(new ByMMRStrategy());
@@ -82,13 +82,13 @@ public class MatchmakingStrategyTest {
 
                 System.out.println("Estrategia: " + serviceMMR.getNombreEstrategia());
                 System.out.println("Descripción: " + serviceMMR.getDescripcionEstrategia());
-                System.out.println("\n✓ Jugadores seleccionados: " + seleccionadosMMR.size());
+                System.out.println("\nJugadores seleccionados: " + seleccionadosMMR.size());
                 mostrarJugadoresSeleccionados(seleccionadosMMR, "MMR");
 
                 // ============================================
                 // PASO 4: ESTRATEGIA BY LATENCY
                 // ============================================
-                System.out.println("\n\n🟢 PASO 4: Aplicando estrategia BY LATENCY...");
+                System.out.println("\n\nPASO 4: Aplicando estrategia BY LATENCY...");
                 System.out.println("-".repeat(80));
 
                 MatchmakerService serviceLatency = new MatchmakerService(new ByLatencyStrategy());
@@ -96,13 +96,13 @@ public class MatchmakingStrategyTest {
 
                 System.out.println("Estrategia: " + serviceLatency.getNombreEstrategia());
                 System.out.println("Descripción: " + serviceLatency.getDescripcionEstrategia());
-                System.out.println("\n✓ Jugadores seleccionados: " + seleccionadosLatency.size());
+                System.out.println("\nJugadores seleccionados: " + seleccionadosLatency.size());
                 mostrarJugadoresSeleccionados(seleccionadosLatency, "Latency");
 
                 // ============================================
                 // PASO 5: ESTRATEGIA BY HISTORY
                 // ============================================
-                System.out.println("\n\n🟡 PASO 5: Aplicando estrategia BY HISTORY...");
+                System.out.println("\n\nPASO 5: Aplicando estrategia BY HISTORY...");
                 System.out.println("-".repeat(80));
 
                 MatchmakerService serviceHistory = new MatchmakerService(new ByHistoryStrategy());
@@ -110,13 +110,13 @@ public class MatchmakingStrategyTest {
 
                 System.out.println("Estrategia: " + serviceHistory.getNombreEstrategia());
                 System.out.println("Descripción: " + serviceHistory.getDescripcionEstrategia());
-                System.out.println("\n✓ Jugadores seleccionados: " + seleccionadosHistory.size());
+                System.out.println("\n- Jugadores seleccionados: " + seleccionadosHistory.size());
                 mostrarJugadoresSeleccionados(seleccionadosHistory, "History");
 
                 // ============================================
                 // PASO 6: CAMBIO DINÁMICO DE ESTRATEGIA
                 // ============================================
-                System.out.println("\n\n🔄 PASO 6: Demostración de cambio dinámico de estrategia...");
+                System.out.println("\n\nPASO 6: Demostración de cambio dinámico de estrategia...");
                 System.out.println("-".repeat(80));
 
                 MatchmakerService service = new MatchmakerService(new ByMMRStrategy());
@@ -131,13 +131,13 @@ public class MatchmakingStrategyTest {
                 // ============================================
                 // PASO 7: COMPARACIÓN DE RESULTADOS
                 // ============================================
-                System.out.println("\n\n📊 PASO 7: Comparación de resultados...");
+                System.out.println("\n\nPASO 7: Comparación de resultados...");
                 System.out.println("-".repeat(80));
 
                 compararResultados(seleccionadosMMR, seleccionadosLatency, seleccionadosHistory);
 
                 System.out.println("\n" + "=".repeat(80));
-                System.out.println("     ✓ TEST COMPLETADO EXITOSAMENTE");
+                System.out.println("     TEST COMPLETADO EXITOSAMENTE");
                 System.out.println("═".repeat(80));
         }
 
@@ -262,7 +262,7 @@ public class MatchmakingStrategyTest {
          */
         private static void mostrarJugadoresSeleccionados(List<Usuario> seleccionados, String estrategia) {
                 if (seleccionados.isEmpty()) {
-                        System.out.println("⚠ No se encontraron suficientes candidatos válidos");
+                        System.out.println("- No se encontraron suficientes candidatos válidos");
                         return;
                 }
 
@@ -327,7 +327,7 @@ public class MatchmakingStrategyTest {
                 System.out.println(String.format("%-20s | %10.2f | %10.2f | %10.2f",
                                 "Varianza roles", varianzaRolesMMR, varianzaRolesLatency, varianzaRolesHistory));
 
-                System.out.println("\n📝 Análisis:");
+                System.out.println("\nAnálisis:");
                 System.out.println("  • BY MMR: Mejor balance de skill (" + rangoPromedioMMR + " avg)");
                 System.out.println("  • BY LATENCY: Menor latencia promedio (" + latenciaPromedioLatency + "ms)");
                 System.out.println("  • BY HISTORY: Mayor compatibilidad grupal (" + compatibilidadHistory + " score)");

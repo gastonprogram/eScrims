@@ -29,7 +29,7 @@ public class ComentarioView {
         System.out.println("=".repeat(40));
 
         comentarios.forEach(c -> {
-            System.out.printf("\nID: %d | Rating: %s%n", c.getId(), "⭐".repeat(c.getRating()));
+            System.out.printf("\nID: %d | Rating: %s%n", c.getId(), "*".repeat(c.getRating()));
             System.out.println("Contenido: " + c.getContenido());
             System.out.println("-".repeat(40));
         });

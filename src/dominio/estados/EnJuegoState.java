@@ -93,10 +93,10 @@ public class EnJuegoState implements ScrimState {
             // Guardar estadísticas usando el servicio
             estadisticasService.actualizarEstadisticas(estadisticas);
 
-            System.out.println("✅ Estadísticas automáticas generadas y guardadas para scrim: " + scrim.getId());
+            System.out.println("Estadísticas automáticas generadas y guardadas para scrim: " + scrim.getId());
 
         } catch (Exception e) {
-            System.err.println("⚠️ Error generando estadísticas automáticas: " + e.getMessage());
+            System.err.println("Error generando estadísticas automáticas: " + e.getMessage());
             // El scrim sigue finalizándose aunque falle la generación de estadísticas
         }
     }
@@ -127,7 +127,7 @@ public class EnJuegoState implements ScrimState {
     public String getEstado() {
         return "EN_JUEGO";
     }
-    
+
     private List<Usuario> obtenerUsuariosParticipantes(Scrim scrim) {
         RepositorioUsuario repo = RepositorioFactory.getRepositorioUsuario();
         return scrim.getConfirmacionesConfirmadas().stream()

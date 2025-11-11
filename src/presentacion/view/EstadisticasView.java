@@ -66,7 +66,7 @@ public class EstadisticasView {
 
         System.out.println("\n--- Estadísticas por Jugador ---");
         estadisticas.getEstadisticasPorJugador().forEach((id, stats) -> {
-            String mvpLabel = stats.isEsMVP() ? " ⭐ MVP" : "";
+            String mvpLabel = stats.isEsMVP() ? " * MVP" : "";
             System.out.printf("\nJugador ID %s%s:%n", id, mvpLabel);
             System.out.printf("  K/D/A: %d/%d/%d (KDA: %.2f)%n",
                     stats.getKills(), stats.getDeaths(), stats.getAssists(), stats.getKDA());
@@ -76,7 +76,7 @@ public class EstadisticasView {
         // Mostrar MVP actual si existe
         EstadisticasJugador mvp = estadisticas.obtenerMVP();
         if (mvp != null) {
-            System.out.printf("\n🏆 MVP Actual: Jugador %s (KDA: %.2f)%n",
+            System.out.printf("\n* MVP Actual: Jugador %s (KDA: %.2f)%n",
                     mvp.getJugadorId(), mvp.getKDA());
         }
     }
@@ -101,29 +101,29 @@ public class EstadisticasView {
             return;
         }
 
-        System.out.println("\n🎮 ESTADÍSTICAS COMPLETAS DEL SCRIM");
+        System.out.println("\n- ESTADÍSTICAS COMPLETAS DEL SCRIM");
         System.out.println("=" + "=".repeat(50));
-        System.out.println("📅 ID: " + estadisticas.getScrimId());
-        System.out.println("🕐 Inicio: " + estadisticas.getFechaHoraInicio());
+        System.out.println("- ID: " + estadisticas.getScrimId());
+        System.out.println("- Inicio: " + estadisticas.getFechaHoraInicio());
 
         if (estadisticas.getFechaHoraFin() != null) {
-            System.out.println("🏁 Fin: " + estadisticas.getFechaHoraFin());
-            System.out.printf("⏱️ Duración: %d minutos (%s)%n",
+            System.out.println("- Fin: " + estadisticas.getFechaHoraFin());
+            System.out.printf("- Duración: %d minutos (%s)%n",
                     estadisticas.getDuracionMinutos(),
                     estadisticas.getDescripcionPartida());
         }
 
         System.out.println(
-                "🏆 Ganador: " + (estadisticas.getGanador() != null ? estadisticas.getGanador() : "Sin determinar"));
+                "- Ganador: " + (estadisticas.getGanador() != null ? estadisticas.getGanador() : "Sin determinar"));
 
         // Mostrar formación de equipos si la partida finalizó
         if (estadisticas.getFechaHoraFin() != null && !estadisticas.getEstadisticasPorJugador().isEmpty()) {
-            System.out.println("\n👥 FORMACIÓN DE EQUIPOS:");
+            System.out.println("\n- FORMACIÓN DE EQUIPOS:");
             System.out.println(estadisticas.getFormacionEquipos());
         }
 
         // Mostrar estadísticas individuales
-        System.out.println("\n📊 ESTADÍSTICAS INDIVIDUALES:");
+        System.out.println("\n- ESTADÍSTICAS INDIVIDUALES:");
         if (!estadisticas.getEstadisticasPorJugador().isEmpty()) {
             System.out.println("Jugador | K/D/A | KDA | Puntos | MVP");
             System.out.println("-".repeat(45));
@@ -132,13 +132,13 @@ public class EstadisticasView {
                         stats.getJugadorId().substring(Math.max(0, stats.getJugadorId().length() - 8)),
                         stats.getKills(), stats.getDeaths(), stats.getAssists(),
                         stats.getKDA(), stats.getPuntuacion(),
-                        stats.isEsMVP() ? "⭐" : "");
+                        stats.isEsMVP() ? "*" : "");
             });
         } else {
             System.out.println("No hay estadísticas individuales registradas.");
         }
 
-        System.out.println("\n📋 REPORTES DE CONDUCTA:");
+        System.out.println("\n- REPORTES DE CONDUCTA:");
         System.out.println("Total de reportes: " + estadisticas.getReportes().size());
         if (!estadisticas.getReportes().isEmpty()) {
             System.out.println("\nReportes:");
@@ -177,11 +177,11 @@ public class EstadisticasView {
 
         if (moderacion.estaPenalizado(usuarioId)) {
             long horasRestantes = moderacion.getTiempoRestantePenalizacion(usuarioId);
-            System.out.println("🔴 PENALIZADO - Horas restantes: " + horasRestantes);
+            System.out.println("- PENALIZADO - Horas restantes: " + horasRestantes);
         } else if (moderacion.estaEnCooldown(usuarioId)) {
-            System.out.println("🟡 EN COOLDOWN");
+            System.out.println("- EN COOLDOWN");
         } else {
-            System.out.println("🟢 Sin penalizaciones activas");
+            System.out.println("- Sin penalizaciones activas");
         }
     }
 
@@ -420,7 +420,7 @@ public class EstadisticasView {
         System.out.println("ID: " + comentario.getId());
         System.out.println("Jugador: " + comentario.getJugadorId());
         System.out.println("Scrim: " + comentario.getScrimId());
-        System.out.println("Rating: " + "★".repeat(comentario.getRating()) + "☆".repeat(5 - comentario.getRating()));
+        System.out.println("Rating: " + "*".repeat(comentario.getRating()) + "-".repeat(5 - comentario.getRating()));
         System.out.println("Contenido: " + comentario.getContenido());
         System.out.println("Estado: " + comentario.getEstado());
         System.out.println("Fecha: " + comentario.getFechaCreacion());

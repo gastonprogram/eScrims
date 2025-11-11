@@ -42,7 +42,7 @@ public class EjemploGestionPostulacionesOrganizador {
             // ============================================
             // PASO 1: SETUP INICIAL
             // ============================================
-            System.out.println("\n📋 PASO 1: Setup inicial...");
+            System.out.println("\n- PASO 1: Setup inicial...");
 
             RepositorioUsuario repoUsuarios = RepositorioFactory.getRepositorioUsuario();
             RepositorioScrim repoScrims = RepositorioFactory.getRepositorioScrim();
@@ -50,7 +50,7 @@ public class EjemploGestionPostulacionesOrganizador {
             // Crear organizador
             Usuario organizador = new Usuario("ProOrganizer", "organizer@escrims.com", "pass123");
             repoUsuarios.guardar(organizador);
-            System.out.println("✓ Organizador: " + organizador.getUsername() + " (ID: " + organizador.getId() + ")");
+            System.out.println("- Organizador: " + organizador.getUsername() + " (ID: " + organizador.getId() + ")");
 
             // Para este ejemplo, usamos ARAM de LoL (5v5 pero más rápido)
             // ARAM es un formato válido de League of Legends
@@ -65,30 +65,30 @@ public class EjemploGestionPostulacionesOrganizador {
             scrim.setCreatedBy(organizador.getId());
 
             repoScrims.guardar(scrim);
-            System.out.println("✓ Scrim creado con 10 plazas (ARAM 5v5)");
+            System.out.println("- Scrim creado con 10 plazas (ARAM 5v5)");
             System.out.println("  Requisitos: Rango 500-1000, Latencia máx 80ms"); // ============================================
             // PASO 2: POSTULACIONES DE JUGADORES
             // ============================================
-            System.out.println("\n\n📝 PASO 2: Llegan postulaciones de jugadores...");
+            System.out.println("\n\n- PASO 2: Llegan postulaciones de jugadores...");
             System.out.println("-".repeat(80));
 
             PostulacionService postService = new PostulacionService(repoScrims, repoUsuarios);
 
             // Crear jugadores y postularlos (necesitamos 10 para ARAM 5v5)
             String[][] jugadores = {
-                    { "TopLaner", "800", "50" }, // ✅ Cumple todo
-                    { "MidLaner", "700", "60" }, // ✅ Cumple todo
-                    { "ADCPlayer", "400", "40" }, // ❌ NO cumple rango (muy bajo)
-                    { "JungleMain", "900", "70" }, // ✅ Cumple todo
-                    { "SupportPro", "850", "90" }, // ❌ NO cumple latencia (muy alta)
-                    { "FlexPlayer", "950", "55" }, // ✅ Cumple todo
-                    { "SoloQKing", "1200", "45" }, // ❌ NO cumple rango (muy alto)
-                    { "Player8", "600", "65" }, // ✅ Cumple todo
-                    { "Player9", "750", "50" }, // ✅ Cumple todo
-                    { "Player10", "820", "70" }, // ✅ Cumple todo
-                    { "Player11", "680", "45" }, // ✅ Cumple todo
-                    { "Player12", "920", "60" }, // ✅ Cumple todo
-                    { "Player13", "780", "75" } // ✅ Cumple todo
+                    { "TopLaner", "800", "50" }, // Cumple todo
+                    { "MidLaner", "700", "60" }, // Cumple todo
+                    { "ADCPlayer", "400", "40" }, // NO cumple rango (muy bajo)
+                    { "JungleMain", "900", "70" }, // Cumple todo
+                    { "SupportPro", "850", "90" }, // NO cumple latencia (muy alta)
+                    { "FlexPlayer", "950", "55" }, // Cumple todo
+                    { "SoloQKing", "1200", "45" }, // NO cumple rango (muy alto)
+                    { "Player8", "600", "65" }, // Cumple todo
+                    { "Player9", "750", "50" }, // Cumple todo
+                    { "Player10", "820", "70" }, // Cumple todo
+                    { "Player11", "680", "45" }, // Cumple todo
+                    { "Player12", "920", "60" }, // Cumple todo
+                    { "Player13", "780", "75" } // Cumple todo
             };
 
             for (String[] jugadorData : jugadores) {
@@ -101,11 +101,11 @@ public class EjemploGestionPostulacionesOrganizador {
                 try {
                     postService.postularAScrim(scrim.getId(), jugador.getId(), rango, latencia);
                     System.out.println(
-                            "\n🎮 " + jugadorData[0] + " (Rango: " + rango + ", Latencia: " + latencia + "ms)");
+                            "\n- " + jugadorData[0] + " (Rango: " + rango + ", Latencia: " + latencia + "ms)");
                     System.out.println("   → Postulación procesada exitosamente");
                 } catch (Exception e) {
                     System.out.println(
-                            "\n🎮 " + jugadorData[0] + " (Rango: " + rango + ", Latencia: " + latencia + "ms)");
+                            "\n- " + jugadorData[0] + " (Rango: " + rango + ", Latencia: " + latencia + "ms)");
                     System.out.println("   → " + e.getMessage());
                 }
             }
@@ -113,28 +113,28 @@ public class EjemploGestionPostulacionesOrganizador {
             // ============================================
             // PASO 3: ORGANIZADOR REVISA POSTULACIONES
             // ============================================
-            System.out.println("\n\n👀 PASO 3: Organizador revisa todas las postulaciones...");
+            System.out.println("\n\n- PASO 3: Organizador revisa todas las postulaciones...");
             System.out.println("-".repeat(80));
 
             List<Postulacion> todasPostulaciones = postService.listarTodasLasPostulaciones(
                     scrim.getId(),
                     organizador.getId());
 
-            System.out.println("\n📊 Total de postulaciones: " + todasPostulaciones.size());
+            System.out.println("\n- Total de postulaciones: " + todasPostulaciones.size());
 
             int aceptadas = 0, rechazadas = 0, pendientes = 0;
             for (Postulacion post : todasPostulaciones) {
                 switch (post.getEstado()) {
                     case ACEPTADA:
                         aceptadas++;
-                        System.out.println("\n✅ " + post.getUserId());
+                        System.out.println("\n- " + post.getUserId());
                         System.out.println("   Rango: " + post.getRangoUsuario() + " | Latencia: "
                                 + post.getLatenciaUsuario() + "ms");
                         System.out.println("   Estado: ACEPTADA (automáticamente)");
                         break;
                     case RECHAZADA:
                         rechazadas++;
-                        System.out.println("\n❌ " + post.getUserId());
+                        System.out.println("\n- " + post.getUserId());
                         System.out.println("   Rango: " + post.getRangoUsuario() + " | Latencia: "
                                 + post.getLatenciaUsuario() + "ms");
                         System.out.println("   Estado: RECHAZADA");
@@ -142,7 +142,7 @@ public class EjemploGestionPostulacionesOrganizador {
                         break;
                     case PENDIENTE:
                         pendientes++;
-                        System.out.println("\n⏳ " + post.getUserId());
+                        System.out.println("\n- " + post.getUserId());
                         System.out.println("   Rango: " + post.getRangoUsuario() + " | Latencia: "
                                 + post.getLatenciaUsuario() + "ms");
                         System.out.println("   Estado: PENDIENTE (requiere revisión manual)");
@@ -150,7 +150,7 @@ public class EjemploGestionPostulacionesOrganizador {
                 }
             }
 
-            System.out.println("\n📈 Resumen:");
+            System.out.println("\n- Resumen:");
             System.out.println("  Aceptadas: " + aceptadas);
             System.out.println("  Rechazadas: " + rechazadas);
             System.out.println("  Pendientes: " + pendientes);
@@ -160,7 +160,7 @@ public class EjemploGestionPostulacionesOrganizador {
             // PASO 4: ORGANIZADOR GESTIONA PENDIENTES
             // ============================================
             if (pendientes > 0) {
-                System.out.println("\n\n⚙️ PASO 4: Organizador gestiona postulaciones pendientes...");
+                System.out.println("\n\n- PASO 4: Organizador gestiona postulaciones pendientes...");
                 System.out.println("-".repeat(80));
 
                 List<Postulacion> postulacionesPendientes = postService.listarPostulacionesPendientes(
@@ -172,7 +172,7 @@ public class EjemploGestionPostulacionesOrganizador {
                 // El organizador acepta la primera pendiente
                 if (!postulacionesPendientes.isEmpty()) {
                     Postulacion primeraPendiente = postulacionesPendientes.get(0);
-                    System.out.println("\n💡 Organizador decide ACEPTAR a: " + primeraPendiente.getUserId());
+                    System.out.println("\n- Organizador decide ACEPTAR a: " + primeraPendiente.getUserId());
 
                     try {
                         postService.aceptarPostulacion(
@@ -191,7 +191,7 @@ public class EjemploGestionPostulacionesOrganizador {
                         organizador.getId());
 
                 for (Postulacion post : postulacionesPendientes) {
-                    System.out.println("\n💡 Organizador decide RECHAZAR a: " + post.getUserId());
+                    System.out.println("\n- Organizador decide RECHAZAR a: " + post.getUserId());
 
                     try {
                         postService.rechazarPostulacion(
@@ -209,7 +209,7 @@ public class EjemploGestionPostulacionesOrganizador {
             // ============================================
             // PASO 5: LOBBY ARMADO - CONFIRMACIONES
             // ============================================
-            System.out.println("\n\n🎯 PASO 5: Estado del scrim tras aceptar postulaciones...");
+            System.out.println("\n\n- PASO 5: Estado del scrim tras aceptar postulaciones...");
             System.out.println("-".repeat(80));
 
             scrim = repoScrims.buscarPorId(scrim.getId());
@@ -217,11 +217,11 @@ public class EjemploGestionPostulacionesOrganizador {
             System.out.println("Plazas: " + scrim.getPostulacionesAceptadas().size() + "/" + scrim.getPlazas());
 
             if ("LOBBY_ARMADO".equals(scrim.getEstado())) {
-                System.out.println("\n✅ ¡LOBBY ARMADO! Confirmaciones generadas automáticamente.");
+                System.out.println("\n- LOBBY ARMADO! Confirmaciones generadas automáticamente.");
 
                 ConfirmacionService confService = new ConfirmacionService(repoScrims);
 
-                System.out.println("\n👥 Jugadores que deben confirmar:");
+                System.out.println("\n- Jugadores que deben confirmar:");
                 List<Confirmacion> confirmaciones = confService.listarConfirmaciones(
                         scrim.getId(),
                         organizador.getId());
@@ -233,7 +233,7 @@ public class EjemploGestionPostulacionesOrganizador {
                 // ============================================
                 // PASO 6: JUGADORES CONFIRMAN
                 // ============================================
-                System.out.println("\n\n✅ PASO 6: Jugadores confirman asistencia...");
+                System.out.println("\n\n- PASO 6: Jugadores confirman asistencia...");
                 System.out.println("-".repeat(80));
 
                 // Primeros 2 confirman
@@ -249,7 +249,7 @@ public class EjemploGestionPostulacionesOrganizador {
 
                 // El tercero RECHAZA
                 if (confs.size() > 2) {
-                    System.out.println("\n⚠️ ¡" + confs.get(2).getUserId() + " rechaza la confirmación!");
+                    System.out.println("\n- " + confs.get(2).getUserId() + " rechaza la confirmación!");
                     try {
                         confService.rechazarAsistencia(scrim.getId(), confs.get(2).getUserId());
                         System.out.println("   → Rechazo procesado exitosamente");
@@ -259,12 +259,12 @@ public class EjemploGestionPostulacionesOrganizador {
 
                     // Recargar scrim para ver el cambio de estado
                     scrim = repoScrims.buscarPorId(scrim.getId());
-                    System.out.println("\n💡 Estado del scrim tras el rechazo: " + scrim.getEstado());
+                    System.out.println("\n- Estado del scrim tras el rechazo: " + scrim.getEstado());
 
                     // Si volvió a BUSCANDO, no podemos seguir confirmando
                     if ("BUSCANDO".equals(scrim.getEstado())) {
-                        System.out.println("   ⏸️  El scrim volvió a BUSCANDO. No se pueden confirmar más jugadores.");
-                        System.out.println("   📋 Postulaciones aceptadas restantes: "
+                        System.out.println("   - El scrim volvió a BUSCANDO. No se pueden confirmar más jugadores.");
+                        System.out.println("   - Postulaciones aceptadas restantes: "
                                 + scrim.getPostulacionesAceptadas().size() + "/" + scrim.getPlazas());
                     }
                 }
@@ -286,20 +286,20 @@ public class EjemploGestionPostulacionesOrganizador {
                 // ============================================
                 // PASO 7: ESTADO FINAL
                 // ============================================
-                System.out.println("\n\n🏁 PASO 7: Estado final tras confirmaciones...");
+                System.out.println("\n\n- PASO 7: Estado final tras confirmaciones...");
                 System.out.println("-".repeat(80));
 
                 scrim = repoScrims.buscarPorId(scrim.getId());
                 System.out.println("Estado final: " + scrim.getEstado());
 
                 if ("BUSCANDO".equals(scrim.getEstado())) {
-                    System.out.println("\n⏪ El scrim volvió a BUSCANDO porque un jugador rechazó.");
+                    System.out.println("\n- El scrim volvió a BUSCANDO porque un jugador rechazó.");
                     System.out.println("   El organizador puede aceptar nuevas postulaciones para llenar el slot.");
                 } else if ("CONFIRMADO".equals(scrim.getEstado())) {
-                    System.out.println("\n🎉 ¡SCRIM CONFIRMADO! Listo para iniciar.");
+                    System.out.println("\n- SCRIM CONFIRMADO! Listo para iniciar.");
                 }
 
-                System.out.println("\n📊 Resumen final:");
+                System.out.println("\n- Resumen final:");
                 System.out.println("  - Total postulaciones: " + scrim.getPostulaciones().size());
                 System.out.println("  - Aceptadas: " + scrim.getPostulacionesAceptadas().size());
                 System.out.println("  - Total confirmaciones: " + scrim.getConfirmaciones().size());
@@ -318,11 +318,11 @@ public class EjemploGestionPostulacionesOrganizador {
             }
 
             System.out.println("\n" + "=".repeat(80));
-            System.out.println("✅ EJEMPLO COMPLETADO - Flujo del Organizador demostrado");
+            System.out.println("- EJEMPLO COMPLETADO - Flujo del Organizador demostrado");
             System.out.println("=".repeat(80));
 
         } catch (Exception e) {
-            System.err.println("\n❌ ERROR: " + e.getMessage());
+            System.err.println("\n- ERROR: " + e.getMessage());
             e.printStackTrace();
         }
     }

@@ -146,13 +146,13 @@ public class AccionesOrganizadorView {
      * Muestra un mensaje de éxito.
      */
     public void mostrarExito(String mensaje) {
-        System.out.println("\n✓ ÉXITO: " + mensaje);
+        System.out.println("\n- ÉXITO: " + mensaje);
     }
 
     /**
      * Muestra un mensaje de error.
      */
     public void mostrarError(String mensaje) {
-        System.out.println("\n✗ ERROR: " + mensaje);
+        System.out.println("\n- ERROR: " + mensaje);
     }
 }

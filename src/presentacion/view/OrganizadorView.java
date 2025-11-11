@@ -32,7 +32,7 @@ public class OrganizadorView {
      */
     public String mostrarMenuOrganizador() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("           👑 GESTIÓN DE MIS SCRIMS (ORGANIZADOR)");
+        System.out.println("           GESTIÓN DE MIS SCRIMS (ORGANIZADOR)");
         System.out.println("=".repeat(60));
         System.out.println("1. Ver postulaciones pendientes de un scrim");
         System.out.println("2. Gestionar postulaciones (aceptar/rechazar)");
@@ -52,31 +52,31 @@ public class OrganizadorView {
      */
     public void mostrarMisScrims(List<dominio.modelo.Scrim> scrims) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("              👑 MIS SCRIMS COMO ORGANIZADOR");
+        System.out.println("              MIS SCRIMS COMO ORGANIZADOR");
         System.out.println("=".repeat(60));
 
         if (scrims.isEmpty()) {
-            System.out.println("\n📭 No tienes scrims como organizador");
+            System.out.println("\n- No tienes scrims como organizador");
             System.out.println("   Puedes crear uno desde el menú principal");
             return;
         }
 
-        System.out.printf("\n📋 Tienes %d scrim(s) como organizador:\n", scrims.size());
+        System.out.printf("\n- Tienes %d scrim(s) como organizador:\n", scrims.size());
 
         for (int i = 0; i < scrims.size(); i++) {
             dominio.modelo.Scrim scrim = scrims.get(i);
             System.out.println("\n" + "-".repeat(60));
-            System.out.printf("%d. 📋 ID: %s\n", i + 1, scrim.getId());
-            System.out.printf("   🎮 Juego: %s | Formato: %s\n",
+            System.out.printf("%d. ID: %s\n", i + 1, scrim.getId());
+            System.out.printf("   Juego: %s | Formato: %s\n",
                     scrim.getJuego().getNombre(),
                     scrim.getFormato().getFormatName());
-            System.out.printf("   📅 Fecha/Hora: %s\n", scrim.getFechaHora());
-            System.out.printf("   📊 Estado: %s\n", scrim.getState().getEstado());
+            System.out.printf("   Fecha/Hora: %s\n", scrim.getFechaHora());
+            System.out.printf("   Estado: %s\n", scrim.getState().getEstado());
 
             // Mostrar estadísticas rápidas
             int postulaciones = scrim.getPostulaciones().size();
             int confirmaciones = scrim.getConfirmaciones().size();
-            System.out.printf("   📨 Postulaciones: %d | ✅ Confirmaciones: %d\n", postulaciones, confirmaciones);
+            System.out.printf("   Postulaciones: %d | Confirmaciones: %d\n", postulaciones, confirmaciones);
         }
 
         System.out.println("-".repeat(60));
@@ -86,7 +86,7 @@ public class OrganizadorView {
      * Solicita el número del scrim a gestionar.
      */
     public int solicitarNumeroScrim(int cantidadScrims) {
-        System.out.printf("\n📋 Ingrese el número del scrim (1-%d) o '0' para cancelar: ", cantidadScrims);
+        System.out.printf("\n- Ingrese el número del scrim (1-%d) o '0' para cancelar: ", cantidadScrims);
         try {
             String input = scanner.nextLine().trim();
             return Integer.parseInt(input);
@@ -103,7 +103,7 @@ public class OrganizadorView {
      */
     @Deprecated
     public String solicitarIdScrim() {
-        System.out.print("\n📋 ID del scrim: ");
+        System.out.print("\n- ID del scrim: ");
         return scanner.nextLine().trim();
     }
 
@@ -112,20 +112,20 @@ public class OrganizadorView {
      */
     public void mostrarPostulacionesPendientes(List<Postulacion> postulaciones) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("              📋 POSTULACIONES PENDIENTES");
+        System.out.println("              POSTULACIONES PENDIENTES");
         System.out.println("=".repeat(60));
 
         if (postulaciones.isEmpty()) {
-            System.out.println("\n📭 No hay postulaciones pendientes");
+            System.out.println("\n- No hay postulaciones pendientes");
             return;
         }
 
         for (int i = 0; i < postulaciones.size(); i++) {
             Postulacion p = postulaciones.get(i);
             System.out.printf("\n%d. Usuario ID: %s\n", i + 1, p.getUserId());
-            System.out.printf("   🎮 Rango: %d\n", p.getRangoUsuario());
-            System.out.printf("   📡 Latencia: %d ms\n", p.getLatenciaUsuario());
-            System.out.printf("   📅 Fecha: %s\n", p.getFechaPostulacion());
+            System.out.printf("   Rango: %d\n", p.getRangoUsuario());
+            System.out.printf("   Latencia: %d ms\n", p.getLatenciaUsuario());
+            System.out.printf("   Fecha: %s\n", p.getFechaPostulacion());
         }
         System.out.println("=".repeat(60));
     }
@@ -135,25 +135,25 @@ public class OrganizadorView {
      */
     public void mostrarTodasLasPostulaciones(List<Postulacion> postulaciones) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("              📋 TODAS LAS POSTULACIONES");
+        System.out.println("              TODAS LAS POSTULACIONES");
         System.out.println("=".repeat(60));
 
         if (postulaciones.isEmpty()) {
-            System.out.println("\n📭 No hay postulaciones para este scrim");
+            System.out.println("\n- No hay postulaciones para este scrim");
             return;
         }
 
         for (Postulacion p : postulaciones) {
-            String estadoEmoji = getEstadoEmojiPostulacion(p.getEstado());
+            String estadoMarca = getEstadoMarcaPostulacion(p.getEstado());
 
             System.out.printf("\n%s Usuario ID: %s | Estado: %s\n",
-                    estadoEmoji, p.getUserId(), p.getEstado());
-            System.out.printf("   🎮 Rango: %d | 📡 Latencia: %d ms\n",
+                    estadoMarca, p.getUserId(), p.getEstado());
+            System.out.printf("   Rango: %d | Latencia: %d ms\n",
                     p.getRangoUsuario(), p.getLatenciaUsuario());
-            System.out.printf("   📅 Fecha: %s\n", p.getFechaPostulacion());
+            System.out.printf("   Fecha: %s\n", p.getFechaPostulacion());
 
             if (p.getEstado() == Postulacion.EstadoPostulacion.RECHAZADA) {
-                System.out.printf("   💬 Motivo rechazo: %s\n", p.getMotivoRechazo());
+                System.out.printf("   Motivo rechazo: %s\n", p.getMotivoRechazo());
             }
         }
         System.out.println("=".repeat(60));
@@ -206,7 +206,7 @@ public class OrganizadorView {
      * Solicita el motivo del rechazo.
      */
     public String solicitarMotivo() {
-        System.out.print("\n💬 Ingrese el motivo del rechazo: ");
+        System.out.print("\n- Ingrese el motivo del rechazo: ");
         String motivo = scanner.nextLine().trim();
         return motivo.isEmpty() ? "Sin motivo especificado" : motivo;
     }
@@ -218,23 +218,23 @@ public class OrganizadorView {
      */
     public void mostrarListaConfirmaciones(List<Confirmacion> confirmaciones) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("           ✅ ESTADO DE CONFIRMACIONES");
+        System.out.println("           ESTADO DE CONFIRMACIONES");
         System.out.println("=".repeat(60));
 
         if (confirmaciones.isEmpty()) {
-            System.out.println("\n📭 No hay confirmaciones para este scrim");
+            System.out.println("\n- No hay confirmaciones para este scrim");
             return;
         }
 
         for (Confirmacion c : confirmaciones) {
-            String estadoEmoji = getEstadoEmojiConfirmacion(c.getEstado());
+            String estadoMarca = getEstadoMarcaConfirmacion(c.getEstado());
 
             System.out.printf("\n%s Usuario ID: %s | Estado: %s\n",
-                    estadoEmoji, c.getUserId(), c.getEstado());
-            System.out.printf("   📅 Solicitud: %s\n", c.getFechaSolicitud());
+                    estadoMarca, c.getUserId(), c.getEstado());
+            System.out.printf("   Solicitud: %s\n", c.getFechaSolicitud());
 
             if (c.getFechaRespuesta() != null) {
-                System.out.printf("   📅 Respuesta: %s\n", c.getFechaRespuesta());
+                System.out.printf("   Respuesta: %s\n", c.getFechaRespuesta());
             }
         }
         System.out.println("=".repeat(60));
@@ -245,19 +245,19 @@ public class OrganizadorView {
      */
     public void mostrarConfirmacionesPendientes(List<Confirmacion> pendientes) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("           ⏳ CONFIRMACIONES PENDIENTES");
+        System.out.println("           CONFIRMACIONES PENDIENTES");
         System.out.println("=".repeat(60));
 
         if (pendientes.isEmpty()) {
-            System.out.println("\n✅ ¡Todos los jugadores han confirmado!");
+            System.out.println("\n[OK] ¡Todos los jugadores han confirmado!");
             return;
         }
 
-        System.out.printf("\n⚠️  %d jugador(es) aún no han confirmado:\n\n", pendientes.size());
+        System.out.printf("\n[!] %d jugador(es) aún no han confirmado:\n\n", pendientes.size());
 
         for (Confirmacion c : pendientes) {
-            System.out.printf("⏳ Usuario ID: %s\n", c.getUserId());
-            System.out.printf("   📅 Solicitud enviada: %s\n", c.getFechaSolicitud());
+            System.out.printf("[...] Usuario ID: %s\n", c.getUserId());
+            System.out.printf("   Solicitud enviada: %s\n", c.getFechaSolicitud());
         }
         System.out.println("=".repeat(60));
     }
@@ -267,11 +267,11 @@ public class OrganizadorView {
      */
     public void mostrarEstadisticas(long confirmadas, long pendientes, long rechazadas) {
         System.out.println("\n" + "-".repeat(60));
-        System.out.println("           📊 ESTADÍSTICAS");
+        System.out.println("           ESTADÍSTICAS");
         System.out.println("-".repeat(60));
-        System.out.printf("✅ Confirmadas: %d\n", confirmadas);
-        System.out.printf("⏳ Pendientes:  %d\n", pendientes);
-        System.out.printf("❌ Rechazadas:  %d\n", rechazadas);
+        System.out.printf("[OK] Confirmadas: %d\n", confirmadas);
+        System.out.printf("[...] Pendientes:  %d\n", pendientes);
+        System.out.printf("[X] Rechazadas:  %d\n", rechazadas);
         System.out.println("-".repeat(60));
     }
 
@@ -281,48 +281,48 @@ public class OrganizadorView {
      * Muestra un mensaje de éxito.
      */
     public void mostrarExito(String mensaje) {
-        System.out.println("\n✅ " + mensaje);
+        System.out.println("\n[OK] " + mensaje);
     }
 
     /**
      * Muestra un mensaje de error.
      */
     public void mostrarError(String mensaje) {
-        System.err.println("\n❌ " + mensaje);
+        System.err.println("\n[ERROR] " + mensaje);
     }
 
     /**
      * Muestra un mensaje informativo.
      */
     public void mostrarInfo(String mensaje) {
-        System.out.println("\nℹ️  " + mensaje);
+        System.out.println("\n[INFO] " + mensaje);
     }
 
     // ========== HELPERS ==========
 
-    private String getEstadoEmojiPostulacion(Postulacion.EstadoPostulacion estado) {
+    private String getEstadoMarcaPostulacion(Postulacion.EstadoPostulacion estado) {
         switch (estado) {
             case ACEPTADA:
-                return "✅";
+                return "[OK]";
             case RECHAZADA:
-                return "❌";
+                return "[X]";
             case PENDIENTE:
-                return "⏳";
+                return "[...]";
             default:
-                return "❓";
+                return "[?]";
         }
     }
 
-    private String getEstadoEmojiConfirmacion(Confirmacion.EstadoConfirmacion estado) {
+    private String getEstadoMarcaConfirmacion(Confirmacion.EstadoConfirmacion estado) {
         switch (estado) {
             case CONFIRMADA:
-                return "✅";
+                return "[OK]";
             case RECHAZADA:
-                return "❌";
+                return "[X]";
             case PENDIENTE:
-                return "⏳";
+                return "[...]";
             default:
-                return "❓";
+                return "[?]";
         }
     }
 }

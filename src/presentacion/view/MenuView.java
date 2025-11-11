@@ -30,7 +30,7 @@ public class MenuView {
     }
 
     public void mostrarOpcionInvalida() {
-        System.err.println("\n✗ Opción inválida. Por favor seleccione 1, 2 o 3.");
+        System.err.println("\n- Opción inválida. Por favor seleccione 1, 2 o 3.");
     }
 
     public void mostrarSalida() {
@@ -127,14 +127,14 @@ public class MenuView {
     }
 
     public void mostrarExito(String mensaje) {
-        System.out.println("\n✓ " + mensaje);
+        System.out.println("\n- " + mensaje);
     }
 
     public void mostrarError(String mensaje) {
-        System.err.println("\n✗ " + mensaje);
+        System.err.println("\nError: " + mensaje);
     }
 
     public void mostrarInfo(String mensaje) {
-        System.out.println("\n" + mensaje);
+        System.out.println("\nInfo: " + mensaje);
     }
 }

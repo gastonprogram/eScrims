@@ -45,11 +45,11 @@ public class TestCreacionScrimPositivo {
         try {
 
             System.out.println("\n============================================================");
-            System.out.println("        🎮 TEST CREACIÓN DE SCRIM POSITIVO 🎮");
+            System.out.println("        - TEST CREACIÓN DE SCRIM POSITIVO");
             System.out.println("============================================================\n");
 
             // creacion de jugadores y organizador
-            System.out.println("📋 Fase 1: Creación de usuarios...");
+            System.out.println("- Fase 1: Creación de usuarios...");
 
             Usuario organizador = crearUsuario("organizador", "organizador@escrims.com", "password123",
                     "Counter-Strike", 60);
@@ -120,7 +120,7 @@ public class TestCreacionScrimPositivo {
                 int latenciaJugador = jugador.getLatenciaPromedio();
 
                 postService.postularAScrim(scrim.getId(), jugador.getId(), rangoJugador, latenciaJugador);
-                System.out.println("   ✓ " + jugador.getUsername() + " (Rango: " + rangoJugador + ", Latencia: "
+                System.out.println("   - " + jugador.getUsername() + " (Rango: " + rangoJugador + ", Latencia: "
                         + latenciaJugador + "ms)");
             }
             System.out.println("Postulaciones completadas\n");
@@ -131,9 +131,9 @@ public class TestCreacionScrimPositivo {
             for (int i = 0; i < scrim.getPlazas(); i++) {
                 try {
                     confService.confirmarAsistencia(scrim.getId(), confirmaciones.get(i).getUserId());
-                    System.out.println("   ✓ Confirmación " + (i + 1) + "/" + scrim.getPlazas());
+                    System.out.println("   - Confirmación " + (i + 1) + "/" + scrim.getPlazas());
                 } catch (Exception e) {
-                    System.out.println("   ✗ Error en confirmación " + (i + 1) + ": " + e.getMessage());
+                    System.out.println("   - Error en confirmación " + (i + 1) + ": " + e.getMessage());
                 }
             }
             System.out.println("Todas las confirmaciones procesadas\n");
@@ -144,12 +144,12 @@ public class TestCreacionScrimPositivo {
             System.out.println("Scrim iniciado - Estado: EN_JUEGO\n");
 
             // simular duracion del scrim
-            System.out.println("⏱️  Simulando duración de la partida...");
+            System.out.println("- Simulando duración de la partida...");
             Thread.sleep(3000);
             System.out.println("Partida en progreso...\n");
 
             // finalizar scrim
-            System.out.println("🏁 Fase 8: Finalizando scrim...");
+            System.out.println("- Fase 8: Finalizando scrim...");
             scrimService.finalizarPartida(scrim.getId());
             Thread.sleep(2000);
             System.out.println("Scrim finalizado - Estado: FINALIZADO\n");
@@ -175,7 +175,7 @@ public class TestCreacionScrimPositivo {
                 }
 
                 // Ranking por KDA
-                System.out.println("\n🏆 RANKING POR KDA:");
+                System.out.println("\n* RANKING POR KDA:");
                 System.out.println("┌─────┬─────────────────────┬───────┬────────┬─────────┐");
                 System.out.println("│ Pos │ Jugador             │ Kills │ Deaths │ Assists │");
                 System.out.println("├─────┼─────────────────────┼───────┼────────┼─────────┤");

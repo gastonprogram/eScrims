@@ -94,7 +94,7 @@ public class SimulacionCreadorScrim {
                 postulacionService.postularAScrim(scrim.getId(), candidato.getId(),
                         candidato.getRangoPorJuego().get(LeagueOfLegends.getInstance().getNombre()),
                         candidato.getLatenciaPromedio());
-                System.out.println("   ✓ Aceptado automáticamente (cumple requisitos)");
+                System.out.println("   - Aceptado automáticamente (cumple requisitos)");
 
                 // Verificar estado del scrim después de cada postulación
                 scrim = scrimService.buscarPorId(scrim.getId());
@@ -109,9 +109,9 @@ public class SimulacionCreadorScrim {
 
             } catch (IllegalArgumentException e) {
                 // Postulación rechazada por requisitos
-                System.out.println("   ✗ Rechazado: " + e.getMessage());
+                System.out.println("   - Rechazado: " + e.getMessage());
             } catch (Exception e) {
-                System.err.println("   ✗ Error: " + e.getMessage());
+                System.err.println("   - Error: " + e.getMessage());
             }
         }
 
@@ -155,7 +155,7 @@ public class SimulacionCreadorScrim {
                             postulacionService.postularAScrim(scrim.getId(), candidato.getId(),
                                     candidato.getRangoPorJuego().get(LeagueOfLegends.getInstance().getNombre()),
                                     candidato.getLatenciaPromedio());
-                            System.out.println("   ✓ Aceptado automáticamente");
+                            System.out.println("Aceptado automáticamente");
 
                             scrim = scrimService.buscarPorId(scrim.getId());
                             if ("LOBBY_ARMADO".equals(scrim.getEstado())) {
@@ -163,7 +163,7 @@ public class SimulacionCreadorScrim {
                                 break;
                             }
                         } catch (Exception e) {
-                            System.err.println("   ✗ " + e.getMessage());
+                            System.err.println("error: " + e.getMessage());
                         }
                     }
                 }

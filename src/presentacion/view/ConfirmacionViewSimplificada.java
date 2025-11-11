@@ -33,7 +33,7 @@ public class ConfirmacionViewSimplificada {
      */
     public String mostrarMenuConfirmaciones() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("            ✅ GESTIÓN DE CONFIRMACIONES");
+        System.out.println("            GESTIÓN DE CONFIRMACIONES");
         System.out.println("=".repeat(60));
         System.out.println("1. Confirmar asistencia a un scrim");
         System.out.println("2. Rechazar asistencia a un scrim");
@@ -51,26 +51,26 @@ public class ConfirmacionViewSimplificada {
      */
     public void mostrarScrimsConConfirmacionPendiente(List<Scrim> scrims) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("         ⏳ SCRIMS CON CONFIRMACIÓN PENDIENTE");
+        System.out.println("         SCRIMS CON CONFIRMACIÓN PENDIENTE");
         System.out.println("=".repeat(60));
 
         if (scrims.isEmpty()) {
-            System.out.println("\n📭 No tienes confirmaciones pendientes");
+            System.out.println("\nNo tienes confirmaciones pendientes");
             System.out.println("   Las confirmaciones se generan cuando un scrim se llena");
             return;
         }
 
-        System.out.printf("\n✅ Tienes %d confirmación(es) pendiente(s):\n", scrims.size());
+        System.out.printf("\nTienes %d confirmación(es) pendiente(s):\n", scrims.size());
 
         for (int i = 0; i < scrims.size(); i++) {
             Scrim scrim = scrims.get(i);
             System.out.println("\n" + "-".repeat(60));
-            System.out.printf("%d. 📋 ID: %s\n", i + 1, scrim.getId());
-            System.out.printf("   🎮 Juego: %s | Formato: %s\n",
+            System.out.printf("%d. ID: %s\n", i + 1, scrim.getId());
+            System.out.printf("   Juego: %s | Formato: %s\n",
                     scrim.getJuego().getNombre(),
                     scrim.getFormato().getFormatName());
-            System.out.printf("   📅 Fecha/Hora: %s\n", scrim.getFechaHora());
-            System.out.printf("   📊 Estado: %s\n", scrim.getState().getEstado());
+            System.out.printf("   Fecha/Hora: %s\n", scrim.getFechaHora());
+            System.out.printf("   Estado: %s\n", scrim.getState().getEstado());
 
             // Contar confirmaciones
             long confirmadas = scrim.getConfirmaciones().stream()
@@ -78,7 +78,7 @@ public class ConfirmacionViewSimplificada {
                     .count();
             long totales = scrim.getConfirmaciones().size();
 
-            System.out.printf("   ✅ Confirmaciones: %d/%d\n", confirmadas, totales);
+            System.out.printf("   Confirmaciones: %d/%d\n", confirmadas, totales);
         }
 
         System.out.println("-".repeat(60));
@@ -88,7 +88,7 @@ public class ConfirmacionViewSimplificada {
      * Solicita el número del scrim para confirmar o rechazar asistencia.
      */
     public int solicitarNumeroScrim(int cantidadScrims) {
-        System.out.printf("\n📋 Ingrese el número del scrim (1-%d) o '0' para cancelar: ", cantidadScrims);
+        System.out.printf("\nIngrese el número del scrim (1-%d) o '0' para cancelar: ", cantidadScrims);
         try {
             String input = scanner.nextLine().trim();
             return Integer.parseInt(input);
@@ -105,9 +105,9 @@ public class ConfirmacionViewSimplificada {
     @Deprecated
     public String solicitarIdScrim() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("              ✅ CONFIRMAR ASISTENCIA");
+        System.out.println("              CONFIRMAR ASISTENCIA");
         System.out.println("=".repeat(60));
-        System.out.print("\n📋 ID del scrim: ");
+        System.out.print("\nID del scrim: ");
         return scanner.nextLine().trim();
     }
 
@@ -124,7 +124,7 @@ public class ConfirmacionViewSimplificada {
      * Solicita confirmación final del usuario antes de rechazar asistencia.
      */
     public boolean confirmarRechazoUsuario() {
-        System.out.println("\n⚠️  ATENCIÓN: Al rechazar, perderás tu lugar en el scrim.");
+        System.out.println("\nATENCIÓN: Al rechazar, perderás tu lugar en el scrim.");
         System.out.print("¿Estás seguro de rechazar tu asistencia? (s/n): ");
         String respuesta = scanner.nextLine().trim().toLowerCase();
         return respuesta.equals("s") || respuesta.equals("si") || respuesta.equals("sí");
@@ -137,26 +137,26 @@ public class ConfirmacionViewSimplificada {
      */
     public void mostrarScrimsConMisConfirmaciones(List<Scrim> scrims, String miUserId) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("         📊 MIS CONFIRMACIONES EN SCRIMS");
+        System.out.println("         MIS CONFIRMACIONES EN SCRIMS");
         System.out.println("=".repeat(60));
 
         if (scrims.isEmpty()) {
-            System.out.println("\n📭 No tienes confirmaciones en ningún scrim");
+            System.out.println("\nNo tienes confirmaciones en ningún scrim");
             System.out.println("   Las confirmaciones aparecen cuando te postulan a un scrim que se llena");
             return;
         }
 
-        System.out.printf("\n📋 Tienes confirmaciones en %d scrim(s):\n", scrims.size());
+        System.out.printf("\nTienes confirmaciones en %d scrim(s):\n", scrims.size());
 
         for (int i = 0; i < scrims.size(); i++) {
             Scrim scrim = scrims.get(i);
             System.out.println("\n" + "-".repeat(60));
-            System.out.printf("%d. 📋 ID: %s\n", i + 1, scrim.getId());
-            System.out.printf("   🎮 Juego: %s | Formato: %s\n",
+            System.out.printf("%d. ID: %s\n", i + 1, scrim.getId());
+            System.out.printf("   Juego: %s | Formato: %s\n",
                     scrim.getJuego().getNombre(),
                     scrim.getFormato().getFormatName());
-            System.out.printf("   📅 Fecha/Hora: %s\n", scrim.getFechaHora());
-            System.out.printf("   📊 Estado del scrim: %s\n", scrim.getState().getEstado());
+            System.out.printf("   Fecha/Hora: %s\n", scrim.getFechaHora());
+            System.out.printf("   Estado del scrim: %s\n", scrim.getState().getEstado());
 
             // Buscar mi confirmación en este scrim
             scrim.getConfirmaciones().stream()
@@ -175,7 +175,7 @@ public class ConfirmacionViewSimplificada {
      * Solicita el número del scrim para ver mi confirmación.
      */
     public int solicitarNumeroScrimParaVer(int cantidadScrims) {
-        System.out.printf("\n📋 Ingrese el número del scrim (1-%d) o '0' para cancelar: ", cantidadScrims);
+        System.out.printf("\nIngrese el número del scrim (1-%d) o '0' para cancelar: ", cantidadScrims);
         try {
             String input = scanner.nextLine().trim();
             return Integer.parseInt(input);
@@ -193,9 +193,9 @@ public class ConfirmacionViewSimplificada {
     @Deprecated
     public String solicitarIdScrimParaVer() {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("           📊 VER ESTADO DE MI CONFIRMACIÓN");
+        System.out.println("           VER ESTADO DE MI CONFIRMACIÓN");
         System.out.println("=".repeat(60));
-        System.out.print("\n📋 ID del scrim: ");
+        System.out.print("\nID del scrim: ");
         return scanner.nextLine().trim();
     }
 
@@ -204,34 +204,34 @@ public class ConfirmacionViewSimplificada {
      */
     public void mostrarMiConfirmacion(Confirmacion confirmacion) {
         System.out.println("\n" + "=".repeat(60));
-        System.out.println("                 ✅ MI CONFIRMACIÓN");
+        System.out.println("                 MI CONFIRMACIÓN");
         System.out.println("=".repeat(60));
 
         String estadoEmoji = getEstadoEmoji(confirmacion.getEstado());
 
         System.out.printf("\n%s Estado: %s\n", estadoEmoji, confirmacion.getEstado());
-        System.out.printf("📋 Scrim ID: %s\n", confirmacion.getScrimId());
-        System.out.printf("📅 Fecha de solicitud: %s\n", confirmacion.getFechaSolicitud());
+        System.out.printf("Scrim ID: %s\n", confirmacion.getScrimId());
+        System.out.printf("Fecha de solicitud: %s\n", confirmacion.getFechaSolicitud());
 
         if (confirmacion.getFechaRespuesta() != null) {
-            System.out.printf("📅 Fecha de respuesta: %s\n", confirmacion.getFechaRespuesta());
+            System.out.printf("Fecha de respuesta: %s\n", confirmacion.getFechaRespuesta());
         }
 
         // Mensajes según el estado
         switch (confirmacion.getEstado()) {
             case CONFIRMADA:
-                System.out.println("\n✅ ASISTENCIA CONFIRMADA");
+                System.out.println("\nASISTENCIA CONFIRMADA");
                 System.out.println("   Esperando que los demás jugadores confirmen.");
                 System.out.println("   Recibirás una notificación cuando todos confirmen.");
                 break;
 
             case RECHAZADA:
-                System.out.println("\n❌ ASISTENCIA RECHAZADA");
+                System.out.println("\nASISTENCIA RECHAZADA");
                 System.out.println("   Has liberado tu lugar en el scrim.");
                 break;
 
             case PENDIENTE:
-                System.out.println("\n⏳ CONFIRMACIÓN PENDIENTE");
+                System.out.println("\nCONFIRMACIÓN PENDIENTE");
                 System.out.println("   Por favor confirma o rechaza tu asistencia lo antes posible.");
                 System.out.println("   El scrim no puede iniciar hasta que todos confirmen.");
                 break;
@@ -246,21 +246,21 @@ public class ConfirmacionViewSimplificada {
      * Muestra un mensaje de éxito.
      */
     public void mostrarExito(String mensaje) {
-        System.out.println("\n✅ " + mensaje);
+        System.out.println("\n- " + mensaje);
     }
 
     /**
      * Muestra un mensaje de error.
      */
     public void mostrarError(String mensaje) {
-        System.err.println("\n❌ " + mensaje);
+        System.err.println("\nError: " + mensaje);
     }
 
     /**
      * Muestra un mensaje informativo.
      */
     public void mostrarInfo(String mensaje) {
-        System.out.println("\nℹ️  " + mensaje);
+        System.out.println("\nℹ " + mensaje);
     }
 
     // ========== HELPERS ==========
@@ -268,13 +268,13 @@ public class ConfirmacionViewSimplificada {
     private String getEstadoEmoji(Confirmacion.EstadoConfirmacion estado) {
         switch (estado) {
             case CONFIRMADA:
-                return "✅";
+                return "-";
             case RECHAZADA:
-                return "❌";
+                return "RECHAZADA: ";
             case PENDIENTE:
-                return "⏳";
+                return "PENDIENTE: ";
             default:
-                return "❓";
+                return "";
         }
     }
 }

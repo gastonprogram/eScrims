@@ -65,13 +65,13 @@ public class GestionMatchmakingView {
             }
 
             if (numero < 1 || numero > cantidadScrims) {
-                System.err.println("✗ Número inválido. Debe estar entre 1 y " + cantidadScrims);
+                System.err.println("Número inválido. Debe estar entre 1 y " + cantidadScrims);
                 return solicitarNumeroScrim(cantidadScrims);
             }
 
             return numero;
         } catch (NumberFormatException e) {
-            System.err.println("✗ Debe ingresar un número válido");
+            System.err.println("Debe ingresar un número válido");
             return solicitarNumeroScrim(cantidadScrims);
         }
     }
@@ -124,7 +124,7 @@ public class GestionMatchmakingView {
                 return estrategias.get(opcion - 1).getNombre();
             }
         } catch (NumberFormatException e) {
-            System.err.println("✗ Opción inválida");
+            System.err.println("Opción inválida");
         }
 
         return solicitarNuevaEstrategia(estrategiaActual); // Reintentar
@@ -149,11 +149,11 @@ public class GestionMatchmakingView {
     // ================== Métodos para el Controller ==================
 
     public void mostrarExito(String mensaje) {
-        System.out.println("\n✓ " + mensaje);
+        System.out.println("\n- " + mensaje);
     }
 
     public void mostrarError(String mensaje) {
-        System.err.println("\n✗ " + mensaje);
+        System.err.println("\n- " + mensaje);
     }
 
     public void mostrarInfo(String mensaje) {
@@ -161,7 +161,7 @@ public class GestionMatchmakingView {
     }
 
     public void mostrarCancelacion() {
-        System.out.println("\n✗ Operación cancelada");
+        System.out.println("\nOperación cancelada");
     }
 
     public void pausaParaContinuar() {

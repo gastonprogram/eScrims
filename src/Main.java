@@ -146,7 +146,7 @@ public class Main {
             registerView.mostrarResumenDatos(username, email, juegoPrincipal, rango);
 
             if (!registerView.confirmarRegistro()) {
-                registerView.mostrarMensaje("\n✗ Registro cancelado.");
+                registerView.mostrarMensaje("\n- Registro cancelado.");
                 return;
             }
 
@@ -251,7 +251,7 @@ public class Main {
 
             menuView.presionarEnterParaContinuar();
         } catch (Exception e) {
-            System.err.println("\n✗ Error al crear scrim: " + e.getMessage());
+            System.err.println("\n- Error al crear scrim: " + e.getMessage());
             e.printStackTrace();
             menuView.presionarEnterParaContinuar();
         }
@@ -276,7 +276,7 @@ public class Main {
 
             menuView.presionarEnterParaContinuar();
         } catch (Exception e) {
-            System.err.println("\n✗ Error al buscar scrims: " + e.getMessage());
+            System.err.println("\n- Error al buscar scrims: " + e.getMessage());
             e.printStackTrace();
             menuView.presionarEnterParaContinuar();
         }
@@ -304,7 +304,7 @@ public class Main {
             controller.gestionarPerfil();
 
         } catch (Exception e) {
-            System.err.println("\n✗ Error en la gestión de perfil: " + e.getMessage());
+            System.err.println("\n- Error en la gestión de perfil: " + e.getMessage());
             e.printStackTrace();
             menuView.presionarEnterParaContinuar();
         }
@@ -334,7 +334,7 @@ public class Main {
 
             menuView.presionarEnterParaContinuar();
         } catch (Exception e) {
-            System.err.println("\n✗ Error en la postulación: " + e.getMessage());
+            System.err.println("\n- Error en la postulación: " + e.getMessage());
             e.printStackTrace();
             menuView.presionarEnterParaContinuar();
         }
@@ -362,7 +362,7 @@ public class Main {
 
             menuView.presionarEnterParaContinuar();
         } catch (Exception e) {
-            System.err.println("\n✗ Error en confirmaciones: " + e.getMessage());
+            System.err.println("\n- Error en confirmaciones: " + e.getMessage());
             e.printStackTrace();
             menuView.presionarEnterParaContinuar();
         }
@@ -406,7 +406,7 @@ public class Main {
             }
 
         } catch (Exception e) {
-            System.err.println("\n✗ Error en gestión de organizador: " + e.getMessage());
+            System.err.println("\n- Error en gestión de organizador: " + e.getMessage());
             e.printStackTrace();
             menuView.presionarEnterParaContinuar();
         }
@@ -435,7 +435,7 @@ public class Main {
 
             menuView.presionarEnterParaContinuar();
         } catch (Exception e) {
-            System.err.println("\n✗ Error en gestión de postulaciones: " + e.getMessage());
+            System.err.println("\n- Error en gestión de postulaciones: " + e.getMessage());
             e.printStackTrace();
             menuView.presionarEnterParaContinuar();
         }
@@ -462,7 +462,7 @@ public class Main {
 
             menuView.presionarEnterParaContinuar();
         } catch (Exception e) {
-            System.err.println("\n✗ Error en acciones de organizador: " + e.getMessage());
+            System.err.println("\n- Error en acciones de organizador: " + e.getMessage());
             e.printStackTrace();
             menuView.presionarEnterParaContinuar();
         }
@@ -521,7 +521,7 @@ public class Main {
             }
 
         } catch (Exception e) {
-            System.err.println("\n✗ Error en estadísticas y moderación: " + e.getMessage());
+            System.err.println("\n- Error en estadísticas y moderación: " + e.getMessage());
             e.printStackTrace();
             menuView.presionarEnterParaContinuar();
         }
@@ -602,7 +602,7 @@ public class Main {
 
             estadisticasService.reportarConducta(scrimId, tipo, gravedad, usuarioReportadoId,
                     usuario.getId().toString(), descripcion);
-            vista.mostrarMensaje("✓ Reporte creado exitosamente.");
+            vista.mostrarMensaje("- Reporte creado exitosamente.");
         } catch (Exception e) {
             vista.mostrarMensaje("Error al crear reporte: " + e.getMessage());
         }
@@ -711,7 +711,7 @@ public class Main {
 
             dominio.estadisticas.Comentario comentario = estadisticasService.crearComentario(jugadorId, scrimId,
                     contenido, rating);
-            vista.mostrarMensaje("✓ Comentario creado exitosamente (ID: " + comentario.getId() + ")");
+            vista.mostrarMensaje("- Comentario creado exitosamente (ID: " + comentario.getId() + ")");
             vista.mostrarMensaje("El comentario está pendiente de moderación.");
 
         } catch (Exception e) {
@@ -816,7 +816,7 @@ public class Main {
 
             // Aplicar moderación
             estadisticasService.moderarComentario(comentarioId, nuevoEstado, motivoRechazo);
-            vista.mostrarMensaje("✓ Comentario moderado exitosamente.");
+            vista.mostrarMensaje("- Comentario moderado exitosamente.");
 
         } catch (Exception e) {
             vista.mostrarMensaje("Error al moderar comentarios: " + e.getMessage());
@@ -854,16 +854,16 @@ public class Main {
 
             // Verificar si hay estadísticas de jugadores registradas
             if (estadisticas.getEstadisticasPorJugador().isEmpty()) {
-                vista.mostrarMensaje("⚠️ No hay estadísticas de jugadores registradas para este scrim.");
+                vista.mostrarMensaje("- No hay estadísticas de jugadores registradas para este scrim.");
                 vista.mostrarMensaje("Se finalizará la partida sin estadísticas individuales.");
             }
 
             // Finalizar partida con simulación
             estadisticas.finalizarPartidaConSimulacion();
 
-            vista.mostrarMensaje("🎯 ¡Partida finalizada exitosamente!");
-            vista.mostrarMensaje("🏆 Ganador determinado: " + estadisticas.getGanador());
-            vista.mostrarMensaje("⏱️ Duración simulada: " + estadisticas.getDuracionMinutos() + " minutos");
+            vista.mostrarMensaje("- Partida finalizada exitosamente!");
+            vista.mostrarMensaje("- Ganador determinado: " + estadisticas.getGanador());
+            vista.mostrarMensaje("- Duración simulada: " + estadisticas.getDuracionMinutos() + " minutos");
 
             // Mostrar estadísticas completas
             vista.mostrarEstadisticasScrim(estadisticas);
@@ -875,7 +875,7 @@ public class Main {
 
                 if (respuesta.startsWith("s")) {
                     if (!estadisticas.getReportes().isEmpty()) {
-                        vista.mostrarMensaje("\n📋 RESUMEN DE REPORTES DE CONDUCTA:");
+                        vista.mostrarMensaje("\n- RESUMEN DE REPORTES DE CONDUCTA:");
                         estadisticas.getReportes().forEach(reporte -> {
                             System.out.printf("- %s: %s (%s) - %s%n",
                                     reporte.getUsuarioReportadoId(),

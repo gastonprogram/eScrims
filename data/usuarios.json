@@ -1,10 +1,10 @@
 [
   {
-    "id": "b9af4ec1-a37e-4e74-8c40-804b3b0e1d38",
+    "id": "576e45b9-d791-49cc-9770-5e94d1190375",
     "username": "Organizador_Test",
     "email": "org@test.com",
-    "hashedPassword": "oU+2HggxDfsLn0kEdyLyQ3ZYVwV6HefhWYLwhbwFrZc\u003d",
-    "salt": "SHamIREtvfI7DfpezZX5hQ\u003d\u003d",
+    "hashedPassword": "8V/Vd6y0AFGSzEmWqcmaD/pkbKihMBM9SYdvkS7KE/0\u003d",
+    "salt": "sa7Bn2o2uF+vEuMQSu822A\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -12,14 +12,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T19:41:01.438",
-    "updatedAt": "2025-11-10T19:41:01.438",
+    "createdAt": "2025-11-11T12:47:07.665",
+    "updatedAt": "2025-11-11T12:47:07.665",
     "historial": {
-      "userId": "b9af4ec1-a37e-4e74-8c40-804b3b0e1d38",
+      "userId": "576e45b9-d791-49cc-9770-5e94d1190375",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T19:41:01.4387745"
+      "ultimaActividad": "2025-11-11T12:47:07.6659321"
     },
     "subscribedEvents": [
       "CANCELADO",
@@ -37,11 +37,11 @@
     }
   },
   {
-    "id": "e07c99ad-7da0-4d12-ad9d-b21a5125ac8b",
+    "id": "77d45d3b-fc16-4974-8f8f-98c9639e3b3e",
     "username": "Player1",
     "email": "p1@test.com",
-    "hashedPassword": "qMyoW99i4+w3to96LWVJoV3Qpi16In+s05TqqFErATA\u003d",
-    "salt": "zK6vJu8DCbaug0ybn1j1tw\u003d\u003d",
+    "hashedPassword": "uC/rx877yTjYzhO4AZrahKGHpNNVBapFuzVqDGtflAQ\u003d",
+    "salt": "BaIrQrZTrPoOhZAkdmZ6aw\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -49,14 +49,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T19:41:01.438",
-    "updatedAt": "2025-11-10T19:41:01.438",
+    "createdAt": "2025-11-11T12:47:07.665",
+    "updatedAt": "2025-11-11T12:47:07.665",
     "historial": {
-      "userId": "e07c99ad-7da0-4d12-ad9d-b21a5125ac8b",
+      "userId": "77d45d3b-fc16-4974-8f8f-98c9639e3b3e",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T19:41:01.4387745"
+      "ultimaActividad": "2025-11-11T12:47:07.6659321"
     },
     "subscribedEvents": [
       "CANCELADO",
@@ -74,11 +74,11 @@
     }
   },
   {
-    "id": "56c1ecd1-d003-431e-bffa-726a81874806",
+    "id": "93bd070e-3704-4f1a-9313-fc76649e7f55",
     "username": "Player2",
     "email": "p2@test.com",
-    "hashedPassword": "i1+OAg433Bpu28vqoQq3zvDLhj1LDuFJsiFPQyHK2dQ\u003d",
-    "salt": "0MBzhri0KhmUWZha2iSZrw\u003d\u003d",
+    "hashedPassword": "LfmQjxYUR0zkMRPSnMg3AZ9/2PJIxF/5oXtcAarfe9Q\u003d",
+    "salt": "pPxgyNtvbODrWpePJAV8Vw\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -86,14 +86,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T19:41:01.438",
-    "updatedAt": "2025-11-10T19:41:01.438",
+    "createdAt": "2025-11-11T12:47:07.665",
+    "updatedAt": "2025-11-11T12:47:07.665",
     "historial": {
-      "userId": "56c1ecd1-d003-431e-bffa-726a81874806",
+      "userId": "93bd070e-3704-4f1a-9313-fc76649e7f55",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T19:41:01.4387745"
+      "ultimaActividad": "2025-11-11T12:47:07.6659321"
     },
     "subscribedEvents": [
       "CANCELADO",
@@ -111,11 +111,11 @@
     }
   },
   {
-    "id": "43fd1648-fab3-45e8-bb5d-1bed32a887db",
+    "id": "661fece0-8710-4595-8548-d795f6b5dfa0",
     "username": "Player3",
     "email": "p3@test.com",
-    "hashedPassword": "05A3jqEyNopHMl3PEP6NmgamV1wclpPusi4ae5ojcJ4\u003d",
-    "salt": "zEzsbPSi/nIiqrn9vqqJ8A\u003d\u003d",
+    "hashedPassword": "/oIxMs887PJRbDERDlj5IuLln+hpO2BtmasRqXil+i0\u003d",
+    "salt": "C7Ly2gonrADyxXdbgIjdQA\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -123,14 +123,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T19:41:01.438",
-    "updatedAt": "2025-11-10T19:41:01.439",
+    "createdAt": "2025-11-11T12:47:07.665",
+    "updatedAt": "2025-11-11T12:47:07.665",
     "historial": {
-      "userId": "43fd1648-fab3-45e8-bb5d-1bed32a887db",
+      "userId": "661fece0-8710-4595-8548-d795f6b5dfa0",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T19:41:01.4397747"
+      "ultimaActividad": "2025-11-11T12:47:07.6659321"
     },
     "subscribedEvents": [
       "CANCELADO",
@@ -148,11 +148,11 @@
     }
   },
   {
-    "id": "bd51713d-9438-4f3a-ab61-5c643dc71409",
+    "id": "c90857fb-54a6-41bf-8532-2b516fc2273b",
     "username": "Player4",
     "email": "p4@test.com",
-    "hashedPassword": "s2Ljyj1mym1w+kXgPtMv+UKhHgRnxfsDVLU2Xqdu0CQ\u003d",
-    "salt": "fF1J92kBIMTf3np6zY0TqQ\u003d\u003d",
+    "hashedPassword": "CJbKjQGYHKnJWF/pYvq7WdgGE6qoN4aVbfGLA5iFk4k\u003d",
+    "salt": "wjmH1mHUePCNtXOkcv2/mw\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -160,14 +160,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T19:41:01.439",
-    "updatedAt": "2025-11-10T19:41:01.439",
+    "createdAt": "2025-11-11T12:47:07.665",
+    "updatedAt": "2025-11-11T12:47:07.665",
     "historial": {
-      "userId": "bd51713d-9438-4f3a-ab61-5c643dc71409",
+      "userId": "c90857fb-54a6-41bf-8532-2b516fc2273b",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T19:41:01.4397747"
+      "ultimaActividad": "2025-11-11T12:47:07.6659321"
     },
     "subscribedEvents": [
       "CANCELADO",
@@ -185,11 +185,11 @@
     }
   },
   {
-    "id": "9e377f38-2caf-43d2-8a4b-63dbabaab9ae",
+    "id": "b2f6ad00-e786-434d-9633-558d7b212246",
     "username": "Player5",
     "email": "p5@test.com",
-    "hashedPassword": "nxPnyGlS91T++8HigcAY6TjALHoNIsm7vIGz6saviqw\u003d",
-    "salt": "j51iTtsJGA62guOUybVvhA\u003d\u003d",
+    "hashedPassword": "qoQCa9Kb3uACjV9SS7lj/pnR0binq1UTJIBXOG+13zA\u003d",
+    "salt": "Ym1jY0Ux1DbpPbvQROzLhg\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -197,14 +197,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T19:41:01.457",
-    "updatedAt": "2025-11-10T19:41:01.457",
+    "createdAt": "2025-11-11T12:47:07.697",
+    "updatedAt": "2025-11-11T12:47:07.697",
     "historial": {
-      "userId": "9e377f38-2caf-43d2-8a4b-63dbabaab9ae",
+      "userId": "b2f6ad00-e786-434d-9633-558d7b212246",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T19:41:01.4570912"
+      "ultimaActividad": "2025-11-11T12:47:07.6973295"
     },
     "subscribedEvents": [
       "CANCELADO",
@@ -222,11 +222,11 @@
     }
   },
   {
-    "id": "32ce0523-6729-41fa-878f-4f92eef54662",
+    "id": "86947d4d-1bf4-43a2-be19-1732a37aa02e",
     "username": "Player6",
     "email": "p6@test.com",
-    "hashedPassword": "xssUg1LpuiEO/kFz/Nk1STYvPwlwfnHeDHdGfwEsw6I\u003d",
-    "salt": "/uCMcTl+XP47isiBfGfI9g\u003d\u003d",
+    "hashedPassword": "92ersHSlp2OFCtaTxgL4k8IF0dmj1A42NjppXqiQaX4\u003d",
+    "salt": "nAgjOtTAOYBkLofOtcFCRQ\u003d\u003d",
     "rangoPorJuego": {},
     "rol": "USER",
     "region": "",
@@ -234,14 +234,14 @@
     "disponibilidad": "",
     "latenciaPromedio": 50,
     "disponible": true,
-    "createdAt": "2025-11-10T19:41:01.457",
-    "updatedAt": "2025-11-10T19:41:01.457",
+    "createdAt": "2025-11-11T12:47:07.697",
+    "updatedAt": "2025-11-11T12:47:07.697",
     "historial": {
-      "userId": "32ce0523-6729-41fa-878f-4f92eef54662",
+      "userId": "86947d4d-1bf4-43a2-be19-1732a37aa02e",
       "partidasJugadas": 0,
       "partidasAbandonadas": 0,
       "tasaFairPlay": 1.0,
-      "ultimaActividad": "2025-11-10T19:41:01.4570912"
+      "ultimaActividad": "2025-11-11T12:47:07.6973295"
     },
     "subscribedEvents": [
       "CANCELADO",

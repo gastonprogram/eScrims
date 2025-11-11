@@ -57,7 +57,7 @@ public class CrearScrimView {
                 return null; // Cancelar
             }
         } catch (NumberFormatException e) {
-            System.err.println("✗ Opción inválida");
+            System.err.println("Opción inválida");
         }
 
         return solicitarJuego(); // Reintentar
@@ -87,7 +87,7 @@ public class CrearScrimView {
                 return formatos.get(opcion - 1);
             }
         } catch (NumberFormatException e) {
-            System.err.println("✗ Opción inválida");
+            System.err.println("Opción inválida");
         }
 
         return solicitarFormato(juego); // Reintentar
@@ -113,13 +113,13 @@ public class CrearScrimView {
 
             // Validar que sea en el futuro
             if (fechaHora.isBefore(LocalDateTime.now())) {
-                System.err.println("✗ La fecha debe ser en el futuro");
+                System.err.println("La fecha debe ser en el futuro");
                 return solicitarFechaHora();
             }
 
             return fechaHora;
         } catch (DateTimeParseException e) {
-            System.err.println("✗ Formato de fecha inválido");
+            System.err.println("Formato de fecha inválido");
             return solicitarFechaHora();
         }
     }
@@ -135,12 +135,12 @@ public class CrearScrimView {
         try {
             int rango = Integer.parseInt(scanner.nextLine().trim());
             if (rango < 1 || rango > 100) {
-                System.err.println("✗ El rango debe estar entre 1 y 100");
+                System.err.println("El rango debe estar entre 1 y 100");
                 return solicitarRangoMinimo();
             }
             return rango;
         } catch (NumberFormatException e) {
-            System.err.println("✗ Debe ingresar un número");
+            System.err.println("Debe ingresar un número");
             return solicitarRangoMinimo();
         }
     }
@@ -156,12 +156,12 @@ public class CrearScrimView {
         try {
             int rango = Integer.parseInt(scanner.nextLine().trim());
             if (rango < 1 || rango > 100) {
-                System.err.println("✗ El rango debe estar entre 1 y 100");
+                System.err.println("El rango debe estar entre 1 y 100");
                 return solicitarRangoMaximo();
             }
             return rango;
         } catch (NumberFormatException e) {
-            System.err.println("✗ Debe ingresar un número");
+            System.err.println("Debe ingresar un número");
             return solicitarRangoMaximo();
         }
     }
@@ -177,12 +177,12 @@ public class CrearScrimView {
         try {
             int latencia = Integer.parseInt(scanner.nextLine().trim());
             if (latencia < 0 || latencia > 1000) {
-                System.err.println("✗ La latencia debe estar entre 0 y 1000ms");
+                System.err.println("- La latencia debe estar entre 0 y 1000ms");
                 return solicitarLatenciaMaxima();
             }
             return latencia;
         } catch (NumberFormatException e) {
-            System.err.println("✗ Debe ingresar un número");
+            System.err.println("Debe ingresar un número");
             return solicitarLatenciaMaxima();
         }
     }
@@ -214,7 +214,7 @@ public class CrearScrimView {
                 return estrategias.get(opcion - 1).getNombre();
             }
         } catch (NumberFormatException e) {
-            System.err.println("✗ Opción inválida");
+            System.err.println("Opción inválida");
         }
 
         return solicitarEstrategiaMatchmaking(); // Reintentar
@@ -244,17 +244,17 @@ public class CrearScrimView {
     }
 
     public void mostrarCancelacion() {
-        System.out.println("\n✗ Creación de scrim cancelada");
+        System.out.println("\nCreación de scrim cancelada");
     }
 
     // ================== Métodos para el Controller ==================
 
     public void mostrarExito(String mensaje) {
-        System.out.println("\n✓ " + mensaje);
+        System.out.println("\n- " + mensaje);
     }
 
     public void mostrarError(String mensaje) {
-        System.err.println("\n✗ " + mensaje);
+        System.err.println("\nError: " + mensaje);
     }
 
     public void mostrarInfo(String mensaje) {

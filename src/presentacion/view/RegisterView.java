@@ -78,19 +78,19 @@ public class RegisterView {
 
     public void mostrarRegistroExitoso(String username) {
         System.out.println("\n" + "=".repeat(40));
-        System.out.println("✓ ¡Usuario registrado exitosamente!");
+        System.out.println("¡Usuario registrado exitosamente!");
         System.out.println("Username: " + username);
         System.out.println("Ya puede iniciar sesión con sus credenciales.");
         System.out.println("=".repeat(40));
     }
 
     public void mostrarErrorRegistro(String mensaje) {
-        System.err.println("\n✗ Error en el registro:");
+        System.err.println("\nError en el registro:");
         System.err.println("  " + mensaje);
     }
 
     public void mostrarErrorConfirmacion() {
-        System.err.println("\n✗ Las contraseñas no coinciden. Intente nuevamente.");
+        System.err.println("\nLas contraseñas no coinciden. Intente nuevamente.");
     }
 
     public boolean confirmarReintento() {
@@ -140,11 +140,11 @@ public class RegisterView {
     // ================== Métodos para el Controller ==================
 
     public void mostrarExito(String mensaje) {
-        System.out.println("\n✓ " + mensaje);
+        System.out.println("\n" + mensaje);
     }
 
     public void mostrarError(String mensaje) {
-        System.err.println("\n✗ " + mensaje);
+        System.err.println("\n" + mensaje);
     }
 
     public void mostrarInfo(String mensaje) {

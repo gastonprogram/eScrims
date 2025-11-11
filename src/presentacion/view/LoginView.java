@@ -26,16 +26,16 @@ public class LoginView {
     }
 
     public void mostrarLoginExitoso(String username) {
-        System.out.println("\n✓ ¡Bienvenido " + username + "!");
+        System.out.println("\n¡Bienvenido " + username + "!");
         System.out.println("Sesión iniciada correctamente.");
     }
 
     public void mostrarErrorLogin(String mensaje) {
-        System.err.println("\n✗ Error de login: " + mensaje);
+        System.err.println("\n- Error de login: " + mensaje);
     }
 
     public void mostrarLogoutExitoso() {
-        System.out.println("\n✓ Sesión cerrada correctamente.");
+        System.out.println("\nSesión cerrada correctamente.");
         System.out.println("¡Hasta luego!");
     }
 
@@ -64,11 +64,11 @@ public class LoginView {
     // ================== Métodos para el Controller ==================
 
     public void mostrarExito(String mensaje) {
-        System.out.println("\n✓ " + mensaje);
+        System.out.println("\n- " + mensaje);
     }
 
     public void mostrarError(String mensaje) {
-        System.err.println("\n✗ " + mensaje);
+        System.err.println("\n- " + mensaje);
     }
 
     public void mostrarInfo(String mensaje) {

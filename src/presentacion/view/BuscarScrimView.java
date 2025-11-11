@@ -92,7 +92,7 @@ public class BuscarScrimView {
             int rango = Integer.parseInt(input);
             return rango >= 0 ? rango : null;
         } catch (NumberFormatException e) {
-            System.err.println("✗ Número inválido, se omitirá el filtro");
+            System.err.println("Número inválido, se omitirá el filtro");
             return null;
         }
     }
@@ -113,7 +113,7 @@ public class BuscarScrimView {
             int rango = Integer.parseInt(input);
             return rango >= 0 ? rango : null;
         } catch (NumberFormatException e) {
-            System.err.println("✗ Número inválido, se omitirá el filtro");
+            System.err.println("Número inválido, se omitirá el filtro");
             return null;
         }
     }
@@ -134,7 +134,7 @@ public class BuscarScrimView {
             int latencia = Integer.parseInt(input);
             return latencia >= 0 ? latencia : null;
         } catch (NumberFormatException e) {
-            System.err.println("✗ Número inválido, se omitirá el filtro");
+            System.err.println("Número inválido, se omitirá el filtro");
             return null;
         }
     }
@@ -155,7 +155,7 @@ public class BuscarScrimView {
         try {
             return LocalDateTime.parse(input, FORMATO_FECHA);
         } catch (DateTimeParseException e) {
-            System.err.println("✗ Formato inválido, se omitirá el filtro");
+            System.err.println("Formato inválido, se omitirá el filtro");
             return null;
         }
     }
@@ -176,7 +176,7 @@ public class BuscarScrimView {
         try {
             return LocalDateTime.parse(input, FORMATO_FECHA);
         } catch (DateTimeParseException e) {
-            System.err.println("✗ Formato inválido, se omitirá el filtro");
+            System.err.println("Formato inválido, se omitirá el filtro");
             return null;
         }
     }
@@ -190,7 +190,7 @@ public class BuscarScrimView {
         System.out.println("=".repeat(70));
 
         if (scrims.isEmpty()) {
-            System.out.println("\n✗ No se encontraron scrims con los filtros especificados");
+            System.out.println("\nNo se encontraron scrims con los filtros especificados");
             return;
         }
 
@@ -253,7 +253,7 @@ public class BuscarScrimView {
     }
 
     public void mostrarSinResultados() {
-        System.out.println("\n✗ No hay scrims disponibles en el sistema");
+        System.out.println("\nNo hay scrims disponibles en el sistema");
     }
 
     /**
@@ -330,7 +330,7 @@ public class BuscarScrimView {
      */
     public void mostrarListaScrims(List<Scrim> scrims) {
         if (scrims.isEmpty()) {
-            System.out.println("\n✗ No hay scrims disponibles");
+            System.out.println("\nNo hay scrims disponibles");
             return;
         }
 
@@ -349,20 +349,20 @@ public class BuscarScrimView {
      * Muestra un mensaje de éxito.
      */
     public void mostrarExito(String mensaje) {
-        System.out.println("\n✓ " + mensaje);
+        System.out.println("\n- " + mensaje);
     }
 
     /**
      * Muestra un mensaje de error.
      */
     public void mostrarError(String mensaje) {
-        System.err.println("\n✗ Error: " + mensaje);
+        System.err.println("\nError: " + mensaje);
     }
 
     /**
      * Muestra un mensaje informativo.
      */
     public void mostrarInfo(String mensaje) {
-        System.out.println("\nℹ " + mensaje);
+        System.out.println("\nInfo: " + mensaje);
     }
 }
